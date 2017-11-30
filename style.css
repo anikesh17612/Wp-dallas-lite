@@ -83,7 +83,7 @@ audio:not([controls]) {
 }
 
 #page{
-	background: gray;
+	background: green;
 	margin: 0 auto;
 	width: 1200px;
 }
@@ -95,6 +95,7 @@ template {
 
 a {
 	background-color: transparent;
+	color:yellow;
 }
 
 a:active,
@@ -489,7 +490,7 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: yellow;
 }
 
 a:visited {
