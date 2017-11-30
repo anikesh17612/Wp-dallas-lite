@@ -8,7 +8,6 @@
  *
  * @package WP_Dallas_Lite
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
