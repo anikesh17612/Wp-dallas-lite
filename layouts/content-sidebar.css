@@ -6,6 +6,12 @@
  * Learn more: https://developer.wordpress.org/themes/basics/template-files/
 */
 
+.page{
+	width: 1200px;
+	margin: 0 auto;
+	background: #f00;
+}
+
 .content-area {
 	float: left;
 	margin: 0 -25% 0 0;
