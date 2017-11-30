@@ -82,6 +82,12 @@ audio:not([controls]) {
 	height: 0;
 }
 
+#page{
+	background: #f00;
+	margin: 0 auto;
+	width: 1200px;
+}
+
 [hidden],
 template {
 	display: none;
