@@ -83,7 +83,7 @@ audio:not([controls]) {
 }
 
 #page{
-	background: #f00;
+	background: gray;
 	margin: 0 auto;
 	width: 1200px;
 }
