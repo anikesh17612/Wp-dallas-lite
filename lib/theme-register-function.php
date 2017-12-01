@@ -17,7 +17,14 @@ function wp_dallas_option($wp_customize){
 		'priority' => 10
 	) );	
 	$wp_customize->add_setting( 'blog_layout_selection', array(
-		 'default'           => __( 'Select Layout', 'wp_dallas_lite' )		 
+		 'default'           => __( 'Select Blog Layout', 'wp_dallas_lite' )		 
+	) );
+	$wp_customize->add_setting( 'select_blog_single_page_layout', array(
+		 'default'           => __( 'Select Single Page Layout', 'wp_dallas_lite' )		 
+	) );
+	
+	$wp_customize->add_setting( 'select_pagination_layout', array(
+		 'default'           => __( 'Select Pagination Layout', 'wp_dallas_lite' )		 
 	) );
 	// Add control
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -42,7 +49,7 @@ function wp_dallas_option($wp_customize){
 		    array(
 		        'label'    => __( 'Select Blog Single Plage Layout', 'wp_dallas_lite' ),
 		        'section'  => 'Blog_layout_option',
-		        'settings' => 'blog_layout_selection',
+		        'settings' => 'select_blog_single_page_layout',
 				'type'=> 'select',
 		        'choices' =>
 				array(
@@ -58,7 +65,7 @@ function wp_dallas_option($wp_customize){
 		    array(
 		        'label'    => __( 'Select Pagination Layout', 'wp_dallas_lite' ),
 		        'section'  => 'Blog_layout_option',
-		        'settings' => 'blog_layout_selection',
+		        'settings' => 'select_pagination_layout',
 				'type'=> 'select',
 				'selected' => 'selected',
 		        'choices' =>
