@@ -37,6 +37,13 @@
 	
 	
 		<div class="site-info">
+		
+			<?php if(get_theme_mod( 'enable-copyright-text' )==1){
+				
+					echo get_theme_mod( 'copyright-text' );
+			}
+			?>
+		
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp_dallas_lite' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */
 				printf( esc_html__( 'Proudly powered by %s', 'wp_dallas_lite' ), 'WordPress' );
@@ -47,6 +54,15 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'wp_dallas_lite' ), 'wp_dallas_lite', '<a href="http://www.joomdev.com">JoomDev</a>' );
 			?>
 		</div><!-- .site-info -->
+		<div class="footer-menu">
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-3',
+						'menu_id'        => 'Footer-menu',
+					) );
+				?>
+				
+			</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
