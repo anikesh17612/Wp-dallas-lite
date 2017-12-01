@@ -12,8 +12,30 @@
 ?>
 
 	</div><!-- #content -->
+<!-- Create bottom postion of theme -->
+<section id="bottom" class="site-bottom">
+	<?php if ( is_active_sidebar( 'bottom-a' ) ) {
+			dynamic_sidebar( 'bottom-a' );
+	}
+	if ( is_active_sidebar( 'bottom-b' ) ) {
+			 dynamic_sidebar( 'bottom-b' ); 
+	}
+	if ( is_active_sidebar( 'bottom-c' ) ) {
+			 dynamic_sidebar( 'bottom-c' );
+	}
+	if ( is_active_sidebar( 'bottom-d' ) ) {
+			 dynamic_sidebar( 'bottom-d' ); 
+	}
+	?>
+</section>
+<!-- End bottom postion of theme -->
 
 	<footer id="colophon" class="site-footer">
+	
+	
+	<?php esc_html_e( get_theme_mod( 'blog_layout_selection' ) ); ?> <!-- get option value example --> 
+	
+	
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp_dallas_lite' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */
