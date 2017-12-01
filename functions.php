@@ -112,6 +112,42 @@ function wp_dallas_lite_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Bottom A', 'wp_dallas_lite' ),
+		'id'            => 'bottom-a',
+		'description'   => esc_html__( 'Add widgets here.', 'wp_dallas_lite' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'bottom B', 'wp_dallas_lite' ),
+		'id'            => 'bottom-b',
+		'description'   => esc_html__( 'Add widgets here.', 'wp_dallas_lite' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Bottom C', 'wp_dallas_lite' ),
+		'id'            => 'bottom-c',
+		'description'   => esc_html__( 'Add widgets here.', 'wp_dallas_lite' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Bottom D', 'wp_dallas_lite' ),
+		'id'            => 'bottom-d',
+		'description'   => esc_html__( 'Add widgets here.', 'wp_dallas_lite' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'wp_dallas_lite_widgets_init' );
 
@@ -169,3 +205,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+require_once( get_template_directory()  . '/lib/theme-register-function.php'); 
+
