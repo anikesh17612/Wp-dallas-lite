@@ -10,7 +10,6 @@
  *
  * @package WP_Dallas_Lite
  */
-
 /**
  * Set up the WordPress core custom header feature.
  *
