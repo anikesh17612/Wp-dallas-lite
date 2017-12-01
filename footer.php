@@ -13,18 +13,28 @@
 
 	</div><!-- #content -->
 <!-- Create bottom postion of theme -->
-<section id="bottom" class="site-bottom">
+<section id="bottom" class="site-bottom row">
 	<?php if ( is_active_sidebar( 'bottom-a' ) ) {
+		echo '<div  class="col-md-3 col-lg-3">';
 			dynamic_sidebar( 'bottom-a' );
+		echo '</div>';
 	}
 	if ( is_active_sidebar( 'bottom-b' ) ) {
-			 dynamic_sidebar( 'bottom-b' ); 
+		echo '<div class="col-md-3 col-lg-3">';
+			dynamic_sidebar( 'bottom-b' ); 
+		echo '</div>';
 	}
 	if ( is_active_sidebar( 'bottom-c' ) ) {
-			 dynamic_sidebar( 'bottom-c' );
+		echo '<div  class="col-md-3 col-lg-3">';
+			dynamic_sidebar( 'bottom-c' );
+		echo '</div>';
+			 
 	}
 	if ( is_active_sidebar( 'bottom-d' ) ) {
-			 dynamic_sidebar( 'bottom-d' ); 
+		echo '<div  class="col-md-3 col-lg-3">';
+			dynamic_sidebar( 'bottom-d' ); 
+		echo '</div>';
+			 
 	}
 	?>
 </section>
@@ -36,22 +46,10 @@
 	<?php esc_html_e( get_theme_mod( 'blog_layout_selection' ) ); ?> <!-- get option value example --> 
 	
 	
-		<div class="site-info">
-		
-			<?php if(get_theme_mod( 'enable-copyright-text' )==1){
-				
-					echo get_theme_mod( 'copyright-text' );
+		<div class="wp-copyright">
+			<?php if(get_theme_mod('enableCopyrightText') == 1 ){
+				echo get_theme_mod('copyrightText');
 			}
-			?>
-		
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wp_dallas_lite' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'wp_dallas_lite' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'wp_dallas_lite' ), 'wp_dallas_lite', '<a href="http://www.joomdev.com">JoomDev</a>' );
 			?>
 		</div><!-- .site-info -->
 		<div class="footer-menu">
