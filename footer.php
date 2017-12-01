@@ -43,7 +43,7 @@
 	<footer id="colophon" class="site-footer">
 	
 	
-	<?php esc_html_e( get_theme_mod( 'blog_layout_selection' ) ); ?> <!-- get option value example --> 
+	<?php //esc_html_e( get_theme_mod( 'blog_layout_selection' ) ); ?> <!-- get option value example --> 
 	
 	
 		<div class="wp-copyright">
