@@ -13,6 +13,12 @@
  */
 
 get_header(); ?>
+<?php 
+if(get_theme_mod('blog_layout_selection')=='blogleft'){ ?>
+	<div class="left-sidebar">
+  <?php get_sidebar();	?>
+  </div>
+<?php }?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -34,5 +40,12 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+if(get_theme_mod('blog_layout_selection')=='blogright'){ ?>
+	<div class="right-sidebar">
+		<?php get_sidebar();	?>
+    </div>
+<?php }
+if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
+  //We don't need sidebar here for Blog full width Layout
+}
 get_footer();
