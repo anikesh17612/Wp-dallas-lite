@@ -204,4 +204,5 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 require_once( get_template_directory()  . '/lib/theme-register-function.php'); 
+require_once( get_template_directory()  . '/lib/googlefonts.php');
 
