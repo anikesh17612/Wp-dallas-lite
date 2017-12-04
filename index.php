@@ -11,8 +11,16 @@
  *
  * @package WP_Dallas_Lite
  */
+get_header(); 
+?>
+<?php 
+if(get_theme_mod('blog_layout_selection')=='blogleft'){ ?>
+	<div class="wpdal-left-sidebar">
+		<?php get_sidebar();	?>
+    </div>
+<?php }?>
 
-get_header(); ?>
+
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -46,11 +54,36 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
-
+		endif; 
+		
+		
+		
+		?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+	
 <?php
-get_sidebar();
+if(get_theme_mod('blog_layout_selection')=='blogright'){ ?>
+	<div class="wpdal-right-sidebar">
+		<?php get_sidebar();	?>
+    </div>
+<?php }
+
+if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
+  //We don't need sidebar here for Blog full width Layout
+}
+ 	
+if(get_theme_mod('select_pagination_layout') == 'paginumber'){?>
+	<div class="wpdal_pagination"> 
+		<?php echo paginate_links( $args );?>
+	</div>
+<?php 
+}
+
+if(get_theme_mod('select_pagination_layout') == 'pagiloadmore'){?>
+	<div class="wpdal_pagination"> 
+		 <div class="loadmore">Load More...</div>
+	</div>
+<?php 
+}
 get_footer();
