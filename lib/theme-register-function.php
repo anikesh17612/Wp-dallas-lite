@@ -212,7 +212,7 @@ function wp_dallas_option($wp_customize){
 	    $wp_customize,
 		'excerpt_character_limit',
 		    array(
-		        'label'    => __( 'Excerpt character Limit', 'wp_dallas_lite' ),
+		        'label'    => __( 'Excerpt world Limit', 'wp_dallas_lite' ),
 		        'section'  => 'blog_setting',
 		        'settings' => 'excerptCharacterLimit',
 				'type'=> 'text',
@@ -287,7 +287,7 @@ function wp_dallas_option($wp_customize){
 		 )));
 	
 	$wp_customize->add_setting( '404pageTitle', array(
-		 'default'           => __( 'Page Not Found - Lost Maybe?.', 'wp_dallas_lite' )		 
+		 'default'           => 'Page Not Found - Lost Maybe?.' 
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -305,7 +305,7 @@ function wp_dallas_option($wp_customize){
 	)));
 	
 	$wp_customize->add_setting( '404pageDescription', array(
-		 'default'           => __( 'The page you are looking for was moved, removed, renamed or might never existed..', 'wp_dallas_lite' )		 
+		 'default'           => 'The page you are looking for was moved, removed, renamed or might never existed..'	 
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -323,14 +323,14 @@ function wp_dallas_option($wp_customize){
 	   )));
 	   
 	$wp_customize->add_setting( '404buttonText', array(
-		 'default'           => __( 'Go Back Home', 'wp_dallas_lite' )		 
+		 'default'           => 'Go Back Home'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
 	    $wp_customize,
 		'button_text',
 		    array(
-		        'label'    => __( '404 Page Title', 'wp_dallas_lite' ),
+		        'label'    => __( '404 Button Text', 'wp_dallas_lite' ),
 		        'section'  => 'error',
 		        'settings' => '404buttonText',
 				'type'=> 'text',
@@ -434,7 +434,7 @@ function wp_dallas_option($wp_customize){
 	/*---------Typography Setting---------------------  */
 	
 	$wp_customize->add_section( 'typographySetting' , array(
-		'title'    => __('Typography Setting','wp_dallas_lite'),
+		'title'    => __('Typography Settings','wp_dallas_lite'),
 		'panel'    => 'blog_layout',
 		'priority' => 10
 	) );
@@ -706,7 +706,7 @@ function wp_dallas_option($wp_customize){
 	/*---------Social Icon---------------------  */	
 	
 	$wp_customize->add_section( 'socialMedial' , array(
-		'title'    => __('Social Icon','wp_dallas_lite'),
+		'title'    => __('Social Icons','wp_dallas_lite'),
 		'panel'    => 'blog_layout',
 		'priority' => 10
 	) );
