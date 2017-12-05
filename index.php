@@ -15,14 +15,14 @@ get_header();
 ?>
 <?php 
 if(get_theme_mod('blog_layout_selection')=='blogleft'){ ?>
-	<div class="wpdal-left-sidebar">
+	<div class="wpdal-left-sidebar col-md-3 col-sm-12 col-xs-12">
 		<?php get_sidebar();	?>
     </div>
 <?php }?>
 
 
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area  col-md-9 col-sm-12 col-xs-12 ">
 		<main id="main" class="site-main">
 
 		<?php
@@ -64,15 +64,16 @@ if(get_theme_mod('blog_layout_selection')=='blogleft'){ ?>
 	
 <?php
 if(get_theme_mod('blog_layout_selection')=='blogright'){ ?>
-	<div class="wpdal-right-sidebar">
+	<div class="wpdal-right-sidebar col-md-3 col-sm-12 col-xs-12">
 		<?php get_sidebar();	?>
     </div>
 <?php }
 
 if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
   //We don't need sidebar here for Blog full width Layout
-}
- 	
+}?>
+ </div>
+ <?php
 if(get_theme_mod('select_pagination_layout') == 'paginumber'){?>
 	<div class="wpdal_pagination"> 
 		<?php echo paginate_links( $args );?>
