@@ -41,26 +41,23 @@
 <!-- End bottom postion of theme -->
 
 	<footer id="colophon" class="site-footer">
-	
-	
-	<?php //esc_html_e( get_theme_mod( 'blog_layout_selection' ) ); ?> <!-- get option value example --> 
-	
-	
-		<div class="wp-copyright">
-			<?php if(get_theme_mod('enableCopyrightText') == 1 ){
-				echo get_theme_mod('copyrightText');
-			}
-			?>
-		</div><!-- .site-info -->
-		<div class="footer-menu">
-				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'menu-3',
-						'menu_id'        => 'Footer-menu',
-					) );
+		<div class="row">			
+			<div class="wp-copyright  col-md-6 col-sm-12 col-xs-12 ">
+				<?php if(get_theme_mod('enableCopyrightText') == 1 ){
+					echo get_theme_mod('copyrightText');
+				}
 				?>
-				
+			</div><!-- site-info -->
+			<div class="footer-menu col-md-6 col-sm-12 col-xs-12">
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'menu-3',
+							'menu_id'        => 'Footer-menu',
+						) );
+					?>
+					
 			</div>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
