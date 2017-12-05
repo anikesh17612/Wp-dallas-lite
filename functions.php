@@ -157,7 +157,11 @@ add_action( 'widgets_init', 'wp_dallas_lite_widgets_init' );
 function wp_dallas_lite_scripts() {
 	wp_enqueue_style( 'wp_dallas_lite-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'wp_dallas_lite-navigation', get_template_directory_uri() . 'assets/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'wp_dallas_lite-jquerylibrary', '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '20151215', true );//ashish
+	wp_enqueue_script( 'wp_dallas_lite-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'wp_dallas_lite-loadmore', get_template_directory_uri() . '/assets/js/loadmore.js', array(), '20151215', true );//ashish
+	$translation_array = array( 'templateUrl' => get_template_directory_uri() ,'adminUrl'=>admin_url());//ashish
+	wp_localize_script( 'wp_dallas_lite-loadmore', 'loadmore_params', $translation_array );//ashish
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '3.0.0', true );
@@ -168,6 +172,34 @@ function wp_dallas_lite_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'wp_dallas_lite_scripts' );
+
+/** 
+* This code Implimented to load more post using ajax ON click load more Button 
+*/
+function load_posts_by_ajax_callback() {
+	if($_POST['wpdal_loadpost'] ==1)
+	$paged = $_POST['page'];
+	$args = array(
+		'post_type' => 'post',
+		'post_status' => 'publish',
+		'posts_per_page' => '2',
+		'paged' => $paged,
+	);
+	$my_posts = new WP_Query( $args );
+	if ( $my_posts->have_posts() ) :
+		?>
+		<?php while ( $my_posts->have_posts() ) : $my_posts->the_post() ?>
+			<h2><?php the_title() ?></h2>
+			<?php the_excerpt() ?>
+		<?php endwhile ?>
+		<?php
+	endif;
+
+	wp_die();
+}
+add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_callback');
+
+
 
 /**
  * Implement the Custom Header feature.
@@ -204,5 +236,4 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 require_once( get_template_directory()  . '/lib/theme-register-function.php'); 
-require_once( get_template_directory()  . '/lib/googlefonts.php');
 
