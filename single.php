@@ -7,7 +7,13 @@
  * @package WP_Dallas_Lite
  */
 
-get_header(); ?>
+get_header(); 
+
+if(get_theme_mod('select_blog_single_page_layout')=='leftside'){ ?>
+	<div class="wpdal-left-sidebar wpdal-single-layout-page">
+		<?php get_sidebar();	?>
+    </div>
+<?php }?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -31,5 +37,14 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+if(get_theme_mod('select_blog_single_page_layout')=='rightside'){ ?>
+	<div class="wpdal-right-sidebar wpdal-single-layout-page">
+		<?php get_sidebar();	?>
+    </div>
+<?php }
+
+if(get_theme_mod('select_blog_single_page_layout')=='fullwidth'){
+  //We don't need sidebar here for Single page full width Layout
+}
 get_footer();
+
