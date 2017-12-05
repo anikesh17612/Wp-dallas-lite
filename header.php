@@ -38,11 +38,11 @@
 				
 			
 			</div>
-		</div><!-- top-header -->
+		</div><!-- Top Header -->
 		<div class="site-branding">
 			<?php
 			if(get_theme_mod('allLogoFavicon') == 'logo-image'){?>
-				<div class="wpdal_log_image"><img src="<?php echo get_theme_mod('uploadLogo')?>" alt=""></div> 
+				<div class="wpdal_log_image"><img src="<?php echo get_theme_mod('assets/images/logo.png')?>" alt=""></div> 
 			<?php }else if(get_theme_mod('allLogoFavicon')=='logo-text'){?>
 				<div class="wpdal_log_text"><h2><?php echo get_theme_mod('customLogoText')?></h2></div> 
 			<?php }else{
