@@ -47,9 +47,11 @@
 		<div class="site-branding">
 			<?php
 			if(get_theme_mod('allLogoFavicon') == 'logo-image'){?>
-				<div class="wpdal_logo_image"><img src="<?php echo get_theme_mod('uploadLogo');?>" alt="default-logo"></div> 
+				
 				<?php if(empty(get_theme_mod('uploadLogo'))){?>
 					<div class="wpdal_logo_image"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.png';?>" alt="default-logo"></div> 
+				<?php }else{?>
+					<div class="wpdal_logo_image"><img src="<?php echo get_theme_mod('uploadLogo');?>" alt="default-logo"></div> 
 				<?php }?>
 			<?php }else if(get_theme_mod('allLogoFavicon')=='logo-text'){?>
 				<div class="wpdal_logo_text"><h2><?php echo get_theme_mod('customLogoText')?></h2></div> 
