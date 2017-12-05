@@ -41,7 +41,13 @@
 		</div><!-- top-header -->
 		<div class="site-branding">
 			<?php
-			the_custom_logo();
+			if(get_theme_mod('allLogoFavicon') == 'logo-image'){?>
+				<div class="wpdal_log_image"><img src="<?php echo get_theme_mod('uploadLogo')?>" alt=""></div> 
+			<?php }else if(get_theme_mod('allLogoFavicon')=='logo-text'){?>
+				<div class="wpdal_log_text"><h2><?php echo get_theme_mod('customLogoText')?></h2></div> 
+			<?php }else{
+				the_custom_logo();	
+			}
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
