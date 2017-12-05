@@ -24,8 +24,8 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp_dallas_lite' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="top-header">
-			<div class="top-menu">
+		<div class="top-header row">
+			<div class="top-menu col-md-6 col-sm-12 col-xs-12">
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-2',
@@ -34,7 +34,7 @@
 				?>
 				
 			</div>
-			<div class="social-icon">
+			<div class="social-icon col-md-6 col-sm-12 col-xs-12">
 				
 			
 			</div>
