@@ -35,16 +35,24 @@
 				
 			</div>
 			<div class="social-icon col-md-6 col-sm-12 col-xs-12">
-				
+				<ul class="nav menu">
+					<li><a href="<?php echo get_theme_mod('facebooklogo');?>" alt="wpdal-fb">fb</a></li>
+					<li><a href="<?php echo get_theme_mod('twitterlogo');?>" alt="wpdal-tw">tw</a></li>
+					<li><a href="<?php echo get_theme_mod('googlepluslogo');?>" alt="wpdal-gplus">gplus</a></li>
+					<li><a href="<?php echo get_theme_mod('linkedinlogo');?>" alt="wpdal-ln">linked in</a></li>
+				</ul>
 			
 			</div>
 		</div><!-- Top Header -->
 		<div class="site-branding">
 			<?php
 			if(get_theme_mod('allLogoFavicon') == 'logo-image'){?>
-				<div class="wpdal_log_image"><img src="<?php echo get_theme_mod('assets/images/logo.png')?>" alt=""></div> 
+				<div class="wpdal_logo_image"><img src="<?php echo get_theme_mod('uploadLogo');?>" alt="default-logo"></div> 
+				<?php if(empty(get_theme_mod('uploadLogo'))){?>
+					<div class="wpdal_logo_image"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.png';?>" alt="default-logo"></div> 
+				<?php }?>
 			<?php }else if(get_theme_mod('allLogoFavicon')=='logo-text'){?>
-				<div class="wpdal_log_text"><h2><?php echo get_theme_mod('customLogoText')?></h2></div> 
+				<div class="wpdal_logo_text"><h2><?php echo get_theme_mod('customLogoText')?></h2></div> 
 			<?php }else{
 				the_custom_logo();	
 			}
