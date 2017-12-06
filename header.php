@@ -22,9 +22,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp_dallas_lite' ); ?></a>
-
-	<header id="masthead" class="site-header">
-		<div class="top-header row">
+	<div class="top-header row">
 			<div class="top-menu col-md-6 col-sm-12 col-xs-12">
 				<?php
 					wp_nav_menu( array(
@@ -35,15 +33,11 @@
 				
 			</div>
 			<div class="social-icon col-md-6 col-sm-12 col-xs-12">
-				<ul class="nav menu">
-					<li><a href="<?php echo get_theme_mod('facebooklogo');?>" alt="wpdal-fb">fb</a></li>
-					<li><a href="<?php echo get_theme_mod('twitterlogo');?>" alt="wpdal-tw">tw</a></li>
-					<li><a href="<?php echo get_theme_mod('googlepluslogo');?>" alt="wpdal-gplus">gplus</a></li>
-					<li><a href="<?php echo get_theme_mod('linkedinlogo');?>" alt="wpdal-ln">linked in</a></li>
-				</ul>
-			
+				
+			<?php echo socialicon();?>
 			</div>
-		</div><!-- Top Header -->
+	</div><!-- Top Header -->
+	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
 			if(get_theme_mod('allLogoFavicon') == 'logo-image' || get_theme_mod('allLogoFavicon')==""){?>
