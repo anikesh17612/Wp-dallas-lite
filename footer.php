@@ -40,12 +40,13 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="row">
-			<div class="wp-copyright col-md-6 col-sm-12 col-xs-12 ">
-				<?php if(get_theme_mod('enableCopyrightText') == 1 ){
-					echo get_theme_mod('copyrightText');
-				}
-				?>
-			</div><!-- site-info -->
+			
+				<?php if(get_theme_mod('enableCopyrightText') == 1 ){?>
+				<div class="wp-copyright col-md-6 col-sm-12 col-xs-12 ">
+					<?php echo get_theme_mod('copyrightText');?>
+				</div><!-- site-info -->
+				<?php }	?>
+			
 			<div class="footer-menu col-md-6 col-sm-12 col-xs-12">
 					<?php
 						wp_nav_menu( array(
