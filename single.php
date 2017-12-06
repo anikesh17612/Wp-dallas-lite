@@ -9,7 +9,7 @@
 
 get_header(); 
 
-if(get_theme_mod('select_blog_single_page_layout')=='leftside'){ ?>
+if(get_theme_mod('select_blog_single_page_layout')=='leftside' || get_theme_mod('select_blog_single_page_layout')==""){ ?>
 	<div class="wpdal-left-sidebar wpdal-single-layout-page col-md-3 col-sm-12 col-xs-12">
 		<?php get_sidebar();	?>
     </div>
