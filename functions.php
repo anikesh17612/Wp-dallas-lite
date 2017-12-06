@@ -162,6 +162,8 @@ function wp_dallas_lite_scripts() {
 	wp_enqueue_script( 'wp_dallas_lite-loadmore', get_template_directory_uri() . '/assets/js/loadmore.js', array(), '20151215', true );//ashish
 	$translation_array = array( 'templateUrl' => get_template_directory_uri() ,'adminUrl'=>admin_url());//ashish
 	wp_localize_script( 'wp_dallas_lite-loadmore', 'loadmore_params', $translation_array );//ashish
+	wp_enqueue_style('personalblog-style',get_stylesheet_uri());
+	wp_add_inline_style( 'personalblog-style', personalblog_css_generator() );
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '3.0.0', true );
@@ -259,6 +261,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 require_once( get_template_directory()  . '/lib/theme-register-function.php'); 
 require_once( get_template_directory()  . '/lib/googlefonts.php'); 
+require_once( get_template_directory()  . '/lib/theme-core-style.php'); 
 
 
 
