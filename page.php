@@ -12,9 +12,10 @@
  * @package WP_Dallas_Lite
  */
 
-get_header(); ?>
+get_header(); 
+?>
 <?php 
-if(get_theme_mod('blog_layout_selection')=='blogleft'){ ?>
+if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_layout_selection')==""){ ?>
 	<div class="left-sidebar">
   <?php get_sidebar();	?>
   </div>
