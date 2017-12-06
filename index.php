@@ -76,17 +76,26 @@ if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
 }?>
  </div>
  <?php
-if(get_theme_mod('select_pagination_layout') == 'paginumber' || get_theme_mod('select_pagination_layout')==""){?>
-	<div class="wpdal_pagination"> 
-		<?php echo paginate_links( $args );?>
-	</div>
-<?php 
-}
+/*****************************************************************/
+/* Show pagination option based on Blog pages show at most ******/
+/****************************************************************/
+$count_posts = wp_count_posts();
+$published_posts = $count_posts->publish;
+$default_posts_per_page = get_option( 'posts_per_page' );
 
-if(get_theme_mod('select_pagination_layout') == 'pagiloadmore'){?>
-	<div class="wpdal_pagination"> 
-		 <div class="loadmore">Load More...</div>
-	</div>
-<?php 
+if($published_posts > $default_posts_per_page){ 
+	if(get_theme_mod('select_pagination_layout') == 'paginumber' || get_theme_mod('select_pagination_layout')==""){?>
+		<div class="wpdal_pagination"> 
+			<?php echo paginate_links( $args );?>
+		</div>
+	<?php 
+	}
+
+	if(get_theme_mod('select_pagination_layout') == 'pagiloadmore'){?>
+		<div class="wpdal_pagination"> 
+			 <div class="loadmore"><button class="btn btn-info">Load More...</button></div>
+		</div>
+	<?php 
+	}
 }
 get_footer();
