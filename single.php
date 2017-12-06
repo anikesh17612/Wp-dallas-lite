@@ -14,8 +14,12 @@ if(get_theme_mod('select_blog_single_page_layout')=='leftside' || get_theme_mod(
 		<?php get_sidebar();	?>
     </div>
 <?php }?>
-
-	<div id="primary" class="content-area col-md-9 col-sm-12 col-xs-12">
+<?php if(get_theme_mod('select_blog_single_page_layout') =='fullwidth' ){
+		echo '<div id="primary" class="content-area  col-md-12 col-sm-12 col-xs-12 ">';
+	}else{
+		 echo '<div id="primary" class="content-area  col-md-9 col-sm-12 col-xs-12 ">';
+	}
+?>
 		<main id="main" class="site-main">
 
 		<?php

@@ -19,10 +19,12 @@ if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_lay
 		<?php get_sidebar();	?>
     </div>
 <?php }?>
-
-
-
-	<div id="primary" class="content-area  col-md-9 col-sm-12 col-xs-12 ">
+<?php if(get_theme_mod('blog_layout_selection') =='blogfullwidth' ){
+		echo '<div id="primary" class="content-area  col-md-12 col-sm-12 col-xs-12 ">';
+	}else{
+		 echo '<div id="primary" class="content-area  col-md-9 col-sm-12 col-xs-12 ">';
+	}
+?>
 		<main id="main" class="site-main">
 
 		<?php
