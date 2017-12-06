@@ -1,15 +1,12 @@
 <?php 
-
-if(!function_exists('personalblog_css_generator')){
-    function personalblog_css_generator(){
+if(!function_exists('wp_dallas_lite_css_generator')){
+    function wp_dallas_lite_css_generator(){
 
         $output = '';
 
-        /* *******************************
-        **********      Theme Options   **********
-        ********************************** */
-
-
+        /* ******************************************************
+        **********  Theme Options for Color settings   **********
+        *********************************************************/
             $major_color = get_theme_mod( 'major_color', '#00aeef' );
             if($major_color){
                 $output .= 'a,.bottom-widget .contact-info i,.bottom-widget .widget ul li a:hover, .latest-blog-content .latest-post-button:hover,.meta-category a:hover,.common-menu-wrap .nav>li>a:hover,.common-menu-wrap .nav>li.active>a,
@@ -50,9 +47,9 @@ if(!function_exists('personalblog_css_generator')){
             }
 
 
-        /* *******************************
-        **********  Quick Style **********
-        ********************************** */
+        /* ************************************************************
+        **********  Quick Style for headings and Google font **********
+        ****************************************************************/
 
         $bstyle = $mstyle = $h1style = $h2style = $h3style = $h4style = $h5style = '';
         //body
@@ -84,13 +81,11 @@ if(!function_exists('personalblog_css_generator')){
         # heading2
         $h2style = '';
         if ( get_theme_mod( 'h2_font_size', '32' ) ) {
-            $h2style .= 'font-size:'.get_theme_mod( 'h2_font_size', '32' ).'px;';
+            $h2style .= 'font-size:'.get_theme_mod( 'h2_font_size', '32' ).'px !important;';
         }
         if ( get_theme_mod( 'h2_google_font', 'Roboto Slab' ) ) {
             $h2style .= 'font-family:'.get_theme_mod( 'h2_google_font', 'Roboto Slab' ).';';
         }
-
-
         //heading3
         $h3style = '';
         if ( get_theme_mod( 'h3_font_size', '28' ) ) {
@@ -127,8 +122,8 @@ if(!function_exists('personalblog_css_generator')){
         $output .= 'h4{'.$h4style.'}';
         $output .= 'h5{'.$h5style.'}';
 
+        $output .= '.site-header{ background-color: '.esc_attr( get_theme_mod( 'header_color', '#fff' ) ) .'; }';
         $output .= 'body{ background-color: '.esc_attr( get_theme_mod( 'body_bg_color', '#fff' ) ) .'; }';
-
 
         // Button color setting...
 
