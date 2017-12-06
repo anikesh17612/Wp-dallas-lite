@@ -729,7 +729,7 @@ function wp_dallas_option($wp_customize){
 	) );
 	
 	$wp_customize->add_setting( 'facebooklogo', array(
-		 'default'           => 'facebook.com' 
+		 'default'           => 'https://facebook.com' 
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -747,7 +747,7 @@ function wp_dallas_option($wp_customize){
 	)));
 	
 	$wp_customize->add_setting( 'twitterlogo', array(
-		 'default'           => 'twitter.com' 
+		 'default'           => 'https://twitter.com/' 
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -765,7 +765,7 @@ function wp_dallas_option($wp_customize){
 	)));
 	
 	$wp_customize->add_setting( 'googlepluslogo', array(
-		 'default'           => 'googleplus.com' 
+		 'default'           => 'https://plus.google.com' 
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -783,7 +783,7 @@ function wp_dallas_option($wp_customize){
 	)));
 	
 	$wp_customize->add_setting( 'linkedinlogo', array(
-		 'default'           => 'linkedin.com' 
+		 'default'           => 'https://in.linkedin.com/' 
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -793,6 +793,132 @@ function wp_dallas_option($wp_customize){
 		        'label'    => __( 'LinkedIn Link', 'wp_dallas_lite' ),
 		        'section'  => 'socialMedial',
 		        'settings' => 'linkedinlogo',
+				'type'=> 'text',
+		        'choices' =>
+				array(
+				'logo_text' => 'Use custom Link',		
+		  ),
+	)));
+	
+	$wp_customize->add_setting( 'behancelogo', array(
+		 'default'           => 'https://www.behance.net/' 
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'behance_logo',
+		    array(
+		        'label'    => __( 'Behance Link', 'wp_dallas_lite' ),
+		        'section'  => 'socialMedial',
+		        'settings' => 'behancelogo',
+				'type'=> 'text',
+		        'choices' =>
+				array(
+				'logo_text' => 'Use custom Link',		
+		  ),
+	)));
+	
+	$wp_customize->add_setting( 'youtubelogo', array(
+		 'default'           => 'https://www.youtube.com/' 
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'youtube_logo',
+		    array(
+		        'label'    => __( 'Youtube Link', 'wp_dallas_lite' ),
+		        'section'  => 'socialMedial',
+		        'settings' => 'youtubelogo',
+				'type'=> 'text',
+		        'choices' =>
+				array(
+				'logo_text' => 'Use custom Link',		
+		  ),
+	)));
+	
+	$wp_customize->add_setting( 'snapchatlogo', array(
+		 'default'           => 'https://www.snapchat.com/' 
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'snapchat_logo',
+		    array(
+		        'label'    => __( 'Snapchat Link', 'wp_dallas_lite' ),
+		        'section'  => 'socialMedial',
+		        'settings' => 'snapchatlogo',
+				'type'=> 'text',
+		        'choices' =>
+				array(
+				'logo_text' => 'Use custom Link',		
+		  ),
+	)));
+	
+	$wp_customize->add_setting( 'skypelogo', array(
+		 'default'           => 'https://login.skype.com/login' 
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'skype_logo',
+		    array(
+		        'label'    => __( 'Skype Link', 'wp_dallas_lite' ),
+		        'section'  => 'socialMedial',
+		        'settings' => 'skypelogo',
+				'type'=> 'text',
+		        'choices' =>
+				array(
+				'logo_text' => 'Use custom Link',		
+		  ),
+	)));
+	
+	$wp_customize->add_setting( 'whatsapplogo', array(
+		 'default'           => 'whatsapp://send?abid='. $whatsapp .'&text=Hi' 
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'whatsapp_logo',
+		    array(
+		        'label'    => __( 'whatsapp Link', 'wp_dallas_lite' ),
+		        'section'  => 'socialMedial',
+		        'settings' => 'whatsapplogo',
+				'type'=> 'text',
+		        'choices' =>
+				array(
+				'logo_text' => 'Use custom Link',		
+		  ),
+	)));
+	
+	$wp_customize->add_setting( 'pinterestlogo', array(
+		 'default'           => 'https://www.pinterest.com/' 
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'pinterest_logo',
+		    array(
+		        'label'    => __( 'Pinterest Link', 'wp_dallas_lite' ),
+		        'section'  => 'socialMedial',
+		        'settings' => 'pinterestlogo',
+				'type'=> 'text',
+		        'choices' =>
+				array(
+				'logo_text' => 'Use custom Link',		
+		  ),
+	)));
+	
+	$wp_customize->add_setting( 'customlogo', array(
+		 'default'           => '' 
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'custom_logo',
+		    array(
+		        'label'    => __( 'Custom Link', 'wp_dallas_lite' ),
+		        'section'  => 'socialMedial',
+		        'settings' => 'customlogo',
 				'type'=> 'text',
 		        'choices' =>
 				array(
