@@ -41,6 +41,7 @@
 					<li><a href="<?php echo get_theme_mod('googlepluslogo');?>" alt="wpdal-gplus">gplus</a></li>
 					<li><a href="<?php echo get_theme_mod('linkedinlogo');?>" alt="wpdal-ln">linked in</a></li>
 				</ul>
+			
 			</div>
 		</div><!-- Top Header -->
 		<div class="site-branding">

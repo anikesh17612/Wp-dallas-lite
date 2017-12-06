@@ -28,21 +28,19 @@
 		echo '<div  class="col-md-3 col-lg-3">';
 			dynamic_sidebar( 'bottom-c' );
 		echo '</div>';
-			 
 	}
 	if ( is_active_sidebar( 'bottom-d' ) ) {
 		echo '<div  class="col-md-3 col-lg-3">';
 			dynamic_sidebar( 'bottom-d' ); 
 		echo '</div>';
-			 
 	}
 	?>
 </section>
 <!-- End bottom postion of theme -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="row">			
-			<div class="wp-copyright  col-md-6 col-sm-12 col-xs-12 ">
+		<div class="row">
+			<div class="wp-copyright col-md-6 col-sm-12 col-xs-12 ">
 				<?php if(get_theme_mod('enableCopyrightText') == 1 ){
 					echo get_theme_mod('copyrightText');
 				}
@@ -52,7 +50,7 @@
 					<?php
 						wp_nav_menu( array(
 							'theme_location' => 'menu-3',
-							'menu_id'        => 'Footer-menu',
+							'menu_id'		 => 'Footer-menu',
 						) );
 					?>
 					
