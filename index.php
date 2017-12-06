@@ -14,7 +14,7 @@
 get_header(); 
 ?>
 <?php 
-if(get_theme_mod('blog_layout_selection')=='blogleft'){ ?>
+if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_layout_selection')==""){ ?>
 	<div class="wpdal-left-sidebar col-md-3 col-sm-12 col-xs-12">
 		<?php get_sidebar();	?>
     </div>
@@ -74,7 +74,7 @@ if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
 }?>
  </div>
  <?php
-if(get_theme_mod('select_pagination_layout') == 'paginumber'){?>
+if(get_theme_mod('select_pagination_layout') == 'paginumber' || get_theme_mod('select_pagination_layout')==""){?>
 	<div class="wpdal_pagination"> 
 		<?php echo paginate_links( $args );?>
 	</div>
