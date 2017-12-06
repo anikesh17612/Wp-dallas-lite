@@ -346,14 +346,14 @@ function wp_dallas_option($wp_customize){
 		'priority' => 10
 	) );
 	
-	$wp_customize->add_setting( 'sub_header_overlayer_color', array(
+	$wp_customize->add_setting( 'header_color', array(
 		 'default'           => '#fff'
 	) );
 	
 	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'link_header_color', array(
 		'label'      => __( 'Header Color', 'wp_dallas_lite' ),
 		'section'    => 'layout_styling',
-		'settings'   => 'sub_header_overlayer_color',
+		'settings'   => 'header_color',
 	) ) );
 	
 	$wp_customize->add_setting( 'body_bg_color', array(
