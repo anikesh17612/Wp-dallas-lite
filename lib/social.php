@@ -14,16 +14,16 @@
 
  function socialicon() {
 
-        $facebook	=  get_theme_mod('facebooklogo');
-        $twitter	=  get_theme_mod('twitterlogo');
-        $googleplus =  get_theme_mod('googlepluslogo');
-        $linkedin	=  get_theme_mod('linkedinlogo');
-        $behance	=  get_theme_mod('behancelogo');
-		$youtube	=  get_theme_mod('youtubelogo');
-		$Snapchat	=  get_theme_mod('snapchatlogo');
-		$skype		=  get_theme_mod('skypelogo');
-		$whatsapp	=  get_theme_mod('whatsapplogo');
-		$pinterest	=  get_theme_mod('pinterestlogo');        
+        $facebook	=  get_theme_mod('facebooklogo','https://www.facebook.com/');
+        $twitter	=  get_theme_mod('twitterlogo','https://twitter.com');
+        $googleplus =  get_theme_mod('googlepluslogo','https://plus.google.com');
+        $linkedin	=  get_theme_mod('linkedinlogo','https://in.linkedin.com/');
+        $behance	=  get_theme_mod('behancelogo','https://www.behance.net/');
+		$youtube	=  get_theme_mod('youtubelogo','https://www.youtube.com/');
+		$Snapchat	=  get_theme_mod('snapchatlogo','https://www.snapchat.com/');
+		$skype		=  get_theme_mod('skypelogo','https://login.skype.com/login');
+		$whatsapp	=  get_theme_mod('whatsapplogo','Hello');
+		$pinterest	=  get_theme_mod('pinterestlogo','https://www.pinterest.com/');        
         $custom		=  get_theme_mod('customlogo');
 
         if( $facebook || $twitter || $googleplus || $linkedin || $behance || $behance || $youtube || $Snapchat || $skype || $pinterest || "" ) {
