@@ -9,8 +9,12 @@ var ajaxurl = loadmore_params.adminUrl+"admin-ajax.php";
 				};
 
 				jQuery.post(ajaxurl, data, function(response) {
-					jQuery('.site-main').append(response);
-					page++;
+					if(response){
+						jQuery('.site-main').append(response);
+						page++;
+					}else{
+						jQuery('.loadmore').hide();
+					}
 				});
 			});
 		});
