@@ -222,17 +222,17 @@ function wp_dallas_option($wp_customize){
 		),
 	)));
 	
-	$wp_customize->add_setting( 'excerptCharacterLimit', array(
+	$wp_customize->add_setting( 'excerptwordLimit', array(
 		 'default'           => '330' 
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
 	    $wp_customize,
-		'excerpt_character_limit',
+		'excerpt_word_limit',
 		    array(
-		        'label'    => __( 'Excerpt character Limit', 'wp_dallas_lite' ),
+		        'label'    => __( 'Excerpt Word Limit', 'wp_dallas_lite' ),
 		        'section'  => 'blog_setting',
-		        'settings' => 'excerptCharacterLimit',
+		        'settings' => 'excerptwordLimit',
 				'type'=> 'text',
 		        'choices' =>
 				array(
@@ -538,7 +538,7 @@ function wp_dallas_option($wp_customize){
 				)
 	));
 	
-	$wp_customize->add_setting( 'body_google_font', array(
+	$wp_customize->add_setting( 'menu_google_font', array(
 		 'default'           => 'Roboto Slab'	 
 	) );
 	
@@ -548,7 +548,7 @@ function wp_dallas_option($wp_customize){
 		array(
 			
 			'section' =>'typographySetting',
-			'settings' => 'body_google_font',
+			'settings' => 'menu_google_font',
 			'label'    => esc_html__( 'Menu Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
 			'default'  => 'Roboto Slab',
