@@ -158,26 +158,44 @@ function wp_dallas_option($wp_customize){
 		 'settings'   => 'uploadLogo',
 		 )));
 	
-	$wp_customize->add_setting( 'customLogoText', array(
-		 'default'           => __( 'Use your Custom logo text', 'wp_dallas_lite' )		 
+	$wp_customize->add_setting( 'siteTitle', array(
+		 'default'           => 'JD Dallas Lite'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
 	    $wp_customize,
-		'custom_logo_text',
+		'site_title',
 		    array(
-		        'label'    => __( 'Use your Custom logo text', 'wp_dallas_lite' ),
+		        'label'    => __( 'Site Title', 'wp_dallas_lite' ),
 		        'section'  => 'logo_favicon_section',
-		        'settings' => 'customLogoText',
+		        'settings' => 'siteTitle',
 				'type'=> 'text',
 		        'choices' =>
 				array(
-				'logo_text' => 'Use your Custom logo text',
-				'logo-text' => 'Logo text',			
+				'logo_text' => 'JD Dallas Lite',	
 		  ),
 	)));
 	
-	/*---------blog Settings---------------------  */
+	$wp_customize->add_setting( 'tagLine', array(
+		 'default'           => 'Just Another WordPress Site'
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'tag_line',
+		    array(
+		        'label'    => __( 'Tag Line', 'wp_dallas_lite' ),
+		        'section'  => 'logo_favicon_section',
+		        'settings' => 'tagLine',
+				'type'=> 'text',
+		        'choices' =>
+				array(
+				'logo_tagline' => 'Just Another WordPress Site',
+						
+		  ),
+	)));
+	
+	/*---------Blog Settings---------------------  */
 	
 	$wp_customize->add_section( 'blog_setting' , array(
 		'title'    => __('Blog Settings','wp_dallas_lite'),
@@ -266,25 +284,6 @@ function wp_dallas_option($wp_customize){
 		'priority' => 10
 	) );
 	
-	$wp_customize->add_setting( 'pageBackgroundImage', array(
-		 'default'           => ''		 
-	) );
-	
-	$wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize,'page_background_image',array(
-		 'label'      => __('No image selected', 'wp_dallas_lite'),
-		 'section'    => 'error',
-		 'settings'   => 'pageBackgroundImage',
-	)));
-	
-	$wp_customize->add_setting( 'pageLogoImage', array(
-		 'default'           => '' 
-	) );
-	
-	$wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize,'page_Logo_image',array(
-		 'label'      => __('Upload 404 Page logo Image', 'wp_dallas_lite'),
-		 'section'    => 'error',
-		 'settings'   => 'pageLogoImage',
-		 )));
 	
 	$wp_customize->add_setting( '404pageTitle', array(
 		 'default'           => 'Page Not Found - Lost Maybe?.' 
@@ -346,6 +345,16 @@ function wp_dallas_option($wp_customize){
 		'priority' => 10
 	) );
 	
+	$wp_customize->add_setting( 'top_header_color', array(
+		 'default'           => '#666'
+	) );
+	
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'link_top_header_color', array(
+		'label'      => __( 'Top Header Color', 'wp_dallas_lite' ),
+		'section'    => 'layout_styling',
+		'settings'   => 'top_header_color',
+	) ) );
+	
 	$wp_customize->add_setting( 'header_color', array(
 		 'default'           => '#fff'
 	) );
@@ -386,8 +395,25 @@ function wp_dallas_option($wp_customize){
 		'settings'   => 'hover_color',
 	) ) );
 	
+	$wp_customize->add_setting( 'footer_color', array(
+		 'default'           => '#666'
+	) );
 	
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'footer_bg_color', array(
+		'label'      => __( 'Footer Color', 'wp_dallas_lite' ),
+		'section'    => 'layout_styling',
+		'settings'   => 'footer_color',
+	) ) );
 	
+	$wp_customize->add_setting( 'copyright_color', array(
+		 'default'           => '#666'
+	) );
+	
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'copyright_bg_color', array(
+		'label'      => __( 'Copyright Color', 'wp_dallas_lite' ),
+		'section'    => 'layout_styling',
+		'settings'   => 'copyright_color',
+	) ) );
 	
 	$wp_customize->add_setting( 'buttonColorSettings ', array(
 		 'default'           => 'Button Color Settings' 
@@ -399,7 +425,7 @@ function wp_dallas_option($wp_customize){
 		array(
 					'section' =>'layout_styling',
 					'settings' => 'buttonColorSettings',
-					'label'    => esc_html__( 'Body Font Size', 'personalblog' ),
+					'label'    => esc_html__( 'Body Font Size', 'wp_dallas_lite' ),
 					'type'     => 'title',
 					'default'  => 'Button Color Settings',
 				)
@@ -456,6 +482,25 @@ function wp_dallas_option($wp_customize){
 		'priority' => 10
 	) );
 	
+	$wp_customize->add_setting( 'body_layout', array(
+		 'default'           => 'fullwidth_body_layout' 
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'fullwidth_layout',
+		    array(
+		        'label'    => __( 'Body Layout', 'wp_dallas_lite' ),
+		        'section'  => 'typographySetting',
+		        'settings' => 'body_layout',
+				'type'=> 'select',
+		        'choices' =>
+				array(
+				'box_layout' => 'Box Layout',
+				'fullwidth_body_layout' => 'Fullwidth Layout',
+		  ),
+	   )));
+	
 	$wp_customize->add_setting( 'body_google_font', array(
 		 'default'           => 'Source Sans Pro' 
 	) );
@@ -467,7 +512,7 @@ function wp_dallas_option($wp_customize){
 		    array(
 		'section' =>'typographySetting',
 		'settings' => 'body_google_font',
-		'label'    => esc_html__( 'Body Google Font', 'personalblog' ),
+		'label'    => esc_html__( 'Body Google Font', 'wp_dallas_lite' ),
 		'type'     => 'select',
 		'default'  => 'Source Sans Pro',
 		'choices'  => get_google_fonts(),
@@ -487,7 +532,7 @@ function wp_dallas_option($wp_customize){
 		array(
 					'section' =>'typographySetting',
 					'settings' => 'body_font_size',
-					'label'    => esc_html__( 'Body Font Size', 'personalblog' ),
+					'label'    => esc_html__( 'Body Font Size', 'wp_dallas_lite' ),
 					'type'     => 'number',
 					'default'  => '18',
 				)
@@ -504,7 +549,7 @@ function wp_dallas_option($wp_customize){
 			
 			'section' =>'typographySetting',
 			'settings' => 'body_google_font',
-			'label'    => esc_html__( 'Menu Google Font', 'personalblog' ),
+			'label'    => esc_html__( 'Menu Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
 			'default'  => 'Roboto Slab',
 			'choices'  => get_google_fonts(),
@@ -524,7 +569,7 @@ function wp_dallas_option($wp_customize){
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'menu_font_size',
-			'label'    => esc_html__( 'Menu Font Size', 'personalblog' ),
+			'label'    => esc_html__( 'Menu Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
 			'default'  => '14',
 		)
@@ -541,7 +586,7 @@ function wp_dallas_option($wp_customize){
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'menu_google_font',
-			'label'    => esc_html__( 'Heading1 Google Font', 'personalblog' ),
+			'label'    => esc_html__( 'H1 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
 			'default'  => 'Roboto Slab',
 			'choices'  => get_google_fonts(),
@@ -562,7 +607,7 @@ function wp_dallas_option($wp_customize){
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'h1_font_size',
-			'label'    => esc_html__( 'Heading1 Font Size', 'personalblog' ),
+			'label'    => esc_html__( 'H1 Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
 			'default'  => '42',
 		)
@@ -579,7 +624,7 @@ function wp_dallas_option($wp_customize){
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'h2_google_font',
-			'label'    => esc_html__( 'Heading2 Google Font', 'personalblog' ),
+			'label'    => esc_html__( 'H2 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
 			'default'  => 'Roboto Slab',
 			'choices'  => get_google_fonts(),
@@ -600,7 +645,7 @@ function wp_dallas_option($wp_customize){
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'h2_font_size',
-			'label'    => esc_html__( 'Heading2 Font Size', 'personalblog' ),
+			'label'    => esc_html__( 'H2 Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
 			'default'  => '32',
 		)
@@ -617,7 +662,7 @@ function wp_dallas_option($wp_customize){
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'h3_google_font',
-			'label'    => esc_html__( 'Heading3 Google Font', 'personalblog' ),
+			'label'    => esc_html__( 'H3 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
 			'default'  => 'Roboto Slab',
 			'choices'  => get_google_fonts(),
@@ -638,7 +683,7 @@ function wp_dallas_option($wp_customize){
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'h3_font_size',
-			'label'    => esc_html__( 'Heading3 Font Size', 'personalblog' ),
+			'label'    => esc_html__( 'H3 Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
 			'default'  => '28',
 		)
@@ -655,7 +700,7 @@ function wp_dallas_option($wp_customize){
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'h4_google_font',
-			'label'    => esc_html__( 'Heading4 Google Font', 'personalblog' ),
+			'label'    => esc_html__( 'H4 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
 			'default'  => 'Roboto Slab',
 			'choices'  => get_google_fonts(),
@@ -676,7 +721,7 @@ function wp_dallas_option($wp_customize){
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'h4_font_size',
-			'label'    => esc_html__( 'Heading4 Font Size', 'personalblog' ),
+			'label'    => esc_html__( 'H4 Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
 			'default'  => '22',
 		)
@@ -693,7 +738,7 @@ function wp_dallas_option($wp_customize){
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'h5_google_font',
-			'label'    => esc_html__( 'Heading5 Google Font', 'personalblog' ),
+			'label'    => esc_html__( 'H5 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
 			'default'  => 'Roboto Slab',
 			'choices'  => get_google_fonts(),
@@ -714,13 +759,53 @@ function wp_dallas_option($wp_customize){
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'h5_font_size',
-			'label'    => esc_html__( 'Heading5 Font Size', 'personalblog' ),
+			'label'    => esc_html__( 'H5 Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
 			'default'  => '18',
 		)
 	));
 	
-	/*---------Social Icon---------------------  */	
+	$wp_customize->add_setting( 'h6_google_font', array(
+		 'default'           => 'Roboto Slab'
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'h6_google_font',
+		//Heading 6
+		array(
+			'section' =>'typographySetting',
+			'settings' => 'h6_google_font',
+			'label'    => esc_html__( 'H6 Google Font', 'wp_dallas_lite' ),
+			'type'     => 'select',
+			'default'  => 'Roboto Slab',
+			'choices'  => get_google_fonts(),
+			'google_font' => true,
+			'google_font_weight' => 'menu_font_weight',
+			'google_font_weight_default' => '700'
+		)
+	));
+	
+	
+	
+	$wp_customize->add_setting( 'h6_font_size', array(
+		 'default'           => '16'
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'h6_font_size',
+		//Heading 6
+		array(
+			'section' =>'typographySetting',
+			'settings' => 'h6_font_size',
+			'label'    => esc_html__( 'H6 Font Size', 'wp_dallas_lite' ),
+			'type'     => 'number',
+			'default'  => '16',
+		)
+	));
+	
+	/*---------Social Icons---------------------  */	
 	
 	$wp_customize->add_section( 'socialMedial' , array(
 		'title'    => __('Social Icons','wp_dallas_lite'),
