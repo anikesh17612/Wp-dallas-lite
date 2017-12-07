@@ -1,8 +1,11 @@
+
 <?php 
 if(!function_exists('wp_dallas_lite_css_generator')){
     function wp_dallas_lite_css_generator(){
-
+	
         $output = '';
+		$output.= '@import url(http://fonts.googleapis.com/css?family='.get_theme_mod('body_google_font').')';
+
 
         /* ******************************************************
         **********  Theme Options for Color settings   **********
@@ -56,8 +59,8 @@ if(!function_exists('wp_dallas_lite_css_generator')){
         if ( get_theme_mod( 'body_font_size', '18' ) ) {
             $bstyle .= 'font-size:'.get_theme_mod( 'body_font_size', '18' ).'px;';
         }
-        if ( get_theme_mod( 'body_google_font', 'Source Sans Pro' ) ) {
-            $bstyle .= 'font-family:'.get_theme_mod( 'body_google_font', 'Source Sans Pro' ).';';
+        if ( get_theme_mod( 'body_google_font') ) {
+            $bstyle .= 'font-family:"'.get_theme_mod( 'body_google_font').'" sans-serif !important;';
         }
 
         //menu
@@ -81,7 +84,7 @@ if(!function_exists('wp_dallas_lite_css_generator')){
         # heading2
         $h2style = '';
         if ( get_theme_mod( 'h2_font_size', '32' ) ) {
-            $h2style .= 'font-size:'.get_theme_mod( 'h2_font_size', '32' ).'px !important;';
+            $h2style .= 'font-size:'.get_theme_mod( 'h2_font_size', '32' ).'px';
         }
         if ( get_theme_mod( 'h2_google_font', 'Roboto Slab' ) ) {
             $h2style .= 'font-family:'.get_theme_mod( 'h2_google_font', 'Roboto Slab' ).';';
