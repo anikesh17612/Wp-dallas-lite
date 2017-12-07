@@ -11,7 +11,8 @@ if(!function_exists('wp_dallas_lite_css_generator')){
     function wp_dallas_lite_css_generator(){
 	
         $output = '';
-		$output.= '@import url(http://fonts.googleapis.com/css?family='.get_theme_mod('body_google_font').')';
+		//$output.= '@import url(//fonts.googleapis.com/css?family=Tangerine)';
+
 
 
         /* ******************************************************
