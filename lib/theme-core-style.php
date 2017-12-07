@@ -146,7 +146,7 @@ if(!function_exists('wp_dallas_lite_css_generator')){
         $output .= '.site-header{ background-color: '.esc_attr( get_theme_mod( 'header_color', '#fff' ) ) .'; }';
         $output .= 'body{ background-color: '.esc_attr( get_theme_mod( 'body_bg_color', '#fff' ) ) .'; }';
 		$output .= '.site_top_header{ background-color: '.esc_attr( get_theme_mod( 'top_header_color', '#666' ) ) .'; }';
-		$output .= '.site_footer{ background-color: '.esc_attr( get_theme_mod( 'footer_color', '#666' ) ) .'; }';
+		$output .= '.site_footer0{ background-color: '.esc_attr( get_theme_mod( 'footer_color', '#666' ) ) .'; }';
 
         // Button color setting...
 
