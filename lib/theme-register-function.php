@@ -467,7 +467,7 @@ function wp_dallas_option($wp_customize){
 		    array(
 		'section' =>'typographySetting',
 		'settings' => 'body_google_font',
-		'label'    => esc_html__( 'Select Google Font', 'personalblog' ),
+		'label'    => esc_html__( 'Body Google Font', 'personalblog' ),
 		'type'     => 'select',
 		'default'  => 'Source Sans Pro',
 		'choices'  => get_google_fonts(),
@@ -504,7 +504,7 @@ function wp_dallas_option($wp_customize){
 			
 			'section' =>'typographySetting',
 			'settings' => 'body_google_font',
-			'label'    => esc_html__( 'Select Google Font', 'personalblog' ),
+			'label'    => esc_html__( 'Menu Google Font', 'personalblog' ),
 			'type'     => 'select',
 			'default'  => 'Roboto Slab',
 			'choices'  => get_google_fonts(),
