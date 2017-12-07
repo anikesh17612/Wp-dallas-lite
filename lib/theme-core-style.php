@@ -11,7 +11,7 @@ if(!function_exists('wp_dallas_lite_css_generator')){
     function wp_dallas_lite_css_generator(){
 	
         $output = '';
-		//$output.= '@import url(http://fonts.googleapis.com/css?family='.get_theme_mod('body_google_font').')';
+		$output.= '@import url(http://fonts.googleapis.com/css?family='.get_theme_mod('body_google_font').')';
 
 
         /* ******************************************************
@@ -67,7 +67,7 @@ if(!function_exists('wp_dallas_lite_css_generator')){
             $bstyle .= 'font-size:'.get_theme_mod( 'body_font_size', '18' ).'px;';
         }
         if ( get_theme_mod( 'body_google_font') ) {
-            $bstyle .= 'font-family:"'.get_theme_mod( 'body_google_font').'" sans-serif !important;';
+            $bstyle .= 'font-family:"'.get_theme_mod( 'body_google_font').'"';
         }
 
         //menu
