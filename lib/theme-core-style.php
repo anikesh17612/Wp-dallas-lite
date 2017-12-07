@@ -1,10 +1,17 @@
-
 <?php 
+/**
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package WP_Dallas_Lite
+ */
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 if(!function_exists('wp_dallas_lite_css_generator')){
     function wp_dallas_lite_css_generator(){
 	
         $output = '';
-		$output.= '@import url(http://fonts.googleapis.com/css?family='.get_theme_mod('body_google_font').')';
+		//$output.= '@import url(http://fonts.googleapis.com/css?family='.get_theme_mod('body_google_font').')';
 
 
         /* ******************************************************
