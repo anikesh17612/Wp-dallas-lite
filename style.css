@@ -877,7 +877,7 @@ ul.social-icons > li{
 
 #header-section .top-menu{ float: left; }
 
-#header-section .social-icon{ float: right; }
+#header-section .social-icon{ text-align: right; }
 
 #header-section .social-icons li{  }
 
@@ -917,7 +917,7 @@ ul.social-icons > li{
 
 /*----- Content -----*/
 
-/*----- Footer -----*/
+/*----- Bottom Section -----*/
 
 #bottom-section{
 	color: #fff;
@@ -930,6 +930,43 @@ ul.social-icons > li{
 	font-size: 22px;
 	margin: 0 0 20px;
 }
+
+#bottom-section #wp-subscribe .title{
+	font-size: 22px;
+	margin: 0 0 20px;
+	text-transform: none;
+}
+
+#bottom-section #wp-subscribe{
+	text-align: left;
+}
+
+#bottom-section ul.menu{
+	margin: 0;
+	padding: 0;
+    list-style: outside none none;
+}
+
+#bottom-section ul.menu > li{
+	margin: 5px 7px;
+}
+
+#bottom-section ul.menu > li > a{
+	color: #fff;
+}
+
+#bottom-section ul.menu > li > a:hover,
+#bottom-section ul.menu > li > a:focus{
+	color: #ffcc33;
+}
+
+#bottom-section ul.menu > li.current-menu-item > a{
+	color: #ffcc33;
+}
+
+/*----- Bottom Section -----*/
+
+/*----- Footer -----*/
 
 #footer-section{
 	color: #fff;
@@ -1018,6 +1055,8 @@ ul.contact-info li .fa{
 #site-navigation ul#primary-menu > li > a{
 	color: #fff;
 	background: none;
+	transition: all 0.2s ease-in-out 0s;
+	-webkit-transition: all 0.2s ease-in-out 0s;
 }
 
 #site-navigation ul#primary-menu > li > a:hover{
@@ -1027,7 +1066,63 @@ ul.contact-info li .fa{
 #site-navigation ul#primary-menu > li.current-menu-item{  }
 
 #site-navigation ul#primary-menu > li.current-menu-item > a{
+	color: #fff;
+	background: #ffcc33;
+}
+
+#site-navigation ul#primary-menu ul.sub-menu{
+	background: #fff;
+	border-top: 3px solid #ffcc33;
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+#site-navigation ul#primary-menu ul.sub-menu > li{
+	line-height: normal;
+}
+
+#site-navigation ul#primary-menu ul.sub-menu > li:not(:last-child){
+	border-bottom: 1px dashed #ddd;
+}
+
+#site-navigation ul#primary-menu ul.sub-menu > li > a,
+#site-navigation ul#primary-menu ul.sub-menu > li > span{
+	color: #262626;
+}
+
+#site-navigation ul#primary-menu ul.sub-menu > li > a{
+	padding: 10px 15px;
+	transition: all 0.2s ease-in-out 0s;
+	-webkit-transition: all 0.2s ease-in-out 0s;
+}
+
+#site-navigation ul#primary-menu ul.sub-menu > li > a:hover,
+#site-navigation ul#primary-menu ul.sub-menu > li > a:focus,
+#site-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a,
+#site-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a{
+	color: #fff;
+	padding-left: 20px;
+	background: #ffcc33;
+}
+
+#site-navigation ul#primary-menu > li.current-menu-ancestor > a{
 	color: #ffcc33;
+}
+
+#site-navigation ul#primary-menu ul.sub-menu > li.menu-item-has-children > a:after{
+	content:"\f105";
+	padding-left: 10px;
+	font-family: FontAwesome;
+}
+
+.menu-toggle{
+    color: #242424;
+    font-size: 20px;
+    padding: 4px 12px;
+    line-height: 26px;
+    background: #ffcc33;
+    border: 1px solid #ffcc33;
+			border-radius: 0;
+	-webkit-border-radius: 0;
 }
 
 /*----- Site Navigation -----*/
@@ -1074,3 +1169,45 @@ ul.contact-info li .fa{
 }
 	
 /*----- Back to top -----*/
+
+
+/*----- WP Tab -----*/
+
+.widget .wpt_widget_content{
+	
+}
+
+.widget .wpt_widget_content ul.wpt-tabs{
+	
+}
+
+.widget .wpt_widget_content ul.has-2-tabs li{
+	
+}
+
+.widget .wpt_widget_content ul.has-3-tabs li{
+	
+}
+
+.widget .wpt_widget_content ul.has-4-tabs li{
+	
+}
+
+/*----- WP Tab -----*/
+
+/*----- WP Subscribe -----*/
+
+#wp-subscribe{
+	padding: 0;
+	background: none;
+}
+
+/*----- WP Subscribe -----*/
+
+/*----- Responsive -----*/
+
+@media (max-width:767px){
+	
+}
+
+/*----- Responsive -----*/
