@@ -74,7 +74,8 @@ if(get_theme_mod('blog_layout_selection')=='blogright'){ ?>
 if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
   //We don't need sidebar here for Blog full width Layout
 }?>
- </div>
+ </div> 
+ 
  <?php
 /*****************************************************************/
 /* Show pagination option based on Blog pages show at most ******/
@@ -98,4 +99,8 @@ if($published_posts > $default_posts_per_page){
 	<?php 
 	}
 }
-get_footer();
+?>
+</div><!-- #row -->
+</div><!-- #container -->
+
+<?php get_footer(); ?>

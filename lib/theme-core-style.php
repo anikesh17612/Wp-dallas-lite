@@ -13,14 +13,12 @@ if(!function_exists('wp_dallas_lite_css_generator')){
         $output = '';
 		//$output.= '@import url(//fonts.googleapis.com/css?family=Tangerine)';
 
-
-
         /* ******************************************************
         **********  Theme Options for Color settings   **********
         *********************************************************/
-            $major_color = get_theme_mod( 'major_color', '#00aeef' );
+            $major_color = get_theme_mod( 'major_color', '#ffcc33' );
             if($major_color){
-                $output .= 'a,.bottom-widget .contact-info i,.bottom-widget .widget ul li a:hover, .latest-blog-content .latest-post-button:hover,.meta-category a:hover,.common-menu-wrap .nav>li>a:hover,.common-menu-wrap .nav>li.active>a,
+                $output .= 'a, a:visited, .bottom-widget .contact-info i,.bottom-widget .widget ul li a:hover, .latest-blog-content .latest-post-button:hover,.meta-category a:hover,.common-menu-wrap .nav>li>a:hover,.common-menu-wrap .nav>li.active>a,
                 .common-menu-wrap .nav>li.menu-item-has-children.active > a:after,.common-menu-wrap .nav>li.menu-item-has-children > a:hover:after,
                 .entry-header .entry-title a:hover,.blog-post-meta li a:hover,.entry-content .wrap-btn-style a.btn-style:hover,
                 .widget-blog-posts-section .entry-title  a:hover,.widget ul li a:hover,.footer-copyright ul li a:hover, .themeum-pagination ul li:first-child a:hover, .themeum-pagination ul li:last-child a:hover, .single-related-posts .common-post-item-intro a:hover{ color: '. esc_attr($major_color) .'; }';
@@ -39,16 +37,14 @@ if(!function_exists('wp_dallas_lite_css_generator')){
             }
 
             if($major_color){
-                $output .= '.team-content4,.portfolio-filter li a:before, .classic-slider .owl-dots .active>span, .widget .tagcloud a:hover, .themeum-pagination li span.page-numbers:hover, .themeum-pagination li a.page-numbers:hover,.themeum-pagination li span.page-numbers.current{ background: '. esc_attr($major_color) .'; }';
+                $output .= '.team-content4,.portfolio-filter li a:before, .classic-slider .owl-dots .active>span, .widget .tagcloud a:hover, .themeum-pagination li span.page-numbers:hover, .themeum-pagination li a.page-numbers:hover,.themeum-pagination li span.page-numbers.current, #header-section .social-icons li a:hover , #header-section .social-icons li a:focus{ background: '. esc_attr($major_color) .'; }';
             }
-
 
             if($major_color){
                 $output .= '.themeum-pagination li span.page-numbers.current{border-color: '. esc_attr($major_color) .'; }';
             }
 
             // .select2-container .select2-dropdown .select2-results ul li
-
 
             $hover_color = get_theme_mod( 'hover_color', '#0088e2' );
             if( $hover_color ){
@@ -57,27 +53,26 @@ if(!function_exists('wp_dallas_lite_css_generator')){
                 $output .= '.woocommerce a.button:hover{ border-color: '.esc_attr( $hover_color ) .'; }';
             }
 
-
         /* ************************************************************
         **********  Quick Style for headings and Google font **********
         ****************************************************************/
 
-        $bstyle = $mstyle = $h1style = $h2style = $h3style = $h4style = $h5style = '';
+        $bstyle = $mstyle = $h1style = $h2style = $h3style = $h4style = $h5style = $h6style = '';
         //Body
-        if ( get_theme_mod( 'body_font_size', '18' ) ) {
-            $bstyle .= 'font-size:'.get_theme_mod( 'body_font_size', '18' ).'px;';
+        if ( get_theme_mod( 'body_font_size', '16' ) ) {
+            $bstyle .= 'font-size:'.get_theme_mod( 'body_font_size', '16' ).'px;';
         }
         if ( get_theme_mod( 'body_google_font') ) {
-            $bstyle .= 'font-family:"'.get_theme_mod( 'body_google_font').'"';
+            $bstyle .= 'font-family:"'.get_theme_mod( 'body_google_font' , 'Lato,sans-serif').'"';
         }
 
         //Menu
         $mstyle = '';
-        if ( get_theme_mod( 'menu_font_size', '14' ) ) {
-            $mstyle .= 'font-size:'.get_theme_mod( 'menu_font_size', '14' ).'px;';
+        if ( get_theme_mod( 'menu_font_size', '15' ) ) {
+            $mstyle .= 'font-size:'.get_theme_mod( 'menu_font_size', '15' ).'px;';
         }
         if ( get_theme_mod( 'menu_google_font', 'Roboto Slab' ) ) {
-            $mstyle .= 'font-family:'.get_theme_mod( 'menu_google_font', 'Roboto Slab' ).';';
+            $mstyle .= 'font-family:'.get_theme_mod( 'menu_google_font', 'Lato,sans-serif' ).';';
         }
 
         //Heading 1
@@ -86,53 +81,52 @@ if(!function_exists('wp_dallas_lite_css_generator')){
             $h1style .= 'font-size:'.get_theme_mod( 'h1_font_size', '42' ).'px;';
         }
         if ( get_theme_mod( 'h1_google_font', 'Roboto Slab' ) ) {
-            $h1style .= 'font-family:'.get_theme_mod( 'h1_google_font', 'Roboto Slab' ).';';
+            $h1style .= 'font-family:'.get_theme_mod( 'h1_google_font', 'Lato,sans-serif' ).';';
         }
 
         //Heading 2
         $h2style = '';
-        if ( get_theme_mod( 'h2_font_size', '32' ) ) {
-            $h2style .= 'font-size:'.get_theme_mod( 'h2_font_size', '32' ).'px';
+        if ( get_theme_mod( 'h2_font_size', '36' ) ) {
+            $h2style .= 'font-size:'.get_theme_mod( 'h2_font_size', '36' ).'px';
         }
         if ( get_theme_mod( 'h2_google_font', 'Roboto Slab' ) ) {
-            $h2style .= 'font-family:'.get_theme_mod( 'h2_google_font', 'Roboto Slab' ).';';
+            $h2style .= 'font-family:'.get_theme_mod( 'h2_google_font', 'Lato,sans-serif' ).';';
         }
         //Heading 3
         $h3style = '';
-        if ( get_theme_mod( 'h3_font_size', '28' ) ) {
-            $h3style .= 'font-size:'.get_theme_mod( 'h3_font_size', '28' ).'px;';
+        if ( get_theme_mod( 'h3_font_size', '30' ) ) {
+            $h3style .= 'font-size:'.get_theme_mod( 'h3_font_size', '30' ).'px;';
         }
         if ( get_theme_mod( 'h3_google_font', 'Roboto Slab' ) ) {
-            $h3style .= 'font-family:'.get_theme_mod( 'h3_google_font', 'Roboto Slab' ).';';
+            $h3style .= 'font-family:'.get_theme_mod( 'h3_google_font', 'Lato,sans-serif' ).';';
         }
 
         //Heading 4
         $h4style = '';
-        if ( get_theme_mod( 'h4_font_size', '22' ) ) {
-            $h4style .= 'font-size:'.get_theme_mod( 'h4_font_size', '22' ).'px;';
+        if ( get_theme_mod( 'h4_font_size', '27' ) ) {
+            $h4style .= 'font-size:'.get_theme_mod( 'h4_font_size', '27' ).'px;';
         }
         if ( get_theme_mod( 'h4_google_font', 'Roboto Slab' ) ) {
-            $h4style .= 'font-family:'.get_theme_mod( 'h4_google_font', 'Roboto Slab' ).';';
+            $h4style .= 'font-family:'.get_theme_mod( 'h4_google_font', 'Lato,sans-serif' ).';';
         }
 
         //Heading 5
         $h5style = '';
-        if ( get_theme_mod( 'h5_font_size', '18' ) ) {
-            $h5style .= 'font-size:'.get_theme_mod( 'h5_font_size', '18' ).'px;';
+        if ( get_theme_mod( 'h5_font_size', '25' ) ) {
+            $h5style .= 'font-size:'.get_theme_mod( 'h5_font_size', '25' ).'px;';
         }
         if ( get_theme_mod( 'h5_google_font', 'Roboto Slab' ) ) {
-            $h5style .= 'font-family:'.get_theme_mod( 'h5_google_font', 'Roboto Slab' ).';';
+            $h5style .= 'font-family:'.get_theme_mod( 'h5_google_font', 'Lato,sans-serif' ).';';
         }
 		
 		//Heading 6
-        $h5style = '';
-        if ( get_theme_mod( 'h6_font_size', '16' ) ) {
-            $h5style .= 'font-size:'.get_theme_mod( 'h6_font_size', '16' ).'px;';
+        $h6style = '';
+        if ( get_theme_mod( 'h6_font_size', '20' ) ) {
+            $h5style .= 'font-size:'.get_theme_mod( 'h6_font_size', '20' ).'px;';
         }
         if ( get_theme_mod( 'h6_google_font', 'Roboto Slab' ) ) {
-            $h5style .= 'font-family:'.get_theme_mod( 'h6_google_font', 'Roboto Slab' ).';';
+            $h5style .= 'font-family:'.get_theme_mod( 'h6_google_font', 'Lato,sans-serif' ).';';
         }
-
 
         $output .= 'body{'.$bstyle.'}';
         $output .= '.nav-menu>li>a{'.$mstyle.'}';
@@ -143,11 +137,11 @@ if(!function_exists('wp_dallas_lite_css_generator')){
         $output .= 'h5{'.$h5style.'}';
 		$output .= 'h6{'.$h6style.'}';
 
-        $output .= '.site-header{ background-color: '.esc_attr( get_theme_mod( 'header_color', '#fff' ) ) .'; }';
         $output .= 'body{ background-color: '.esc_attr( get_theme_mod( 'body_bg_color', '#fff' ) ) .'; }';
-		$output .= '.top-header{ background-color: '.esc_attr( get_theme_mod( 'top_header_color', '#666' ) ) .'; }';
-		$output .= '.site-footer{ background-color: '.esc_attr( get_theme_mod( 'copyright_color', '#666' ) ) .'; }';
-		$output .= '.site-bottom{ background-color: '.esc_attr( get_theme_mod( 'footer_color', '#666' ) ) .'; }';
+		$output .= '#header-section{ background-color: '.esc_attr( get_theme_mod( 'top_header_color', '#1a1c27' ) ) .'; }';
+        $output .= '.site-header{ background-color: '.esc_attr( get_theme_mod( 'header_color', '#222533' ) ) .'; }';
+		$output .= '#bottom-section{ background-color: '.esc_attr( get_theme_mod( 'footer_color', '#1a1c27' ) ) .'; }';
+		$output .= '#footer-section{ background-color: '.esc_attr( get_theme_mod( 'copyright_color', '#222533' ) ) .'; }';
 
         // Button color setting...
 

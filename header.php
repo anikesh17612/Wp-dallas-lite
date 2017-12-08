@@ -22,20 +22,20 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp_dallas_lite' ); ?></a>
-	<div class="top-header row">
+	<div id="header-section">
 		<div class="container">
-				<div class="top-menu col-md-6 col-sm-12 col-xs-12">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'menu-2',
-							'menu_id'        => 'Top-menu',
-						) );
-					?>
-					
-				</div>
-				<div class="social-icon col-md-6 col-sm-12 col-xs-12">
-					
-				<?php echo socialicon();?>
+			<div class="row">
+					<div class="top-menu col-md-6 col-sm-12 col-xs-12">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'menu-2',
+								'menu_id'        => 'top-menu',
+							) );
+						?>
+					</div>
+					<div class="social-icon col-md-6 col-sm-12 col-xs-12">
+						<?php echo socialicon();?>
+					</div>
 				</div>
 		</div>
 	</div>
@@ -86,4 +86,5 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		<div class="row">
+		<div class="container">
+			<div class="row">

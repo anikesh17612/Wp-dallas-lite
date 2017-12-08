@@ -82,12 +82,6 @@ audio:not([controls]) {
 	height: 0;
 }
 
-#page{
-	background: gray;
-	margin: 0 auto;
-	width: 1200px;
-}
-
 [hidden],
 template {
 	display: none;
@@ -489,7 +483,7 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #ffcc33;
 }
 
 a:visited {
@@ -857,3 +851,110 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+/*----- Social Icons -----*/
+
+ul.social-icons {
+    display: inline-block;
+    list-style: outside none none;
+    margin: -5px;
+    padding: 0;
+}
+
+ul.social-icons > li{
+	margin: 5px 7px;
+	display: inline-block;
+}
+
+/*----- Social Icons -----*/
+
+/*----- Top Header -----*/
+
+#header-section{
+	padding: 15px 0;
+}
+
+#header-section .top-menu{ float: left; }
+
+#header-section .social-icon{ float: right; }
+
+#header-section .social-icons li{  }
+
+#header-section .social-icons li a{
+	color: #fff;
+	width: 30px;
+	height: 30px;
+	display: block;
+	font-size: 15px;
+	line-height: 28px;
+	text-align: center;
+	background: #464a4d;
+		border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+#top-menu{
+	margin: 0;
+	padding: 0;
+    display: inline-block;
+    list-style: outside none none;
+}
+
+#top-menu > li{
+	margin: 5px 7px;
+	display: inline-block;
+}
+
+/*----- Top Header -----*/
+
+/*----- Footer -----*/
+
+#bottom-section{
+	color: #fff;
+	padding: 15px 0;
+	font-size: 16px;
+	background: #222533;
+}
+
+#bottom-section .widget-title{
+	font-size: 22px;
+}
+
+#footer-section{
+	color: #fff;
+	padding: 15px 0;
+	background: #222533;
+}
+
+#footer-section .footer-menu{
+	
+}
+
+#footer-section .footer-menu ul{
+	margin: 0;
+	padding: 0;
+	text-align: right;
+    list-style: outside none none;
+}
+
+#footer-section .footer-menu ul li a{
+	color: #999;
+}
+
+#footer-section .footer-menu ul li{
+	margin: 5px 7px;
+	display: inline-block;
+}
+
+/*----- Footer -----*/
+
+/*----- Box Layout -----*/
+
+body.box_layout #page{
+	width: 95%;
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+/*----- Box Layout -----*/

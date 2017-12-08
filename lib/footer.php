@@ -12,7 +12,7 @@
  * @package WP_Dallas_Lite
  */
 
- function socialicon() {
+ function copyright() {
 
         $facebook	=  get_theme_mod('facebooklogo','https://www.facebook.com/');
         $twitter	=  get_theme_mod('twitterlogo','https://twitter.com');
