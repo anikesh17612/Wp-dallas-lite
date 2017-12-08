@@ -48,7 +48,8 @@
 					<div class="wpdal_logo_image"><img src="<?php echo get_theme_mod('uploadLogo');?>" alt=""></div> 
 				<?php }?>
 			<?php }else if(get_theme_mod('allLogoFavicon')=='logo-text'){?>
-				<div class="wpdal_logo_text"><h2><?php echo get_theme_mod('customLogoText')?></h2></div> 
+				<div class="wpdal_logo_text"><h1><?php echo get_theme_mod('siteTitle')?></h1></div> 
+				<div class="wpdal_logo_text"><p><?php echo get_theme_mod('tagLine')?></p></div> 
 			<?php }else{
 				the_custom_logo();	
 			}
