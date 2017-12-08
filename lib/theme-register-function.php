@@ -127,7 +127,7 @@ function wp_dallas_option($wp_customize){
 	
 	$wp_customize->add_control( new WP_Customize_Control(
 	    $wp_customize,
-		'copyright_text',
+		'back_to_top',
 		    array(
 		        'label'    => __( 'Back To Top', 'wp_dallas_lite' ),
 		        'section'  => 'footer_section',
