@@ -921,7 +921,7 @@ ul.social-icons > li{
 
 #bottom-section{
 	color: #fff;
-	padding: 15px 0;
+	padding: 40px 0;
 	font-size: 16px;
 	background: #222533;
 }
@@ -991,3 +991,51 @@ ul.contact-info li .fa{
 }
 
 /*----- Contact Info -----*/
+
+/*----- Site Navigation -----*/
+
+#site-navigation{
+	
+}
+
+#site-navigation ul#primary-menu{
+	float: right;
+}
+
+#site-navigation ul#primary-menu > li{
+	padding: 0;
+	line-height: 90px;
+	position: relative;
+	display: inline-block;
+}
+
+#site-navigation ul#primary-menu > li.menu-item-has-children a:after{
+	content: "\f107";
+	font-family: "FontAwesome";
+}
+
+#site-navigation ul#primary-menu > li a{
+	color: #fff;
+	background: none;
+}
+
+#site-navigation ul#primary-menu > li a:hover{
+	color: ;
+}
+
+/*----- Site Navigation -----*/
+
+/*----- Logo -----*/
+
+.site-branding{}
+
+.site-branding h1.site-title{
+	margin: 0;
+	font-size: 18px;
+}
+
+.site-branding p.site-description{
+	font-size: 16px;
+}
+
+/*----- Logo -----*/
