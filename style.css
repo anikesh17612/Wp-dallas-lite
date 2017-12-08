@@ -1009,19 +1009,25 @@ ul.contact-info li .fa{
 	display: inline-block;
 }
 
-#site-navigation ul#primary-menu > li.menu-item-has-children a:after{
+#site-navigation ul#primary-menu > li.menu-item-has-children > a:after{
 	content: "\f107";
 	padding-left: 5px;
 	font-family: "FontAwesome";
 }
 
-#site-navigation ul#primary-menu > li a{
+#site-navigation ul#primary-menu > li > a{
 	color: #fff;
 	background: none;
 }
 
-#site-navigation ul#primary-menu > li a:hover{
-	color: ;
+#site-navigation ul#primary-menu > li > a:hover{
+	color: #ffcc33;
+}
+
+#site-navigation ul#primary-menu > li.current-menu-item{  }
+
+#site-navigation ul#primary-menu > li.current-menu-item > a{
+	color: #ffcc33;
 }
 
 /*----- Site Navigation -----*/
@@ -1051,12 +1057,20 @@ ul.contact-info li .fa{
 	z-index: 999;
 	display: none;
 	position: fixed;
-	border: 1px solid #ddd;
-	background-color: rgba(255, 255, 255, 0.4);
+	text-align: center;
+	background: #ffcc33;
+	border: 1px solid #ffcc33;
 }
 
 .backtotop .fa{
-	text-align: center;
+	color: #262626;
+	font-size: 35px;
+	line-height: 35px;
 }
 
+.backtotop:hover{
+	background: #ffd966;
+	border-color: #ffd966;
+}
+	
 /*----- Back to top -----*/
