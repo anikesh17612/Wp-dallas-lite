@@ -56,6 +56,7 @@
 						wp_nav_menu( array(
 							'theme_location' => 'menu-3',
 							'menu_id'		 => 'footer-menu',
+							'menu_class'	 => 'nav menu'
 						) );
 					?>
 				</div>
