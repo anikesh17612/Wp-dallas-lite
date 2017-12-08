@@ -39,11 +39,10 @@ jQuery(document).ready(function(){
 	jQuery(".backtotop").on('click',function(){
 		jQuery("html, body").animate({scrollTop: $("body").offset().top}, 500);
 	});
-	
 })	
 
 jQuery(window).scroll(function() {
-    if (jQuery(this).scrollTop() > 10) {
+    if (jQuery(this).scrollTop() > 150) {
         jQuery(".backtotop").stop(true, true).fadeIn();
     } else {
        jQuery(".backtotop").stop(true, true).fadeOut();
