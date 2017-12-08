@@ -33,8 +33,8 @@
 					</div>
 				<?php } else {
 					 if ( get_theme_mod( 'enableExcerpt', true ) ) { 
-						if ( get_theme_mod( 'excerptCharacterLimit', 330 ) ) {
-							$textlimit = get_theme_mod( 'excerptCharacterLimit', 330 );
+						if ( get_theme_mod( 'excerptwordLimit', 330 ) ) {
+							$textlimit = get_theme_mod( 'excerptwordLimit', 330 );
 							echo wpdallas_excerpt_max_charlength($textlimit);
 						} else {
 							echo  the_content();
