@@ -575,7 +575,7 @@ function wp_dallas_option($wp_customize){
 		)
 	));
 	
-	$wp_customize->add_setting( 'menu_google_font', array(
+	$wp_customize->add_setting( 'h1_google_font', array(
 		 'default'           => 'Roboto Slab'
 	) );
 	
@@ -585,7 +585,7 @@ function wp_dallas_option($wp_customize){
 		//Heading 1
 		array(
 			'section' =>'typographySetting',
-			'settings' => 'menu_google_font',
+			'settings' => 'h1_google_font',
 			'label'    => esc_html__( 'H1 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
 			'default'  => 'Roboto Slab',
