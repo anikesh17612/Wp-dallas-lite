@@ -135,7 +135,7 @@ if(!function_exists('wp_dallas_lite_css_generator')){
 
 
         $output .= 'body{'.$bstyle.'}';
-        $output .= '.common-menu-wrap .nav>li>a{'.$mstyle.'}';
+        $output .= '.nav-menu>li>a{'.$mstyle.'}';
         $output .= 'h1{'.$h1style.'}';
         $output .= 'h2{'.$h2style.'}';
         $output .= 'h3{'.$h3style.'}';
@@ -145,8 +145,9 @@ if(!function_exists('wp_dallas_lite_css_generator')){
 
         $output .= '.site-header{ background-color: '.esc_attr( get_theme_mod( 'header_color', '#fff' ) ) .'; }';
         $output .= 'body{ background-color: '.esc_attr( get_theme_mod( 'body_bg_color', '#fff' ) ) .'; }';
-		$output .= '.site_top_header{ background-color: '.esc_attr( get_theme_mod( 'top_header_color', '#666' ) ) .'; }';
-		$output .= '.site_footer0{ background-color: '.esc_attr( get_theme_mod( 'footer_color', '#666' ) ) .'; }';
+		$output .= '.top-header{ background-color: '.esc_attr( get_theme_mod( 'top_header_color', '#666' ) ) .'; }';
+		$output .= '.site-footer{ background-color: '.esc_attr( get_theme_mod( 'copyright_color', '#666' ) ) .'; }';
+		$output .= '.site-bottom{ background-color: '.esc_attr( get_theme_mod( 'footer_color', '#666' ) ) .'; }';
 
         // Button color setting...
 
