@@ -43,35 +43,36 @@
 	<!-- Top Header -->
 	<header id="masthead" class="site-header">
 		<div class="container">
-			<div class="site-branding">
-				<?php
-				if(get_theme_mod('allLogoFavicon') == 'logo-image' || get_theme_mod('allLogoFavicon')==""){?>
-					
-					<?php if(empty(get_theme_mod('uploadLogo'))){?>
-						<div class="wpdal_logo_image"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.png';?>" alt=""></div> 
-					<?php }else{?>
-						<div class="wpdal_logo_image"><img src="<?php echo get_theme_mod('uploadLogo');?>" alt=""></div> 
-					<?php }?>
-				<?php }else if(get_theme_mod('allLogoFavicon')=='logo-text'){?>
-					<div class="wpdal_logo_text"><h1><?php echo get_theme_mod('siteTitle')?></h1></div> 
-					<div class="wpdal_logo_text"><p><?php echo get_theme_mod('tagLine')?></p></div> 
-				<?php }else{
-					the_custom_logo();	
-				}
-				if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif;
+			<div class="col-md-3">
+				<div class="site-branding">
+					<?php
+					if(get_theme_mod('allLogoFavicon') == 'logo-image' || get_theme_mod('allLogoFavicon')==""){?>
+						<?php if(empty(get_theme_mod('uploadLogo'))){?>
+							<div class="wpdal_logo_image"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.png';?>" alt=""></div> 
+						<?php }else{?>
+							<div class="wpdal_logo_image"><img src="<?php echo get_theme_mod('uploadLogo');?>" alt=""></div> 
+						<?php }?>
+						<?php }else if(get_theme_mod('allLogoFavicon')=='logo-text'){?>
+							<div class="wpdal_logo_text"><h1><?php echo get_theme_mod('siteTitle')?></h1></div> 
+							<div class="wpdal_logo_text"><p><?php echo get_theme_mod('tagLine')?></p></div> 
+						<?php }else{
+							the_custom_logo();	
+						}
+						if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php else : ?>
+							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php
+						endif;
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-				endif; ?>
-				
-				
+						$description = get_bloginfo( 'description', 'display' );
+						if ( $description || is_customize_preview() ) : ?>
+							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<?php
+						endif; ?>
+				</div>
+			</div>
+			<div class="col-md-9">
 				<nav id="site-navigation" class="main-navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo '<i class="fa fa-bars" aria-hidden="true"></i>'; ?></button>
 					<?php
@@ -81,8 +82,10 @@
 							'menu_class'	 => 'nav menu'
 						) );
 					?>
-				</nav><!-- #site-navigation -->
-			</div><!-- .site-branding -->
+				</nav>
+			</div>
+			<!-- #site-navigation -->
+			<!-- .site-branding -->
 		</div>
 	</header><!-- #masthead -->
 

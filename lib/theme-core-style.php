@@ -46,7 +46,7 @@ if(!function_exists('wp_dallas_lite_css_generator')){
 
             // .select2-container .select2-dropdown .select2-results ul li
 
-            $hover_color = get_theme_mod( 'hover_color', '#0088e2' );
+            $hover_color = get_theme_mod( 'hover_color', '#ffcc33' );
             if( $hover_color ){
                 $output .= 'a:hover, .post-content-wrapper-controller:hover, .post-content-wrapper-controller .fa.pull-left:hover, .post-content-wrapper-controller .fa.pull-right:hover , .widget.widget_rss ul li a,.social-share a:hover{ color: '.esc_attr( $hover_color ) .'; }';
                 $output .= '.error-page-inner a.btn.btn-primary.btn-lg:hover,.btn.btn-primary:hover,input[type=button]:hover{ background-color: '.esc_attr( $hover_color ) .'; }';
