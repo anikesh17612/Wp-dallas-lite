@@ -27,9 +27,10 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-				<?php if ( is_single() ) { ?>
+				<div class="post-thumbnail"><?php the_post_thumbnail();  ?></div>	
+				<p><?php if ( is_single() ) { ?>
 					<div class="single-entry-content">
-						<?php the_content();?>
+						<p><?php the_content();?></p>
 					</div>
 				<?php } else {
 					 if ( get_theme_mod( 'enableExcerpt', true ) ) { 
@@ -37,7 +38,7 @@
 							$textlimit = get_theme_mod( 'excerptwordLimit', 330 );
 							echo wpdallas_excerpt_max_charlength($textlimit);
 						} else {
-							echo  the_content();
+						 echo  the_content();
 						}
 						if ( get_theme_mod( 'enableBlogReadmore', true ) ) { 
 							if ( get_theme_mod( 'continueReading', 'Continue reading...' ) ) {
@@ -48,10 +49,11 @@
 							} 
 						}  
 					}else{
-						echo  the_content();
+					 	echo  the_content();
 					} 
 				} 
-	 
+			?></p>
+			<?php
 			/*
 			//This is default comment for wpdallas Blog Excerpts setting implimentaion   	
 
