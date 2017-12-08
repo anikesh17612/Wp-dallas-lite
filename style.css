@@ -1010,3 +1010,18 @@ ul.contact-info li .fa{
 }
 
 /*----- Site Navigation -----*/
+
+/*----- Logo -----*/
+
+.site-branding{}
+
+.site-branding h1.site-title{
+	margin: 0;
+	font-size: 18px;
+}
+
+.site-branding p.site-description{
+	font-size: 16px;
+}
+
+/*----- Logo -----*/
