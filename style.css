@@ -1009,18 +1009,25 @@ ul.contact-info li .fa{
 	display: inline-block;
 }
 
-#site-navigation ul#primary-menu > li.menu-item-has-children a:after{
+#site-navigation ul#primary-menu > li.menu-item-has-children > a:after{
 	content: "\f107";
+	padding-left: 5px;
 	font-family: "FontAwesome";
 }
 
-#site-navigation ul#primary-menu > li a{
+#site-navigation ul#primary-menu > li > a{
 	color: #fff;
 	background: none;
 }
 
-#site-navigation ul#primary-menu > li a:hover{
-	color: ;
+#site-navigation ul#primary-menu > li > a:hover{
+	color: #ffcc33;
+}
+
+#site-navigation ul#primary-menu > li.current-menu-item{  }
+
+#site-navigation ul#primary-menu > li.current-menu-item > a{
+	color: #ffcc33;
 }
 
 /*----- Site Navigation -----*/
@@ -1039,3 +1046,31 @@ ul.contact-info li .fa{
 }
 
 /*----- Logo -----*/
+
+/*----- Back to top -----*/
+
+.backtotop{
+	width: 40px;
+	bottom: 62px;
+	height: 40px;
+	right: 100px;
+	z-index: 999;
+	display: none;
+	position: fixed;
+	text-align: center;
+	background: #ffcc33;
+	border: 1px solid #ffcc33;
+}
+
+.backtotop .fa{
+	color: #262626;
+	font-size: 35px;
+	line-height: 35px;
+}
+
+.backtotop:hover{
+	background: #ffd966;
+	border-color: #ffd966;
+}
+	
+/*----- Back to top -----*/

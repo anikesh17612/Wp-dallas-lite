@@ -66,6 +66,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<a href="javascript:void(0)" class="backtotop" style="display: block;">&nbsp;</a>
+<a href="javascript:void(0)" class="backtotop" style="display: block;"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 </body>
 </html>
