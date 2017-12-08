@@ -66,6 +66,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<a href="javascript:void(0)" class="scrollup" style="display: block;">&nbsp;</a>
 </body>
 </html>
