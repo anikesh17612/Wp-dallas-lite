@@ -62,17 +62,16 @@
 				</div>
 			</div>
 		</div>
-	</footer>
-	<!-- #site-footer -->
+	</footer><!-- #site-footer -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
-<!-- Back To Top -->
+<!-- BAck To Top -->
 <?php
-if(get_theme_mod('backToTop') == 1 ){ 
+if(get_theme_mod('backToTop') == 1 ){ ?>
 <a href="javascript:void(0)" class="backtotop" style="display: block;"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
-<?php } else {?>
+} else { 
 <a href="javascript:void(0)" class="backtotop" style="display: none;"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 <?php } ?>
 </body>
