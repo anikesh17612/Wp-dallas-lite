@@ -104,7 +104,7 @@ function wp_dallas_option($wp_customize){
 	)));
 	
 	$wp_customize->add_setting( 'copyrightText', array(
-		 'default'           => __( 'Copyright Text', 'wp_dallas_lite' )		 
+		 'default'           => 'Copyright © 2017 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>' 
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -121,7 +121,7 @@ function wp_dallas_option($wp_customize){
 		  ),
 	   )));
 	   
-	 $wp_customize->add_setting( 'backToTop', array(
+	$wp_customize->add_setting( 'backToTop', array(
 		 'default'           => '1' 
 	) );
 	
