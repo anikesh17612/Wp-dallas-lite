@@ -125,7 +125,7 @@ if(!function_exists('wp_dallas_lite_css_generator')){
             $h5style .= 'font-size:'.get_theme_mod( 'h6_font_size', '20' ).'px;';
         }
         if ( get_theme_mod( 'h6_google_font', 'Roboto Slab' ) ) {
-            $h5style .= 'font-family:'.get_theme_mod( 'h6_google_font', 'Lato,sans-serif' ).';';
+            $h5style .= 'font-family:'.get_theme_mod( 'h6_google_font', 'Lato,sans-serif' ).',sans-serif;';
         }
 
         $output .= 'body{'.$bstyle.'}';

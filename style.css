@@ -94,6 +94,7 @@ a {
 a:active,
 a:hover {
 	outline: 0;
+	text-decoration: none;
 }
 
 abbr[title] {
@@ -852,7 +853,6 @@ object {
 	display: block;
 }
 
-
 /*----- Social Icons -----*/
 
 ul.social-icons {
@@ -908,6 +908,15 @@ ul.social-icons > li{
 
 /*----- Top Header -----*/
 
+/*----- Content -----*/
+
+#content{
+	margin: 50px 0;
+	padding: 10px 0;
+}
+
+/*----- Content -----*/
+
 /*----- Footer -----*/
 
 #bottom-section{
@@ -919,6 +928,7 @@ ul.social-icons > li{
 
 #bottom-section .widget-title{
 	font-size: 22px;
+	margin: 0 0 20px;
 }
 
 #footer-section{
@@ -958,3 +968,26 @@ body.box_layout #page{
 }
 
 /*----- Box Layout -----*/
+
+/*----- Contact Info -----*/
+
+ul.contact-info{
+	margin: 0;
+	padding: 0;
+	list-style: outside none none;
+}
+
+ul.contact-info li{
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 10px;
+}
+
+ul.contact-info li .fa{
+	left: 0;
+	top: 6px;
+	font-size: 16px;
+	position: absolute;
+}
+
+/*----- Contact Info -----*/
