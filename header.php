@@ -81,7 +81,6 @@
 					?>
 				</nav><!-- #site-navigation -->
 			</div><!-- .site-branding -->
-<h1>siddhartha</h1>
 		</div>
 	</header><!-- #masthead -->
 
