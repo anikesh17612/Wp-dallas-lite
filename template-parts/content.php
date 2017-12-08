@@ -20,7 +20,8 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php wp_dallas_lite_posted_on(); ?>
+			<?php wp_dallas_lite_posted_on(); ?>	
+			
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -30,7 +31,7 @@
 				<div class="post-thumbnail"><?php the_post_thumbnail();  ?></div>	
 				<p><?php if ( is_single() ) { ?>
 					<div class="single-entry-content">
-						<p><?php the_content();?></p>
+						<?php the_content();?>
 					</div>
 				<?php } else {
 					 if ( get_theme_mod( 'enableExcerpt', true ) ) { 
