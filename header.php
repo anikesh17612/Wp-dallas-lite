@@ -45,7 +45,7 @@
 		<div class="container">
 			<div class="col-md-3">
 				<div class="site-branding">
-					<?php
+					<a href="index.php"><?php
 					if(get_theme_mod('allLogoFavicon') == 'logo-image' || get_theme_mod('allLogoFavicon')==""){?>
 						<?php if(empty(get_theme_mod('uploadLogo'))){?>
 							<div class="wpdal_logo_image"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.png';?>" alt=""></div> 
@@ -69,7 +69,7 @@
 						if ( $description || is_customize_preview() ) : ?>
 							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 						<?php
-						endif; ?>
+						endif; ?></a>
 				</div>
 			</div>
 			<div class="col-md-9">
