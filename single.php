@@ -50,5 +50,9 @@ if(get_theme_mod('select_blog_single_page_layout')=='rightside'){ ?>
 if(get_theme_mod('select_blog_single_page_layout')=='fullwidth'){
   //We don't need sidebar here for Single page full width Layout
 }
-get_footer();
+?>
+ </div> <!-- #row -->
+</div><!-- #container -->
+
+<?php get_footer(); 
 
