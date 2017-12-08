@@ -72,7 +72,7 @@
 				
 				
 				<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menus', 'wp_dallas_lite' ); ?></button>
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '.<i class="icon icon-menu"></i>.', 'wp_dallas_lite' ); ?></button>
 					<?php
 						wp_nav_menu( array(
 							'theme_location' => 'menu-1',
@@ -81,7 +81,6 @@
 					?>
 				</nav><!-- #site-navigation -->
 			</div><!-- .site-branding -->
-<h1>siddhartha</h1>
 		</div>
 	</header><!-- #masthead -->
 
