@@ -42,28 +42,28 @@
 </section>
 <!-- End bottom postion of theme -->
 
-<footer id="footer-section">
-	<div class="container">
-		<div class="row">
-			<?php if(get_theme_mod('enableCopyrightText') == 1 ){?>
-			<div class="wp-copyright col-md-6 col-sm-12 col-xs-12 ">
-				<?php echo get_theme_mod('copyrightText');?>
-			</div><!-- site-info -->
-			<?php }	?>
-			
-			<div class="footer-menu col-md-6 col-sm-12 col-xs-12">
-				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'menu-3',
-						'menu_id'		 => 'footer-menu',
-						'menu_class'	 => 'nav menu'
-					) );
-				?>
+	<footer id="footer-section">
+		<div class="container">
+			<div class="row">
+					<?php if(get_theme_mod('enableCopyrightText') == 1 ){?>
+					<div class="wp-copyright col-md-6 col-sm-12 col-xs-12 ">
+						<?php echo get_theme_mod('copyrightText');?>
+					</div><!-- site-info -->
+					<?php }	?>
+				
+				<div class="footer-menu col-md-6 col-sm-12 col-xs-12">
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'menu-3',
+							'menu_id'		 => 'footer-menu',
+							'menu_class'	 => 'nav menu'
+						) );
+					?>
+				</div>
 			</div>
 		</div>
-	</div>
-</footer>
-<!-- #site-footer -->
+	</footer>
+	<!-- #site-footer -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
