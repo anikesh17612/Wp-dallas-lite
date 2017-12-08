@@ -1011,6 +1011,7 @@ ul.contact-info li .fa{
 
 #site-navigation ul#primary-menu > li.menu-item-has-children a:after{
 	content: "\f107";
+	padding-left: 5px;
 	font-family: "FontAwesome";
 }
 
@@ -1039,3 +1040,23 @@ ul.contact-info li .fa{
 }
 
 /*----- Logo -----*/
+
+/*----- Back to top -----*/
+
+.backtotop{
+	width: 40px;
+	bottom: 62px;
+	height: 40px;
+	right: 100px;
+	z-index: 999;
+	display: none;
+	position: fixed;
+	border: 1px solid #ddd;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.backtotop .fa{
+	text-align: center;
+}
+
+/*----- Back to top -----*/
