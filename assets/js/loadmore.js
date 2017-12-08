@@ -18,3 +18,10 @@ var ajaxurl = loadmore_params.adminUrl+"admin-ajax.php";
 				});
 			});
 		});
+
+jQuery(document).ready(function(){
+	var currentBodyLayout =loadmore_params.body_layout;
+	if(currentBodyLayout == 'box_layout'){
+		jQuery('body').addClass('box_layout');
+	}
+})		
