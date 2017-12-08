@@ -121,6 +121,25 @@ function wp_dallas_option($wp_customize){
 		  ),
 	   )));
 	   
+	 $wp_customize->add_setting( 'backToTop', array(
+		 'default'           => '1' 
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'copyright_text',
+		    array(
+		        'label'    => __( 'Back To Top', 'wp_dallas_lite' ),
+		        'section'  => 'footer_section',
+		        'settings' => 'backToTop',
+				'type'=> 'radio',
+		        'choices' =>
+				array(
+				'1' => 'Yes',
+				'0' => 'No',				
+		  ),
+	   )));
+	   
 	/*---------All Logo & favicon---------------------  */
 	
 	$wp_customize->add_section( 'logo_favicon_section' , array(
