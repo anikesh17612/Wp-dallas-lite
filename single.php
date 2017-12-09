@@ -36,9 +36,6 @@ if(get_theme_mod('select_blog_single_page_layout')=='leftside' || get_theme_mod(
 			echo '<div class="tags_list">';
 			echo implode(" ",$tagString);
 			echo '</div>';
-			echo '<div class="social_icon_single">';
-			echo socialicon();
-			echo '</div>';
 			//the_post_navigation();
 
 			// If comments are open or we have at least one comment, load up the comment template.
