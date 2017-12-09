@@ -6,6 +6,7 @@
  *
  * @package WP_Dallas_Lite
  */
+ 
 
 get_header(); 
 
@@ -52,47 +53,66 @@ if(get_theme_mod('select_blog_single_page_layout')=='leftside' || get_theme_mod(
 	</div><!-- #primary -->
 <?php
 //for use in the loop, list 5 post titles related to first tag on current post
-$tags = wp_get_post_tags($post->ID);
-if ($tags) {
-echo '<h1>Related Posts</h1>';
-$first_tag = $tags[0]->term_id;
-$args=array(
-'tag__in' => array($first_tag),
-'post__not_in' => array($post->ID),
-'posts_per_page'=>5,
-'caller_get_posts'=>1
-);
-$my_query = new WP_Query($args);
-if( $my_query->have_posts() ) {
-while ($my_query->have_posts()) : $my_query->the_post(); 
-echo '<div class="related_post">';
-echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) );
-$categories_list = get_the_category_list( esc_html__( ', ', 'wp_dallas_lite' ) );
-?>
-<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-<?php if($categories_list){ 
-	echo '<span class="post_category">'.$categories_list.'</span>';
-}?>
-</div>
- 
-<?php
-endwhile;
-}
-wp_reset_query();
-}
-?>
-<?php
-if(get_theme_mod('select_blog_single_page_layout')=='rightside'){ ?>
-	<div class="wpdal-right-sidebar wpdal-single-layout-page col-md-3 col-sm-12 col-xs-12">
-		<?php get_sidebar();	?>
-    </div>
-<?php }
 
-if(get_theme_mod('select_blog_single_page_layout')=='fullwidth'){
-  //We don't need sidebar here for Single page full width Layout
-}
-?>
- </div> <!-- #row -->
+$authors_bio = wp_list_authors( $args );
+  $args = array(
+    'orderby'       => 'name', 
+    'order'         => 'ASC', 
+    'number'        => null,
+    'optioncount'   => false, 
+    'exclude_admin' => true, 
+    'show_fullname' => false,
+    'hide_empty'    => true,
+    'echo'          => true,
+    'style'         => 'list',
+    'html'          => true,
+	);
+
+foreach($authors_bio as $args){
+				$authors_bio[] = '<span class="post_author_bio">'.$args->description.'</span>';
+			}  
+
+$tags = wp_get_post_tags($post->ID);
+	if ($tags) {
+		echo '<h1>Related Posts</h1>';
+		$first_tag = $tags[0]->term_id;
+		$args=array(
+		'tag__in' => array($first_tag),
+		'post__not_in' => array($post->ID),
+		'posts_per_page'=>5,
+		'caller_get_posts'=>1
+		);
+		$my_query = new WP_Query($args);
+		if( $my_query->have_posts() ) {
+			while ($my_query->have_posts()) : $my_query->the_post(); 
+			echo '<div class="related_post">';
+			echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'wp_dallas_lite' ) );
+			?>
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+			<?php if($categories_list){ 
+				echo '<span class="post_category">'.$categories_list.'</span>';
+			}?>
+			</div>
+	 
+			<?php
+			endwhile;
+			}
+		wp_reset_query();
+	}
+	?>
+	<?php
+	if(get_theme_mod('select_blog_single_page_layout')=='rightside'){ ?>
+		<div class="wpdal-right-sidebar wpdal-single-layout-page col-md-3 col-sm-12 col-xs-12">
+			<?php get_sidebar();	?>
+		</div>
+	<?php }
+
+	if(get_theme_mod('select_blog_single_page_layout')=='fullwidth'){
+	  //We don't need sidebar here for Single page full width Layout
+	}
+	?>
+	</div> <!-- #row -->
 </div><!-- #container -->
 
 <?php get_footer(); 
