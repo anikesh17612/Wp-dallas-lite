@@ -29,7 +29,6 @@ require_once( ABSPATH . 'wp-admin/includes/template.php' );
 			<?php wp_dallas_lite_posted_on(); ?>	
 			<?php wp_star_rating( $args ); ?>	
 			
-			
 		</div><!-- .entry-meta -->
 		<?php
 		endif;
@@ -56,7 +55,7 @@ require_once( ABSPATH . 'wp-admin/includes/template.php' );
 							if ( get_theme_mod( 'continueReading', 'Continue reading...' ) ) {
 								$continue = esc_html( get_theme_mod( 'continueReading', 'Continue reading...' ) );
 								echo '<div class="meta-content-limit"></div>';
-								echo '<p class="wrap-btn-style"><a class="btn btn-style" href="'.get_permalink().'">'. $continue .'</a></p>';
+								echo '<a class="btn btn-primary" href="'.get_permalink().'">'. $continue .'</a>';
 
 							} 
 						}  

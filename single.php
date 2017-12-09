@@ -59,12 +59,12 @@ $authors_bio = array_filter( array_map( function( $a ) {
 )
 );
 //echo '<pre>';print_r(get_the_author_meta('url'));echo '</pre>';
-echo '<div class="post-author-meta row">';
-	echo '<div class="author-meta col-md-2 col-sm-6 col-xs-6">
+echo '<div class="post-author-meta"><div class="row">';
+	echo '<div class="author-meta author-avtar">
 	<div class="author-img">';
 		echo get_avatar( $post->post_author);
 	echo '</div></div>';
-	echo '<div class="col-md-10 col-sm-6 col-xs-6"><div class="author-title">';
+	echo '<div class="author-description"><div class="author-title">';
 		echo $authors_bio['first_name'].' '.$authors_bio['last_name'];
 	echo '</div>';
 	echo '<div class="author-desc">';
@@ -76,7 +76,7 @@ echo '<div class="post-author-meta row">';
 	}
 	echo '</div></div>';
 	
-echo '</div>';
+echo '</div></div>';
 
 $tags = wp_get_post_tags($post->ID);
 	if ($tags) {
