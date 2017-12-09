@@ -27,7 +27,7 @@ var ajaxurl = loadmore_params.adminUrl+"admin-ajax.php";
 jQuery(document).ready(function(){
 	var currentBodyLayout =loadmore_params.body_layout;
 	if(currentBodyLayout == 'box_layout'){
-		jQuery('body').addClass('box_layout');
+		jQuery('.main_body').addClass('box_layout');
 	}
 })
 /* ******************************************************** */
@@ -48,3 +48,12 @@ jQuery(window).scroll(function() {
        jQuery(".backtotop").stop(true, true).fadeOut();
     }
 });
+/* ******************************************************** */
+/* ****************	MOBILE MENU CLICK  ***********************/
+/* ******************************************************** */	
+jQuery(document).ready(function(){
+	jQuery(".menu-toggle").on('click',function(){
+		jQuery('.main_body').toggleClass('mobile_menu_open');
+	})
+})
+

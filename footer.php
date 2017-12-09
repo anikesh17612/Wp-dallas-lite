@@ -12,13 +12,14 @@
 ?>
 
 	</div><!-- #content -->
+<?php if(is_active_sidebar( 'bottom-a' ) || is_active_sidebar( 'bottom-b' ) || is_active_sidebar( 'bottom-c' ) || is_active_sidebar( 'bottom-d' )){?>	
 <!-- Create bottom postion of theme -->
 <section id="bottom-section">
 	<div class="container">
 		<div class="row">
 			<?php if ( is_active_sidebar( 'bottom-a' ) ) {
 				echo '<div  class="col-md-3 col-lg-3">';
-					dynamic_sidebar( 'bottom-a' );
+					dynamic_sidebar( 'bottom-a' ); 
 				echo '</div>';
 			}
 			if ( is_active_sidebar( 'bottom-b' ) ) {
@@ -40,6 +41,7 @@
 		</div>
 	</div>
 </section>
+<?php } ?>
 <!-- End bottom postion of theme -->
 
 	<footer id="footer-section">
@@ -71,7 +73,7 @@
 <?php
 if(get_theme_mod('backToTop') == 1 ){ ?>
 <a href="javascript:void(0)" class="backtotop" style="display: block;"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
-} else { 
+<?php } else {?> 
 <a href="javascript:void(0)" class="backtotop" style="display: none;"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 <?php } ?>
 </body>

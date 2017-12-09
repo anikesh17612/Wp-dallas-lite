@@ -48,5 +48,8 @@ if(get_theme_mod('blog_layout_selection')=='blogright'){ ?>
 <?php }
 if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
   //We don't need sidebar here for Blog full width Layout
-}
+}?>
+ </div> <!-- #row -->
+</div><!-- #container -->
+<?php
 get_footer();

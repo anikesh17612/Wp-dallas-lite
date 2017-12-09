@@ -47,6 +47,9 @@ if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_lay
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
+					echo '<div class="social_icon_index">';
+							echo socialicon();
+					echo '</div>';
 
 			endwhile;
 

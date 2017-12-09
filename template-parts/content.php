@@ -6,7 +6,13 @@
  *
  * @package WP_Dallas_Lite
  */
-
+require_once( ABSPATH . 'wp-admin/includes/template.php' );
+	$args = array(
+		   'rating' => 5,
+		   'type' => 'rating',
+		   'number' => 1234,
+		);
+		
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -21,10 +27,15 @@
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php wp_dallas_lite_posted_on(); ?>	
+			<?php wp_star_rating( $args ); ?>	
+			
 			
 		</div><!-- .entry-meta -->
 		<?php
-		endif; ?>
+		endif;
+
+	
+		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -78,7 +89,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php wp_dallas_lite_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<!--<footer class="entry-footer">
+		<?php //wp_dallas_lite_entry_footer(); ?>
+	</footer>--><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -176,6 +176,14 @@ function wp_dallas_lite_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'wp_dallas_lite_scripts' );
 
+/*  ********************************/
+/* REMOVE COLORS OPTION FROM CUSTOMIZER  */
+/* ***************************** */
+add_action( "customize_register", "wp_dallas_lite_JMD_customize_register" );
+function wp_dallas_lite_JMD_customize_register( $wp_customize ) {
+ $wp_customize->remove_section("colors");
+}
+
 /** 
 * This code Implimented to load more post using ajax ON click load more Button 
 */
