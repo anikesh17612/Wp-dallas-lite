@@ -53,24 +53,27 @@ if(get_theme_mod('select_blog_single_page_layout')=='leftside' || get_theme_mod(
 	</div><!-- #primary -->
 <?php
 //for use in the loop, list 5 post titles related to first tag on current post
+$authors_bio = get_user_meta( $post->post_author );
 
-$authors_bio = wp_list_authors( $args );
-  $args = array(
-    'orderby'       => 'name', 
-    'order'         => 'ASC', 
-    'number'        => null,
-    'optioncount'   => false, 
-    'exclude_admin' => true, 
-    'show_fullname' => false,
-    'hide_empty'    => true,
-    'echo'          => true,
-    'style'         => 'list',
-    'html'          => true,
-	);
-
-foreach($authors_bio as $args){
-				$authors_bio[] = '<span class="post_author_bio">'.$args->description.'</span>';
-			}  
+// Filter out empty meta data
+$authors_bio = array_filter( array_map( function( $a ) {
+	return $a[0];
+}, $authors_bio
+)
+);
+//echo '<pre>';print_r($authors_bio);echo '</pre>';
+echo '<div class="post-author-meta">';
+	echo '<div class="author-img">';
+		echo get_avatar( $post->post_author, 32 );
+	echo '</div>';
+	echo '<div class="author-title">';
+		echo $authors_bio['first_name'].' '.$authors_bio['last_name'];
+	echo '</div>';
+	echo '<div class="author-desc">';
+		echo $authors_bio['description'];
+	echo '</div>';
+	
+echo '</div>';
 
 $tags = wp_get_post_tags($post->ID);
 	if ($tags) {
