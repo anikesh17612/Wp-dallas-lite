@@ -128,13 +128,14 @@ add_action("admin_init", "social_share_settings");
 
 function add_social_share_icons($content)
 {
-    $html = "<div class='social-share-wrapper'><div class='share-on'>Share on: </div>";
+    $html = "<div class='post-social-share'><div class='share-on'>Share on: </div>";
 
     global $post;
 
     $url = get_permalink($post->ID);
     $url = esc_url($url);
-	$title = the_title();
+	$title = single_post_title();
+	//print_r($post->title);exit;
 
     if(get_option("social-share-facebook") == 1)
     {
