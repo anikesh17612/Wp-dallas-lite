@@ -273,10 +273,17 @@ require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
- */
+  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/* --------------------------------------------*
+			Required Plugins	
+---------------------------------------------*/
+
+require_once( get_template_directory()  . '/lib/plugin-check.php');
+
 
 /**
  * Load WooCommerce compatibility file.
