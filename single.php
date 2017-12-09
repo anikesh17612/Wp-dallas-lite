@@ -61,7 +61,7 @@ $authors_bio = array_filter( array_map( function( $a ) {
 }, $authors_bio
 )
 );
-//echo '<pre>';print_r($authors_bio);echo '</pre>';
+//echo '<pre>';print_r(get_the_author_meta('url'));echo '</pre>';
 echo '<div class="post-author-meta row">';
 	echo '<div class="author-meta col-md-2 col-sm-6 col-xs-6">
 	<div class="author-img">';
@@ -72,6 +72,11 @@ echo '<div class="post-author-meta row">';
 	echo '</div>';
 	echo '<div class="author-desc">';
 		echo $authors_bio['description'];
+	echo '</div>';
+	echo '<div class="author-meta-social-link">';
+	if(get_the_author_meta('url')){
+		echo '<a href="'.get_the_author_meta('url').'" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>';
+	}
 	echo '</div></div>';
 	
 echo '</div>';
