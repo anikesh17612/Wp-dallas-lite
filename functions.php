@@ -182,6 +182,9 @@ add_action( 'wp_enqueue_scripts', 'wp_dallas_lite_scripts' );
 add_action( "customize_register", "wp_dallas_lite_JMD_customize_register" );
 function wp_dallas_lite_JMD_customize_register( $wp_customize ) {
  $wp_customize->remove_section("colors");
+ $wp_customize->remove_control("blogname");
+ $wp_customize->remove_control("blogdescription");
+ $wp_customize->remove_control("display_header_text");
 }
 
 /** 
