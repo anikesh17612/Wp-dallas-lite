@@ -2,9 +2,18 @@
 /*-------------------------------------------*
     Dallas Option Registration
  *------------------------------------------*/
+ function admin_style() {
+  wp_enqueue_style('admin-styles', get_template_directory_uri().'/lib/admin/assets/admin-style.css');
+}
+add_action('admin_enqueue_scripts', 'admin_style');
  
 add_action('customize_register','wp_dallas_option'); 
 function wp_dallas_option($wp_customize){
+	
+	
+	$wp_customize->add_setting( 'separatorline', array(
+		 'default'           => ''
+	) );	
 	
 	$wp_customize->add_panel( 'blog_layout', array(
 		'priority'       => 500,
@@ -371,7 +380,7 @@ function wp_dallas_option($wp_customize){
 	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'link_top_header_color', array(
 		'label'      => __( 'Top Header Color', 'wp_dallas_lite' ),
 		'section'    => 'layout_styling',
-		'settings'   => 'top_header_color',
+		'settings'   => 'top_header_color',		
 	) ) );
 	
 	$wp_customize->add_setting( 'header_color', array(
@@ -414,6 +423,23 @@ function wp_dallas_option($wp_customize){
 		'settings'   => 'hover_color',
 	) ) );
 	
+	
+	/*  Layout Separator code  */
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'footer_separatorline',
+		array(
+					'section' =>'layout_styling',
+					'settings' => 'separatorline',
+					'label'    => esc_html__( 'Footer Button Layout Settings', 'wp_dallas_lite' ),
+					'type'     => 'hidden',
+					'class'	   => 'layout_separator',
+					)
+	));
+	
+		
+	/*  Layout Separator code  */
+	
 	$wp_customize->add_setting( 'footer_color', array(
 		 'default'           => '#666'
 	) );
@@ -434,6 +460,24 @@ function wp_dallas_option($wp_customize){
 		'settings'   => 'copyright_color',
 	) ) );
 	
+	
+	
+	/*  Layout Separator code  */
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'separatorline',
+		array(
+					'section' =>'layout_styling',
+					'settings' => 'separatorline',
+					'label'    => esc_html__( 'Button Color Settings', 'wp_dallas_lite' ),
+					'type'     => 'hidden',
+					'class'	   => 'layout_separator',
+					)
+	));
+	
+		
+	/*  Layout Separator code  */
+	
 	$wp_customize->add_setting( 'buttonColorSettings ', array(
 		 'default'           => 'Button Color Settings' 
 	) );
@@ -450,8 +494,6 @@ function wp_dallas_option($wp_customize){
 				)
 	));
 	
-	
-	
 	$wp_customize->add_setting( 'button_bg_color', array(
 		 'default'           => '#32aad6'
 	) );
@@ -463,6 +505,7 @@ function wp_dallas_option($wp_customize){
 	) ) );
 	
 	
+		
 	$wp_customize->add_setting( 'button_hover_bg_color', array(
 		 'default'           => '#00aeef'	 
 	) );
