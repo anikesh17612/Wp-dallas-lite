@@ -65,7 +65,7 @@ $authors_bio = array_filter( array_map( function( $a ) {
 echo '<div class="post-author-meta row">';
 	echo '<div class="author-meta col-md-2 col-sm-6 col-xs-6">
 	<div class="author-img">';
-		echo get_avatar( $post->post_author, 32 );
+		echo get_avatar( $post->post_author);
 	echo '</div></div>';
 	echo '<div class="col-md-10 col-sm-6 col-xs-6"><div class="author-title">';
 		echo $authors_bio['first_name'].' '.$authors_bio['last_name'];
