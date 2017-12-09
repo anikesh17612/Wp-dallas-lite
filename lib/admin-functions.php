@@ -134,6 +134,7 @@ function add_social_share_icons($content)
 
     $url = get_permalink($post->ID);
     $url = esc_url($url);
+	$title = the_title();
 
     if(get_option("social-share-facebook") == 1)
     {
@@ -142,7 +143,7 @@ function add_social_share_icons($content)
 
     if(get_option("social-share-twitter") == 1)
     {
-        $html = $html . "<div class='twitter'><a target='_blank' href='https://twitter.com/home?url=" . $url . "'><i class='fa fa-twitter' aria-hidden='true'></i></a></div>";
+        $html = $html . "<div class='twitter'><a target='_blank' title='".$title."' href='http://twitter.com/share?text=".$title."&url=" . $url . "' ><i class='fa fa-twitter' aria-hidden='true'></i></a></div>";
     }
 
     if(get_option("social-share-linkedin") == 1)
@@ -173,7 +174,7 @@ function add_social_share_icons($content)
     }
 	if(get_option("social-share-email-checkbox") == 1)
     {
-        $html = $html . "<div class='reddit'><a target='_blank' href='mailto:?subject=".the_title()."' title='Share by email'><i class='fa fa-google-plus' aria-hidden='true'></i></a></div>";
+        $html = $html . "<div class='reddit'><a target='_blank' href='mailto:?subject=".$title."' title='Share by email'><i class='fa fa-google-plus' aria-hidden='true'></i></a></div>";
     }
 	
 
