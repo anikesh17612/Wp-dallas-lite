@@ -45,7 +45,7 @@
 		<div class="container">
 			<div class="col-md-3">
 				<div class="site-branding">
-					<a href="index.php"><?php
+					<a href="<?php echo site_url();?>"><?php
 					if(get_theme_mod('allLogoFavicon') == 'logo-image' || get_theme_mod('allLogoFavicon')==""){?>
 						<?php if(empty(get_theme_mod('uploadLogo'))){?>
 							<div class="wpdal_logo_image"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.png';?>" alt=""></div> 
