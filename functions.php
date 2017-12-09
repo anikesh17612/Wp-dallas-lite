@@ -287,6 +287,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 require_once( get_template_directory()  . '/lib/plugin-check.php');
 
+/* --------------------------------------------*
+			Social Sharing Plugins	
+---------------------------------------------*/
+require_once( get_template_directory()  . '/lib/admin-functions.php'); 
+
 
 /**
  * Load WooCommerce compatibility file.
