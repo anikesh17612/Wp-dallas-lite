@@ -50,33 +50,7 @@ if(get_theme_mod('select_blog_single_page_layout')=='leftside' || get_theme_mod(
 	</div><!-- #primary -->
 <?php
 //for use in the loop, list 5 post titles related to first tag on current post
-$authors_bio = get_user_meta( $post->post_author );
 
-// Filter out empty meta data
-$authors_bio = array_filter( array_map( function( $a ) {
-	return $a[0];
-}, $authors_bio
-)
-);
-//echo '<pre>';print_r(get_the_author_meta('url'));echo '</pre>';
-echo '<div class="post-author-meta"><div class="row">';
-	echo '<div class="author-meta author-avtar">
-	<div class="author-img">';
-		echo get_avatar( $post->post_author);
-	echo '</div></div>';
-	echo '<div class="author-description"><div class="author-title">';
-		echo $authors_bio['first_name'].' '.$authors_bio['last_name'];
-	echo '</div>';
-	echo '<div class="author-desc">';
-		echo $authors_bio['description'];
-	echo '</div>';
-	echo '<div class="author-meta-social-link">';
-	if(get_the_author_meta('url')){
-		echo '<a href="'.get_the_author_meta('url').'" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>';
-	}
-	echo '</div></div>';
-	
-echo '</div></div>';
 
 $tags = wp_get_post_tags($post->ID);
 	if ($tags) {
