@@ -7,14 +7,7 @@
  * @package WP_Dallas_Lite
  */
 require_once( ABSPATH . 'wp-admin/includes/template.php' );
-	$args = array(
-		   'rating' => 5,
-		   'type' => 'rating',
-		   'number' => 1234,
-		);
-		
-?>
-
+ ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
@@ -64,7 +57,8 @@ require_once( ABSPATH . 'wp-admin/includes/template.php' );
 					} 
 				} 
 			?></p>
-			<?php
+			<?php 
+				
 			/*
 			//This is default comment for wpdallas Blog Excerpts setting implimentaion   	
 
