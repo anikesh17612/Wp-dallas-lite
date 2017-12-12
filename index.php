@@ -47,13 +47,10 @@ if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_lay
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
-					echo '<div class="social_icon_index">';
-							echo socialicon();
-					echo '</div>';
+					
 
 			endwhile;
 
-			the_posts_navigation();
 
 		else :
 
@@ -77,7 +74,7 @@ if(get_theme_mod('blog_layout_selection')=='blogright'){ ?>
 if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
   //We don't need sidebar here for Blog full width Layout
 }?>
- </div> <!-- #row -->
+
  
  <?php
 /*****************************************************************/
@@ -103,6 +100,7 @@ if($published_posts > $default_posts_per_page){
 	}
 }
 ?>
+ </div> <!-- #row -->
 </div><!-- #container -->
 
 <?php get_footer(); 
