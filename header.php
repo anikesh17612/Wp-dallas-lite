@@ -51,25 +51,15 @@
 							<div class="wpdal_logo_image"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.png';?>" alt=""></div> 
 						<?php }else{?>
 							<div class="wpdal_logo_image"><img src="<?php echo get_theme_mod('uploadLogo');?>" alt=""></div> 
-						<?php }?>
-						<?php }else if(get_theme_mod('allLogoFavicon')=='logo-text'){?>
+						<?php }?><?php 
+					}else if(get_theme_mod('allLogoFavicon')=='logo-text'|| get_theme_mod('allLogoFavicon')==""){?>
 							<div class="wpdal_logo_text"><h1><?php echo get_theme_mod('siteTitle')?></h1></div> 
 							<div class="wpdal_logo_text"><p><?php echo get_theme_mod('tagLine')?></p></div> 
-						<?php }else{
+						<?php }
+						else{
 							the_custom_logo();	
 						}
-						if ( is_front_page() && is_home() ) : ?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php else : ?>
-							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php
-						endif;
-
-						$description = get_bloginfo( 'description', 'display' );
-						if ( $description || is_customize_preview() ) : ?>
-							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-						<?php
-						endif; ?></a>
+						 ?></a>
 				</div>
 			</div>
 			<div class="col-md-9">
