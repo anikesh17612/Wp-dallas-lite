@@ -136,7 +136,6 @@ function add_social_share_icons($content)
     $url = esc_url($url);
 	$title = str_replace( ' ', '%20', get_the_title());
 	$twitterURL = 'https://twitter.com/intent/tweet?text='.$title.'&amp;url='.$url.'&amp;';
-	//print_r($post->title);exit;
 
     if(get_option("social-share-facebook") == 1)
     {
