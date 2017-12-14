@@ -36,10 +36,7 @@ function wp_dallas_lite_activation_link( $plugin, $action = 'activate' ) {
 	$_REQUEST['plugin'] = $plugin;
 	if($_REQUEST['plugin']){
 		$url = wp_nonce_url( $url, $action . '-plugin_' . $plugin );
-	}else{
-		echo "test";
 	}
-	
 	
 	return $url;
 	

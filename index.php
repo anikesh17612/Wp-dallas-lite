@@ -58,12 +58,12 @@ if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_lay
 
 		endif; 
 		
-
+		add_social_share_icons($content);
 		
 		?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	
+	<?php add_filter("the_content", "add_social_share_icons");?>
 <?php
 if(get_theme_mod('blog_layout_selection')=='blogright'){ ?>
 	<div class="wpdal-right-sidebar col-md-3 col-sm-12 col-xs-12">

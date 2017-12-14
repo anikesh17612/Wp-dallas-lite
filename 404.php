@@ -24,5 +24,8 @@ get_header();
 			</section><!-- .error-404 -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+</div> <!-- #row -->
+</div><!-- #container -->
 <?php
 get_footer();
