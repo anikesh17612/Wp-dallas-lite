@@ -268,6 +268,8 @@ optgroup,
 textarea {
 	color: #404040;
 	font-family: sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
 	line-height: 1.5;
 }
 
@@ -852,16 +854,6 @@ object {
 	display: block;
 }
 
-/*----- Baisc -----*/
-
-input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"],
-input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"],
-input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea{
-	border-radius: 0;
-}
-
-/*----- Baisc -----*/
-
 /*----- Social Icons -----*/
 
 ul.social-icons {
@@ -1330,75 +1322,18 @@ ul.contact-info li .fa{
 	color: #242424;
 }
 
-.post-social-share{
-	
-}
-
 /*----- Content Area -----*/
 
-/*----- Comment Section -----*/
-
-comments .style-title, #comments .comments-title, #comments .comment-reply-title{
-	border: none;
-}
-
-.comment-respond{
-	padding: 20px;
-	border: 1px solid #ddd;
-}
-
-ol.comment-list li:not(:last-child){
-	margin-bottom: 20px;
-	padding-bottom: 20px;
-	border-bottom: 1px solid #ddd;
-}
-ol.comment-list{
-	padding: 20px;
-	margin: 0 0 20px;
-	border: 1px solid #ddd;
-	list-style: outside none none;
-}
-
-/*----- Comment Section -----*/
-
-/*----- Author Section -----*/
-
-.post-author-meta{
-	padding: 30px;
-	overflow: hidden;
-	border: 1px solid #ddd;
-	box-shadow: 0 0 5px #ccc;
-}
-
-.post-author-meta .author-avtar img.avatar{
-	border-radius: 100%;
-	-webkit-border-radius: 100%;
-}
-
-.post-author-meta .author-avtar{
-	float: left;
-	min-width: 130px;
-}
-
-.post-author-meta .author-description{
-	overflow: hidden;	
-}
-
-.post-author-meta .author-meta-social-link{
-	
-}
-
-/*----- Author Section -----*/
 
 /*----- Button Styling -----*/
 
-.btn, button, input[type="button"], input[type="reset"], input[type="submit"],.submit{
+.btn{
 	font-size: 16px;
 	padding: 10px 25px;
 	border-radius: 3px;
 }
 
-.btn-default, .submit{
+.btn-default{
 	background: #ffcc33;
 }
 
@@ -1407,3 +1342,14 @@ ol.comment-list{
 }
 
 /*----- Button Styling -----*/
+
+
+/*----- Tab Styling -----*/
+
+.tab-content ul{
+	padding:0px;
+	margin: 0;
+}
+
+/*----- Tab Styling -----*/
+

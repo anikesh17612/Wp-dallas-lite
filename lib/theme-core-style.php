@@ -118,7 +118,7 @@ if(!function_exists('wp_dallas_lite_css_generator')){
         if ( get_theme_mod( 'h5_google_font', 'Roboto Slab' ) ) {
             $h5style .= 'font-family:"'.get_theme_mod( 'h5_google_font' , 'Lato').'",sans-serif';
         }
-
+		
 		//Heading 6
         $h6style = '';
         if ( get_theme_mod( 'h6_font_size', '20' ) ) {
@@ -146,11 +146,13 @@ if(!function_exists('wp_dallas_lite_css_generator')){
         // Button color setting...
 
         $output .= '.mc4wp-form-fields input[type=submit], .demo-four .mc4wp-form-fields input[type=submit], .common-menu-wrap .nav>li.online-booking-button a, .error-page-inner a.btn.btn-primary.btn-lg,.btn.btn-primary, .package-list-button, 
-        .contact-submit input[type=submit],.form-submit input[type=submit]{ background-color: '.esc_attr( get_theme_mod( 'button_bg_color', '#32aad6' ) ) .'; border-color: '.esc_attr( get_theme_mod( 'button_bg_color', '#32aad6' ) ) .'; color: '.esc_attr( get_theme_mod( 'button_text_color', '#fff' ) ) .' !important;  }';
+        .contact-submit input[type=submit],.form-submit input[type=submit]{ background-color: '.esc_attr( get_theme_mod( 'button_bg_color', '#32aad6' ) ) .'; border-color: '.esc_attr( get_theme_mod( 'button_bg_color', '#32aad6' ) ) .'; color: '.esc_attr( get_theme_mod( 'button_text_color', '#fff' ) ) .' !important; border-radius: 4px; }';
+        
 
         if ( get_theme_mod( 'button_hover_bg_color', '#00aeef' ) ) {
             $output .= '.mc4wp-form-fields input[type=submit]:hover, .demo-four .mc4wp-form-fields input[type=submit]:hover, .common-menu-wrap .nav>li.online-booking-button a:hover, .error-page-inner a.btn.btn-primary.btn-lg:hover,.btn.btn-primary:hover, .package-list-button:hover, .contact-submit input[type=submit]:hover,.form-submit input[type=submit]:hover{ background-color: '.esc_attr( get_theme_mod( 'button_hover_bg_color', '#00aeef' ) ) .'; border-color: '.esc_attr( get_theme_mod( 'button_hover_bg_color', '#00aeef' ) ) .'; color: '.esc_attr( get_theme_mod( 'button_hover_text_color', '#fff' ) ) .' !important; }';
         }
+
 
         $output .= '.subtitle-cover:before{background:'.get_theme_mod( 'sub_header_overlayer_color', 'rgba(0, 0, 0, 0.5)' ).';}';
 
@@ -165,3 +167,4 @@ if(!function_exists('wp_dallas_lite_css_generator')){
         return $output;
     }
 }
+

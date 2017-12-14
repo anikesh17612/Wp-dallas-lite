@@ -35,11 +35,11 @@ if ( ! function_exists( 'wp_dallas_lite_posted_on' ) ) :
 		
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'By %s', 'post author', 'wp_dallas_lite' ),
+			esc_html_x( 'Posted By %s', 'post author', 'wp_dallas_lite' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 		if ( $categories_list ) {
-				echo '<span class="byline"> ' . $byline . ' '.$categories_list.'</span>'; // WPCS: XSS OK.
+				echo '<span class="byline"> ' . $byline . ' '.$categories_list.'</span><span class="posted_on"> ' . $posted_on . '</span>'; // WPCS: XSS OK.
 		}else{
 				echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 		}

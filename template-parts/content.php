@@ -6,8 +6,9 @@
  *
  * @package WP_Dallas_Lite
  */
-require_once( ABSPATH . 'wp-admin/includes/template.php' );
- ?>
+		
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
@@ -20,7 +21,7 @@ require_once( ABSPATH . 'wp-admin/includes/template.php' );
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php wp_dallas_lite_posted_on(); ?>	
-			<?php wp_star_rating( $args ); ?>	
+			
 			
 		</div><!-- .entry-meta -->
 		<?php
@@ -48,7 +49,7 @@ require_once( ABSPATH . 'wp-admin/includes/template.php' );
 							if ( get_theme_mod( 'continueReading', 'Continue reading...' ) ) {
 								$continue = esc_html( get_theme_mod( 'continueReading', 'Continue reading...' ) );
 								echo '<div class="meta-content-limit"></div>';
-								echo '<a class="btn btn-primary" href="'.get_permalink().'">'. $continue .'</a>';
+								echo '<p class="wrap-btn-style"><a class="btn btn-style" href="'.get_permalink().'">'. $continue .'</a></p>';
 
 							} 
 						}  
@@ -57,8 +58,7 @@ require_once( ABSPATH . 'wp-admin/includes/template.php' );
 					} 
 				} 
 			?></p>
-			<?php 
-				
+			<?php
 			/*
 			//This is default comment for wpdallas Blog Excerpts setting implimentaion   	
 
@@ -82,7 +82,7 @@ require_once( ABSPATH . 'wp-admin/includes/template.php' );
 		?>
 	</div><!-- .entry-content -->
 
-	<!--<footer class="entry-footer">
-		<?php //wp_dallas_lite_entry_footer(); ?>
-	</footer>--><!-- .entry-footer -->
+	<footer class="entry-footer">
+		<?php add_social_share_icons($content); ?>
+	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

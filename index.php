@@ -58,7 +58,7 @@ if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_lay
 
 		endif; 
 		
-		
+
 		
 		?>
 		</main><!-- #main -->
