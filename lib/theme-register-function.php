@@ -177,7 +177,7 @@ function wp_dallas_option($wp_customize){
 	   )));
 	
 	$wp_customize->add_setting( 'uploadLogo', array(
-		 'default'           => 'assets/images/logo.png'		 
+		 'default'           => ''		 
 	) );
 
 		$wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize,'upload_logo',array(
