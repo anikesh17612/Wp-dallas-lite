@@ -15,3 +15,9 @@ body {
 	unicode-bidi: embed;
 }
 */
+
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
