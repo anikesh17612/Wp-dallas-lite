@@ -79,7 +79,7 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
-		<?php echo add_social_share_icons($content); ?>
+	
+		
 
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -13,6 +13,7 @@
  */
 get_header(); 
 ?>
+
 <?php 
 if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_layout_selection')==""){ ?>
 	<div class="wpdal-left-sidebar col-md-3 col-sm-12 col-xs-12">
@@ -46,7 +47,9 @@ if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_lay
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
+				 
 				get_template_part( 'template-parts/content', get_post_format() );
+				
 					
 
 			endwhile;
