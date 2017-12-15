@@ -4,7 +4,6 @@
  */
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-add_action( 'admin_menu', 'social_sharing_options' );
 
 function social_share_menu_item()
 {
