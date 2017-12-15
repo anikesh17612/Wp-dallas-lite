@@ -47,8 +47,7 @@ if(get_theme_mod('select_blog_single_page_layout')=='leftside' || get_theme_mod(
 		?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
-<?php
+		<?php
 //for use in the loop, list 5 post titles related to first tag on current post
 $authors_bio = get_user_meta( $post->post_author );
 
@@ -109,6 +108,8 @@ $tags = wp_get_post_tags($post->ID);
 		wp_reset_query();
 	}
 	?>
+	</div><!-- #primary -->
+
 	<?php
 	if(get_theme_mod('select_blog_single_page_layout')=='rightside'){ ?>
 		<div class="wpdal-right-sidebar wpdal-single-layout-page col-md-3 col-sm-12 col-xs-12">

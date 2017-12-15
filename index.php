@@ -64,20 +64,7 @@ if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_lay
 		
 		?>
 		</main><!-- #main -->
-	</div><!-- #primary -->
-<?php
-if(get_theme_mod('blog_layout_selection')=='blogright'){ ?>
-	<div class="wpdal-right-sidebar col-md-3 col-sm-12 col-xs-12">
-		<?php get_sidebar();	?>
-    </div>
-<?php }
-
-if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
-  //We don't need sidebar here for Blog full width Layout
-}?>
-
- 
- <?php
+		<?php
 /*****************************************************************/
 /* Show pagination option based on Blog pages show at most ******/
 /****************************************************************/
@@ -101,6 +88,21 @@ if($published_posts > $default_posts_per_page){
 	}
 }
 ?>
+
+</div><!-- #primary -->
+<?php
+if(get_theme_mod('blog_layout_selection')=='blogright'){ ?>
+	<div class="wpdal-right-sidebar col-md-3 col-sm-12 col-xs-12">
+		<?php get_sidebar();	?>
+    </div>
+<?php }
+
+if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
+  //We don't need sidebar here for Blog full width Layout
+}?>
+	
+
+ 
  </div> <!-- #row -->
 </div><!-- #container -->
 
