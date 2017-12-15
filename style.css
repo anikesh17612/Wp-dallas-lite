@@ -874,6 +874,7 @@ ul.social-icons > li{
 
 #header-section{
 	padding: 15px 0;
+	background: red !important;
 }
 
 #header-section .top-menu{ float: left; }
