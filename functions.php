@@ -291,6 +291,33 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /* --------------------------------------------*
+			User Follow social icon	
+---------------------------------------------*/
+/**
+ * Show custom user profile fields
+ * 
+ * @param  object $profileuser A WP_User object
+ * @return void
+ */
+function custom_user_profile_fields( $profileuser ) {
+?>
+	<table class="form-table">
+		<tr>
+			<th>
+				<label for="user_location"><?php esc_html_e( 'Location' ); ?></label>
+			</th>
+			<td>
+				<input type="text" name="user_location" id="user_location" value="<?php echo esc_attr( get_the_author_meta( 'user_location', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br><span class="description"><?php esc_html_e( 'Your location.', 'text-domain' ); ?></span>
+			</td>
+		</tr>
+	</table>
+<?php
+}
+add_action( 'show_user_profile', 'custom_user_profile_fields', 10, 1 );
+add_action( 'edit_user_profile', 'custom_user_profile_fields', 10, 1 );
+
+/* --------------------------------------------*
 			Required Plugins	
 ---------------------------------------------*/
 
