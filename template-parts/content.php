@@ -6,9 +6,7 @@
  *
  * @package WP_Dallas_Lite
  */
-		
-?>
-
+ ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
@@ -20,8 +18,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php wp_dallas_lite_posted_on(); ?>	
-			
+			<?php wp_dallas_lite_posted_on(); ?>		
 			
 		</div><!-- .entry-meta -->
 		<?php
@@ -49,7 +46,7 @@
 							if ( get_theme_mod( 'continueReading', 'Continue reading...' ) ) {
 								$continue = esc_html( get_theme_mod( 'continueReading', 'Continue reading...' ) );
 								echo '<div class="meta-content-limit"></div>';
-								echo '<p class="wrap-btn-style"><a class="btn btn-style" href="'.get_permalink().'">'. $continue .'</a></p>';
+								echo '<a class="btn btn-primary" href="'.get_permalink().'">'. $continue .'</a>';
 
 							} 
 						}  
@@ -58,7 +55,8 @@
 					} 
 				} 
 			?></p>
-			<?php
+			<?php 
+				
 			/*
 			//This is default comment for wpdallas Blog Excerpts setting implimentaion   	
 
@@ -82,7 +80,6 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php add_social_share_icons($content); ?>
-	</footer><!-- .entry-footer -->
+		<?php echo add_social_share_icons($content); ?>
+
 </article><!-- #post-<?php the_ID(); ?> -->
