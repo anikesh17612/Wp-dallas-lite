@@ -183,5 +183,3 @@ function add_social_share_icons($content)
 
     return $content = $content . $html;
 }
-
-add_filter("the_content", "add_social_share_icons");
