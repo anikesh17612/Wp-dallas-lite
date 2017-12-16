@@ -73,14 +73,17 @@ echo '<div class="post-author-meta row">';
 	if(get_the_author_meta('url')){
 		echo '<a href="'.get_the_author_meta('url').'" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>';
 	}
-		echo socialicon();
 		$user_id = get_current_user_id();
 		$user_meta = get_user_meta($user_id); 
 		echo $user_meta['fb_url'][0];
 		echo $user_meta['twitter_url'][0];
-		//echo "<pre>";
-		
-		//print_r($user_meta);
+		echo $user_meta['gplus_url'][0];
+		echo $user_meta['linkedin_url'][0];
+		echo $user_meta['behance_url'][0];
+		echo $user_meta['youtube_url'][0];
+		echo $user_meta['snapchat_url'][0];
+		echo $user_meta['skype_url'][0];
+		echo $user_meta['pinterest_url'][0];
 		
 		
 		
