@@ -75,15 +75,15 @@ echo '<div class="post-author-meta row">';
 	}
 		$user_id = get_current_user_id();
 		$user_meta = get_user_meta($user_id); 
-		echo $user_meta['fb_url'][0];
-		echo $user_meta['twitter_url'][0];
-		echo $user_meta['gplus_url'][0];
-		echo $user_meta['linkedin_url'][0];
-		echo $user_meta['behance_url'][0];
-		echo $user_meta['youtube_url'][0];
-		echo $user_meta['snapchat_url'][0];
-		echo $user_meta['skype_url'][0];
-		echo $user_meta['pinterest_url'][0];
+		echo '<i class="fa fa-facebook"></i>'.$user_meta['fb_url'][0];
+		echo '<i class="fa fa-twitter"></i>'.$user_meta['twitter_url'][0];
+		echo '<i class="fa fa-google-plus"></i>'.$user_meta['gplus_url'][0];
+		echo '<i class="fa fa-linkedin"></i>'.$user_meta['linkedin_url'][0];
+		echo '<i class="fa fa-behance"></i>'.$user_meta['behance_url'][0];
+		echo '<i class="fa fa-youtube"></i>'.$user_meta['youtube_url'][0];
+		echo '<i class="fa fa-dribbble"></i>'.$user_meta['snapchat_url'][0];
+		echo '<i class="fa fa-skype"></i>'.$user_meta['skype_url'][0];
+		echo '<i class="fa fa-pinterest"></i>'.$user_meta['pinterest_url'][0];
 		
 		
 		
