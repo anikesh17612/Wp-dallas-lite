@@ -166,16 +166,16 @@ add_action( 'widgets_init', 'wp_dallas_lite_widgets_init' );
 function wp_dallas_lite_scripts() {
 	wp_enqueue_style( 'wp_dallas_lite-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'wp_dallas_lite-jquerylibrary', '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '20151215', true );
-	wp_enqueue_script( 'wp_dallas_lite-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
-	wp_enqueue_script( 'wp_dallas_lite-loadmore', get_template_directory_uri() . '/assets/js/loadmore.js', array(), '20151215', true );
+	
+	wp_enqueue_script( 'wp_dallas_lite-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'wp_dallas_lite-loadmore', get_template_directory_uri() . '/assets/js/loadmore.js', array('jquery'), '20151215', true );
 	$translation_array = array( 'templateUrl' => get_template_directory_uri() ,'adminUrl'=>admin_url(),'body_layout'=>get_theme_mod('body_layout','fullwidth_body_layout'));
 	wp_localize_script( 'wp_dallas_lite-loadmore', 'loadmore_params', $translation_array );
 	wp_enqueue_style( 'font-family', '//fonts.googleapis.com/css?family='.get_theme_mod('body_google_font').'|'.get_theme_mod('menu_google_font').'|'.get_theme_mod('h1_google_font').'|'.get_theme_mod('h2_google_font').'|'.get_theme_mod('h3_google_font').'|'.get_theme_mod('h4_google_font').'|'.get_theme_mod('h5_google_font').'|'.get_theme_mod('h6_google_font'));
  	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '3.0.0', true );
-	wp_enqueue_script( 'wp_dallas_lite-skip-link-focus-fix', get_template_directory_uri() . 'assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '3.0.0', true );
+	wp_enqueue_script( 'wp_dallas_lite-skip-link-focus-fix', get_template_directory_uri() . 'assets/js/skip-link-focus-fix.js', array('jquery'), '20151215', true );
 	wp_enqueue_style('personalblog-style',get_stylesheet_uri());//
 	wp_add_inline_style( 'personalblog-style', wp_dallas_lite_css_generator() );//
 	
@@ -293,22 +293,48 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /* --------------------------------------------*
 			User Follow social icon	
 ---------------------------------------------*/
+
+
 /**
  * Show custom user profile fields
  * 
  * @param  object $profileuser A WP_User object
  * @return void
  */
+add_action( 'profile_update', 'my_profile_update', 10, 2 );
+$user_id =$_POST['user_id'];
+function my_profile_update( $user_id, $old_user_data ) {
+	// Do something
+	 update_user_meta($user_id, 'fb_url', $_POST['fb_url']);
+	 update_user_meta($user_id, 'twitter_url', $_POST['twitter_url']);
+}
+ 
+add_action('edit_user_profile_update', 'update_extra_profile_fields');
+ 
+ function update_extra_profile_fields($user_id) {
+	 if ( current_user_can('edit_user',$user_id) )
+         update_user_meta($user_id, 'fb_url', $_POST['fb_url']);
+         update_user_meta($user_id, 'twitter_url', $_POST['twitter_url']);
+ }
 function custom_user_profile_fields( $profileuser ) {
 ?>
 	<table class="form-table">
 		<tr>
 			<th>
-				<label for="user_location"><?php esc_html_e( 'Location' ); ?></label>
+				<label for="fb_url"><?php esc_html_e( 'Facebook' ); ?></label>
 			</th>
 			<td>
-				<input type="text" name="user_location" id="user_location" value="<?php echo esc_attr( get_the_author_meta( 'user_location', $profileuser->ID ) ); ?>" class="regular-text" />
-				<br><span class="description"><?php esc_html_e( 'Your location.', 'text-domain' ); ?></span>
+				<input type="text" name="fb_url" id="fb_url" value="<?php echo esc_attr( get_the_author_meta( 'fb_url', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br><span class="description"><?php esc_html_e( 'Facebook url.', 'text-domain' ); ?></span>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<label for="twitter_url"><?php esc_html_e( 'Twitter url' ); ?></label>
+			</th>
+			<td>
+				<input type="text" name="twitter_url" id="twitter_url" value="<?php echo esc_attr( get_the_author_meta( 'twitter_url', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br><span class="description"><?php esc_html_e( 'Twitter url.', 'text-domain' ); ?></span>
 			</td>
 		</tr>
 	</table>
@@ -316,6 +342,9 @@ function custom_user_profile_fields( $profileuser ) {
 }
 add_action( 'show_user_profile', 'custom_user_profile_fields', 10, 1 );
 add_action( 'edit_user_profile', 'custom_user_profile_fields', 10, 1 );
+
+
+ 
 
 /* --------------------------------------------*
 			Required Plugins	
