@@ -10,13 +10,13 @@ add_action('admin_enqueue_scripts', 'admin_style');
 add_action('customize_register','wp_dallas_option'); 
 function wp_dallas_option($wp_customize){
 	
-	
 	$wp_customize->add_setting( 'separatorline', array(
 		 'default'           => ''
+		 
 	) );	
 	
 	$wp_customize->add_panel( 'blog_layout', array(
-		'priority'       => 500,
+		'priority'       => 20,
 		'blog_layout' => '',
 		'title'          => __( 'Wp Dallas Lite Option', 'wp_dallas_lite' ),
 		'description'    => __( 'Set editable text for certain content.', 'wp_dallas_lite' ),
