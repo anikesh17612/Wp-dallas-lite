@@ -73,31 +73,35 @@ echo '<div class="post-author-meta row">';
 	if(get_the_author_meta('url')){
 		echo '<a href="'.get_the_author_meta('url').'" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>';
 	}
-		$user_id = get_current_user_id();
+		 $user_id = get_current_user_id();
 		$user_meta = get_user_meta($user_id); 
-		if(get_theme_mod('social-share-facebook')=1){
-		echo '<i class="fa fa-facebook"></i>'.$user_meta['fb_url'][0];
-		return;
-		}elseif(get_theme_mod('social-share-twitter')=1){
-		echo '<i class="fa fa-twitter"></i>'.$user_meta['twitter_url'][0];
-		}elseif(get_theme_mod('social-share-linkedin')=1){
-		echo '<i class="fa fa-google-plus"></i>'.$user_meta['gplus_url'][0];
-		}elseif(get_theme_mod('social-share-linkedin')=1){
-		echo '<i class="fa fa-linkedin"></i>'.$user_meta['linkedin_url'][0];
-		}elseif(get_theme_mod('social-share-linkedin')=1){
-		echo '<i class="fa fa-behance"></i>'.$user_meta['behance_url'][0];
-		}elseif(get_theme_mod('social-share-linkedin')=1){
-		echo '<i class="fa fa-youtube"></i>'.$user_meta['youtube_url'][0];
-		}elseif(get_theme_mod('social-share-linkedin')=1){
-		echo '<i class="fa fa-dribbble"></i>'.$user_meta['snapchat_url'][0];
-		}elseif(get_theme_mod('social-share-linkedin')=1){
-		echo '<i class="fa fa-skype"></i>'.$user_meta['skype_url'][0];
-		}elseif(get_theme_mod('social-share-linkedin')=1){
-		echo '<i class="fa fa-pinterest"></i>'.$user_meta['pinterest_url'][0];
-		}}elseif{
-			return;
+		if(get_the_author_meta('fb_url')){
+			echo '<a href="'.get_the_author_meta('fb_url').'" target="_blank"><i class="fa fa-facebook"></i></a>';
 		}
-		
+		if(get_the_author_meta('twitter_url')){
+			echo '<a href="'.get_the_author_meta('twitter_url').'" target="_blank"><i class="fa fa-twitter"></i></a>';
+		}
+		if(get_the_author_meta('social-share-linkedin')){
+			echo '<a href="'.get_the_author_meta('gplus_url').'" target="_blank"><i class="fa fa-google-plus"></i></a>';
+		}
+		if(get_the_author_meta('social-share-email')){
+			echo '<i class="fa fa-linkedin">'.$get_the_author_meta['linkedin_url'].'</i>';
+		}
+		if(get_the_author_meta('social-share-linkedin')){
+			echo '<i class="fa fa-behance">'.$get_the_author_meta['behance_url'].'</i>';
+		}
+		if(get_the_author_meta('social-share-linkedin')){
+			echo '<i class="fa fa-youtube">'.$get_the_author_meta['youtube_url'].'</i>';
+		}
+		if(get_the_author_meta('social-share-linkedin')){
+			echo '<i class="fa fa-dribbble">'.$get_the_author_meta['snapchat_url'].'</i>';
+		}
+		if(get_the_author_meta('social-share-linkedin')){
+			echo '<i class="fa fa-skype">'.$get_the_author_meta['skype_url'].'</i>';
+		}
+		if(get_the_author_meta('social-share-linkedin')){
+			echo '<i class="fa fa-pinterest">'.$get_the_author_meta['pinterest_url'].'</i>';
+		}
 		
 
 	echo '</div></div>';
