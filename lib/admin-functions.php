@@ -138,7 +138,8 @@ function add_social_share_icons($content)
 	
 	$postThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 	$pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$url.'&amp;media='.$postThumbnail[0].'&amp;description='.$title;
-	$deliciousURL = 'http://profitquery.com/add-to/delicious/?url='.$url.'&title='.$title;
+	//$deliciousURL = 'http://profitquery.com/add-to/delicious/?url='.$url.'&title='.$title;
+	$deliciousURL = 'https://delicious.com/save?v='.$url.'&title='.$title;
 
     if(get_option("social-share-facebook") == 1)
     {
