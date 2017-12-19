@@ -307,6 +307,13 @@ function my_profile_update( $user_id, $old_user_data ) {
 	// Do something
 	 update_user_meta($user_id, 'fb_url', $_POST['fb_url']);
 	 update_user_meta($user_id, 'twitter_url', $_POST['twitter_url']);
+	 update_user_meta($user_id, 'gplus_url', $_POST['gplus_url']);
+	 update_user_meta($user_id, 'linkedin_url', $_POST['linkedin_url']);
+	 update_user_meta($user_id, 'behance_url', $_POST['behance_url']);
+	 update_user_meta($user_id, 'youtube_url', $_POST['youtube_url']);
+	 update_user_meta($user_id, 'snapchat_url', $_POST['snapchat_url']);
+	 update_user_meta($user_id, 'skype_url', $_POST['skype_url']);
+	 update_user_meta($user_id, 'pinterest_url', $_POST['pinterest_url']);
 }
  
 add_action('edit_user_profile_update', 'update_extra_profile_fields');
@@ -346,7 +353,7 @@ function custom_user_profile_fields( $profileuser ) {
 		</tr>
 		<tr>
 			<th>
-				<label for="gplus_url"><?php esc_html_e( 'Twitter url' ); ?></label>
+				<label for="gplus_url"><?php esc_html_e( 'Google Plus url' ); ?></label>
 			</th>
 			<td>
 				<input type="text" name="gplus_url" id="gplus_url" value="<?php echo esc_attr( get_the_author_meta( 'gplus_url', $profileuser->ID ) ); ?>" class="regular-text" />
@@ -355,7 +362,7 @@ function custom_user_profile_fields( $profileuser ) {
 		</tr>
 		<tr>
 			<th>
-				<label for="linkedin_url"><?php esc_html_e( 'Twitter url' ); ?></label>
+				<label for="linkedin_url"><?php esc_html_e( 'Linkedin  url' ); ?></label>
 			</th>
 			<td>
 				<input type="text" name="linkedin_url" id="linkedin_url" value="<?php echo esc_attr( get_the_author_meta( 'linkedin_url', $profileuser->ID ) ); ?>" class="regular-text" />
@@ -364,16 +371,16 @@ function custom_user_profile_fields( $profileuser ) {
 		</tr>
 		<tr>
 			<th>
-				<label for="behance_url"><?php esc_html_e( 'Twitter url' ); ?></label>
+				<label for="behance_url"><?php esc_html_e( 'Behance url' ); ?></label>
 			</th>
 			<td>
 				<input type="text" name="behance_url" id="behance_url" value="<?php echo esc_attr( get_the_author_meta( 'behance_url', $profileuser->ID ) ); ?>" class="regular-text" />
-				<br><span class="description"><?php esc_html_e( 'behance url.', 'text-domain' ); ?></span>
+				<br><span class="description"><?php esc_html_e( 'Behance url.', 'text-domain' ); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
-				<label for="youtube_url"><?php esc_html_e( 'Twitter url' ); ?></label>
+				<label for="youtube_url"><?php esc_html_e( 'Youtube url' ); ?></label>
 			</th>
 			<td>
 				<input type="text" name="youtube_url" id="youtube_url" value="<?php echo esc_attr( get_the_author_meta( 'youtube_url', $profileuser->ID ) ); ?>" class="regular-text" />
@@ -382,7 +389,7 @@ function custom_user_profile_fields( $profileuser ) {
 		</tr>
 		<tr>
 			<th>
-				<label for="snapchat_url"><?php esc_html_e( 'Twitter url' ); ?></label>
+				<label for="snapchat_url"><?php esc_html_e( 'Snapchat url' ); ?></label>
 			</th>
 			<td>
 				<input type="text" name="snapchat_url" id="snapchat_url" value="<?php echo esc_attr( get_the_author_meta( 'snapchat_url', $profileuser->ID ) ); ?>" class="regular-text" />
@@ -391,7 +398,7 @@ function custom_user_profile_fields( $profileuser ) {
 		</tr>
 		<tr>
 			<th>
-				<label for="skype_url"><?php esc_html_e( 'Twitter url' ); ?></label>
+				<label for="skype_url"><?php esc_html_e( 'Skype url' ); ?></label>
 			</th>
 			<td>
 				<input type="text" name="skype_url" id="skype_url" value="<?php echo esc_attr( get_the_author_meta( 'skype_url', $profileuser->ID ) ); ?>" class="regular-text" />
@@ -400,7 +407,7 @@ function custom_user_profile_fields( $profileuser ) {
 		</tr>
 		<tr>
 			<th>
-				<label for="pinterest_url"><?php esc_html_e( 'Twitter url' ); ?></label>
+				<label for="pinterest_url"><?php esc_html_e( 'Pinterest url' ); ?></label>
 			</th>
 			<td>
 				<input type="text" name="pinterest_url" id="pinterest_url" value="<?php echo esc_attr( get_the_author_meta( 'pinterest_url', $profileuser->ID ) ); ?>" class="regular-text" />

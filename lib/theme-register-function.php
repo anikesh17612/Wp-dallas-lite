@@ -431,7 +431,7 @@ function wp_dallas_option($wp_customize){
 		array(
 					'section' =>'layout_styling',
 					'settings' => 'separatorline',
-					'label'    => esc_html__( 'Footer Button Layout Settings', 'wp_dallas_lite' ),
+					'label'    => esc_html__( 'Footer Background Settings', 'wp_dallas_lite' ),
 					'type'     => 'hidden',
 					'class'	   => 'layout_separator',
 					)

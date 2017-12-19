@@ -81,26 +81,26 @@ echo '<div class="post-author-meta row">';
 		if(get_the_author_meta('twitter_url')){
 			echo '<a href="'.get_the_author_meta('twitter_url').'" target="_blank"><i class="fa fa-twitter"></i></a>';
 		}
-		if(get_the_author_meta('social-share-linkedin')){
+		if(get_the_author_meta('gplus_url')){
 			echo '<a href="'.get_the_author_meta('gplus_url').'" target="_blank"><i class="fa fa-google-plus"></i></a>';
 		}
-		if(get_the_author_meta('social-share-email')){
-			echo '<i class="fa fa-linkedin">'.$get_the_author_meta['linkedin_url'].'</i>';
+		if(get_the_author_meta('linkedin_url')){
+			echo '<a href="'.get_the_author_meta('linkedin_url').'" target="_blank"><i class="fa fa-linkedin"></i></a>';
 		}
-		if(get_the_author_meta('social-share-linkedin')){
-			echo '<i class="fa fa-behance">'.$get_the_author_meta['behance_url'].'</i>';
+		if(get_the_author_meta('behance_url')){
+			echo '<a href="'.get_the_author_meta('behance_url').'" target="_blank"><i class="fa fa-behance"></i></a>';
 		}
-		if(get_the_author_meta('social-share-linkedin')){
-			echo '<i class="fa fa-youtube">'.$get_the_author_meta['youtube_url'].'</i>';
+		if(get_the_author_meta('youtube_url')){
+			echo '<a href="'.get_the_author_meta('youtube_url').'" target="_blank"><i class="fa fa-youtube"></i></a>';
 		}
-		if(get_the_author_meta('social-share-linkedin')){
-			echo '<i class="fa fa-dribbble">'.$get_the_author_meta['snapchat_url'].'</i>';
+		if(get_the_author_meta('snapchat_url')){
+			echo '<a href="'.get_the_author_meta('snapchat_url').'" target="_blank"><i class="fa fa-dribbble"></i></a>';
 		}
-		if(get_the_author_meta('social-share-linkedin')){
-			echo '<i class="fa fa-skype">'.$get_the_author_meta['skype_url'].'</i>';
+		if(get_the_author_meta('skype_url')){
+			echo '<a href="'.get_the_author_meta('skype_url').'" target="_blank"><i class="fa fa-skype"></i></a>';
 		}
-		if(get_the_author_meta('social-share-linkedin')){
-			echo '<i class="fa fa-pinterest">'.$get_the_author_meta['pinterest_url'].'</i>';
+		if(get_the_author_meta('pinterest_url')){
+			echo '<a href="'.get_the_author_meta('pinterest_url').'" target="_blank"><i class="fa fa-pinterest"></i></a>';
 		}
 		
 
