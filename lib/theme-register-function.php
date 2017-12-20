@@ -18,7 +18,7 @@ function wp_dallas_option($wp_customize){
 	$wp_customize->add_panel( 'blog_layout', array(
 		'priority'       => 20,
 		'blog_layout' => '',
-		'title'          => __( 'WP Dallas Lite Option', 'wp_dallas_lite' ),
+		'title'          => __( 'WP Dallas Lite Options', 'wp_dallas_lite' ),
 		'description'    => __( 'Set editable text for certain content.', 'wp_dallas_lite' ),
 	) );
 	$wp_customize->add_section( 'Blog_layout_option' , array(
