@@ -34,9 +34,11 @@
 							) );
 						?>
 					</div>
+					<?php if(get_theme_mod('facebooklogo') != '' || get_theme_mod('twitterlogo') != '' || get_theme_mod('googlepluslogo') != '' || get_theme_mod('linkedinlogo') != '' || get_theme_mod('behancelogo') != '' || get_theme_mod('youtubelogo') != '' || get_theme_mod('snapchatlogo') != '' || get_theme_mod('skypelogo') != '' || get_theme_mod('whatsapplogo') != '' || get_theme_mod('pinterestlogo') != '' || get_theme_mod('customlogo') != ''){ ?>
 					<div class="social-icon col-md-6 col-sm-12 col-xs-12">
 						<?php echo socialicon();?>
 					</div>
+					<?php } ?>
 				</div>
 		</div>
 	</div>

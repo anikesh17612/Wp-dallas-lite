@@ -58,6 +58,7 @@ $authors_bio = array_filter( array_map( function( $a ) {
 )
 );
 //echo '<pre>';print_r(get_the_author_meta('url'));echo '</pre>';
+
 echo '<div class="post-author-meta row">';
 	echo '<div class="author-meta col-md-2 col-sm-6 col-xs-6">
 	<div class="author-img">';
@@ -69,6 +70,7 @@ echo '<div class="post-author-meta row">';
 	echo '<div class="author-desc">';
 		echo $authors_bio['description'];
 	echo '</div>';
+	if(get_the_author_meta('url')!='' || get_the_author_meta(fb_url)!='' || get_the_author_meta('twitter_url')!='' || get_the_author_meta('gplus_url')!='' || get_the_author_meta('linkedin_url')!='' || get_the_author_meta('behance_url')!='' || get_the_author_meta('youtube_url')!='' || get_the_author_meta('snapchat_url')!='' || get_the_author_meta('skype_url')!='' || get_the_author_meta('pinterest_url')!='' ){
 	echo '<div class="author-meta-social-link">';
 	if(get_the_author_meta('url')){
 		echo '<a href="'.get_the_author_meta('url').'" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>';
@@ -104,12 +106,14 @@ echo '<div class="post-author-meta row">';
 		}
 		
 
-	echo '</div></div>';
+		echo '</div>';
+	}
+	echo '</div>';
 	
 echo '</div>';
 
 $tags = wp_get_post_tags($post->ID);
-	if ($tags) {
+	if ($tags!='') {
 		echo '<h1>Related Posts</h1>';
 		$first_tag = $tags[0]->term_id;
 		$args=array(

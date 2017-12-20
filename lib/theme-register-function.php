@@ -18,7 +18,7 @@ function wp_dallas_option($wp_customize){
 	$wp_customize->add_panel( 'blog_layout', array(
 		'priority'       => 20,
 		'blog_layout' => '',
-		'title'          => __( 'Wp Dallas Lite Option', 'wp_dallas_lite' ),
+		'title'          => __( 'WP Dallas Lite Option', 'wp_dallas_lite' ),
 		'description'    => __( 'Set editable text for certain content.', 'wp_dallas_lite' ),
 	) );
 	$wp_customize->add_section( 'Blog_layout_option' , array(
@@ -152,7 +152,7 @@ function wp_dallas_option($wp_customize){
 	/*---------All Logo & favicon---------------------  */
 	
 	$wp_customize->add_section( 'logo_favicon_section' , array(
-		'title'    => __('All Logo & favicon','wp_dallas_lite'),
+		'title'    => __('All Logo & Favicon','wp_dallas_lite'),
 		'panel'    => 'blog_layout',
 		'priority' => 10
 	) );
@@ -373,26 +373,6 @@ function wp_dallas_option($wp_customize){
 		'priority' => 10
 	) );
 	
-	$wp_customize->add_setting( 'top_header_color', array(
-		 'default'           => '#666'
-	) );
-	
-	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'link_top_header_color', array(
-		'label'      => __( 'Top Header Color', 'wp_dallas_lite' ),
-		'section'    => 'layout_styling',
-		'settings'   => 'top_header_color',		
-	) ) );
-	
-	$wp_customize->add_setting( 'header_color', array(
-		 'default'           => '#fff'
-	) );
-	
-	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'link_header_color', array(
-		'label'      => __( 'Header Color', 'wp_dallas_lite' ),
-		'section'    => 'layout_styling',
-		'settings'   => 'header_color',
-	) ) );
-	
 	$wp_customize->add_setting( 'body_bg_color', array(
 		 'default'           => '#fff'
 	) );
@@ -423,6 +403,26 @@ function wp_dallas_option($wp_customize){
 		'settings'   => 'hover_color',
 	) ) );
 	
+	$wp_customize->add_setting( 'top_header_color', array(
+		 'default'           => '#1a1c28'
+	) );
+	
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'link_top_header_color', array(
+		'label'      => __( 'Top Header Color', 'wp_dallas_lite' ),
+		'section'    => 'layout_styling',
+		'settings'   => 'top_header_color',		
+	) ) );
+	
+	$wp_customize->add_setting( 'header_color', array(
+		 'default'           => '#222534'
+	) );
+	
+	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'link_header_color', array(
+		'label'      => __( 'Header Color', 'wp_dallas_lite' ),
+		'section'    => 'layout_styling',
+		'settings'   => 'header_color',
+	) ) );
+	
 	
 	/*  Layout Separator code  */
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -441,7 +441,7 @@ function wp_dallas_option($wp_customize){
 	/*  Layout Separator code  */
 	
 	$wp_customize->add_setting( 'footer_color', array(
-		 'default'           => '#666'
+		 'default'           => '#1A1C28'
 	) );
 	
 	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'footer_bg_color', array(
@@ -451,7 +451,7 @@ function wp_dallas_option($wp_customize){
 	) ) );
 	
 	$wp_customize->add_setting( 'copyright_color', array(
-		 'default'           => '#666'
+		 'default'           => '#000000'
 	) );
 	
 	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'copyright_bg_color', array(
@@ -697,19 +697,19 @@ function wp_dallas_option($wp_customize){
 	));
 	
 	$wp_customize->add_setting( 'h2_font_size', array(
-		 'default'           => '32'
+		 'default'           => '36'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
 	    $wp_customize,
 		'h2_font_size',
-		//Heading 1
+		//Heading 2
 		array(
 			'section' =>'typographySetting',
 			'settings' => 'h2_font_size',
 			'label'    => esc_html__( 'H2 Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
-			'default'  => '32',
+			'default'  => '36',
 		)
 	));
 	

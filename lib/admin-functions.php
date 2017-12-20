@@ -126,8 +126,12 @@ add_action("admin_init", "social_share_settings");
 
 
 function add_social_share_icons($content)
-{
-    $html = "<div class='post-social-share'><div class='share-on'>Share on: </div>";
+{	
+
+
+	
+	$html = "<div class='post-social-share'><div class='share-on'>Share on: </div>";
+
 
     global $post;
 
@@ -163,27 +167,34 @@ function add_social_share_icons($content)
 	
 	if(get_option("social-share-stumbleupon") == 1)
     {
-        $html = $html . "<div class='reddit'><a target='_blank' href='https://www.stumbleupon.com/submit?url=" . $url . "'><i class='fa fa-stumbleupon' aria-hidden='true'></i></a></div>";
+        $html = $html . "<div class='stumbleupon'><a target='_blank' href='https://www.stumbleupon.com/submit?url=" . $url . "'><i class='fa fa-stumbleupon' aria-hidden='true'></i></a></div>";
     }
 	if(get_option("social-share-delicious") == 1)
     {
-        $html = $html . "<div class='reddit'><a target='_blank' href='".$deliciousURL."'><i class='fa fa-delicious' aria-hidden='true'></i></a></div>";
+        $html = $html . "<div class='delicious'><a target='_blank' href='".$deliciousURL."'><i class='fa fa-delicious' aria-hidden='true'></i></a></div>";
     }
 	if(get_option("social-share-pinterest") == 1)
     {
-        $html = $html . "<div class='reddit'><a target='_blank' href='".$pinterestURL."'><i class='fa fa-pinterest' aria-hidden='true'></i></a></div>";
+        $html = $html . "<div class='pinterest'><a target='_blank' href='".$pinterestURL."'><i class='fa fa-pinterest' aria-hidden='true'></i></a></div>";
     }
 	if(get_option("social-share-google-plus") == 1)
     {
-        $html = $html . "<div class='reddit'><a target='_blank' href='https://plus.google.com/share?url=" . $url . "'><i class='fa fa-google-plus' aria-hidden='true'></i></a></div>";
+        $html = $html . "<div class='google-plus'><a target='_blank' href='https://plus.google.com/share?url=" . $url . "'><i class='fa fa-google-plus' aria-hidden='true'></i></a></div>";
     }
-	if(get_option("social-share-email-checkbox") == 1)
+	if(get_option("social-share-email") == 1)
     {
-        $html = $html . "<div class='reddit'><a target='_blank' href='mailto:?subject=".$title."' title='Share by email'><i class='fa fa-google-plus' aria-hidden='true'></i></a></div>";
+        $html = $html . "<div class='email'><a target='_blank' href='mailto:?subject=".$title."' title='Share by email'><i class='fa fa-envelope-o' aria-hidden='true'></i></a></div>";
     }
 	
 
     $html = $html . "<div class='clear'></div></div>";
+	
+	if(get_option("social-share-facebook") == 1 || get_option("social-share-twitter") == 1 || get_option("social-share-linkedin") == 1 || get_option("social-share-reddit") == 1 ||  get_option("social-share-stumbleupon") == 1 || get_option("social-share-delicious") == 1 || get_option("social-share-pinterest") == 1 || get_option("social-share-google-plus") == 1 || get_option("social-share-email") == 1 ){
+	     $html;
+	}
+	else{
+		return;
+	}
 
     return $content = $content . $html;
 }
