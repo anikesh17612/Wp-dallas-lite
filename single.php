@@ -96,7 +96,7 @@ echo '<div class="post-author-meta row">';
 			echo '<a href="'.get_the_author_meta('youtube_url').'" target="_blank"><i class="fa fa-youtube"></i></a>';
 		}
 		if(get_the_author_meta('snapchat_url')){
-			echo '<a href="'.get_the_author_meta('snapchat_url').'" target="_blank"><i class="fa fa-dribbble"></i></a>';
+			echo '<a href="'.get_the_author_meta('snapchat_url').'" target="_blank"><i class="fa fa-snapchat"></i></a>';
 		}
 		if(get_the_author_meta('skype_url')){
 			echo '<a href="'.get_the_author_meta('skype_url').'" target="_blank"><i class="fa fa-skype"></i></a>';
