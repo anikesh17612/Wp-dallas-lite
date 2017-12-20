@@ -37,7 +37,7 @@ jQuery(document).ready(function(){
 jQuery(document).ready(function(){
 	jQuery(".backtotop").hide();
 	jQuery(".backtotop").on('click',function(){
-		jQuery("html, body").animate({scrollTop: $("body").offset().top}, 500);
+		jQuery("html, body").animate({scrollTop: jQuery("body").offset().top}, 500);
 	});
 })	
 
