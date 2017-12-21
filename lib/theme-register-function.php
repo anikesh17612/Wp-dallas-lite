@@ -494,7 +494,7 @@ function wp_dallas_option($wp_customize){
 	));
 	
 	$wp_customize->add_setting( 'button_bg_color', array(
-		 'default'           => '#32aad6'
+		 'default'           => '#222533'
 	) );
 	
 	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'link_background_color', array(
@@ -506,7 +506,7 @@ function wp_dallas_option($wp_customize){
 	
 		
 	$wp_customize->add_setting( 'button_hover_bg_color', array(
-		 'default'           => '#00aeef'	 
+		 'default'           => '#363b52'	 
 	) );
 	
 	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'link_hover_background_color', array(
@@ -563,7 +563,7 @@ function wp_dallas_option($wp_customize){
 	   )));
 	
 	$wp_customize->add_setting( 'body_google_font', array(
-		 'default'           => 'Source Sans Pro' 
+		 'default'           => 'Lato' 
 	) );
 	
 	
@@ -575,7 +575,7 @@ function wp_dallas_option($wp_customize){
 		'settings' => 'body_google_font',
 		'label'    => esc_html__( 'Body Google Font', 'wp_dallas_lite' ),
 		'type'     => 'select',
-		'default'  => 'Source Sans Pro',
+		'default'  => 'Lato',
 		'choices'  => get_google_fonts(),
 		'google_font' => true,
 		'google_font_weight' => 'body_font_weight',
@@ -584,7 +584,7 @@ function wp_dallas_option($wp_customize){
 	));
 	
 	$wp_customize->add_setting( 'body_font_size', array(
-		 'default'           => '18'
+		 'default'           => '16'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -595,12 +595,12 @@ function wp_dallas_option($wp_customize){
 					'settings' => 'body_font_size',
 					'label'    => esc_html__( 'Body Font Size', 'wp_dallas_lite' ),
 					'type'     => 'number',
-					'default'  => '18',
+					'default'  => '16',
 				)
 	));
 	
 	$wp_customize->add_setting( 'menu_google_font', array(
-		 'default'           => 'Roboto Slab'	 
+		 'default'           => 'lato'	 
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -612,7 +612,7 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'menu_google_font',
 			'label'    => esc_html__( 'Menu Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
-			'default'  => 'Roboto Slab',
+			'default'  => 'lato',
 			'choices'  => get_google_fonts(),
 			'google_font' => true,
 			'google_font_weight' => 'menu_font_weight',
@@ -621,7 +621,7 @@ function wp_dallas_option($wp_customize){
 	));
 	
 	$wp_customize->add_setting( 'menu_font_size', array(
-		 'default'           => '14'
+		 'default'           => '15'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -632,12 +632,12 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'menu_font_size',
 			'label'    => esc_html__( 'Menu Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
-			'default'  => '14',
+			'default'  => '15',
 		)
 	));
 	
 	$wp_customize->add_setting( 'h1_google_font', array(
-		 'default'           => 'Roboto Slab'
+		 'default'           => 'lato'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -649,7 +649,7 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'h1_google_font',
 			'label'    => esc_html__( 'H1 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
-			'default'  => 'Roboto Slab',
+			'default'  => 'lato',
 			'choices'  => get_google_fonts(),
 			'google_font' => true,
 			'google_font_weight' => 'menu_font_weight',
@@ -675,7 +675,7 @@ function wp_dallas_option($wp_customize){
 	));
 	
 	$wp_customize->add_setting( 'h2_google_font', array(
-		 'default'           => 'Roboto Slab'
+		 'default'           => 'lato'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -687,7 +687,7 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'h2_google_font',
 			'label'    => esc_html__( 'H2 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
-			'default'  => 'Roboto Slab',
+			'default'  => 'lato',
 			'choices'  => get_google_fonts(),
 			'google_font' => true,
 			'google_font_weight' => 'menu_font_weight',
@@ -713,7 +713,7 @@ function wp_dallas_option($wp_customize){
 	));
 	
 	$wp_customize->add_setting( 'h3_google_font', array(
-		 'default'           => 'Roboto Slab'
+		 'default'           => 'lato'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -725,7 +725,7 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'h3_google_font',
 			'label'    => esc_html__( 'H3 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
-			'default'  => 'Roboto Slab',
+			'default'  => 'lato',
 			'choices'  => get_google_fonts(),
 			'google_font' => true,
 			'google_font_weight' => 'menu_font_weight',
@@ -734,7 +734,7 @@ function wp_dallas_option($wp_customize){
 	));
 	
 	$wp_customize->add_setting( 'h3_font_size', array(
-		 'default'           => '28'	 
+		 'default'           => '30'	 
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -746,12 +746,12 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'h3_font_size',
 			'label'    => esc_html__( 'H3 Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
-			'default'  => '28',
+			'default'  => '30',
 		)
 	));
 	
 	$wp_customize->add_setting( 'h4_google_font', array(
-		 'default'           => 'Roboto Slab'
+		 'default'           => 'lato'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -763,7 +763,7 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'h4_google_font',
 			'label'    => esc_html__( 'H4 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
-			'default'  => 'Roboto Slab',
+			'default'  => 'lato',
 			'choices'  => get_google_fonts(),
 			'google_font' => true,
 			'google_font_weight' => 'menu_font_weight',
@@ -772,7 +772,7 @@ function wp_dallas_option($wp_customize){
 	));
 	
 	$wp_customize->add_setting( 'h4_font_size', array(
-		 'default'           => '22'	 
+		 'default'           => '27'	 
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -784,12 +784,12 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'h4_font_size',
 			'label'    => esc_html__( 'H4 Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
-			'default'  => '22',
+			'default'  => '27',
 		)
 	));
 	
 	$wp_customize->add_setting( 'h5_google_font', array(
-		 'default'           => 'Roboto Slab'
+		 'default'           => 'lato'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -801,7 +801,7 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'h5_google_font',
 			'label'    => esc_html__( 'H5 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
-			'default'  => 'Roboto Slab',
+			'default'  => 'lato',
 			'choices'  => get_google_fonts(),
 			'google_font' => true,
 			'google_font_weight' => 'menu_font_weight',
@@ -810,7 +810,7 @@ function wp_dallas_option($wp_customize){
 	));
 	
 	$wp_customize->add_setting( 'h5_font_size', array(
-		 'default'           => '18'
+		 'default'           => '25'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -822,12 +822,12 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'h5_font_size',
 			'label'    => esc_html__( 'H5 Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
-			'default'  => '18',
+			'default'  => '25',
 		)
 	));
 	
 	$wp_customize->add_setting( 'h6_google_font', array(
-		 'default'           => 'Roboto Slab'
+		 'default'           => 'lato'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -839,7 +839,7 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'h6_google_font',
 			'label'    => esc_html__( 'H6 Google Font', 'wp_dallas_lite' ),
 			'type'     => 'select',
-			'default'  => 'Roboto Slab',
+			'default'  => 'lato',
 			'choices'  => get_google_fonts(),
 			'google_font' => true,
 			'google_font_weight' => 'menu_font_weight',
@@ -850,7 +850,7 @@ function wp_dallas_option($wp_customize){
 	
 	
 	$wp_customize->add_setting( 'h6_font_size', array(
-		 'default'           => '16'
+		 'default'           => '20'
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -862,7 +862,7 @@ function wp_dallas_option($wp_customize){
 			'settings' => 'h6_font_size',
 			'label'    => esc_html__( 'H6 Font Size', 'wp_dallas_lite' ),
 			'type'     => 'number',
-			'default'  => '16',
+			'default'  => '20',
 		)
 	));
 	

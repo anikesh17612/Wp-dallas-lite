@@ -113,8 +113,8 @@ echo '<div class="post-author-meta row">';
 echo '</div>';
 
 $tags = wp_get_post_tags($post->ID);
-	if ($tags!='') {
-		echo '<h1>Related Posts</h1>';
+	if ($tags !='') {
+		
 		$first_tag = $tags[0]->term_id;
 		$args=array(
 		'tag__in' => array($first_tag),
@@ -124,19 +124,32 @@ $tags = wp_get_post_tags($post->ID);
 		);
 		$my_query = new WP_Query($args);
 		if( $my_query->have_posts() ) {
-			while ($my_query->have_posts()) : $my_query->the_post(); 
 			echo '<div class="related_post">';
+			echo '<h1>Related Posts</h1>';
+			echo '<div class="row">';
+			echo '<ul>';
+			while ($my_query->have_posts()) : $my_query->the_post(); 
+			echo '<li>';
+			echo '<p class="rel-img">';
 			echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) );
+			echo '</p><h3>';?>
+			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+			<p>
+			<?php 
 			$categories_list = get_the_category_list( esc_html__( ', ', 'wp_dallas_lite' ) );
-			?>
-			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+			?>			
 			<?php if($categories_list){ 
 				echo '<span class="post_category">'.$categories_list.'</span>';
-			}?>
-			</div>
+			}
+			echo '</p>
+			</li>';
+			?>
+			
 	 
 			<?php
 			endwhile;
+			echo '</ul>
+			</div></div>';
 			}
 		wp_reset_query();
 	}
