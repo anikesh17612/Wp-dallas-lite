@@ -211,9 +211,8 @@ function load_posts_by_ajax_callback() {
 	$my_posts = new WP_Query( $args );
 	if ( $my_posts->have_posts() ) :
 		?>
-		<?php while ( $my_posts->have_posts() ) : $my_posts->the_post() ?>
-			<h2><?php the_title() ?></h2>
-			<?php the_excerpt() ?>
+		<?php while ( $my_posts->have_posts() ) : $my_posts->the_post() ?>	 
+			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 		<?php endwhile ?>
 		<?php
 	endif;

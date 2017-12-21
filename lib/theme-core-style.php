@@ -16,7 +16,7 @@ if(!function_exists('wp_dallas_lite_css_generator')){
         /* ******************************************************
         **********  Theme Options for Color settings   **********
         *********************************************************/
-            $major_color = get_theme_mod( 'major_color', '#ffcc33' );
+            $major_color = get_theme_mod( 'major_color', '#ffc414' );
             if($major_color){
                 $output .= 'a, a:visited, .bottom-widget .contact-info i,.bottom-widget .widget ul li a:hover, .latest-blog-content .latest-post-button:hover,.meta-category a:hover,.common-menu-wrap .nav>li>a:hover,.common-menu-wrap .nav>li.active>a,
                 .common-menu-wrap .nav>li.menu-item-has-children.active > a:after,.common-menu-wrap .nav>li.menu-item-has-children > a:hover:after,
@@ -46,7 +46,7 @@ if(!function_exists('wp_dallas_lite_css_generator')){
 
             // .select2-container .select2-dropdown .select2-results ul li
 
-            $hover_color = get_theme_mod( 'hover_color', '#ffcc33' );
+            $hover_color = get_theme_mod( 'hover_color', '#e6ac00' );
             if( $hover_color ){
                 $output .= 'a:hover, .post-content-wrapper-controller:hover, .post-content-wrapper-controller .fa.pull-left:hover, .post-content-wrapper-controller .fa.pull-right:hover , .widget.widget_rss ul li a,.social-share a:hover{ color: '.esc_attr( $hover_color ) .'; }';
                 $output .= '.error-page-inner a.btn.btn-primary.btn-lg:hover,.btn.btn-primary:hover,input[type=button]:hover{ background-color: '.esc_attr( $hover_color ) .'; }';

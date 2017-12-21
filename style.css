@@ -1306,7 +1306,7 @@ ul.contact-info li .fa{
 
 .site-main{}
 
-.site-main article.post{
+.site-main article.type-post{
 	padding: 20px;
 	border: 1px solid #ddd;
 	box-shadow: 0 0 5px #ccc;

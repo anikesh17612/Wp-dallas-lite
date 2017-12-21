@@ -29,14 +29,7 @@ function wp_dallas_option($wp_customize){
 	
 	$wp_customize->add_setting( 'blog_layout_selection', array(
 		 'default'           => 'blogleft'
-	) );
-	$wp_customize->add_setting( 'select_blog_single_page_layout', array(
-		 'default'           => 'leftside' 
-	) );
-	
-	$wp_customize->add_setting( 'select_pagination_layout', array(
-		 'default'           => 'pagiloadmore'	 
-	) );
+	) );	
 	// Add control
 	$wp_customize->add_control( new WP_Customize_Control(
 	    $wp_customize,
@@ -53,6 +46,9 @@ function wp_dallas_option($wp_customize){
 				'blogfullwidth' => 'Blog Full Width',
 		  ),
 	   )));
+	$wp_customize->add_setting( 'select_blog_single_page_layout', array(
+		 'default'           => 'leftside' 
+	) );
 	   // Add control
 	$wp_customize->add_control( new WP_Customize_Control(
 	    $wp_customize,
@@ -69,6 +65,10 @@ function wp_dallas_option($wp_customize){
 				'fullwidth' => 'Single Width Full Width',
 		  ),
 	   )));
+	   
+	$wp_customize->add_setting( 'select_pagination_layout', array(
+		 'default'           => 'pagiloadmore'	 
+	) );
 	   // Add control
 	$wp_customize->add_control( new WP_Customize_Control(
 	    $wp_customize,
@@ -81,8 +81,8 @@ function wp_dallas_option($wp_customize){
 				'selected' => 'selected',
 		        'choices' =>
 				array(
-				'paginumber' => 'Number',
 				'pagiloadmore' => 'Load More',				
+				'paginumber' => 'Number',
 		  ),
 	   )));
 	
@@ -93,7 +93,7 @@ function wp_dallas_option($wp_customize){
 		'priority' => 10
 	) );	
 	
-	$wp_customize->add_setting( 'enableCopyrightText', array(
+	$wp_customize->add_setting( 'enable_copyright_text', array(
 		 'default'           => '1'
 	) );
 	
@@ -103,7 +103,7 @@ function wp_dallas_option($wp_customize){
 		    array(
 		        'label'    => __( 'Enable Copyright Text', 'wp_dallas_lite' ),
 		        'section'  => 'footer_section',
-		        'settings' => 'enableCopyrightText',
+		        'settings' => 'enable_copyright_text',
 				'type'=> 'radio',
 		        'choices' =>
 				array(
@@ -112,7 +112,7 @@ function wp_dallas_option($wp_customize){
 		),
 	)));
 	
-	$wp_customize->add_setting( 'copyrightText', array(
+	$wp_customize->add_setting( 'copyright_text', array(
 		 'default'           => 'Copyright © 2017 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>' 
 	) );
 	
@@ -122,9 +122,8 @@ function wp_dallas_option($wp_customize){
 		    array(
 		        'label'    => __( 'Copyright Text', 'wp_dallas_lite' ),
 		        'section'  => 'footer_section',
-		        'settings' => 'copyrightText',
-				'type'=> 'textarea',
-		        'choices' =>
+		        'settings' => 'copyright_text',
+				'type'	   => 'textarea',
 				array(
 				'textarea_rows' => 5,				
 		  ),
@@ -384,7 +383,7 @@ function wp_dallas_option($wp_customize){
 	) ) );
 	
 	$wp_customize->add_setting( 'major_color', array(
-		 'default'           => '#00aeef'
+		 'default'           => '#ffc414'
 	) );
 	
 	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'link_major_color', array(
@@ -394,7 +393,7 @@ function wp_dallas_option($wp_customize){
 	) ) );
 	
 	$wp_customize->add_setting( 'hover_color', array(
-		 'default'           => '#00a2e8' 
+		 'default'           => '#e6ac00' 
 	) );
 	
 	$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'link_hover_color', array(
