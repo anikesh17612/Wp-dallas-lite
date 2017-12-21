@@ -1165,6 +1165,10 @@ ul.contact-info li .fa {
 }
 /*------ post-social-share ---------*/
 
+.post-social-share{
+	text-align:right;
+}
+
 .post-social-share > div {
     width: auto;
     display: inline-block;
@@ -1176,6 +1180,8 @@ ul.contact-info li .fa {
     text-align: center;
     color: #ffffff;
     border-radius: 100%;
+	margin-left:5px;
+	margin-right:5px;
 }
 .post-social-share > div.facebook a {
     background-color: #3b5999;
@@ -1198,6 +1204,8 @@ ul.contact-info li .fa {
 .post-social-share > div.email a {
     background-color: #ce383a;
 }
+
+
 /*----- WP Subscribe -----*/
 
 #wp-subscribe.wp-subscribe-wrap {
