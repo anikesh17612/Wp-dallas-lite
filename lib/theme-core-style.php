@@ -37,7 +37,7 @@ if(!function_exists('wp_dallas_lite_css_generator')){
             }
 
             if($major_color){
-                $output .= '.team-content4,.portfolio-filter li a:before, .classic-slider .owl-dots .active>span, .widget .tagcloud a:hover, .themeum-pagination li span.page-numbers:hover, .themeum-pagination li a.page-numbers:hover,.themeum-pagination li span.page-numbers.current, #header-section .social-icons li a:hover , #header-section .social-icons li a:focus, #site-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a, .menu-toggle, .backtotop, .btn-default{ background: '. esc_attr($major_color) .'; }';
+                $output .= '.team-content4,.portfolio-filter li a:before, .classic-slider .owl-dots .active>span, .widget .tagcloud a:hover, .themeum-pagination li span.page-numbers:hover, .themeum-pagination li a.page-numbers:hover,.themeum-pagination li span.page-numbers.current, #header-section .social-icons li a:hover , #header-section .social-icons li a:focus, #site-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a, .menu-toggle, .backtotop, .btn-default, #wp-subscribe.wp-subscribe-wrap{ background: '. esc_attr($major_color) .'; }';
             }
 
             if($major_color){
