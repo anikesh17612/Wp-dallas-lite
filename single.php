@@ -130,20 +130,20 @@ $tags = wp_get_post_tags($post->ID);
 			echo '<ul>';
 			while ($my_query->have_posts()) : $my_query->the_post(); 
 			echo '<li>';
-			echo '<p class="rel-img">';
-			echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) );
-			echo '</p><h3>';?>
+			?>
+			<a href="<?php the_permalink() ?>" rel="<?php the_title(); ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><figure><?php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) ); ?></figure></a>
 			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-			<p>
+			
 			<?php 
 			$categories_list = get_the_category_list( esc_html__( ', ', 'wp_dallas_lite' ) );
 			?>			
 			<?php if($categories_list){ 
 				echo '<span class="post_category">'.$categories_list.'</span>';
 			}
-			echo '</p>
-			</li>';
 			?>
+			
+			</li>
+			
 			
 	 
 			<?php
