@@ -30,7 +30,7 @@
 
 	<div class="entry-content">
 				<div class="post-thumbnail"><?php the_post_thumbnail();  ?></div>	
-				<p class="short-description"><?php if ( is_single() ) { ?>
+				<p><?php if ( is_single() ) { ?>
 					<div class="single-entry-content">
 						<?php the_content();?>
 					</div>
