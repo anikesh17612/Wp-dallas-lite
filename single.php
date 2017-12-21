@@ -134,14 +134,6 @@ $tags = wp_get_post_tags($post->ID);
 			<a href="<?php the_permalink() ?>" rel="<?php the_title(); ?>" title="Permanent Link to <?php the_title_attribute(); ?>" class="related_link_image"><figure><?php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) ); ?></figure></a>
 			<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" class="related_link"><?php the_title(); ?></a></h3>
 			
-			<?php 
-			$categories_list = get_the_category_list( esc_html__( ', ', 'wp_dallas_lite' ) );
-			?>			
-			<?php if($categories_list){ 
-				echo '<span class="post_category">'.$categories_list.'</span>';
-			}
-			?>
-			
 			</li>
 			
 			

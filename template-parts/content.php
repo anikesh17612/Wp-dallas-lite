@@ -30,15 +30,19 @@
 
 	<div class="entry-content">
 				<div class="post-thumbnail"><?php the_post_thumbnail();  ?></div>	
-				<p><?php if ( is_single() ) { ?>
+				<?php if ( is_single() ) { ?>
+				<p class="short-description">
 					<div class="single-entry-content">
 						<?php the_content();?>
-					</div>
-				<?php } else {
+					</div></p>
+				<?php  }  else {
 					 if ( get_theme_mod( 'enableExcerpt', true ) ) { 
 						if ( get_theme_mod( 'excerptwordLimit', 330 ) ) {
+							
 							$textlimit = get_theme_mod( 'excerptwordLimit', 330 );
+							echo '<p class="short-description">';
 							echo wpdallas_excerpt_max_charlength($textlimit);
+							echo '</p>';
 						} else {
 						 echo  the_content();
 						}
@@ -56,22 +60,6 @@
 				} 
 			?></p>
 			<?php 
-				
-			/*
-			//This is default comment for wpdallas Blog Excerpts setting implimentaion   	
-
-			the_content( sprintf(
-				wp_kses(
-				 //translators: %s: Name of current post. Only visible to screen readers 
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp_dallas_lite' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) ); */
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wp_dallas_lite' ),
