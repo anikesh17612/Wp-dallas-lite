@@ -965,7 +965,7 @@ ul.social-icons > li{
 
 #footer-section{
 	color: #fff;
-	padding: 15px 0;
+	padding: 10px 0;
 	background: #222533;
 }
 
@@ -1326,4 +1326,11 @@ ul.contact-info li .fa{
 
 .post-author-meta{
 	border: 1px solid #ddd;
+}
+
+
+/*------ copyright -------*/
+.wp-copyright{
+	padding:15px 0;
+	color:#999999;
 }
