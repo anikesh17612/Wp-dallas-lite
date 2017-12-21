@@ -171,7 +171,7 @@ function wp_dallas_lite_scripts() {
 	wp_enqueue_script( 'wp_dallas_lite-loadmore', get_template_directory_uri() . '/assets/js/loadmore.js', array('jquery'), '20151215', true );
 	$translation_array = array( 'templateUrl' => get_template_directory_uri() ,'adminUrl'=>admin_url(),'body_layout'=>get_theme_mod('body_layout','fullwidth_body_layout'));
 	wp_localize_script( 'wp_dallas_lite-loadmore', 'loadmore_params', $translation_array );
-	wp_enqueue_style( 'font-family', '//fonts.googleapis.com/css?family='.get_theme_mod('body_google_font').'|'.get_theme_mod('menu_google_font').'|'.get_theme_mod('h1_google_font').'|'.get_theme_mod('h2_google_font').'|'.get_theme_mod('h3_google_font').'|'.get_theme_mod('h4_google_font').'|'.get_theme_mod('h5_google_font').'|'.get_theme_mod('h6_google_font'));
+	wp_enqueue_style( 'font-family', '//fonts.googleapis.com/css?family='.get_theme_mod('body_google_font', 'Lato').'|'.get_theme_mod('menu_google_font', 'Lato').'|'.get_theme_mod('h1_google_font', 'Lato').'|'.get_theme_mod('h2_google_font', 'Lato').'|'.get_theme_mod('h3_google_font', 'Lato').'|'.get_theme_mod('h4_google_font', 'Lato').'|'.get_theme_mod('h5_google_font', 'Lato').'|'.get_theme_mod('h6_google_font', 'Lato'));
  	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '3.0.0', true );
@@ -419,13 +419,9 @@ function custom_user_profile_fields( $profileuser ) {
 add_action( 'show_user_profile', 'custom_user_profile_fields', 10, 1 );
 add_action( 'edit_user_profile', 'custom_user_profile_fields', 10, 1 );
 
-
- 
-
 /* --------------------------------------------*
 			Required Plugins	
 ---------------------------------------------*/
-
 require_once( get_template_directory()  . '/lib/plugin-check.php');
 
 /* --------------------------------------------*
@@ -433,14 +429,12 @@ require_once( get_template_directory()  . '/lib/plugin-check.php');
 ---------------------------------------------*/
 require_once( get_template_directory()  . '/lib/admin-functions.php'); 
 
-
 /**
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
-
 require_once( get_template_directory()  . '/lib/theme-register-function.php'); 
 require_once( get_template_directory()  . '/lib/googlefonts.php'); 
 require_once( get_template_directory()  . '/lib/theme-core-style.php');

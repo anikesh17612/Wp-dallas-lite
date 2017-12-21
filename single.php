@@ -28,15 +28,15 @@ if(get_theme_mod('select_blog_single_page_layout')=='leftside' || get_theme_mod(
 
 			get_template_part( 'template-parts/content', get_post_type() );
 			$tags_array = get_tags( $args );  
-			  //print_r($tags_array);
 			  
-			foreach($tags_array as $tags){
-				$tagString[] = '<span class="post_tag_name">'.$tags->name.'</span>';
-			}  
-			echo '<div class="tags_list">';
-			echo implode(" ",$tagString);
-			echo '</div>';
-			//the_post_navigation();
+			if($tags_array) {
+				foreach($tags_array as $tags){
+					$tagString[] = '<span class="post_tag_name">'.$tags->name.'</span>';
+				}  
+				echo '<div class="tags_list">';
+				echo implode(" ",$tagString);
+				echo '</div>';
+			}
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
