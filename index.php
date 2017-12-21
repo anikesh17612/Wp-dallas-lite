@@ -73,8 +73,7 @@ $published_posts = $count_posts->publish;
 $default_posts_per_page = get_option( 'posts_per_page' );
 
 if($published_posts > $default_posts_per_page){ 
-	$select_pagination_layout = get_theme_mod('select_pagination_layout', 'pagiloadmore');
-	if($select_pagination_layout){?>
+	if(get_theme_mod('select_pagination_layout') == 'pagiloadmore'){?>
 		<div class="wpdal_pagination">
 			<div class="loadmore"><button class="btn btn-info">Load More...</button></div>		
 			
