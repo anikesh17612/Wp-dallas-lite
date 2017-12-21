@@ -1353,3 +1353,9 @@ ul.contact-info li .fa{
 
 /*----- Tab Styling -----*/
 
+
+/*----- Post Author -----*/
+
+.post-author-meta{
+	border: 1px solid #ddd;
+}
