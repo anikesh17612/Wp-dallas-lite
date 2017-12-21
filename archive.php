@@ -7,9 +7,21 @@
  * @package WP_Dallas_Lite
  */
 
-get_header(); ?>  
+get_header(); ?> 
+<?php 
+if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_layout_selection')==""){ ?>
+	<div class="wpdal-left-sidebar col-md-3 col-sm-12 col-xs-12">
+		<?php get_sidebar();	?>
+    </div>
+<?php }?>
+<?php if(get_theme_mod('blog_layout_selection') =='blogfullwidth' ){
+		echo '<div id="primary" class="content-area  col-md-12 col-sm-12 col-xs-12 ">';
+	}else{
+		 echo '<div id="primary" class="content-area  col-md-9 col-sm-12 col-xs-12 ">';
+	}
+?> 
 
-	<div id="primary" class="content-area">
+
 		<main id="main" class="site-main">
 
 		<?php
@@ -35,8 +47,6 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
-
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
@@ -44,10 +54,48 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
+		
+		<?php
+		
+	/*****************************************************************/
+/* Show pagination option based on Blog pages show at most ******/
+/****************************************************************/
+$count_posts = wp_count_posts();
+$published_posts = $count_posts->publish;
+$default_posts_per_page = get_option( 'posts_per_page' );
 
-<?php
-get_sidebar();?>
+if($published_posts > $default_posts_per_page){ 
+	$select_pagination_layout = get_theme_mod('select_pagination_layout');
+	if($select_pagination_layout == "" || $select_pagination_layout =='pagiloadmore'){?>
+		<div class="wpdal_pagination">
+			<div class="loadmore"><button class="btn btn-info">Load More...</button></div>		
+			
+		</div>
+	<?php 
+	}
+	else{?>
+		<div class="wpdal_pagination">
+		<?php echo paginate_links( $args );?>
+		</div>
+	<?php 
+	}
+
+	
+}
+?>
+	</div><!-- #primary -->
+	
+	<?php
+if(get_theme_mod('blog_layout_selection')=='blogright'){ ?>
+	<div class="wpdal-right-sidebar col-md-3 col-sm-12 col-xs-12">
+		<?php get_sidebar();	?>
+    </div>
+<?php }
+
+if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
+  //We don't need sidebar here for Blog full width Layout
+}?>
+
 </div> <!-- #row -->
 </div><!-- #container -->
 <?php
