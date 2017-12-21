@@ -1080,22 +1080,7 @@ ul.contact-info li .fa {
     vertical-align: top;
     width: 20px;
 }
-/*----- Content Area -----*/
 
-.site-main article.type-post {
-    padding: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 5px #ccc;
-}
-.site-main article.post h2.entry-title {
-    margin: 0;
-    font-size: 25px;
-    line-height: normal;
-}
-.site-main article.post h2.entry-title a {
-    color: #242424;
-}
-/*----- Content Area -----*/
 /*----- Button Styling -----*/
 
 .btn {
@@ -1103,8 +1088,8 @@ ul.contact-info li .fa {
     padding: 10px 25px;
     border-radius: 3px;
 }
-.btn-primary {
-    background: #242424;
+.site-main .btn.btn-primary {
+    background:#222534;
 }
 /*----- Button Styling -----*/
 /*----- Tab Styling -----*/
@@ -1166,7 +1151,12 @@ ul.contact-info li .fa {
 /*------ post-social-share ---------*/
 
 .post-social-share{
-	text-align:right;
+	border-color: #acacac currentcolor currentcolor;
+    border-style: dashed none none;
+    border-width: 1px medium medium;
+    padding-top: 30px;
+    text-align: right;
+	padding-bottom:10px;
 }
 
 .post-social-share > div {
@@ -1205,6 +1195,40 @@ ul.contact-info li .fa {
     background-color: #ce383a;
 }
 
+/*-------- Article post -----------*/
+
+article.post{
+	position:relative;
+}
+
+article.post .entry-content a.btn-primary{
+	position:absolute;
+	bottom:30px;
+}
+
+article.post .entry-content .post-thumbnail > img{
+	margin-bottom:30px;
+	width:100%;
+}
+
+article.post .entry-content .single-entry-content > blockquote{
+	margin-bottom:1.5em;
+	border-left:5px solid #ffc414;
+}
+
+article.type-post {
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px #ccc;
+}
+article.post h2.entry-title {
+    margin: 0 0 15px;
+    font-size: 25px;
+    line-height: normal;
+}
+article.post h2.entry-title a {
+    color: #242424;
+}
 
 /*----- WP Subscribe -----*/
 
