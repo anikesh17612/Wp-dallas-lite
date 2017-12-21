@@ -1276,8 +1276,6 @@ ul.contact-info li .fa{
 
 /*----- Content Area -----*/
 
-.site-main{}
-
 .site-main article.type-post{
 	padding: 20px;
 	border: 1px solid #ddd;
@@ -1330,7 +1328,54 @@ ul.contact-info li .fa{
 
 
 /*------ copyright -------*/
+
 .wp-copyright{
 	padding:15px 0;
 	color:#999999;
+}
+
+/*------- search -------*/
+
+
+.search-form label{
+	width:78%;
+}
+
+.search-form .search-field{
+	width:100%;
+	border-left:1px solid #cccccc;
+	border-top:1px solid #cccccc;
+	border-bottom:1px solid #cccccc;
+	border-right:none;
+	line-height:38px;
+	font-size:14px;
+	font-weight:normal;
+	padding-left:10px;
+	border-radius:0px;
+	color:#999;
+}
+
+.search-form .search-submit{
+	background:#222632;
+	color:#cccccc;
+	line-height:44px;
+	position:absolute;
+	width:20%;
+	padding:0px;
+	border-radius:0px;
+}
+
+@media screen and (max-width:991px){
+	
+	.search-form{
+		margin:20px 0 15px;
+	}
+	
+	.search-form label{
+		width:200px;
+	}
+	
+	.search-form .search-submit{
+		width:50px;
+	}
 }
