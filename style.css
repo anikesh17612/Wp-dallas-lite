@@ -484,9 +484,6 @@ textarea {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-a {
-	color: #ffcc33;
-}
 
 a:visited {
 	color: purple;
@@ -912,11 +909,6 @@ ul.social-icons > li{
 	background: none;
 }
 
-#top-menu > li > a:hover,
-#top-menu > li > a:hover{
-	color: #ffcc33;
-}
-
 /*----- Top Header -----*/
 
 /*----- Content -----*/
@@ -966,14 +958,6 @@ ul.social-icons > li{
 	color: #fff;
 }
 
-#bottom-section ul.menu > li > a:hover,
-#bottom-section ul.menu > li > a:focus{
-	color: #ffcc33;
-}
-
-#bottom-section ul.menu > li.current-menu-item > a{
-	color: #ffcc33;
-}
 
 /*----- Bottom Section -----*/
 
@@ -1070,10 +1054,6 @@ ul.contact-info li .fa{
 	-webkit-transition: all 0.2s ease-in-out 0s;
 }
 
-#site-navigation ul#primary-menu > li > a:hover{
-	color: #ffcc33;
-}
-
 #site-navigation ul#primary-menu > li.current-menu-item{  }
 
 #site-navigation ul#primary-menu > li.current-menu-item > a{
@@ -1111,12 +1091,8 @@ ul.contact-info li .fa{
 #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a{
 	color: #fff;
 	padding-left: 20px;
-	background: #ffcc33;
 }
 
-#site-navigation ul#primary-menu > li.current-menu-ancestor > a{
-	color: #ffcc33;
-}
 
 #site-navigation ul#primary-menu ul.sub-menu > li.menu-item-has-children > a:after{
 	content:"\f105";
@@ -1129,7 +1105,6 @@ ul.contact-info li .fa{
     font-size: 20px;
     padding: 4px 12px;
     line-height: 26px;
-    background: #ffcc33;
     border: 1px solid #ffcc33;
 			border-radius: 0;
 	-webkit-border-radius: 0;
@@ -1137,7 +1112,6 @@ ul.contact-info li .fa{
 
 .nav > li > a:focus,
 .nav > li > a:hover{
-	color: #ffcc33;
 	background: none;
 }
 
@@ -1170,7 +1144,6 @@ ul.contact-info li .fa{
 	display: none;
 	position: fixed;
 	text-align: center;
-	background: #ffcc33;
 	border: 1px solid #ffcc33;
 }
 
@@ -1330,10 +1303,6 @@ ul.contact-info li .fa{
 	font-size: 16px;
 	padding: 10px 25px;
 	border-radius: 3px;
-}
-
-.btn-default{
-	background: #ffcc33;
 }
 
 .btn-primary{
