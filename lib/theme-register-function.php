@@ -232,7 +232,7 @@ function wp_dallas_option($wp_customize)
 		) ,
 	)));
 	$wp_customize->add_setting('continueReading', array(
-		'default' => 'continue_reading'
+		'default' => 'Read more'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'continue_reading', array(
 		'label' => __('Continue Reading', 'wp_dallas_lite') ,
