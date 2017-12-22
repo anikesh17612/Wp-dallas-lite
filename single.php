@@ -169,6 +169,7 @@ if ($tags != '')
 		echo '<div class="related_post">';
 		echo '<h1>Related Posts</h1>';
 		echo '<div class="row">';
+		echo '<div class="col-md-12">';
 		echo '<ul>';
 		while ($my_query->have_posts()):
 			$my_query->the_post();
@@ -193,7 +194,7 @@ if ($tags != '')
 			<?php
 		endwhile;
 		echo '</ul>
-			</div></div>';
+			</div></div></div>';
 		}
 
 	wp_reset_query();
