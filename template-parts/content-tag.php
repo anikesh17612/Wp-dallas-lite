@@ -2,8 +2,9 @@
 		if ($tags_array)
 			{
 			foreach($tags_array as $tags)
-				{
-				$tagString[] = '<a href="'.get_tag_link($tag_id).'"><span class="post_tag_name">' . $tags->name . '</span></a>';
+				{ 
+					//echo get_tag_link($tag_id);
+					$tagString[] = '<a href="'.get_tag_link($tags->term_id).'"><span class="post_tag_name">' . $tags->name . '</span></a>';
 				}
 
 			echo '<div class="tags_list">';
