@@ -229,7 +229,7 @@ input,
 select,
 optgroup,
 textarea {
-    color: #404040;
+    color: inherit;
     font-family: lato;
     font-size: 16px;
     font-size: 1rem;
@@ -444,12 +444,12 @@ a:focus,
 a:active {
     color: midnightblue;
 }
-a:focus {
-    outline: thin dotted;
-}
+
+a:focus ,
 a:hover,
 a:active {
     outline: 0;
+	text-decoration:none;
 }
 /*--------------------------------------------------------------
 ## Menus
@@ -1189,12 +1189,11 @@ ul.contact-info li .fa {
     background-color: #ce383a;
 }
 
-
 .post-social-share > div.stumbleupon a {
     background-color: #eb4924;
 }
 .post-social-share > div.delicious a {
-    background-color: #de4e43;
+    background-color: #3399ff;
 }
 .post-social-share > div.email a {
     background-color: #ce383a;
@@ -1209,6 +1208,11 @@ article.post{
 article.post .entry-content a.btn-primary{
 	position:absolute;
 	bottom:30px;
+}
+
+article.post .entry-header .entry-meta a, article.post .entry-header .entry-meta span{
+	color:#aaaaaa;
+	padding:0 5px;
 }
 
 article.post .entry-content{
@@ -1232,7 +1236,7 @@ article.type-post {
     border: 1px solid #ddd;
     box-shadow: 0 0 5px #ccc;
 }
-article.post h2.entry-title {
+article.post .entry-title {
     margin: 0 0 15px;
     font-size: 25px;
     line-height: normal;
@@ -1329,7 +1333,6 @@ article.post h2.entry-title a {
 	margin:0 0 1.5em;
 	width:100%;
 	float:left;
-	color:#222534;
 }
 
 .post-author-meta .author-meta img{
@@ -1341,8 +1344,8 @@ article.post h2.entry-title a {
 }
 
 .post-author-meta .author-meta-social-link a{
-	margin-right:10px;
-	color:#222534;
+	margin-right:15px;
+	color:inherit;
 	display:inline-block;
 	padding-top:5px;
 }
@@ -1356,4 +1359,36 @@ article.post h2.entry-title a {
 .related_post ul{
 	padding:0px;
 	margin:0px; 
+	list-style:none;
 }
+
+.related_post ul > li{
+	width:32%;
+	display:inline-block;
+	margin-right:1%;
+	vertical-align:top;
+}
+
+.related_post ul > li > a{
+	margin-bottom:15px;
+	display:block;
+	width:100%;
+	float:left;
+}
+
+.related_post ul > li > a > figure{
+	margin:0px;
+	padding:12px;
+	border:1px solid #ddd;
+	width:100%;
+	float:left;
+}
+
+.related_post ul li a.related_link_image img{
+	width:100%;
+	margin:0px;
+}
+
+.related_post ul li a.related_link{
+	color:#222534;
+} 
