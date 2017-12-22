@@ -35,12 +35,12 @@ if (get_theme_mod('select_blog_single_page_layout') == 'fullwidth')
 while (have_posts()):
 	the_post();
 	get_template_part('template-parts/content', get_post_type());
-	$tags_array = get_tags($args);
+	$tags_array = get_the_tags($post->ID);
 	if ($tags_array)
 		{
 		foreach($tags_array as $tags)
 			{
-			$tagString[] = '<span class="post_tag_name">' . $tags->name . '</span>';
+			$tagString[] = '<a href="'.get_tag_link($tag_id).'"><span class="post_tag_name">' . $tags->name . '</span></a>';
 			}
 
 		echo '<div class="tags_list">';
@@ -76,7 +76,7 @@ function ($a)
 
 // echo '<pre>';print_r(get_the_author_meta('url'));echo '</pre>';
 
-echo '<div class="post-author-meta row">';
+echo '<div class="post-author-meta">';
 echo '<div class="author-meta col-md-2 col-sm-6 col-xs-6">
 	<div class="author-img">';
 echo get_avatar($post->post_author);
@@ -223,6 +223,7 @@ if (get_theme_mod('select_blog_single_page_layout') == 'fullwidth')
 ?>
 </div> <!-- #row -->
 </div><!-- #container -->
+
 
 <?php
 get_footer();
