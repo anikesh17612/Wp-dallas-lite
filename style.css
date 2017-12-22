@@ -623,17 +623,7 @@ a:active {
 .site-footer:after {
     clear: both;
 }
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
 
-.widget {
-    margin: 0 0 1.5em;
-    /* Make sure select elements fit in widgets. */
-}
-.widget select {
-    max-width: 100%;
-}
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -1215,7 +1205,7 @@ article.post .entry-header .entry-meta{
 }
 
 article.post .entry-header .entry-meta a, article.post .entry-header .entry-meta span.posted_on, article.post .entry-header .entry-meta span.posted_on a{
-	padding-left:10px;
+	padding-left:7px;
 }
 
 
@@ -1408,3 +1398,48 @@ article.post h2.entry-title a {
 	color:#fff;
 	margin-right:10px;
 }
+
+/*----------- recent post List Sidebar -----------*/
+
+/* #recent-posts-2{
+	border:1px solid #cccccc;
+	padding:30px 20px;
+} */
+
+/*------------ Widget Right Sidebar -----------*/
+
+
+.widget {
+    margin: 0 0 50px;
+    /* Make sure select elements fit in widgets. */
+}
+.widget select {
+    max-width: 100%;
+}
+
+.widget .widget-title{
+	margin-top:0px;
+	font-size:22px;
+}
+
+.widget ul{
+	padding:0 0 0 2px;
+	margin:0px;
+	list-style:none;
+}
+
+.widget ul li a{
+	color:inherit;
+}
+
+.widget ul li{
+	border-bottom:1px solid #e8e8e8;
+	padding:10px 0;
+}
+
+.widget ul li:last-child{
+	border-bottom:none;
+}
+
+/*-------------- Recent Comments Widgets -----------*/
+
