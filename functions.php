@@ -503,4 +503,6 @@ require_once (get_template_directory() . '/lib/theme-core-style.php');
 
 require_once (get_template_directory() . '/lib/social.php');
 
+require_once (get_template_directory() . '/template-parts/post-tag.php');
+
 

@@ -32,21 +32,10 @@ if (get_theme_mod('select_blog_single_page_layout') == 'fullwidth')
 
 		<?php
 
-while (have_posts()):
-	the_post();
-	get_template_part('template-parts/content', get_post_type());
-	$tags_array = get_the_tags($post->ID);
-	if ($tags_array)
-		{
-		foreach($tags_array as $tags)
-			{
-			$tagString[] = '<a href="'.get_tag_link($tag_id).'"><span class="post_tag_name">' . $tags->name . '</span></a>';
-			}
-
-		echo '<div class="tags_list">';
-		echo implode(" ", $tagString);
-		echo '</div>';
-		}
+		while (have_posts()):
+		the_post();
+		get_template_part('template-parts/content', get_post_type());
+	
 
 	// If comments are open or we have at least one comment, load up the comment template.
 
