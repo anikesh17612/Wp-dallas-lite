@@ -32,49 +32,51 @@ endif;
 
 	<div class="entry-content">
 				<div class="post-thumbnail"><?php
-the_post_thumbnail(); ?></div>	
+					the_post_thumbnail(); ?>
+				</div>	
 				<?php
 
-if (is_single())
-	{ ?>
+		if (is_single())
+			{ ?>
 				<p class="short-description">
 					<div class="single-entry-content">
 						<?php
-	the_content(); ?>
-					</div></p>
+						the_content(); ?>
+					</div>
+				</p>
 				<?php
-	}
-  else
-	{
-	if (get_theme_mod('enableExcerpt', true))
-		{
-		if (get_theme_mod('excerptwordLimit', 330))
+		}
+		else
 			{
-			$textlimit = get_theme_mod('excerptwordLimit', 330);
-			echo '<p class="short-description">';
-			echo wpdallas_excerpt_max_charlength($textlimit);
-			echo '</p>';
-			}
-		  else
+			if (get_theme_mod('enableExcerpt', true))
 			{
-			echo the_content();
-			}
-
-		if (get_theme_mod('enableBlogReadmore', true))
-			{
-			if (get_theme_mod('continueReading', 'Continue reading...'))
+				if (get_theme_mod('excerptwordLimit', 330))
+				{
+					$textlimit = get_theme_mod('excerptwordLimit', 330);
+					echo '<p class="short-description">';
+					echo wpdallas_excerpt_max_charlength($textlimit);
+					echo '</p>';
+				}
+				else
+				{
+				echo the_content();
+				}
+	
+				if (get_theme_mod('enableBlogReadmore', true))
+				{
+				if (get_theme_mod('continueReading', 'Continue reading...'))
 				{
 				$continue = esc_html(get_theme_mod('continueReading', 'Continue reading...'));
 				echo '<div class="meta-content-limit"></div>';
 				echo '<a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a>';
+					}
 				}
 			}
+			else
+			{
+			echo the_content();
+			}
 		}
-	  else
-		{
-		echo the_content();
-		}
-	}
 
 ?></p>
 			<?php
@@ -87,6 +89,11 @@ wp_link_pages(array(
 	
 		<?php
 	echo add_social_share_icons($content); ?>
+<?php if (is_single()){
+	get_template_part( 'template-parts/content', 'tag' );	
+}?>	
+</article>
 
-</article><!-- #post-<?php
+
+<!-- #post-<?php
 the_ID(); ?> -->
