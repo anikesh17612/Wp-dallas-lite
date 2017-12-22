@@ -59,22 +59,22 @@ endif;
 				}
 				else
 				{
-				echo the_content();
+					echo the_content();
 				}
 	
 				if (get_theme_mod('enableBlogReadmore', true))
-				{
-				if (get_theme_mod('continueReading', 'Continue reading...'))
-				{
-				$continue = esc_html(get_theme_mod('continueReading', 'Continue reading...'));
-				echo '<div class="meta-content-limit"></div>';
-				echo '<a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a>';
+					{
+					if (get_theme_mod('continueReading', 'Read More'))
+					{
+						$continue = esc_html(get_theme_mod('continueReading', 'Read More'));
+						echo '<div class="meta-content-limit"></div>';
+						echo '<a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a>';
 					}
 				}
 			}
 			else
 			{
-			echo the_content();
+				echo the_content();
 			}
 		}
 
