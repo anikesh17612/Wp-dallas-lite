@@ -66,7 +66,7 @@ function ($a)
 // echo '<pre>';print_r(get_the_author_meta('url'));echo '</pre>';
 
 echo '<div class="post-author-meta">';
-echo '<div class="author-meta col-md-2 col-sm-6 col-xs-6">
+echo '<div class="author-meta col-md-2">
 	<div class="author-img">';
 echo get_avatar($post->post_author);
 echo '</div></div>';
