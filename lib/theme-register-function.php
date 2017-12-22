@@ -23,10 +23,24 @@ function wp_dallas_option($wp_customize)
 		'description' => __('Set editable text for certain content.', 'wp_dallas_lite') ,
 	));
 	$wp_customize->add_section('Blog_layout_option', array(
-		'title' => __('Home Layout', 'wp_dallas_lite') ,
+		'title' => __('Site Layout', 'wp_dallas_lite') ,
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
+	
+	$wp_customize->add_setting('body_layout', array(
+		'default' => 'fullwidth_body_layout'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'fullwidth_layout', array(
+		'label' => __('Body Layout', 'wp_dallas_lite') ,
+		'section' => 'Blog_layout_option',
+		'settings' => 'body_layout',
+		'type' => 'select',
+		'choices' => array(
+			'box_layout' => 'Box Layout',
+			'fullwidth_body_layout' => 'Fullwidth Layout',
+		) ,
+	)));
 	$wp_customize->add_setting('blog_layout_selection', array(
 		'default' => 'blogleft'
 	));
@@ -396,19 +410,7 @@ function wp_dallas_option($wp_customize)
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
-	$wp_customize->add_setting('body_layout', array(
-		'default' => 'fullwidth_body_layout'
-	));
-	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'fullwidth_layout', array(
-		'label' => __('Body Layout', 'wp_dallas_lite') ,
-		'section' => 'typographySetting',
-		'settings' => 'body_layout',
-		'type' => 'select',
-		'choices' => array(
-			'box_layout' => 'Box Layout',
-			'fullwidth_body_layout' => 'Fullwidth Layout',
-		) ,
-	)));
+	
 	$wp_customize->add_setting('body_google_font', array(
 		'default' => 'Lato'
 	));
