@@ -22,28 +22,28 @@ if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_
 			<?php
 	if (is_active_sidebar('bottom-a'))
 		{
-		echo '<div  class="col-md-3 col-lg-3">';
+		echo '<div  class="col-md-3">';
 		dynamic_sidebar('bottom-a');
 		echo '</div>';
 		}
 
 	if (is_active_sidebar('bottom-b'))
 		{
-		echo '<div class="col-md-3 col-lg-3">';
+		echo '<div class="col-md-3">';
 		dynamic_sidebar('bottom-b');
 		echo '</div>';
 		}
 
 	if (is_active_sidebar('bottom-c'))
 		{
-		echo '<div  class="col-md-3 col-lg-3">';
+		echo '<div  class="col-md-3">';
 		dynamic_sidebar('bottom-c');
 		echo '</div>';
 		}
 
 	if (is_active_sidebar('bottom-d'))
 		{
-		echo '<div  class="col-md-3 col-lg-3">';
+		echo '<div  class="col-md-3">';
 		dynamic_sidebar('bottom-d');
 		echo '</div>';
 		}
@@ -64,14 +64,14 @@ $enable_copyright_text = get_theme_mod('enable_copyright_text', '1');
 
 if ($enable_copyright_text)
 	{ ?>
-					<div class="wp-copyright col-md-6 col-sm-12 col-xs-12 ">
+					<div class="wp-copyright col-md-6">
 						<?php
 	echo get_theme_mod('copyright_text', 'Copyright © 2017 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>'); ?>
 					</div><!-- site-info -->
 					<?php
 	} ?>
 				
-				<div class="footer-menu col-md-6 col-sm-12 col-xs-12">
+				<div class="footer-menu col-md-6">
 					<?php
 wp_nav_menu(array(
 	'theme_location' => 'menu-3',
