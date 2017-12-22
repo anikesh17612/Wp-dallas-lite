@@ -1099,11 +1099,8 @@ ul.contact-info li .fa {
     margin: 0;
 }
 /*----- Tab Styling -----*/
-/*----- Post Author -----*/
 
-.post-author-meta {
-    border: 1px solid #ddd;
-}
+
 /*------ copyright -------*/
 
 .wp-copyright {
@@ -1139,7 +1136,7 @@ ul.contact-info li .fa {
 }
 @media screen and (max-width: 991px) {
     .search-form {
-        margin: 20px 0 15px;
+        margin: 30px 0 15px;
     }
     .search-form label {
         width: 200px;
@@ -1151,12 +1148,8 @@ ul.contact-info li .fa {
 /*------ post-social-share ---------*/
 
 .post-social-share{
-	border-color: #acacac currentcolor currentcolor;
-    border-style: dashed none none;
-    border-width: 1px medium medium;
     padding-top: 30px;
     text-align: right;
-	padding-bottom:10px;
 }
 
 .post-social-share > div {
@@ -1172,6 +1165,7 @@ ul.contact-info li .fa {
     border-radius: 100%;
 	margin-left:5px;
 	margin-right:5px;
+	margin-bottom:10px;
 }
 .post-social-share > div.facebook a {
     background-color: #3b5999;
@@ -1206,6 +1200,12 @@ article.post .entry-content a.btn-primary{
 	bottom:30px;
 }
 
+article.post .entry-content{
+	border-color: currentcolor currentcolor #acacac;
+    border-style: none none dashed;
+    border-width: medium medium 1px;
+}
+
 article.post .entry-content .post-thumbnail > img{
 	margin-bottom:30px;
 	width:100%;
@@ -1230,6 +1230,16 @@ article.post h2.entry-title a {
     color: #242424;
 }
 
+@media screen and (max-width:650px){
+	article.post .entry-content a.btn-primary{
+		position:inherit;
+	}
+	
+	.post-social-share{
+		text-align:left;
+	}
+}
+
 /*----- pagination -----*/
 
 .wpdal_pagination{
@@ -1240,7 +1250,8 @@ article.post h2.entry-title a {
 	padding:10px 15px;
 	border:1px solid #ccc;
 	color:#222534;
-	margin:0 3px;
+	margin:5px 3px;
+	display:inline-block;	
 }
 
 .wpdal_pagination > .current, .wpdal_pagination a:hover, .wpdal_pagination span:hover{
@@ -1274,7 +1285,31 @@ article.post h2.entry-title a {
     text-align: left;
     font-size: 14px;
     color: #222534;
-    background: #fff;
+    background-color: #fff;
     height: 38px;
     border: 1px solid #cccccc;
+}
+
+/*----- Comments -----*/
+
+#comments{
+	border: 1px solid #dddddd;
+    box-shadow: 0 0 5px #cccccc;
+    padding: 20px;
+}
+
+#comments .style-title, #comments .comments-title, #comments .comment-reply-title{
+	border:none;
+}
+
+#comments .form-submit input.submit{
+	padding:15px 25px;
+	font-size:14px;
+	background-color:#222534;
+}
+
+/*----- Post Author -----*/
+
+.post-author-meta{
+    border: 1px solid #ddd;
 }
