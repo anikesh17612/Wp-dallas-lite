@@ -230,7 +230,7 @@ select,
 optgroup,
 textarea {
     color: #404040;
-    font-family: sans-serif;
+    font-family: lato;
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.5;
@@ -1183,6 +1183,17 @@ ul.contact-info li .fa {
     background-color: #cd2026;
 }
 .post-social-share > div.google-plus a {
+    background-color: #de4e43;
+}
+.post-social-share > div.email a {
+    background-color: #ce383a;
+}
+
+
+.post-social-share > div.stumbleupon a {
+    background-color: #eb4924;
+}
+.post-social-share > div.delicious a {
     background-color: #de4e43;
 }
 .post-social-share > div.email a {
