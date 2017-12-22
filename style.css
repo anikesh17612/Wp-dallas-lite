@@ -1296,6 +1296,7 @@ article.post h2.entry-title a {
 	border: 1px solid #dddddd;
     box-shadow: 0 0 5px #cccccc;
     padding: 20px;
+	margin:0 0 1.5em;
 }
 
 #comments .style-title, #comments .comments-title, #comments .comment-reply-title{
@@ -1311,5 +1312,37 @@ article.post h2.entry-title a {
 /*----- Post Author -----*/
 
 .post-author-meta{
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
+    box-shadow: 0 0 5px #cccccc;
+    padding: 20px;
+	margin:0 0 1.5em;
+	width:100%;
+	float:left;
+	color:#222534;
+}
+
+.post-author-meta .author-meta img{
+	border-radius:100%;
+}
+
+.post-author-meta .author-title, .post-author-meta .author-desc, .post-author-meta .author-meta-social-link{
+	margin:0 0 10px;
+}
+
+.post-author-meta .author-meta-social-link a{
+	margin-right:10px;
+	color:#222534;
+	display:inline-block;
+	padding-top:5px;
+}
+
+.post-author-meta .author-title{
+	font-size:20px;
+}
+
+/*----------- Related post -----------*/
+
+.related_post ul{
+	padding:0px;
+	margin:0px; 
 }
