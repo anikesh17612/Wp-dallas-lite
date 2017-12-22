@@ -70,7 +70,7 @@ echo '<div class="author-meta col-md-2">
 	<div class="author-img">';
 echo get_avatar($post->post_author);
 echo '</div></div>';
-echo '<div class="col-md-10 col-sm-6 col-xs-6"><div class="author-title">';
+echo '<div class="col-md-10"><div class="author-title">';
 echo $authors_bio['first_name'] . ' ' . $authors_bio['last_name'];
 echo '</div>';
 echo '<div class="author-desc">';
