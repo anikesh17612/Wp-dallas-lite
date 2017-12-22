@@ -130,7 +130,7 @@ function add_social_share_icons($content)
 
 
 	
-	$html = "<div class='post-social-share'><div class='share-on'>Share on: </div>";
+	$html = "<div class='post-social-share'><div class='share-on'> </div>";
 
 
     global $post;

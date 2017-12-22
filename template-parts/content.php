@@ -86,7 +86,7 @@ wp_link_pages(array(
 	</div><!-- .entry-content -->
 	
 		<?php
-echo add_social_share_icons($content); ?>
+	echo add_social_share_icons($content); ?>
 
 </article><!-- #post-<?php
 the_ID(); ?> -->
