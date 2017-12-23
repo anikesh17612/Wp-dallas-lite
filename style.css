@@ -809,6 +809,15 @@ ul.social-icons > li {
     background: none;
 	padding:0 15px;
 }
+
+@media screen and (max-width:767px){
+	#header-section .top-menu, #header-section .social-icon{
+		text-align:center;
+		float:none;
+		margin-bottom:15px;
+	}
+}
+
 /*----- Top Header -----*/
 /*----- Content -----*/
 
@@ -1072,12 +1081,55 @@ ul.contact-info li .fa {
 	
 	#site-navigation.main-navigation ul#primary-menu{
 		float:left;
+		width:100%;
+		border-top:1px solid #444;
+		margin-bottom:10px;
 	}
 	
 	#site-navigation.main-navigation ul#primary-menu li{
-		
+		overflow: hidden;
+		position: relative;
+		display: block;
+		border-bottom:1px solid #444;
+		float:none;
+		line-height:normal;
 	}
 	
+	#site-navigation.main-navigation ul#primary-menu li:last-child{
+		border-bottom:none;
+	}
+	
+	#site-navigation.main-navigation ul ul{
+		position:relative;
+		float:none;
+		display:none;
+	}
+	
+	#site-navigation ul#primary-menu ul.sub-menu{
+		background:transparent;
+	}
+	
+	#site-navigation ul#primary-menu ul.sub-menu li a{
+		color:#fff;
+		width:100%;
+	}
+	
+	#site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a{
+		background:transparent;
+		padding:10px 15px;
+	}
+	
+	#site-navigation ul#primary-menu ul.sub-menu > li:not(:last-child){
+		border-bottom:1px solid #444;
+	}
+	
+	#site-navigation.main-navigation ul li.focus ul{
+		display:block;
+	}
+	
+	#site-navigation.main-navigation ul#primary-menu li a{
+		padding:15px 2px;
+	}
 	
 }
 /*----- Responsive -----*/
@@ -1392,6 +1444,22 @@ article.post h2.entry-title a {
 	margin:0 1.5%;
 }
 
+@media screen and (max-width:1154px){
+	#comments .comment-form p:nth-child(4){
+		margin:0 1.3%;
+	}
+}
+
+@media screen and (max-width:650px){
+	#comments .comment-form p{
+		width:100%;
+	}
+	
+	#comments .comment-form p:nth-child(4){
+		margin:0 0 1.5em;
+	}
+} 
+
 /*----- Post Author -----*/
 
 .post-author-meta{
@@ -1420,6 +1488,12 @@ article.post h2.entry-title a {
 
 .post-author-meta .author-title{
 	font-size:20px;
+}
+
+@media screen and (max-width:991px){
+	.post-author-meta .author-meta{
+		margin-bottom:1.5em;
+	}
 }
 
 /*----------- Related post -----------*/
@@ -1481,6 +1555,19 @@ article.post h2.entry-title a {
 	margin-right:10px;
 }
 
+@media screen and (max-width:767px){
+	.tags_list{
+		position:relative;
+		bottom:20px;
+		margin-top:40px;
+	}
+	
+	.post-social-share{
+		float:none;
+		text-align:left;
+	}
+}
+
 /*----------- recent post List Sidebar -----------*/
 
 /* #recent-posts-2{
@@ -1523,5 +1610,10 @@ article.post h2.entry-title a {
 	border-bottom:none;
 }
 
+/*----------- Container ----------*/
 
-
+@media screen and (min-width:768px) and (max-width:1199px){
+	.container{
+		width:100%;
+	}
+}
