@@ -18,7 +18,7 @@ get_header();
 
 if (get_theme_mod('blog_layout_selection') == 'blogleft' || get_theme_mod('blog_layout_selection') == "")
 	{ ?>
-	<div class="wpdal-left-sidebar col-md-3 col-sm-12 col-xs-12">
+	<div class="wpdal-left-sidebar col-md-3">
 		<?php
 	get_sidebar(); ?>
     </div>
