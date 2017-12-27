@@ -1049,7 +1049,7 @@ ul.contact-info li .fa {
 /*----- Search Widget -----*/
 /*----- WP Tab -----*/
 
-.widget .wpt_widget_content {} .widget .wpt_widget_content ul.wpt-tabs {
+.widget .wpt_widget_content ul.wpt-tabs {
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -1077,15 +1077,64 @@ ul.contact-info li .fa {
 }
 .widget .wpt_widget_content ul.has-2-tabs li {} .widget .wpt_widget_content ul.has-3-tabs li {} .widget .wpt_widget_content ul.has-4-tabs li {}
 /*----- WP Tab -----*/
-/*----- Responsive -----*/
+
+/*----- Responsive Menu -----*/
 
 @media (max-width: 991px) {
-    .menu-toggle {
-        display: block;
-    }
-    .main-navigation ul {
-        display: none;
-    }
+	
+	#site-navigation ul#primary-menu > li.menu-item-has-children > a::after{
+		display:none;
+	}
+	
+	#site-navigation ul#primary-menu ul.sub-menu > li.menu-item-has-children > a::after{
+		display:none;
+	}
+	
+	.main-navigation ul ul.sub-menu.toggled-on{
+		float:none;
+		position:relative;
+		left:0px;
+		top:0px;
+	}
+	
+	button.dropdown-toggle:after{
+		content: "\f107";
+		display:block;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+		font-size:20px;
+		color:#fff;
+	}
+	
+	button.dropdown-toggle.toggled-on:after{
+		content: "\f106";
+		display:block;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+		font-size:20px;
+		color:#ffc414;
+	}
+	
+	button.dropdown-toggle{
+		background:transparent;
+		border-left:1px solid #fff;
+		position:absolute;
+		top:12px;
+		right:0px;
+		border-top:none;
+		border-right:none;
+		border-bottom:none;
+		padding:8px 5px 8px 15px;
+		line-height:100%;
+	}
+	
+	button.dropdown-toggle.toggled-on{
+		border-left:1px solid #ffc414;
+	}
 	
 	#site-navigation.main-navigation ul#primary-menu{
 		float:left;
@@ -1107,14 +1156,9 @@ ul.contact-info li .fa {
 		border-bottom:none;
 	}
 	
-	#site-navigation.main-navigation ul ul{
-		position:relative;
-		float:none;
-		display:none;
-	}
-	
 	#site-navigation ul#primary-menu ul.sub-menu{
 		background:transparent;
+		border-top:1px solid #ffcc33;
 	}
 	
 	#site-navigation ul#primary-menu ul.sub-menu li a{
@@ -1122,9 +1166,31 @@ ul.contact-info li .fa {
 		width:100%;
 	}
 	
+	#site-navigation ul#primary-menu ul.sub-menu > li > a{
+		padding:15px 2px 15px 15px;
+	}
+	
 	#site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a{
 		background:transparent;
-		padding:10px 15px;
+		padding:15px 2px 15px 15px;
+	}
+	
+	#site-navigation ul#primary-menu ul.sub-menu > li > ul > li > a{
+		padding:15px 2px 15px 30px;
+	}
+
+	#site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > ul > li > a:hover, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > ul > li > a:focus, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > ul > li.current-menu-item > a, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > ul > li.current-menu-ancestor > a{
+		background:transparent;
+		padding:15px 2px 15px 30px;
+	}
+	
+	#site-navigation ul#primary-menu ul.sub-menu > li > ul > li > ul > li > a{
+		padding:15px 2px 15px 45px;
+	}
+
+	#site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > ul > li > ul > li > a:hover, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > ul > li > ul > li > a:focus, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > ul > li > ul > li.current-menu-item > a, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > ul > li > ul > li.current-menu-ancestor > a{
+		background:transparent;
+		padding:15px 2px 15px 45px;
 	}
 	
 	#site-navigation ul#primary-menu ul.sub-menu > li:not(:last-child){
@@ -1140,7 +1206,14 @@ ul.contact-info li .fa {
 	}
 	
 }
-/*----- Responsive -----*/
+
+@media (min-width:992px){
+	button.dropdown-toggle{
+		display:none;
+	}
+}
+
+/*----- Responsive Menu -----*/
 /* CSS included for star rating */
 
 .star-rating .star-full:before {
