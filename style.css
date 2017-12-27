@@ -846,18 +846,23 @@ ul.social-icons > li {
 #bottom-section #wp-subscribe {
     text-align: left;
 }
-#bottom-section ul.menu {
+#bottom-section ul {
     margin: 0;
     padding: 0;
     list-style: outside none none;
 }
-#bottom-section ul.menu > li {
-    margin:0;
+#bottom-section ul > li  > a{
 	padding:5px 0;
-	border:none;
+	display:block;
 }
 
-#bottom-section ul.menu > li > a {
+#bottom-section ul > li{
+	border:none;
+	margin:0;
+	padding:0px;
+}
+
+#bottom-section ul > li > a {
     color: #fff;
 }
 
@@ -865,7 +870,7 @@ ul.social-icons > li {
 	margin:0 0 5px 0;
 }
 
-#bottom-section ul.menu > li.current-menu-item a{
+#bottom-section ul > li.current-menu-item a{
 	color:#fff;
 }
 
@@ -881,7 +886,7 @@ ul.social-icons > li {
     padding: 10px 0;
     background: #222533;
 }
-#footer-section .footer-menu {} #footer-section .footer-menu ul {
+#footer-section .footer-menu ul {
     margin: 0;
     padding: 0;
     text-align: right;
@@ -893,6 +898,10 @@ ul.social-icons > li {
 #footer-section .footer-menu ul li {
     margin: 5px 7px;
     display: inline-block;
+}
+
+#footer-section .footer-menu ul.sub-menu{
+	display:none;
 }
 
 @media screen and (max-width:767px){
@@ -1432,6 +1441,10 @@ article.type-post h2.entry-title a {
 	.post-social-share{
 		text-align:left;
 	}
+	
+	article.type-post .entry-content .single-entry-content > blockquote{
+		font-size:14px;
+	}
 }
 
 /*----- pagination -----*/
@@ -1506,9 +1519,14 @@ article.type-post h2.entry-title a {
 	padding:15px 25px;
 	font-size:14px;
 	border-radius:4px;
-	background-color:#222534;
-	border:1px solid #222534;
+	background-color:#212433;
+	border:1px solid #363b52;
 	line-height:normal;
+}
+
+#comments .form-submit input.submit:hover{
+	background:#363b52;
+	border:1px solid #363b52;
 }
 
 #comments label{
@@ -1644,12 +1662,18 @@ article.type-post h2.entry-title a {
 }
 
 .tags_list a span{
-	background-color: #222534;
+	background-color: #212433;
     font-size: 14px;
+	border:1px solid #363b52;
     padding: 15px 25px;
 	border-radius:4px;
 	color:#fff;
 	margin-right:10px;
+}
+
+.tags_list a span:hover{
+	background:#363b52;
+	border:1px solid #363b52;
 }
 
 @media screen and (max-width:767px){
@@ -1715,3 +1739,18 @@ article.type-post h2.entry-title a {
 	}
 }
 
+/*********** Button Info **********/
+
+.btn-info{
+	background-color:#222534;
+	color:#fff;
+	border-color:#363b52;
+	border-radius:4px;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active:focus{
+	background:#363b52;
+	border-color:#363b52;
+}
+
+/*********** Button Info **********/
