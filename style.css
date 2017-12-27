@@ -1618,7 +1618,7 @@ article.post h2.entry-title a {
 	border-bottom:none;
 }
 
-/*----------- Container ----------*/
+/*----------- Container Responsive ----------*/
 
 @media screen and (min-width:768px) and (max-width:1199px){
 	.container{
