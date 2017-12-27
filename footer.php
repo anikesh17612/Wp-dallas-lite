@@ -73,12 +73,15 @@ if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_
 								} ?>
 											
 											<div class="footer-menu col-md-6">
-												<?php
-							wp_nav_menu(array(
-								'theme_location' => 'menu-3',
-								'menu_id' => 'footer-menu',
-								'menu_class' => 'nav menu'
-							));
+							<?php
+							if ( has_nav_menu( 'menu-3' ) ) {
+								wp_nav_menu(array(
+									'theme_location' => 'menu-3',
+									'menu_id' => 'footer-menu',
+									'menu_class' => 'nav menu'
+								));
+							
+							}
 							?>
 					</div>
 				</div>

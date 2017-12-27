@@ -27,11 +27,14 @@
 			<div class="row">
 					<div class="top-menu col-md-6">
 						<?php
+						if ( has_nav_menu( 'menu-2' ) ) {
 							wp_nav_menu( array(
 								'theme_location' => 'menu-2',
 								'menu_id'        => 'top-menu',
 								'menu_class'	 => 'nav menu'
 							) );
+						}
+						
 						?>
 					</div>
 					<?php if(get_theme_mod('facebooklogo','#') != '' || get_theme_mod('twitterlogo','#') != '' || get_theme_mod('googlepluslogo','#') != '' || get_theme_mod('linkedinlogo','#') != '' || get_theme_mod('behancelogo','#') != '' || get_theme_mod('youtubelogo','#') != '' || get_theme_mod('snapchatlogo','#') != '' || get_theme_mod('skypelogo','#') != '' || get_theme_mod('whatsapplogo','#') != '' || get_theme_mod('pinterestlogo','#') != '' || get_theme_mod('customlogo','#') != ''){ ?>
@@ -67,11 +70,13 @@
 				<nav id="site-navigation" class="main-navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo '<i class="fa fa-bars" aria-hidden="true"></i>'; ?></button>
 					<?php
+					if ( has_nav_menu( 'menu-1' ) ) {
 						wp_nav_menu( array(
 							'theme_location' => 'menu-1',
 							'menu_id'        => 'primary-menu',
 							'menu_class'	 => 'nav menu'
 						) );
+					}
 					?>
 				</nav>
 			</div>

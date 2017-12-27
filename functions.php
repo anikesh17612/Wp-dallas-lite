@@ -49,6 +49,7 @@ if (!function_exists('wp_dallas_lite_setup')):
 			'menu-2' => esc_html__('Top', 'wp_dallas_lite') ,
 			'menu-3' => esc_html__('Footer', 'wp_dallas_lite') ,
 		));
+		 
 		/*
 		* Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.
