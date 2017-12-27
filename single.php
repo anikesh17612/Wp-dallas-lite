@@ -162,7 +162,6 @@ if ($tags != '')
 		echo '<ul>';
 		while ($my_query->have_posts()):
 			$my_query->the_post();
-			if('')
 			echo '<li>';
 ?>			
 			<?php if(get_the_post_thumbnail()!='') {?>
