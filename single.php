@@ -162,8 +162,10 @@ if ($tags != '')
 		echo '<ul>';
 		while ($my_query->have_posts()):
 			$my_query->the_post();
+			if('')
 			echo '<li>';
-?>
+?>			
+			<?php if(get_the_post_thumbnail()!='') {?>
 			<a href="<?php
 			the_permalink() ?>" rel="<?php
 			the_title(); ?>" title="Permanent Link to <?php
@@ -171,11 +173,11 @@ if ($tags != '')
 			echo get_the_post_thumbnail($post_id, 'medium', array(
 				'class' => 'alignleft'
 			)); ?></figure></a>
-			<a href="<?php
+			<?php } ?>
+				<a href="<?php
 			the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php
 			the_title_attribute(); ?>" class="related_link"><?php
 			the_title(); ?></a></h3>
-			
 			</li>
 			
 			
