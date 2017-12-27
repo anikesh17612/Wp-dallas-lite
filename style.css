@@ -852,11 +852,27 @@ ul.social-icons > li {
     list-style: outside none none;
 }
 #bottom-section ul.menu > li {
-    margin: 5px 7px;
+    margin:0;
+	padding:5px 0;
+	border:none;
 }
+
 #bottom-section ul.menu > li > a {
     color: #fff;
 }
+
+#bottom-section p{
+	margin:0 0 5px 0;
+}
+
+#bottom-section ul.menu > li.current-menu-item a{
+	color:#fff;
+}
+
+#bottom-section img{
+	margin-bottom:10px;
+}
+
 /*----- Bottom Section -----*/
 /*----- Footer -----*/
 
@@ -1360,36 +1376,36 @@ ul.contact-info li .fa {
 
 /*-------- Article post -----------*/
 
-article.post{
+article.type-post{
 	position:relative;
 }
 
-article.post .entry-content a.btn-primary{
+article.type-post .entry-content a.btn-primary{
 	position:absolute;
 	bottom:30px;
 }
 
-article.post .entry-header .entry-meta{
+article.type-post .entry-header .entry-meta{
 	color:#aaaaaa;
 }
 
-article.post .entry-header .entry-meta a, article.post .entry-header .entry-meta span.posted_on, article.post .entry-header .entry-meta span.posted_on a{
+article.type-post .entry-header .entry-meta a, article.post .entry-header .entry-meta span.posted_on, article.post .entry-header .entry-meta span.posted_on a{
 	padding-left:7px;
 }
 
 
-article.post .entry-content{
+article.type-post .entry-content{
 	border-color: currentcolor currentcolor #acacac;
     border-style: none none dashed;
     border-width: medium medium 1px;
 }
 
-article.post .entry-content .post-thumbnail > img{
+article.type-post .entry-content .post-thumbnail > img{
 	margin-bottom:30px;
 	width:100%;
 }
 
-article.post .entry-content .single-entry-content > blockquote{
+article.type-post .entry-content .single-entry-content > blockquote{
 	margin-bottom:1.5em;
 	border-left:5px solid #ffc414;
 }
@@ -1399,17 +1415,17 @@ article.type-post {
     border: 1px solid #ddd;
     box-shadow: 0 0 5px #ccc;
 }
-article.post .entry-title {
+article.type-post .entry-title {
     margin: 0 0 15px;
     font-size: 25px;
     line-height: normal;
 }
-article.post h2.entry-title a {
+article.type-post h2.entry-title a {
     color: #242424;
 }
 
 @media screen and (max-width:650px){
-	article.post .entry-content a.btn-primary{
+	article.type-post .entry-content a.btn-primary{
 		position:inherit;
 	}
 	
