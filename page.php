@@ -16,12 +16,20 @@ get_header();
 ?>
 <?php 
 if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_layout_selection')==""){ ?>
-	<div class="left-sidebar">
+	<div class="wpdal-left-sidebar col-md-3">
   <?php get_sidebar();	?>
   </div>
-<?php }?>
+<?php }
+if (get_theme_mod('blog_layout_selection') == 'blogfullwidth')
+	{
+	echo '<div id="primary" class="content-area  col-md-12 col-sm-12 col-xs-12 ">';
+	}
+  else
+	{
+	echo '<div id="primary" class="content-area  col-md-9 col-sm-12 col-xs-12 ">';
+	}
 
-	<div id="primary" class="content-area">
+?>
 		<main id="main" class="site-main">
 
 			<?php
@@ -38,17 +46,27 @@ if(get_theme_mod('blog_layout_selection')=='blogleft' || get_theme_mod('blog_lay
 			?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
 
+	</div><!-- #primary -->
 <?php
-if(get_theme_mod('blog_layout_selection')=='blogright'){ ?>
-	<div class="right-sidebar">
-		<?php get_sidebar();	?>
+
+if (get_theme_mod('blog_layout_selection') == 'blogright')
+	{ ?>
+	<div class="wpdal-right-sidebar col-md-3 col-sm-12 col-xs-12">
+		<?php
+	get_sidebar(); ?>
     </div>
-<?php }
-if(get_theme_mod('blog_layout_selection')=='blogfullwidth'){
-  //We don't need sidebar here for Blog full width Layout
-}?>
+<?php
+	}
+
+if (get_theme_mod('blog_layout_selection') == 'blogfullwidth')
+	{
+
+	// We don't need sidebar here for Blog full width Layout
+
+	} ?>
+	
+
  </div> <!-- #row -->
 </div><!-- #container -->
 <?php
