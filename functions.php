@@ -181,7 +181,7 @@ function wp_dallas_lite_scripts()
 		'adminUrl' => admin_url() ,
 		'body_layout' => get_theme_mod('body_layout', 'fullwidth_body_layout')
 	);
-	//wp_localize_script('wp_dallas_lite-loadmore', 'loadmore_params', $translation_array);
+	wp_localize_script('wp_dallas_lite-loadmore', 'loadmore_params', $translation_array); 
 	wp_enqueue_style('font-family', '//fonts.googleapis.com/css?family=' . get_theme_mod('body_google_font', 'Lato') . '|' . get_theme_mod('menu_google_font', 'Lato') . '|' . get_theme_mod('h1_google_font', 'Lato') . '|' . get_theme_mod('h2_google_font', 'Lato') . '|' . get_theme_mod('h3_google_font', 'Lato') . '|' . get_theme_mod('h4_google_font', 'Lato') . '|' . get_theme_mod('h5_google_font', 'Lato') . '|' . get_theme_mod('h6_google_font', 'Lato'));
 	wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css');
