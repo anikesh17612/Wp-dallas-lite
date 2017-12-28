@@ -941,6 +941,9 @@ ul#top-menu ul.sub-menu > li.menu-item-has-children > a:after{
     display: inline-block;
 }
 
+#footer-section .footer-menu ul li .sub-menu{
+	display:none;
+}
 
 /*----- Footer -----*/
 /*----- Box Layout -----*/
