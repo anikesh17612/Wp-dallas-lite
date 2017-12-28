@@ -12,7 +12,6 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
 			<section class="error-404 not-found">
 				<header class="page-header">
 					<h1 class="page-title"><?php echo esc_html(get_theme_mod('404pageTitle' ,esc_html__('Page not Found.', 'Wpdallas'))); ?></h1>

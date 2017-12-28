@@ -32,10 +32,9 @@ if (get_theme_mod('select_blog_single_page_layout') == 'fullwidth')
 
 		<?php
 
-		while (have_posts()):
-		the_post();
-		get_template_part('template-parts/content', get_post_type());
-	
+while (have_posts()):
+	the_post();
+	get_template_part('template-parts/content', get_post_type());
 
 	// If comments are open or we have at least one comment, load up the comment template.
 
@@ -62,9 +61,6 @@ function ($a)
 	}
 
 , $authors_bio));
-
-// echo '<pre>';print_r(get_the_author_meta('url'));echo '</pre>';
-
 echo '<div class="post-author-meta">';
 echo '<div class="author-meta col-md-2">
 	<div class="author-img">';
@@ -164,15 +160,18 @@ if ($tags != '')
 			$my_query->the_post();
 			echo '<li>';
 ?>			
-			<?php if(get_the_post_thumbnail()!='') {?>
+			<?php
+			if (get_the_post_thumbnail() != '')
+				{ ?>
 			<a href="<?php
-			the_permalink() ?>" rel="<?php
-			the_title(); ?>" title="Permanent Link to <?php
-			the_title_attribute(); ?>" class="related_link_image"><figure><?php
-			echo get_the_post_thumbnail($post_id, 'medium', array(
-				'class' => 'alignleft'
-			)); ?></figure></a>
-			<?php } ?>
+				the_permalink() ?>" rel="<?php
+				the_title(); ?>" title="Permanent Link to <?php
+				the_title_attribute(); ?>" class="related_link_image"><figure><?php
+				echo get_the_post_thumbnail($post_id, 'medium', array(
+					'class' => 'alignleft'
+				)); ?></figure></a>
+			<?php
+				} ?>
 				<a href="<?php
 			the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php
 			the_title_attribute(); ?>" class="related_link"><?php
@@ -218,4 +217,3 @@ if (get_theme_mod('select_blog_single_page_layout') == 'fullwidth')
 
 <?php
 get_footer();
-

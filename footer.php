@@ -61,28 +61,30 @@ if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_
 			<div class="row">
 				<div class="col-md-12">
 						<?php
-							$enable_copyright_text = get_theme_mod('enable_copyright_text', '1');
+$enable_copyright_text = get_theme_mod('enable_copyright_text', '1');
 
-							if ($enable_copyright_text)
-								{ ?>
+if ($enable_copyright_text)
+	{ ?>
 												<div class="wp-copyright col-md-6">
 													<?php
-								echo get_theme_mod('copyright_text', 'Copyright © 2017 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>'); ?>
+	echo get_theme_mod('copyright_text', 'Copyright © 2017 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>'); ?>
 												</div><!-- site-info -->
 												<?php
-								} ?>
+	} ?>
 											
 											<div class="footer-menu col-md-6">
 							<?php
-							if ( has_nav_menu( 'menu-3' ) ) {
-								wp_nav_menu(array(
-									'theme_location' => 'menu-3',
-									'menu_id' => 'footer-menu',
-									'menu_class' => 'nav menu'
-								));
-							
-							}
-							?>
+
+if (has_nav_menu('menu-3'))
+	{
+	wp_nav_menu(array(
+		'theme_location' => 'menu-3',
+		'menu_id' => 'footer-menu',
+		'menu_class' => 'nav menu'
+	));
+	}
+
+?>
 					</div>
 				</div>
 			</div>

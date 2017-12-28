@@ -5,7 +5,7 @@ Dallas Option Registration
 
 function admin_style()
 	{
-	wp_enqueue_style('admin-styles', get_template_directory_uri() . '/lib/admin/assets/admin-style.css');
+	wp_enqueue_style('admin-styles', get_template_directory_uri() . '/assets/css/admin-style.css');
 	}
 
 add_action('admin_enqueue_scripts', 'admin_style');
@@ -27,7 +27,6 @@ function wp_dallas_option($wp_customize)
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
-	
 	$wp_customize->add_setting('body_layout', array(
 		'default' => 'fullwidth_body_layout'
 	));
@@ -410,7 +409,6 @@ function wp_dallas_option($wp_customize)
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
-	
 	$wp_customize->add_setting('body_google_font', array(
 		'default' => 'Lato'
 	));

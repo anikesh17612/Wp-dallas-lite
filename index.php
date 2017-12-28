@@ -121,4 +121,3 @@ if (get_theme_mod('blog_layout_selection') == 'blogfullwidth')
 
 <?php
 get_footer();
-
