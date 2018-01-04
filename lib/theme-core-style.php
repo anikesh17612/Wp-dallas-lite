@@ -25,7 +25,7 @@ if (!function_exists('wp_dallas_lite_css_generator'))
                 .widget-blog-posts-section .entry-title  a:hover,.widget ul li a:hover,.footer-copyright ul li a:hover, .themeum-pagination ul li:first-child a:hover, .themeum-pagination ul li:last-child a:hover, .single-related-posts .common-post-item-intro a:hover,#site-navigation ul#primary-menu > li.current-menu-item > a,#site-navigation ul#primary-menu > li > a:hover, #bottom-section ul.menu > li > a:hover, #bottom-section ul.menu > li > a:focus, #site-navigation ul#primary-menu > li.current-menu-ancestor > a, .nav > li > a:focus, .nav > li > a:hover, a, #top-menu > li > a:hover, #top-menu > li > a:hover, #bottom-section ul > li > a:hover{ color: ' . esc_attr($major_color) . '; }';
 			$output.= '
 			@media screen and (max-width: 991px){
-				#site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a{color:' . esc_attr($major_color) . ';}	
+				#site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a{color:' . esc_attr($major_color) . ';}
 				}';
 			}
 
@@ -189,8 +189,11 @@ if (!function_exists('wp_dallas_lite_css_generator'))
 
 		// Button color setting...
 
-		$output.= '.mc4wp-form-fields input[type=submit], .demo-four .mc4wp-form-fields input[type=submit], .common-menu-wrap .nav>li.online-booking-button a, .error-page-inner a.btn.btn-primary.btn-lg,.btn.btn-primary, .package-list-button, 
-        .contact-submit input[type=submit],.form-submit input[type=submit]{ background-color: ' . esc_attr(get_theme_mod('button_bg_color', '#363b52')) . '; border-color: ' . esc_attr(get_theme_mod('button_bg_color', '#363b52')) . '; color: ' . esc_attr(get_theme_mod('button_text_color', '#fff')) . ' !important; border-radius: 4px; }';
+		if (get_theme_mod('button_hover_bg_color', '#363b52'))
+			{
+			$output.= '.mc4wp-form-fields input[type=submit], .demo-four .mc4wp-form-fields input[type=submit], .common-menu-wrap .nav>li.online-booking-button a, .error-page-inner a.btn.btn-primary.btn-lg,.btn.btn-primary, .package-list-button,
+      .contact-submit input[type=submit],.form-submit input[type=submit]{ background-color: ' . esc_attr(get_theme_mod('button_bg_color', '#363b52')) . ' !important; ; border-color: ' . esc_attr(get_theme_mod('button_bg_color', '#363b52')) . '; color: ' . esc_attr(get_theme_mod('button_text_color', '#fff')) . ' !important; border-radius: 4px; }';
+			}
 		if (get_theme_mod('button_hover_bg_color', '#363b52'))
 			{
 			$output.= '.mc4wp-form-fields input[type=submit]:hover, .demo-four .mc4wp-form-fields input[type=submit]:hover, .common-menu-wrap .nav>li.online-booking-button a:hover, .error-page-inner a.btn.btn-primary.btn-lg:hover,.btn.btn-primary:hover, .package-list-button:hover, .contact-submit input[type=submit]:hover,.form-submit input[type=submit]:hover{ background-color: ' . esc_attr(get_theme_mod('button_hover_bg_color', '#363b52')) . '; border-color: ' . esc_attr(get_theme_mod('button_hover_bg_color', '#363b52')) . '; color: ' . esc_attr(get_theme_mod('button_hover_text_color', '#ffffff')) . ' !important; }';
