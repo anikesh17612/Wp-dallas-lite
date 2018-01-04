@@ -21,34 +21,32 @@ if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_
 		<div class="row">
 			<?php
 			
-			$total = is_active_sidebar('bottom-a')+is_active_sidebar('bottom-b')+is_active_sidebar('bottom-c')+is_active_sidebar('bottom-d');
-			$divlen = 12/$total;
-			$class = "col-md-".$divlen;
+			 
 			
 	if (is_active_sidebar('bottom-a'))
 		{
-		echo '<div  class="'.$class.'">';
+		echo '<div  class="col-md-3">';
 			dynamic_sidebar('bottom-a');
 		echo '</div>';
 		}
 
 	if (is_active_sidebar('bottom-b'))
 		{
-		echo '<div  class="'.$class.'">';
+		echo '<div  class="col-md-3">';
 		dynamic_sidebar('bottom-b');
 		echo '</div>';
 		}
 
 	if (is_active_sidebar('bottom-c'))
 		{
-		echo '<div  class="'.$class.'">';
+		echo '<div  class="col-md-3">';
 		dynamic_sidebar('bottom-c');
 		echo '</div>';
 		}
 
 	if (is_active_sidebar('bottom-d'))
 		{
-		echo '<div  class="'.$class.'">';
+		echo '<div  class="col-md-3">';
 		dynamic_sidebar('bottom-d');
 		echo '</div>';
 		}
