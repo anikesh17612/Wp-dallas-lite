@@ -67,8 +67,7 @@ if (is_single())
 			if (get_theme_mod('continueReading', 'Read More'))
 				{
 				$continue = esc_html(get_theme_mod('continueReading', 'Read More'));
-				echo '<div class="meta-content-limit"></div>';
-				echo '<a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a>';
+				
 				}
 			}
 		}
@@ -86,9 +85,10 @@ wp_link_pages(array(
 ));
 ?>
 	</div><!-- .entry-content -->
-	
-		<?php
-echo add_social_share_icons($content); ?>
+	<div class="post-meta">
+		<?php	echo '<div class="meta-content-limit"><a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a></div>';?>
+		<?php	echo add_social_share_icons($content); ?>
+	</div>
 <?php
 
 if (is_single())
