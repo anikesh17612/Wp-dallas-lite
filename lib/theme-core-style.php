@@ -22,7 +22,7 @@ if (!function_exists('wp_dallas_lite_css_generator'))
 			$output.= 'a, a:visited, .bottom-widget .contact-info i,.bottom-widget .widget ul li a:hover, .latest-blog-content .latest-post-button:hover,.meta-category a:hover,.common-menu-wrap .nav>li>a:hover,.common-menu-wrap .nav>li.active>a,
                 .common-menu-wrap .nav>li.menu-item-has-children.active > a:after,.common-menu-wrap .nav>li.menu-item-has-children > a:hover:after,
                 .entry-header .entry-title a:hover,.blog-post-meta li a:hover,.entry-content .wrap-btn-style a.btn-style:hover,
-                .widget-blog-posts-section .entry-title  a:hover,.widget ul li a:hover,.footer-copyright ul li a:hover, .themeum-pagination ul li:first-child a:hover, .themeum-pagination ul li:last-child a:hover, .single-related-posts .common-post-item-intro a:hover,#site-navigation ul#primary-menu > li.current-menu-item > a,#site-navigation ul#primary-menu > li > a:hover, #bottom-section ul.menu > li > a:hover, #bottom-section ul.menu > li > a:focus, #site-navigation ul#primary-menu > li.current-menu-ancestor > a, .nav > li > a:focus, .nav > li > a:hover, a, #top-menu > li > a:hover, #top-menu > li > a:hover, #bottom-section ul > li > a:hover{ color: ' . esc_attr($major_color) . '; }';
+                .widget-blog-posts-section .entry-title  a:hover,.widget ul li a:hover,.footer-copyright ul li a:hover, .themeum-pagination ul li:first-child a:hover, .themeum-pagination ul li:last-child a:hover, .single-related-posts .common-post-item-intro a:hover,#site-navigation ul#primary-menu > li.current-menu-item > a,#site-navigation ul#primary-menu > li > a:hover, #bottom-section ul.menu > li > a:hover, #bottom-section ul.menu > li > a:focus, #site-navigation ul#primary-menu > li.current-menu-ancestor > a, .nav > li > a:focus, .nav > li > a:hover, a, #top-menu > li > a:hover, #top-menu > li > a:hover, #bottom-section ul > li > a:hover,.single-entry-content ul li:before,.single-entry-content ol li:before{ color: ' . esc_attr($major_color) . '; }';
 			$output.= '
 			@media screen and (max-width: 991px){
 				#site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a{color:' . esc_attr($major_color) . ';}
@@ -31,7 +31,7 @@ if (!function_exists('wp_dallas_lite_css_generator'))
 
 		if ($major_color)
 			{
-			$output.= '.bg-contact input[type=text]:focus,input:focus, textarea:focus, keygen:focus, select:focus{ border-color: ' . esc_attr($major_color) . '; }';
+			$output.= '.bg-contact input[type=text]:focus,input:focus, textarea:focus, keygen:focus, select:focus,.single-entry-content ol li:before,.tagcloud > a:hover, .tagcloud > a:focus, #bottom-section .tagcloud > a:hover, #bottom-section .tagcloud > a:focus{ border-color: ' . esc_attr($major_color) . '; }';
 			}
 
 		if ($major_color)
