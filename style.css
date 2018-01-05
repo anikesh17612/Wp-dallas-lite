@@ -1278,11 +1278,6 @@ article.type-post{
 	position:relative;
 }
 
-article.type-post .entry-content a.btn-primary{
-	position:absolute;
-	bottom:30px;
-}
-
 article.type-post .entry-header .entry-meta{
 	color:#aaaaaa;
 }
@@ -1535,14 +1530,10 @@ article.type-post h2.entry-title a {
 	border:1px solid #363b52;
 }
 
-
-
 /*------------ Widget Right Sidebar -----------*/
-
 
 .widget {
     margin: 0 0 50px;
-    /* Make sure select elements fit in widgets. */
 }
 .widget select {
     max-width: 100%;
@@ -1572,8 +1563,7 @@ article.type-post h2.entry-title a {
 	border-bottom:none;
 }
 
-
-/*---------- Button Info ----------*/
+/*----- Button Info -----*/
 
 .btn-info{
 	background-color:#222534;
@@ -1586,9 +1576,6 @@ article.type-post h2.entry-title a {
 	background:#363b52;
 	border-color:#363b52;
 }
-
-/*********** Button Info **********/
-
 
 /*----- Responsive -----*/
 
@@ -1621,11 +1608,6 @@ article.type-post h2.entry-title a {
 	ul#top-menu > li > a{
 		padding:10px 15px;
 	}
-	
-	article.type-post .entry-content a.btn-primary{
-		position:inherit;
-	}
-	
 	.post-social-share{
 		text-align:left;
 	}
@@ -1807,7 +1789,6 @@ article.type-post h2.entry-title a {
 	#content{
 		margin-bottom:0px;
 	}
-	
 }
 
 @media screen and (min-width: 992px) {
@@ -1834,4 +1815,3 @@ article.type-post h2.entry-title a {
 		margin:0 1.3%;
 	}
 }
-
