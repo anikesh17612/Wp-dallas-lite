@@ -41,7 +41,7 @@ function wp_dallas_option($wp_customize)
 		) ,
 	)));
 	$wp_customize->add_setting('blog_layout_selection', array(
-		'default' => 'blogleft'
+		'default' => 'blogright'
 	));
 
 	// Add control
@@ -58,7 +58,7 @@ function wp_dallas_option($wp_customize)
 		) ,
 	)));
 	$wp_customize->add_setting('select_blog_single_page_layout', array(
-		'default' => 'leftside'
+		'default' => 'rightside'
 	));
 
 	// Add control
@@ -75,7 +75,7 @@ function wp_dallas_option($wp_customize)
 		) ,
 	)));
 	$wp_customize->add_setting('select_pagination_layout', array(
-		'default' => 'pagiloadmore'
+		'default' => 'paginumber'
 	));
 
 	// Add control
@@ -111,7 +111,7 @@ function wp_dallas_option($wp_customize)
 		) ,
 	)));
 	$wp_customize->add_setting('copyright_text', array(
-		'default' => 'Copyright © 2017 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>'
+		'default' => 'Copyright © 2018 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'copyright_text', array(
 		'label' => __('Copyright Text', 'wp_dallas_lite') ,
@@ -434,14 +434,14 @@ function wp_dallas_option($wp_customize)
 		'default' => '16',
 	)));
 	$wp_customize->add_setting('menu_google_font', array(
-		'default' => 'lato'
+		'default' => 'Lato'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'select_google_font', array(
 		'section' => 'typographySetting',
 		'settings' => 'menu_google_font',
 		'label' => esc_html__('Menu Google Font', 'wp_dallas_lite') ,
 		'type' => 'select',
-		'default' => 'lato',
+		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
 		'google_font' => true,
 		'google_font_weight' => 'menu_font_weight',
@@ -458,7 +458,7 @@ function wp_dallas_option($wp_customize)
 		'default' => '15',
 	)));
 	$wp_customize->add_setting('h1_google_font', array(
-		'default' => 'lato'
+		'default' => 'Lato'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h1_google_font',
 
@@ -469,7 +469,7 @@ function wp_dallas_option($wp_customize)
 		'settings' => 'h1_google_font',
 		'label' => esc_html__('H1 Google Font', 'wp_dallas_lite') ,
 		'type' => 'select',
-		'default' => 'lato',
+		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
 		'google_font' => true,
 		'google_font_weight' => 'menu_font_weight',
@@ -490,7 +490,7 @@ function wp_dallas_option($wp_customize)
 		'default' => '42',
 	)));
 	$wp_customize->add_setting('h2_google_font', array(
-		'default' => 'lato'
+		'default' => 'Lato'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h2_google_font',
 
@@ -501,7 +501,7 @@ function wp_dallas_option($wp_customize)
 		'settings' => 'h2_google_font',
 		'label' => esc_html__('H2 Google Font', 'wp_dallas_lite') ,
 		'type' => 'select',
-		'default' => 'lato',
+		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
 		'google_font' => true,
 		'google_font_weight' => 'menu_font_weight',
@@ -522,7 +522,7 @@ function wp_dallas_option($wp_customize)
 		'default' => '36',
 	)));
 	$wp_customize->add_setting('h3_google_font', array(
-		'default' => 'lato'
+		'default' => 'Lato'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h3_google_font',
 
@@ -533,7 +533,7 @@ function wp_dallas_option($wp_customize)
 		'settings' => 'h3_google_font',
 		'label' => esc_html__('H3 Google Font', 'wp_dallas_lite') ,
 		'type' => 'select',
-		'default' => 'lato',
+		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
 		'google_font' => true,
 		'google_font_weight' => 'menu_font_weight',
@@ -554,7 +554,7 @@ function wp_dallas_option($wp_customize)
 		'default' => '30',
 	)));
 	$wp_customize->add_setting('h4_google_font', array(
-		'default' => 'lato'
+		'default' => 'Lato'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h4_google_font',
 
@@ -565,7 +565,7 @@ function wp_dallas_option($wp_customize)
 		'settings' => 'h4_google_font',
 		'label' => esc_html__('H4 Google Font', 'wp_dallas_lite') ,
 		'type' => 'select',
-		'default' => 'lato',
+		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
 		'google_font' => true,
 		'google_font_weight' => 'menu_font_weight',
@@ -586,7 +586,7 @@ function wp_dallas_option($wp_customize)
 		'default' => '27',
 	)));
 	$wp_customize->add_setting('h5_google_font', array(
-		'default' => 'lato'
+		'default' => 'Lato'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h5_google_font',
 
@@ -597,7 +597,7 @@ function wp_dallas_option($wp_customize)
 		'settings' => 'h5_google_font',
 		'label' => esc_html__('H5 Google Font', 'wp_dallas_lite') ,
 		'type' => 'select',
-		'default' => 'lato',
+		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
 		'google_font' => true,
 		'google_font_weight' => 'menu_font_weight',
@@ -618,7 +618,7 @@ function wp_dallas_option($wp_customize)
 		'default' => '25',
 	)));
 	$wp_customize->add_setting('h6_google_font', array(
-		'default' => 'lato'
+		'default' => 'Lato'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h6_google_font',
 
@@ -629,7 +629,7 @@ function wp_dallas_option($wp_customize)
 		'settings' => 'h6_google_font',
 		'label' => esc_html__('H6 Google Font', 'wp_dallas_lite') ,
 		'type' => 'select',
-		'default' => 'lato',
+		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
 		'google_font' => true,
 		'google_font_weight' => 'menu_font_weight',

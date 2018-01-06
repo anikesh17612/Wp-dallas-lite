@@ -753,17 +753,18 @@ object {
 }
 /*----- Social Icons -----*/
 
-ul.social-icons {
+#bottom-section ul.social-icons, ul.social-icons{
     display: inline-block;
     list-style: outside none none;
     margin:12px 0;
     padding: 0;
 }
-ul.social-icons > li {
+
+#bottom-section ul.social-icons > li, ul.social-icons > li{
     margin: 5px 7px;
     display: inline-block;
 }
-/*----- Social Icons -----*/
+
 /*----- Top Header -----*/
 
 #header-section .top-menu {
@@ -772,7 +773,10 @@ ul.social-icons > li {
 #header-section .social-icon {
     text-align: right;
 }
-
+#header-section .social-icons li{
+	margin: 0;
+	padding: 3px 5px;
+}
 #header-section .social-icons li a {
     color: #fff;
     width: 30px;
@@ -791,7 +795,8 @@ ul#top-menu{
 }
 
 ul#top-menu > li > a{
-	padding:20px 15px;
+	color: #fff;
+	padding:15px 10px;
 }
 
 ul#top-menu > li{
@@ -859,14 +864,14 @@ ul#top-menu ul.sub-menu > li.menu-item-has-children > a:after{
     padding-left: 10px;
 }
 
-/*----- Top Header -----*/
+
 /*----- Content -----*/
 
 #content {
     margin: 50px 0;
     padding: 10px 0;
 }
-/*----- Content -----*/
+
 /*----- Bottom Section -----*/
 
 #bottom-section {
@@ -946,6 +951,7 @@ ul#top-menu ul.sub-menu > li.menu-item-has-children > a:after{
 }
 
 /*----- Footer -----*/
+
 /*----- Box Layout -----*/
 
 body.box_layout #page {
@@ -953,26 +959,26 @@ body.box_layout #page {
     margin: 0 auto;
     max-width: 1200px;
 }
-/*----- Box Layout -----*/
+
 /*----- Contact Info -----*/
 
-ul.contact-info {
+#bottom-section ul.contact-info, .widget ul.contact-info {
     margin: 0;
     padding: 0;
     list-style: outside none none;
 }
-ul.contact-info li {
+#bottom-section ul.contact-info > li, .widget ul.contact-info > li {
     position: relative;
     padding-left: 30px;
     margin-bottom: 10px;
 }
-ul.contact-info li .fa {
+#bottom-section ul.contact-info > li .fa, .widget ul.contact-info > li .fa {
     left: 0;
     top: 6px;
     font-size: 16px;
     position: absolute;
 }
-/*----- Contact Info -----*/
+
 /*----- Site Navigation -----*/
 
 #site-navigation ul#primary-menu {
@@ -1190,11 +1196,21 @@ ul.contact-info li .fa {
     padding: 15px 0;
     color: #999;
 }
+
 /*------- search -------*/
 
-.search-form label {
-    width: 78%;
+.widget_search{
+	position: relative;
 }
+
+.search-form{
+	position: relative;
+}
+
+.search-form label {
+    width: 100%;
+}
+
 .search-form .search-field {
     width: 100%;
     border-left: 1px solid #cccccc;
@@ -1209,12 +1225,15 @@ ul.contact-info li .fa {
     color: #222534;
 }
 .search-form .search-submit {
-    background: #222632;
+	top: 0;
+	right: 0;
     color: #999;
+    width: auto;
+    padding: 0 20px;
+	font-size: 16px;
     line-height: 44px;
     position: absolute;
-    width: 20%;
-    padding: 0px;
+    background: #222632;
     border-radius: 0px;
 }
 
@@ -1273,6 +1292,11 @@ ul.contact-info li .fa {
 
 /*----- Tag Cloud -----*/
 
+.tagcloud{
+	width: 100%;
+	display: inline-block;
+}
+
 .tagcloud > a{
 	float: left;
 	color: #222533;
@@ -1300,6 +1324,11 @@ article.type-post{
 
 article.type-post .entry-header .entry-meta{
 	color:#aaaaaa;
+}
+
+article.type-post .entry-header .entry-meta a{
+	color: #aaa;
+	padding-right: 5px;
 }
 
 article.type-post .entry-header .entry-meta a, article.post .entry-header .entry-meta span.posted_on, article.post .entry-header .entry-meta span.posted_on a{
@@ -1332,7 +1361,9 @@ article.type-post h2.entry-title a {
 }
 
 .post-meta{
+	width: 100%;
 	padding-top: 20px;
+	display: inline-block;
 	border-top: 2px dotted #000;
 }
 
@@ -1501,6 +1532,11 @@ article.type-post h2.entry-title a {
 	margin:0 1.5%;
 }
 
+#comments ol.comment-list{
+	margin: 0;
+	padding: 0;
+}
+
 /*----- Post Author -----*/
 
 .post-author-meta{
@@ -1582,17 +1618,19 @@ article.type-post h2.entry-title a {
 }
 
 .tags_list a span{
-	background-color: #212433;
+	color:#363b52;
     font-size: 14px;
-	border:1px solid #363b52;
-    padding: 15px 25px;
-	border-radius:4px;
-	color:#fff;
+    padding: 5px 15px;
 	margin-right:10px;
+	line-height: normal;
+	border: 1px solid #363b52;
+}
+
+.tags_list a span:before{
+	content: "#";
 }
 
 .tags_list a span:hover{
-	background:#363b52;
 	border:1px solid #363b52;
 }
 
@@ -1673,22 +1711,10 @@ article.type-post h2.entry-title a {
 @media screen and (max-width:991px){
 	.loadmore{
 		margin-bottom:20px;
-	}
-	
-	#bottom-section{
-		padding-bottom:0;
-	}
-	
+	}	
 	.search-form {
         margin: 30px 0 15px;
     }
-    .search-form label {
-        width: 200px;
-    }
-    .search-form .search-submit {
-        width: 50px;
-    }
-	
 	.post-author-meta .author-meta{
 		margin-bottom:1.5em;
 	}
@@ -1847,10 +1873,6 @@ article.type-post h2.entry-title a {
 		text-align:center;
 		float:none;
 		margin-bottom:15px;
-	}
-
-	ul#top-menu > li > a{
-		padding:10px 15px;
 	}
 
 	article.type-post .entry-content .single-entry-content > blockquote{
