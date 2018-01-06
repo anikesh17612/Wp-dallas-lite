@@ -19,31 +19,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
 
 html {
     font-family: sans-serif;
@@ -83,14 +58,15 @@ template {
     display: none;
 }
 a {
-    outline: none;
     background-color: transparent;
 }
-a:active,
-a:hover {
-    outline: 0;
-    text-decoration: none;
+
+a, a:hover, a:focus, a:active {
+    text-decoration-color: currentcolor;
+    text-decoration-line: none;
+    text-decoration-style: solid;
 }
+
 abbr[title] {
     border-bottom: 1px dotted;
 }
@@ -1371,6 +1347,17 @@ article.type-post h2.entry-title a {
 	float: left;
 }
 
+.post-meta .tags_list{
+	float: left;
+	width: 70%;
+	margin: 0;
+}
+
+.post-meta .tags_list +.post-social-share{
+	width: 30%;
+	overflow: hidden;
+}
+
 .single-entry-content ol,
 .single-entry-content ul{
 	padding: 0;
@@ -1612,25 +1599,21 @@ article.type-post h2.entry-title a {
 
 /*----------- Tags List -----------*/
 
-.tags_list{
-	position:absolute;
-	bottom:40px;
-}
-
-.tags_list a span{
+.tags_list a{
 	color:#363b52;
+	display: inline-block;
     font-size: 14px;
     padding: 5px 15px;
-	margin-right:10px;
+	margin:0 10px 10px 0;
 	line-height: normal;
 	border: 1px solid #363b52;
 }
 
-.tags_list a span:before{
+.tags_list a:before{
 	content: "#";
 }
 
-.tags_list a span:hover{
+.tags_list a:hover{
 	border:1px solid #363b52;
 }
 
@@ -1709,6 +1692,12 @@ article.type-post h2.entry-title a {
 }
 
 @media screen and (max-width:991px){
+	.post-meta .tags_list,
+	.post-meta .tags_list +.post-social-share{
+		float: none;
+		width: 100%;
+		text-align: left;
+	}
 	.loadmore{
 		margin-bottom:20px;
 	}	
@@ -1878,12 +1867,6 @@ article.type-post h2.entry-title a {
 	article.type-post .entry-content .single-entry-content > blockquote{
 		font-size:14px;
 	}
-
-	.tags_list{
-		position:relative;
-		bottom:20px;
-		margin-top:40px;
-	}
 }
 
 @media screen and (max-width:650px){
@@ -1894,4 +1877,4 @@ article.type-post h2.entry-title a {
 	#comments .comment-form p:nth-child(4){
 		margin:0 0 1.5em;
 	}
-} 
+}
