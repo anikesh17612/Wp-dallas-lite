@@ -526,7 +526,7 @@ function wp_dallas_option($wp_customize)
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h3_google_font',
 
-	// Heading 2
+	// Heading 3
 
 	array(
 		'section' => 'typographySetting',
