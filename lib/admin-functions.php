@@ -146,7 +146,7 @@ function add_social_share_icons($content)
 
 	if (get_option("social-share-twitter") == 1)
 		{
-		$html = $html . "<div class='twitter'><a target='_blank' href='" . esc_html_e($twitterURL) . "' ><i class='fa fa-twitter' aria-hidden='true'></i></a></div>";
+		$html = $html . "<div class='twitter'><a target='_blank' href='" . $twitterURL . "' ><i class='fa fa-twitter' aria-hidden='true'></i></a></div>";
 		}
 
 	if (get_option("social-share-linkedin") == 1)

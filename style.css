@@ -618,16 +618,7 @@ a:active {
     clear: both;
     margin: 0 0 1.5em;
 }
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
 
-.comment-content a {
-    word-wrap: break-word;
-}
-.bypostauthor {
-    display: block;
-}
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -1524,6 +1515,29 @@ article.type-post h2.entry-title a {
 	padding: 0;
 }
 
+.comment-list .comment-body {
+	border-bottom: 1px solid #ddd;
+	margin: 15px 0 20px;
+	padding: 20px 0;
+}
+
+.comment-metadata a{
+	color: #999;
+	font-size: 14px;
+}
+
+.comment-content{
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.comment-content a {
+    word-wrap: break-word;
+}
+.bypostauthor {
+    display: block;
+}
+
 /*----- Post Author -----*/
 
 .post-author-meta{
@@ -1532,26 +1546,136 @@ article.type-post h2.entry-title a {
     padding: 20px;
 	margin:0 0 1.5em;
 	width:100%;
-	float:left;
 }
 
-.post-author-meta .author-meta img{
-	border-radius:100%;
-}
-
-.post-author-meta .author-title, .post-author-meta .author-desc, .post-author-meta .author-meta-social-link{
+.post-author-meta .author-title, .post-author-meta .author-meta-social-link{
 	margin:0 0 10px;
 }
 
-.post-author-meta .author-meta-social-link a{
-	margin-right:15px;
+.post-author-meta .author-title{
+	margin-top: 10px;
+}
+
+.post-author-meta .author-meta-social-link li{
+	border: none;
 	color:inherit;
 	display:inline-block;
-	padding-top:5px;
+}
+
+.post-author-meta .author-meta-social-link li:not(:last-child){
+	margin-right: 5px;
+}
+
+.post-author-meta .author-meta-social-link li a{
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	display: block;
+	font-size: 16px;
+	line-height: 40px;
+	background: #222533;
+	border-radius: 40px;
+}
+
+.post-author-meta .author-meta-social-link li a:hover,
+.post-author-meta .author-meta-social-link li a:focus{
+	color: #fff;
 }
 
 .post-author-meta .author-title{
 	font-size:20px;
+}
+
+.author-meta-social-link li a[href*="blogger"]{
+	background-color: #ff8000;
+}
+
+.author-meta-social-link li a[href*="delicious"] {
+    background-color: #205cc0;
+}
+
+.author-meta-social-link li a[href*="digg"] {
+    background-color: #262626;
+}
+
+.author-meta-social-link li a[href*="email"] {
+    background-color: #7d7d7d;
+}
+
+.author-meta-social-link li a[href*="facebook"] {
+    background-color: #3b5998;
+}
+
+.author-meta-social-link li a[href*="flipboard"] {
+    background-color: #e12828;
+}
+
+.author-meta-social-link li a[href*="plus.google"] {
+    background-color: #dc4e41;
+}
+
+.author-meta-social-link li a[href*="linkedin"] {
+    background-color: #0077b5;
+}
+
+.author-meta-social-link li a[href*="livejournal"] {
+    background-color: #00b0ea;
+}
+
+.author-meta-social-link li a[href*="mailru"] {
+    background-color: #168de2;
+}
+
+.author-meta-social-link li a[href*="meneame"] {
+    background-color: #ff6400;
+}
+
+.author-meta-social-link li a[href*="odnoklassniki"] {
+    background-color: #d7772d;
+}
+
+.author-meta-social-link li a[href*="pinterest"] {
+    background-color: #cb2027;
+}
+
+.author-meta-social-link li a[href*="print"] {
+    background-color: #222222;
+}
+
+.author-meta-social-link li a[href*="reddit"] {
+    background-color: #ff4500;
+}
+
+.author-meta-social-link li a[href*="stumbleupon"] {
+    background-color: #eb4924;
+}
+
+.author-meta-social-link li a[href*="tumblr"] {
+    background-color: #32506d;
+}
+
+.author-meta-social-link li a[href*="twitter"] {
+    background-color: #55acee;
+}
+
+.author-meta-social-link li a[href*="vk"] {
+    background-color: #4c6c91;
+}
+
+.author-meta-social-link li a[href*="weibo"] {
+    background-color: #ff9933;
+}
+
+.author-meta-social-link li a[href*="whatsapp"] {
+    background-color: #25d366;
+}
+
+.author-meta-social-link li a[href*="xing"] {
+    background-color: #1a7576;
+}
+
+.author-meta-social-link li a[href*="wechat"] {
+    background-color: #4ec034;
 }
 
 /*----------- Related post -----------*/
@@ -1848,7 +1972,6 @@ article.type-post h2.entry-title a {
 	}
 }
 
-
 @media screen and (max-width:767px){
 	div #header-section .top-menu, div #header-section .social-icon{
 		margin-bottom:0;
@@ -1866,6 +1989,19 @@ article.type-post h2.entry-title a {
 
 	article.type-post .entry-content .single-entry-content > blockquote{
 		font-size:14px;
+	}
+	.post-meta .meta-content-limit{
+		float: none;
+	}
+	.post-meta .meta-content-limit +.post-social-share{
+		margin-top: 20px;
+	}
+	.post-social-share{
+		text-align: left;
+	}
+	.related_post ul > li{
+		margin: 0;
+		width: 100%;
 	}
 }
 

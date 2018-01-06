@@ -19,10 +19,7 @@ if (!function_exists('wp_dallas_lite_css_generator'))
 		$major_color = get_theme_mod('major_color', '#ffc414');
 		if ($major_color)
 			{
-			$output.= 'a, a:visited, .bottom-widget .contact-info i,.bottom-widget .widget ul li a:hover, .latest-blog-content .latest-post-button:hover,.meta-category a:hover,.common-menu-wrap .nav>li>a:hover,.common-menu-wrap .nav>li.active>a,
-                .common-menu-wrap .nav>li.menu-item-has-children.active > a:after,.common-menu-wrap .nav>li.menu-item-has-children > a:hover:after,
-                .entry-header .entry-title a:hover,.blog-post-meta li a:hover,.entry-content .wrap-btn-style a.btn-style:hover,
-                .widget-blog-posts-section .entry-title  a:hover,.widget ul li a:hover,.footer-copyright ul li a:hover, .themeum-pagination ul li:first-child a:hover, .themeum-pagination ul li:last-child a:hover, .single-related-posts .common-post-item-intro a:hover,#site-navigation ul#primary-menu > li.current-menu-item > a,#site-navigation ul#primary-menu > li > a:hover, #bottom-section ul.menu > li > a:hover, #bottom-section ul.menu > li > a:focus, #site-navigation ul#primary-menu > li.current-menu-ancestor > a, .nav > li > a:focus, .nav > li > a:hover, a, #top-menu > li > a:hover, #top-menu > li > a:hover, #bottom-section ul > li > a:hover,.single-entry-content ul li:before,.single-entry-content ol li:before{ color: ' . esc_attr($major_color) . '; }';
+			$output.= '.bottom-widget .contact-info i, .bottom-widget .widget ul li a:hover, .latest-blog-content .latest-post-button:hover, .meta-category a:hover, .common-menu-wrap .nav >li >a:hover, .common-menu-wrap .nav >li.active >a, .common-menu-wrap .nav >li.menu-item-has-children.active > a:after,.common-menu-wrap .nav>li.menu-item-has-children > a:hover:after, .entry-header .entry-title a:hover,.blog-post-meta li a:hover,.entry-content .wrap-btn-style a.btn-style:hover, .widget-blog-posts-section .entry-title a:hover,.widget ul li a:hover,.footer-copyright ul li a:hover, .single-related-posts .common-post-item-intro a:hover,#site-navigation ul#primary-menu > li.current-menu-item > a,#site-navigation ul#primary-menu > li > a:hover, #bottom-section ul.menu > li > a:hover, #bottom-section ul.menu > li > a:focus, #site-navigation ul#primary-menu > li.current-menu-ancestor > a, .nav > li > a:focus, .nav > li > a:hover, a, #top-menu > li > a:hover, #top-menu > li > a:hover, #bottom-section ul > li > a:hover,.single-entry-content ul li:before,.single-entry-content ol li:before{ color: ' . esc_attr($major_color) . '; }';
 			$output.= '
 			@media screen and (max-width: 991px){
 				#site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a{color:' . esc_attr($major_color) . ';}
@@ -41,18 +38,12 @@ if (!function_exists('wp_dallas_lite_css_generator'))
 
 		if ($major_color)
 			{
-			$output.= '.themeum-latest-post-content .entry-title a:hover,.common-menu-wrap .nav>li.current>a,
-                .header-solid .common-menu-wrap .nav>li.current>a,.portfolio-filter .btn-link.active,.portfolio-filter li a:hover,.latest-review-single-layout2 .latest-post-title a:hover, .blog-arrows a:hover{ color: ' . esc_attr($major_color) . '; }';
+			$output.= '.common-menu-wrap .nav >li.current >a, .header-solid .common-menu-wrap .nav >li.current >a, .portfolio-filter .btn-link.active, .portfolio-filter li a:hover, .latest-review-single-layout2 .latest-post-title a:hover, .blog-arrows a:hover{ color: ' . esc_attr($major_color) . '; }';
 			}
 
 		if ($major_color)
 			{
-			$output.= '.team-content4,.portfolio-filter li a:before, .classic-slider .owl-dots .active>span, .widget .tagcloud a:hover, .themeum-pagination li span.page-numbers:hover, .themeum-pagination li a.page-numbers:hover,.themeum-pagination li span.page-numbers.current, #header-section .social-icons li a:hover , #header-section .social-icons li a:focus, #site-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a, .menu-toggle, .backtotop, .btn-default, #wp-subscribe.wp-subscribe-wrap{ background: ' . esc_attr($major_color) . '; }';
-			}
-
-		if ($major_color)
-			{
-			$output.= '.themeum-pagination li span.page-numbers.current{border-color: ' . esc_attr($major_color) . '; }';
+			$output.= '.team-content4,.portfolio-filter li a:before, .classic-slider .owl-dots .active >span, .widget .tagcloud a:hover, #header-section .social-icons li a:hover, #header-section .social-icons li a:focus, #site-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a, .menu-toggle, .backtotop, .btn-default, #wp-subscribe.wp-subscribe-wrap{ background: ' . esc_attr($major_color) . '; }';
 			}
 
 		// .select2-container .select2-dropdown .select2-results ul li
@@ -198,8 +189,7 @@ if (!function_exists('wp_dallas_lite_css_generator'))
 		if (get_theme_mod('h6_line_height', '20'))
 			{
 			$h6style.= 'line-height:' . get_theme_mod('h6_line_height', '20') . 'px;';
-			}	
-
+			}
 		$output.= 'body{' . $bstyle . '}';
 		$output.= '.nav-menu>li>a{' . $mstyle . '}';
 		$output.= 'h1{' . $h1style . '}';
