@@ -600,6 +600,10 @@ a:active {
 ## Posts and pages
 --------------------------------------------------------------*/
 
+.single-post div.post-thumbnail, .single-post p.short-description{
+	display: none;
+}
+
 .sticky {
     display: block;
 }
@@ -1560,6 +1564,11 @@ article.type-post h2.entry-title a {
 	margin-top: 10px;
 }
 
+.post-author-meta .author-meta-social-link a{
+	color:inherit;
+	padding: 0 5px;
+}
+
 .post-author-meta .author-meta-social-link li{
 	border: none;
 	color:inherit;
@@ -1742,6 +1751,7 @@ article.type-post h2.entry-title a {
 }
 
 .tags_list a:hover{
+	color:#363b52;
 	border:1px solid #363b52;
 }
 
