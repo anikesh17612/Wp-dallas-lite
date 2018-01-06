@@ -1184,7 +1184,7 @@ body.box_layout #page {
     border-top: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
     border-right: none;
-    line-height: 38px;
+    line-height: 30px;
     font-size: 14px;
     font-weight: normal;
     padding-left: 10px;
@@ -1198,7 +1198,7 @@ body.box_layout #page {
     width: auto;
     padding: 0 20px;
 	font-size: 16px;
-    line-height: 44px;
+    line-height: 36px;
     position: absolute;
     background: #222632;
     border-radius: 0px;
