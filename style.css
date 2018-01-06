@@ -917,6 +917,10 @@ ul#top-menu ul.sub-menu > li.menu-item-has-children > a:after{
 	display:none;
 }
 
+#footer-section a{
+	color: #fff;
+}
+
 /*----- Footer -----*/
 
 /*----- Box Layout -----*/
