@@ -100,12 +100,6 @@ wp_link_pages(array(
 		}
 			echo add_social_share_icons($content); ?>
 	</div>
-<?php
-
-if (is_single())
-	{
-	get_template_part('template-parts/content', 'tag');
-	} ?>	
 </article>
 
 
