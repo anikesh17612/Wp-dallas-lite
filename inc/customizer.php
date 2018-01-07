@@ -2,7 +2,7 @@
 /**
  * WP Dallas Lite Theme Customizer
  *
- * @package WP_Dallas_Lite
+ * @package wp_dallas_lite
  */
 
 /**

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WP_Dallas_Lite
+ * @package wp_dallas_lite
  */
 
 if (!function_exists('wp_dallas_lite_setup')):

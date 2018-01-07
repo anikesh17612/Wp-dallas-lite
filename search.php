@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package WP_Dallas_Lite
+ * @package wp_dallas_lite
  */
 
 get_header(); ?>

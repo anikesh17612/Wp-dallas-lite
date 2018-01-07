@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WP_Dallas_Lite
+ * @package wp_dallas_lite
  */
 ?>
 

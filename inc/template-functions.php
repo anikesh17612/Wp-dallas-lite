@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package WP_Dallas_Lite
+ * @package wp_dallas_lite
  */
 
 /**

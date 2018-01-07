@@ -8,7 +8,7 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package WP_Dallas_Lite
+ * @package wp_dallas_lite
  */
 /**
  * Set up the WordPress core custom header feature.

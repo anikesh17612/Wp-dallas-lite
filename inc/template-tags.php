@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package WP_Dallas_Lite
+ * @package wp_dallas_lite
  */
 
 if ( ! function_exists( 'wp_dallas_lite_posted_on' ) ) :

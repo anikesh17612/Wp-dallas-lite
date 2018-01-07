@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package WP_Dallas_Lite
+ * @package wp_dallas_lite
  */
 
 get_header(); 
