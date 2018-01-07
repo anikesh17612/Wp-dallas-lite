@@ -14,11 +14,11 @@ get_header();
 		<main id="main" class="site-main">
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php echo esc_html(get_theme_mod('404pageTitle' ,esc_html__('Page not Found.', 'Wpdallas'))); ?></h1>
+					<h1 class="page-title"><?php echo esc_html(get_theme_mod('404pageTitle' ,esc_html__('Page not Found.', 'wp_dallas_lite'))); ?></h1>
 				</header><!-- .page-header -->
 				<div class="page-content">
-					<p><?php echo esc_html(get_theme_mod('404pageDescription',esc_html__('The page you are looking for was moved, removed, renamed or might never existed..', 'Wpdallas'))); ?></p>
-					<p><a href="<?php echo home_url();?>"><?php echo esc_html(get_theme_mod('404buttonText', esc_html__('Go Back Home', 'Wpdallas'))); ?></a></p>
+					<p><?php echo esc_html(get_theme_mod('404pageDescription',esc_html__('The page you are looking for was moved, removed, renamed or might never existed..', 'wp_dallas_lite'))); ?></p>
+					<p><a href="<?php echo home_url();?>"><?php echo esc_html(get_theme_mod('404buttonText', esc_html__('Go Back Home', 'wp_dallas_lite'))); ?></a></p>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 		</main><!-- #main -->

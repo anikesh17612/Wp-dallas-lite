@@ -201,7 +201,7 @@ function wp_dallas_lite_scripts()
 		wp_enqueue_script('comment-reply');
 		}
 
-	wp_localize_script('wp-dallas-lite-script', 'screenReaderText', array(
+	wp_localize_script('wp_dallas_lite_script', 'screenReaderText', array(
 		'expand' => __('expand child menu', 'wp-dallas-lite') ,
 		'collapse' => __('collapse child menu', 'wp-dallas-lite') ,
 	));
@@ -357,109 +357,109 @@ function custom_user_profile_fields($profileuser)
 		<tr>
 			<th>
 				<label for="fb_url"><?php
-	esc_html_e('Facebook'); ?></label>
+	esc_html_e('Facebook','wp_dallas_lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="fb_url" id="fb_url" value="<?php
 	echo esc_attr(get_the_author_meta('fb_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Facebook url.', 'text-domain'); ?></span>
+	esc_html_e('Facebook url.','wp_dallas_lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="twitter_url"><?php
-	esc_html_e('Twitter url'); ?></label>
+	esc_html_e('Twitter url','wp_dallas_lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="twitter_url" id="twitter_url" value="<?php
 	echo esc_attr(get_the_author_meta('twitter_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Twitter url.', 'text-domain'); ?></span>
+	esc_html_e('Twitter url.','wp_dallas_lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="gplus_url"><?php
-	esc_html_e('Google Plus url'); ?></label>
+	esc_html_e('Google Plus url','wp_dallas_lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="gplus_url" id="gplus_url" value="<?php
 	echo esc_attr(get_the_author_meta('gplus_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Google Plus url.', 'text-domain'); ?></span>
+	esc_html_e('Google Plus url.','wp_dallas_lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="linkedin_url"><?php
-	esc_html_e('Linkedin  url'); ?></label>
+	esc_html_e('Linkedin  url','wp_dallas_lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="linkedin_url" id="linkedin_url" value="<?php
 	echo esc_attr(get_the_author_meta('linkedin_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Linkedin url.', 'text-domain'); ?></span>
+	esc_html_e('Linkedin url.','wp_dallas_lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="behance_url"><?php
-	esc_html_e('Behance url'); ?></label>
+	esc_html_e('Behance url','wp_dallas_lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="behance_url" id="behance_url" value="<?php
 	echo esc_attr(get_the_author_meta('behance_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Behance url.', 'text-domain'); ?></span>
+	esc_html_e('Behance url.','wp_dallas_lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="youtube_url"><?php
-	esc_html_e('Youtube url'); ?></label>
+	esc_html_e('Youtube url','wp_dallas_lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="youtube_url" id="youtube_url" value="<?php
 	echo esc_attr(get_the_author_meta('youtube_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Youtube url.', 'text-domain'); ?></span>
+	esc_html_e('Youtube url.','wp_dallas_lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="snapchat_url"><?php
-	esc_html_e('Snapchat url'); ?></label>
+	esc_html_e('Snapchat url','wp_dallas_lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="snapchat_url" id="snapchat_url" value="<?php
 	echo esc_attr(get_the_author_meta('snapchat_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Snapchat url.', 'text-domain'); ?></span>
+	esc_html_e('Snapchat url.','wp_dallas_lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="skype_url"><?php
-	esc_html_e('Skype url'); ?></label>
+	esc_html_e('Skype url','wp_dallas_lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="skype_url" id="skype_url" value="<?php
 	echo esc_attr(get_the_author_meta('skype_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Skype url.', 'text-domain'); ?></span>
+	esc_html_e('Skype url.','wp_dallas_lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="pinterest_url"><?php
-	esc_html_e('Pinterest url'); ?></label>
+	esc_html_e('Pinterest url','wp_dallas_lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="pinterest_url" id="pinterest_url" value="<?php
 	echo esc_attr(get_the_author_meta('pinterest_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Pinterest url.', 'text-domain'); ?></span>
+	esc_html_e('Pinterest url.','wp_dallas_lite'); ?></span>
 			</td>
 		</tr>
 	</table>
