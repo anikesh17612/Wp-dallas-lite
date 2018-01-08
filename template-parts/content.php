@@ -6,7 +6,8 @@
  *
  * @package wp_dallas_lite
  */
-?>
+
+ ?>
 <article id="post-<?php
 the_ID(); ?>" <?php
 post_class(); ?>>
@@ -31,19 +32,20 @@ endif;
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-				<div class="post-thumbnail"><?php
-the_post_thumbnail(); ?>
+	<?php if (!is_single()){?>
+				<div class="post-thumbnail">
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+	<img src="<?php the_post_thumbnail_url(); ?>"/>
+	</a>
 				</div>	
 				<?php
-
+	}
 if (is_single())
 	{ ?>
-				<p class="short-description">
 					<div class="single-entry-content">
 						<?php
 	the_content(); ?>
 					</div>
-				</p>
 				<?php
 	}
   else
@@ -77,7 +79,7 @@ if (is_single())
 		}
 	}
 
-?></p>
+?>
 			<?php
 wp_link_pages(array(
 	'before' => '<div class="page-links">' . esc_html__('Pages:', 'wp_dallas_lite') ,
@@ -96,7 +98,13 @@ wp_link_pages(array(
 				$continue = esc_html(get_theme_mod('continueReading', 'Read More'));
 				
 				}
-			}echo '<div class="meta-content-limit"><a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a></div>';
+			echo '<div class="meta-content-limit"><a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a></div>';
+			}else{
+				
+			}
+		}
+		else{
+			
 		}
 			echo add_social_share_icons($content); ?>
 	</div>

@@ -58,7 +58,7 @@ if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_
 <?php
 	} ?>
 <!-- End bottom postion of theme -->
-
+<?php if(get_theme_mod('enable_copyright_text', '1') || has_nav_menu('menu-3') ){?>
 	<footer id="footer-section">
 		<div class="container">
 			<div class="row">
@@ -73,6 +73,8 @@ if ($enable_copyright_text)
 	echo get_theme_mod('copyright_text', 'Copyright © 2018 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>'); ?>
 												</div><!-- site-info -->
 												<?php
+	}else{
+		
 	} ?>
 											
 											<div class="footer-menu col-md-6">
@@ -93,6 +95,10 @@ if (has_nav_menu('menu-3'))
 			</div>
 		</div>
 	</footer><!-- #site-footer -->
+<?php }
+else{
+		
+	}?>
 </div><!-- #page -->
 
 <?php
