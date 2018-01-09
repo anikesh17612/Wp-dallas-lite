@@ -66,7 +66,9 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+	comment_form(array('title_reply_before'   => '<h4 id="reply-title" class="comment-reply-title">'));
+
+
 	?>
 
 </div><!-- #comments -->
