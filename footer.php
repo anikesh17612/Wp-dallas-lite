@@ -80,10 +80,7 @@ if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_
 			</div>
 		</div>
 	</footer><!-- #site-footer -->
-<?php }
-else{
-		
-	}?>
+<?php }?>
 </div><!-- #page -->
 
 <?php
