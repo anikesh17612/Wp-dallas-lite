@@ -106,7 +106,7 @@ add_action('after_setup_theme', 'wp_dallas_lite_content_width', 0);
 * @link https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 */
 add_theme_support('post-thumbnails');
-set_post_thumbnail_size(1200, auto);
+set_post_thumbnail_size(1200, 'auto');
 /**
  * Register widget area.
  *

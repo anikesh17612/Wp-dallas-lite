@@ -79,7 +79,7 @@ if ($published_posts > $default_posts_per_page)
 		{ ?>
 		<div class="wpdal_pagination">
 		<?php
-		echo paginate_links($args); ?>
+		echo paginate_links(); ?>
 		</div>
 	<?php
 		}
