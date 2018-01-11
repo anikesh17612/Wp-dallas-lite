@@ -16,6 +16,10 @@ language_attributes(); ?>>
 	<meta charset="<?php
 bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php $fb_image = wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID() ), 'thumnail'); ?>
+	<?php if ($fb_image) : ?>
+	<meta property="og:image" content="<?php echo $fb_image[0]; ?>" />
+	<?php endif; ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<?php
