@@ -885,9 +885,7 @@ Author: JoomDev Author URI: https://www.joomdev.com Description: WP Dallas Lite 
      padding: 10px 25px;
      border-radius: 3px;
 }
- .site-main .btn.btn-primary {
-     background:#222534;
-}
+
 /*----- Button Styling -----*/
 /*----- Tab Styling -----*/
  .tab-content ul {
@@ -1154,21 +1152,16 @@ Author: JoomDev Author URI: https://www.joomdev.com Description: WP Dallas Lite 
      padding:15px 25px;
      font-size:14px;
      border-radius:4px;
-     background-color:#212433;
-     border:1px solid #363b52;
      line-height:normal;
 }
- #comments .form-submit input.submit:hover{
-     background:#363b52;
-     border:1px solid #363b52;
-}
+
  #comments label{
      font-weight:normal;
 }
+
  #comments textarea, #comments input{
      border-radius:0px;
      border:1px solid #cccccc;
-     color:inherit;
      font-size:14px;
      width:100%;
      padding-left:10px;
@@ -1405,15 +1398,10 @@ Author: JoomDev Author URI: https://www.joomdev.com Description: WP Dallas Lite 
 }
 /*----- Button Info -----*/
  .btn-info{
-     background-color:#222534;
      color:#fff;
-     border-color:#363b52;
      border-radius:4px;
 }
- .btn-info:hover, .btn-info:focus, .btn-info:active:focus{
-     background:#363b52;
-     border-color:#363b52;
-}
+
 /*----- Responsive -----*/
  @media screen and (min-width:768px) and (max-width:1199px){
      .container{

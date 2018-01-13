@@ -19,7 +19,7 @@ if (!function_exists('wp_dallas_lite_css_generator'))
 		$major_color = get_theme_mod('major_color', '#ffc414');
 		if ($major_color)
 			{
-			$output.= 'a, a:visited, .bottom-widget .contact-info i, .bottom-widget .widget ul li a:hover, .latest-blog-content .latest-post-button:hover, .meta-category a:hover, .common-menu-wrap .nav >li >a:hover, .common-menu-wrap .nav >li.active >a, .common-menu-wrap .nav >li.menu-item-has-children.active > a:after,.common-menu-wrap .nav>li.menu-item-has-children > a:hover:after, .entry-header .entry-title a:hover,.blog-post-meta li a:hover,.entry-content .wrap-btn-style a.btn-style:hover, .widget-blog-posts-section .entry-title a:hover,.widget ul li a:hover,.footer-copyright ul li a:hover, .single-related-posts .common-post-item-intro a:hover,#site-navigation ul#primary-menu > li.current-menu-item > a,#site-navigation ul#primary-menu > li > a:hover, #bottom-section ul.menu > li > a:hover, #bottom-section ul.menu > li > a:focus, #site-navigation ul#primary-menu > li.current-menu-ancestor > a, .nav > li > a:focus, .nav > li > a:hover, a, #top-menu > li > a:hover, #top-menu > li > a:hover, #bottom-section ul > li > a:hover,.single-entry-content ul li:before,.single-entry-content ol li:before{ color: ' . esc_attr($major_color) . '!important; }';
+			$output.= 'a, a:visited, .bottom-widget .contact-info i, .bottom-widget .widget ul li a:hover, .latest-blog-content .latest-post-button:hover, .meta-category a:hover, .common-menu-wrap .nav >li >a:hover, .common-menu-wrap .nav >li.active >a, .common-menu-wrap .nav >li.menu-item-has-children.active > a:after,.common-menu-wrap .nav>li.menu-item-has-children > a:hover:after, .entry-header .entry-title a:hover,.blog-post-meta li a:hover,.entry-content .wrap-btn-style a.btn-style:hover, .widget-blog-posts-section .entry-title a:hover, .footer-copyright ul li a:hover, .single-related-posts .common-post-item-intro a:hover,#site-navigation ul#primary-menu > li.current-menu-item > a, #site-navigation ul#primary-menu > li.current-menu-ancestor > a, .nav > li > a:focus, .nav > li > a:hover, a, .single-entry-content ul li:before,.single-entry-content ol li:before{ color: ' . esc_attr($major_color) . '}';
 			$output.= '
 			@media screen and (max-width: 991px){
 				#site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a{color:' . esc_attr($major_color) . ';}
@@ -43,7 +43,7 @@ if (!function_exists('wp_dallas_lite_css_generator'))
 
 		if ($major_color)
 			{
-			$output.= '.team-content4,.portfolio-filter li a:before, .classic-slider .owl-dots .active >span, .widget .tagcloud a:hover, #header-section .social-icons li a:hover, #header-section .social-icons li a:focus, #site-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a, .menu-toggle, .backtotop, .btn-default, #wp-subscribe.wp-subscribe-wrap{ background: ' . esc_attr($major_color) . '; }';
+			$output.= '.team-content4, .portfolio-filter li a:before, .classic-slider .owl-dots .active >span, .widget .tagcloud a:hover, #header-section .social-icons li a:hover, #header-section .social-icons li a:focus, #site-navigation ul#primary-menu ul.sub-menu > li > a:hover, #site-navigation ul#primary-menu ul.sub-menu > li > a:focus, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-item > a, #site-navigation ul#primary-menu ul.sub-menu > li.current-menu-ancestor > a, .menu-toggle, .backtotop, .btn-default, #wp-subscribe.wp-subscribe-wrap{ background: ' . esc_attr($major_color) . '; }';
 			}
 
 		// .select2-container .select2-dropdown .select2-results ul li
@@ -51,9 +51,9 @@ if (!function_exists('wp_dallas_lite_css_generator'))
 		$hover_color = get_theme_mod('hover_color', '#e6ac00');
 		if ($hover_color)
 			{
-			$output.= 'a:hover, .post-content-wrapper-controller:hover, .post-content-wrapper-controller .fa.pull-left:hover, .post-content-wrapper-controller .fa.pull-right:hover , .widget.widget_rss ul li a,.social-share a:hover{ color: ' . esc_attr($hover_color) . '; }';
-			$output.= '.error-page-inner a.btn.btn-primary.btn-lg:hover,.btn.btn-primary:hover,input[type=button]:hover{ background-color: ' . esc_attr($hover_color) . '; }';
-			$output.= '.woocommerce a.button:hover{ border-color: ' . esc_attr($hover_color) . '!important; }';
+			$output.= 'a:hover, #top-menu > li > a:hover, #site-navigation ul#primary-menu > li > a:hover, .widget ul li a:hover, #bottom-section ul.menu > li > a:hover, #bottom-section ul.menu > li > a:focus, #bottom-section ul > li > a:hover, .post-content-wrapper-controller:hover, .post-content-wrapper-controller .fa.pull-left:hover, .post-content-wrapper-controller .fa.pull-right:hover , .widget.widget_rss ul li a,.social-share a:hover{ color: ' . esc_attr($hover_color) . '; }';
+			$output.= '.error-page-inner a.btn.btn-primary.btn-lg:hover{ background-color: ' . esc_attr($hover_color) . '; }';
+			$output.= '.woocommerce a.button:hover{ border-color: ' . esc_attr($hover_color) . ' }';
 			}
 
 		/* ************************************************************
@@ -206,14 +206,14 @@ if (!function_exists('wp_dallas_lite_css_generator'))
 
 		// Button color setting...
 
-		if (get_theme_mod('button_hover_bg_color', '#363b52'))
+		if (get_theme_mod('button_bg_color', '#222533'))
 			{
-			$output.= '.mc4wp-form-fields input[type=submit], .demo-four .mc4wp-form-fields input[type=submit], .common-menu-wrap .nav>li.online-booking-button a, .error-page-inner a.btn.btn-primary.btn-lg,.btn.btn-primary, .package-list-button,
-      .contact-submit input[type=submit],.form-submit input[type=submit]{ background-color: ' . esc_attr(get_theme_mod('button_bg_color', '#363b52')) . ' !important; ; border-color: ' . esc_attr(get_theme_mod('button_bg_color', '#363b52')) . '; color: ' . esc_attr(get_theme_mod('button_text_color', '#fff')) . ' !important; border-radius: 4px; }';
+			$output.= '.mc4wp-form-fields input[type=submit], #comments .form-submit input.submit, a btn, .btn, .btn-info, .btn-primary, .demo-four .mc4wp-form-fields input[type=submit], .common-menu-wrap .nav>li.online-booking-button a, .error-page-inner a.btn.btn-primary.btn-lg,.btn.btn-primary, .package-list-button,
+      .contact-submit input[type=submit],.form-submit input[type=submit]{ background-color: ' . esc_attr(get_theme_mod('button_bg_color', '#222533')) . '  ; border-color: ' . esc_attr(get_theme_mod('button_bg_color', '#222533')) . '; color: ' . esc_attr(get_theme_mod('button_text_color', '#fff')) . ';border-radius: 4px; }';
 			}
 		if (get_theme_mod('button_hover_bg_color', '#363b52'))
 			{
-			$output.= '.mc4wp-form-fields input[type=submit]:hover, .demo-four .mc4wp-form-fields input[type=submit]:hover, .common-menu-wrap .nav>li.online-booking-button a:hover, .error-page-inner a.btn.btn-primary.btn-lg:hover,.btn.btn-primary:hover, .package-list-button:hover, .contact-submit input[type=submit]:hover,.form-submit input[type=submit]:hover{ background-color: ' . esc_attr(get_theme_mod('button_hover_bg_color', '#363b52')) . '; border-color: ' . esc_attr(get_theme_mod('button_hover_bg_color', '#363b52')) . '; color: ' . esc_attr(get_theme_mod('button_hover_text_color', '#ffffff')) . ' !important; }';
+			$output.= '.mc4wp-form-fields input[type=submit]:hover, #comments .form-submit input.submit:hover, .btn-info:hover, .btn-info:focus, .btn-info:active:focus, .demo-four .mc4wp-form-fields input[type=submit]:hover, .common-menu-wrap .nav>li.online-booking-button a:hover, .error-page-inner a.btn.btn-primary.btn-lg:hover,.btn.btn-primary:hover, .package-list-button:hover, .contact-submit input[type=submit]:hover,.form-submit input[type=submit]:hover{ background-color: ' . esc_attr(get_theme_mod('button_hover_bg_color', '#363b52')) . '; border-color: ' . esc_attr(get_theme_mod('button_hover_bg_color', '#363b52')) . '; color: ' . esc_attr(get_theme_mod('button_hover_text_color', '#ffffff')) . '}';
 			}
 
 		$output.= '.subtitle-cover:before{background:' . get_theme_mod('sub_header_overlayer_color', 'rgba(0, 0, 0, 0.5)') . ';}';
