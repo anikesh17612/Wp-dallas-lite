@@ -15,7 +15,7 @@ get_header();
 ?>
 <?php
 
-if (get_theme_mod('blog_layout_selection') == 'blogleft' || get_theme_mod('blog_layout_selection') == "")
+if (get_theme_mod('blog_layout_selection') == 'blogleft' )
 	{ ?>
 	<div class="wpdal-left-sidebar col-md-3">
   <?php
@@ -56,7 +56,7 @@ endwhile; // End of the loop.
 	</div><!-- #primary -->
 <?php
 
-if (get_theme_mod('blog_layout_selection') == 'blogright')
+if (get_theme_mod('blog_layout_selection') == 'blogright' || get_theme_mod('blog_layout_selection') == "")
 	{ ?>
 	<div class="wpdal-right-sidebar col-md-3 col-sm-12 col-xs-12">
 		<?php
