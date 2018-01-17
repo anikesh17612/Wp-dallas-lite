@@ -22,6 +22,7 @@
 		$youtube	=  get_theme_mod('youtubelogo','https://www.youtube.com/');
 		$Snapchat	=  get_theme_mod('snapchatlogo','https://www.snapchat.com/');
 		$skype		=  get_theme_mod('skypelogo','https://login.skype.com/login');
+		$whatsapp	=  get_theme_mod('whatsapplogo','https://login.skype.com/login');		
 		$pinterest	=  get_theme_mod('pinterestlogo','https://www.pinterest.com/');        
         $custom		=  get_theme_mod('customlogo');
 
@@ -51,6 +52,9 @@
             }
 			if( $skype ) {
                 $html .= '<li><a href="skype:'. $skype .'?chat"><i class="fa fa-skype"></i></a></li>';
+            }
+			if( $whatsapp ) {
+                $html .= '<li><a href="whatsapp:'. $whatsapp .'?chat"><i class="fa fa-whatsapp"></i></a></li>';
             }
 			if( $pinterest ) {
                 $html .= '<li><a target="_blank" href="'. $pinterest .'"><i class="fa fa-pinterest"></i></a></li>';

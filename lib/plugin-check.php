@@ -6,7 +6,7 @@
 * @package wp_dallas_lite
 */
 defined('ABSPATH') or die('No script kiddies please!');
-include_once (ABSPATH . 'wp-admin/includes/plugin.php');
+include_once( ABSPATH . 'wp-admin/includes/plugin.php');
 
 function wp_dallas_lite_plugin_notice() {
     $user_id = get_current_user_id();

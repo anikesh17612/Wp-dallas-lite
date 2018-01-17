@@ -62,7 +62,7 @@ if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_
 					<?php $enable_copyright_text = get_theme_mod('enable_copyright_text', '1');
 						if ($enable_copyright_text){ ?>
 							<div class="wp-copyright col-md-6">
-								<?php echo get_theme_mod('copyright_text', 'Copyright © 2018 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>'); ?>
+								<?php echo get_theme_mod('copyright_text', 'Copyright &copy; 2018 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>'); ?>
 							</div><!-- site-info -->
 							<?php
 						}else{		

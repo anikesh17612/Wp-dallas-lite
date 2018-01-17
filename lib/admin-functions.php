@@ -6,7 +6,7 @@ defined('ABSPATH') or die('No script kiddies please!');
 
 function social_share_menu_item()
 	{
-	add_submenu_page("options-general.php", "Social Share", "Social Share", "manage_options", "social-share", "social_share_page");
+	add_theme_page("options-general.php", "Social Share", "Social Share", "manage_options", "social-share", "social_share_page");
 	}
 
 add_action("admin_menu", "social_share_menu_item");

@@ -317,7 +317,7 @@ User Follow social icon
  * @return void
  */
 add_action('profile_update', 'my_profile_update', 10, 2);
-$user_id = $_POST['user_id'];
+$user_id = get_current_user_id();
 
 function my_profile_update($user_id, $old_user_data)
 	{
