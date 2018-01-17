@@ -28,20 +28,20 @@ if ( ! function_exists( 'wp_dallas_lite_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( ' on %s', 'post date', 'wp_dallas_lite' ),
+			esc_html_x( ' %s', 'post date', 'wp_dallas_lite' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 		$categories_list = get_the_category_list( esc_html__( ', ', 'wp_dallas_lite' ) );
 		
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'By %s', 'post author', 'wp_dallas_lite' ),
+			esc_html_x( ' %s', 'post author', 'wp_dallas_lite' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 		if ( $categories_list ) {
-				echo '<span class="byline"> ' . $byline . ' '.$categories_list.'</span><span class="posted_on"> ' . $posted_on . '</span>'; // WPCS: XSS OK.
+				echo '<span class="byline"><i class="fa fa-user" aria-hidden="true"> ' . $byline . '</i></span><span class="category-list"><i class="fa fa-folder" aria-hidden="true"> '.$categories_list.'</i></span><span class="posted_on"><i class="fa fa-calendar" aria-hidden="true"> ' . $posted_on . '</i></span>'; // WPCS: XSS OK.
 		}else{
-				echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+				echo '<span class="byline"> <i class="fa fa-user" aria-hidden="true">' . $byline . '</i></span>'; // WPCS: XSS OK.
 		}
 		
 		

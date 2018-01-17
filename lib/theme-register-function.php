@@ -481,7 +481,7 @@ function wp_dallas_option($wp_customize)
 		'google_font_weight_default' => '700'
 	)));
 	$wp_customize->add_setting('h1_font_size', array(
-		'default' => '42',
+		'default' => '36',
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h1_font_size',
 
@@ -492,7 +492,7 @@ function wp_dallas_option($wp_customize)
 		'settings' => 'h1_font_size',
 		'label' => esc_html__('H1 Font Size', 'wp_dallas_lite') ,
 		'type' => 'number',
-		'default' => '42',
+		'default' => '36',
 	)));
 	// h1 line height 
 	$wp_customize->add_setting('h1_line_height', array(
@@ -529,7 +529,7 @@ function wp_dallas_option($wp_customize)
 		'google_font_weight_default' => '700'
 	)));
 	$wp_customize->add_setting('h2_font_size', array(
-		'default' => '36',
+		'default' => '30',
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h2_font_size',
 
@@ -540,7 +540,7 @@ function wp_dallas_option($wp_customize)
 		'settings' => 'h2_font_size',
 		'label' => esc_html__('H2 Font Size', 'wp_dallas_lite') ,
 		'type' => 'number',
-		'default' => '36',
+		'default' => '30',
 	)));
 	
 	// H2 line height
@@ -578,7 +578,7 @@ function wp_dallas_option($wp_customize)
 		'google_font_weight_default' => '700'
 	)));
 	$wp_customize->add_setting('h3_font_size', array(
-		'default' => '30',
+		'default' => '26',
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h3_font_size',
 
@@ -589,7 +589,7 @@ function wp_dallas_option($wp_customize)
 		'settings' => 'h3_font_size',
 		'label' => esc_html__('H3 Font Size', 'wp_dallas_lite') ,
 		'type' => 'number',
-		'default' => '30',
+		'default' => '26',
 	)));
 	
 	// H3 line height
@@ -626,7 +626,7 @@ function wp_dallas_option($wp_customize)
 		'google_font_weight_default' => '700'
 	)));
 	$wp_customize->add_setting('h4_font_size', array(
-		'default' => '27',
+		'default' => '24',
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h4_font_size',
 
@@ -637,7 +637,7 @@ function wp_dallas_option($wp_customize)
 		'settings' => 'h4_font_size',
 		'label' => esc_html__('H4 Font Size', 'wp_dallas_lite') ,
 		'type' => 'number',
-		'default' => '27',
+		'default' => '24',
 	)));
 	
 	// H4 line height
@@ -675,7 +675,7 @@ function wp_dallas_option($wp_customize)
 		'google_font_weight_default' => '700'
 	)));
 	$wp_customize->add_setting('h5_font_size', array(
-		'default' => '25',
+		'default' => '22',
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h5_font_size',
 
@@ -686,7 +686,7 @@ function wp_dallas_option($wp_customize)
 		'settings' => 'h5_font_size',
 		'label' => esc_html__('H5 Font Size', 'wp_dallas_lite') ,
 		'type' => 'number',
-		'default' => '25',
+		'default' => '22',
 	)));
 	
 	// H5 line height
