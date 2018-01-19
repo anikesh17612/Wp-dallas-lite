@@ -244,16 +244,16 @@ Author: JoomDev Author URI: https://www.joomdev.com Description: WP Dallas Lite 
      width: 100%;
 }
 /*-------------------------------------------------------------- # Forms --------------------------------------------------------------*/
- button, input[type="button"], input[type="reset"], input[type="submit"] {
-     border: 1px solid;
-     border-color: #ccc #ccc #bbb;
-     border-radius: 3px;
-     background: #e6e6e6;
-     color: rgba(0, 0, 0, 0.8);
-     font-size: 12px;
-     font-size: 0.75rem;
-     line-height: 1;
-     padding: .6em 1em .4em;
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
 }
  button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
      border-color: #ccc #bbb #aaa;
@@ -1005,24 +1005,32 @@ Author: JoomDev Author URI: https://www.joomdev.com Description: WP Dallas Lite 
      border-color: #fff;
 }
 /*-------- Article post -----------*/
- article.type-post{
+
+article.type-post{
      position:relative;
 }
- article.type-post .entry-header .entry-meta{
-     color:#aaaaaa;
+
+article.type-post .entry-header .entry-meta, 
+article.type-post .entry-header .entry-meta a{
+	color: #aaa;
+	padding-right: 5px;
+	font-family:lato;
 }
- article.type-post .entry-header .entry-meta a{
-     color: #aaa;
-     padding-right: 5px;
+
+article.type-post .entry-header .entry-meta > span{
+	margin-right:15px;
 }
- article.type-post .entry-header .entry-meta a, article.post .entry-header .entry-meta span.posted_on, article.post .entry-header .entry-meta span.posted_on a{
-     padding-left:3px;
+
+article.type-post .entry-header .entry-meta > span a{
+	padding-left:5px;
 }
- article.type-post .entry-content .post-thumbnail > img{
-     margin-bottom:30px;
-     width:100%;
+
+article.type-post img{
+	margin-bottom:30px;
+	width:100%;
 }
- article.type-post .entry-content .single-entry-content > blockquote{
+
+article.type-post .entry-content .single-entry-content > blockquote{
      margin-bottom:1.5em;
      border-left:5px solid #ffc414;
 }
@@ -1135,6 +1143,29 @@ Author: JoomDev Author URI: https://www.joomdev.com Description: WP Dallas Lite 
      height: 38px;
      border: 1px solid #cccccc;
 }
+
+/*----- Form -----*/
+
+form label{
+     font-weight:normal;
+	 width:100%;
+}
+
+form input[type="text"], form input[type="email"], form input[type="url"], form input[type="password"], form input[type="search"], form input[type="number"], form input[type="tel"], form input[type="range"], form input[type="date"], form input[type="month"], form input[type="week"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="color"], form textarea{
+     border-radius:0px;
+     border:1px solid #cccccc;
+     font-size:14px;
+     width:100%;
+     padding:5px 10px;	 
+}
+
+form button, form input[type="button"], form input[type="reset"], form input[type="submit"]{
+	border-radius:4px;
+	font-size: 14px;
+    line-height: normal;
+    padding:10px 20px;
+}
+
 /*----- Comments -----*/
  #comments{
      border: 1px solid #dddddd;
@@ -1188,7 +1219,7 @@ Author: JoomDev Author URI: https://www.joomdev.com Description: WP Dallas Lite 
      margin: 0;
      padding: 0;
 }
- .comment-list .comment-body {
+.comment-list .comment-body {
      border-bottom: 1px solid #ddd;
      margin: 15px 0 20px;
      padding: 20px 0;
@@ -1211,20 +1242,29 @@ Author: JoomDev Author URI: https://www.joomdev.com Description: WP Dallas Lite 
  .post-author-meta{
      border: 1px solid #dddddd;
      box-shadow: 0 0 5px #cccccc;
-     padding: 20px;
+     padding:30px 20px;
      margin:0 0 1.5em;
      width:100%;
 }
- .post-author-meta .author-title, .post-author-meta .author-meta-social-link{
-     margin:0 0 10px;
+
+.post-author-meta .author-desc{
+	padding:10px 0 15px;
 }
- .post-author-meta .author-title{
-     margin-top: 10px;
+
+.post-author-meta .author-img img{
+	border-radius:100%;
 }
- .post-author-meta .author-meta-social-link a{
+
+.post-author-meta .author-meta-social-link a{
      color:inherit;
-     padding: 0 5px;
+     padding-right:15px;
 }
+
+
+ .post-author-meta .author-meta-social-link a:last-child{
+	 padding-right:0px;
+ }
+
  .post-author-meta .author-meta-social-link li{
      border: none;
      color:inherit;
@@ -1403,6 +1443,15 @@ Author: JoomDev Author URI: https://www.joomdev.com Description: WP Dallas Lite 
 }
 
 /*----- Responsive -----*/
+
+@media (max-width:1300px){
+	.backtotop {
+		right:20px;
+		bottom:20px;
+	}
+}
+
+
  @media screen and (min-width:768px) and (max-width:1199px){
      .container{
          width:100%;
