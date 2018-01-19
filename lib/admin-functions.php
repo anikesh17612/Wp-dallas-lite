@@ -193,6 +193,9 @@ function add_social_share_icons($content)
 		{
 		return;
 		}
+		if(is_single()){
+            $tag = the_tags( '<div class="tags_list">', '&nbsp;', '</div>' ); 
+        }
 
-	return $content = $content . $html;
+	return $content = $content .$tag. $html;
 	}
