@@ -128,7 +128,7 @@ add_action("admin_init", "social_share_settings");
 function add_social_share_icons($content)
 	{
 	$html = "<div class='post-social-share'><div class='share-on'> </div>";
-	global $post;
+	global $post,$tag;
 	$url = get_permalink($post->ID);
 	$url = esc_url($url);
 	$title = str_replace(' ', '%20', get_the_title());
