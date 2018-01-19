@@ -169,6 +169,7 @@ if ($tags != '')
 				the_permalink() ?>" rel="<?php
 				the_title(); ?>" title="Permanent Link to <?php
 				the_title_attribute(); ?>" class="related_link_image"><figure><?php
+				$post_id = '';
 				echo get_the_post_thumbnail($post_id, 'medium', array(
 					'class' => 'alignleft'
 				)); ?></figure></a>
