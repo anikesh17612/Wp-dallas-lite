@@ -1,12 +1,12 @@
 <?php
 /**
- * @package WP_Atlanta
+ * @package wp_dallas_lite
  */
 defined('ABSPATH') or die('No script kiddies please!');
 
 function social_share_menu_item()
 	{
-	add_theme_page("options-general.php", "Social Share", "Social Share", "manage_options", "social-share", "social_share_page");
+	add_submenu_page("options-general.php", "Social Share", "Social Share", "manage_options", "social-share", "social_share_page");
 	}
 
 add_action("admin_menu", "social_share_menu_item");
@@ -128,7 +128,7 @@ add_action("admin_init", "social_share_settings");
 function add_social_share_icons($content)
 	{
 	$html = "<div class='post-social-share'><div class='share-on'> </div>";
-	global $post,$tag;
+	global $post;
 	$url = get_permalink($post->ID);
 	$url = esc_url($url);
 	$title = str_replace(' ', '%20', get_the_title());
@@ -193,8 +193,8 @@ function add_social_share_icons($content)
 		{
 		return;
 		}
-		if(is_single() || is_archive() ){
-            $tag = the_tags( '<div class="tags_list">', '&nbsp;', '</div>' ); 
+		if(is_single()){
+            $tag = the_tags( '<div class="tags_list">', ' ', '</div>' ); 
         }
 
 	return $content = $content .$tag. $html;
