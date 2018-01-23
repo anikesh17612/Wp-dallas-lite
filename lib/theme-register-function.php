@@ -9,7 +9,7 @@ class wp_call_back
 	function sanitize_call_back($callback)
 	{
 		
-		
+		return $callback;
 	}
 	 
 }
