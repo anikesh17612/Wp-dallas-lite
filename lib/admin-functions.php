@@ -193,7 +193,7 @@ function add_social_share_icons($content)
 		{
 		return;
 		}
-		if(is_single()){
+		if(is_single() || is_archive() ){
             $tag = the_tags( '<div class="tags_list">', '&nbsp;', '</div>' ); 
         }
 

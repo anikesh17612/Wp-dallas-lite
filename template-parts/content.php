@@ -65,7 +65,7 @@
 			<?php wp_link_pages(array( 'before' => '<div class="page-links">' . esc_html__('Pages:', 'wp_dallas_lite') ,'after' => '</div>',)); ?>
 	</div><!-- .entry-content -->
 	<div class="post-meta">
-		<?php if(!is_single()){
+		<?php if(!is_single() && !is_archive()){
 				if (get_theme_mod('enableBlogReadmore', true))
 				{
 				if (get_theme_mod('continueReading', 'Read More'))
