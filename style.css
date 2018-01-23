@@ -1170,8 +1170,7 @@ body.box_layout #page {
 }
 
 .backtotop:hover {
-	background: #ffd966;
-	border-color: #ffd966;
+	opacity:0.5;
 }
 
 /*----- WP Tab -----*/
@@ -1279,7 +1278,7 @@ body.box_layout #page {
 }
 
 .search-form label {
-	width: 100%;
+	width: 65%;
 }
 
 .search-form .search-field {
@@ -1288,25 +1287,24 @@ body.box_layout #page {
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	border-right: none;
-	line-height: 30px;
 	font-size: 14px;
 	font-weight: normal;
-	padding-left: 10px;
+	padding:10px;
 	border-radius: 0px;
 	color: #222534;
+	line-height:normal;
 }
 
 .search-form .search-submit {
 	top: 0;
 	right: 0;
 	color: #999;
-	width: auto;
-	padding: 0 20px;
-	font-size: 16px;
-	line-height: 40px;
+	width: 35%;
+	padding:10px;
+	font-size: 14px;
 	position: absolute;
-	background: #222632;
 	border-radius: 0px;
+	line-height:normal;
 }
 
 /*------ Post Social Share ------*/
@@ -1552,22 +1550,30 @@ article.type-post h2.entry-title a {
 	color: #1a1c28;
 }
 
-#wp-subscribe.wp-subscribe-wrap input.submit {
-	background-color: #1a1c28;
-	color: #fff;
-	font-size: 14px;
+.wp-subscribe-wrap input::-moz-placeholder, 
+#wp-subscribe.wp-subscribe-wrap p{
+	opacity:inherit;
+}
+
+#wp-subscribe.wp-subscribe-wrap input{
+	text-indent:inherit;
+}
+
+#wp-subscribe.wp-subscribe-wrap form input.submit {
+	font-size: 16px;
 	text-transform: capitalize;
-	height: 38px;
-	border: 1px solid #1a1c28;
+	border-radius:0px;
+	height:auto;
+	padding:12px 10px;
 }
 
 #wp-subscribe.wp-subscribe-wrap input.email-field {
 	text-align: left;
-	font-size: 14px;
-	color: #222534;
+	color: #999999;
 	background-color: #fff;
-	height: 38px;
-	border: 1px solid #cccccc;
+	height:auto;
+	padding:8px 10px;
+	border:1px solid #ddd;
 }
 
 /*----- Form -----*/
@@ -1594,7 +1600,6 @@ form input[type="datetime-local"],
 form input[type="color"],
 form textarea {
 	border-radius: 0px;
-	border: 1px solid #cccccc;
 	font-size: 14px;
 	width: 100%;
 	padding: 5px 10px;
