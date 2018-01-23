@@ -60,7 +60,7 @@ while (have_posts()):
 		echo $authors_bio['description'];
 		echo '</div>';
 
-		if (get_the_author_meta('url') != '' || get_the_author_meta('fb_url') != '' || get_the_author_meta('twitter_url') != '' || get_the_author_meta('gplus_url') != '' || get_the_author_meta('linkedin_url') != '' || get_the_author_meta('behance_url') != '' || get_the_author_meta('youtube_url') != '' || get_the_author_meta('snapchat_url') != '' || get_the_author_meta('skype_url') != '' || get_the_author_meta('pinterest_url') != '')
+		if (get_the_author_meta('url') != '' || get_the_author_meta(fb_url) != '' || get_the_author_meta('twitter_url') != '' || get_the_author_meta('gplus_url') != '' || get_the_author_meta('linkedin_url') != '' || get_the_author_meta('behance_url') != '' || get_the_author_meta('youtube_url') != '' || get_the_author_meta('snapchat_url') != '' || get_the_author_meta('skype_url') != '' || get_the_author_meta('pinterest_url') != '')
 			{
 			echo '<div class="author-meta-social-link">';
 			if (get_the_author_meta('url'))
@@ -161,7 +161,7 @@ if ($tags != '')
 		while ($my_query->have_posts()):
 			$my_query->the_post();
 			echo '<li>';
-?>
+?>			
 			<?php
 			if (get_the_post_thumbnail() != '')
 				{ ?>
@@ -180,9 +180,9 @@ if ($tags != '')
 			the_title_attribute(); ?>" class="related_link"><?php
 			the_title(); ?></a></h3>
 			</li>
-
-
-
+			
+			
+	 
 			<?php
 		endwhile;
 		echo '</ul>
