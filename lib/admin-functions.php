@@ -1,6 +1,6 @@
 <?php
 /**
- * @package wp_dallas_lite
+ * @package WP_Atlanta
  */
 defined('ABSPATH') or die('No script kiddies please!');
 
@@ -16,7 +16,7 @@ function social_share_page()
 ?>
       <div class="wrap">
          <h1>Social Sharing Options</h1>
-
+ 
          <form method="post" action="options.php">
             <?php
 	settings_fields("social_share_config_section");
@@ -194,7 +194,7 @@ function add_social_share_icons($content)
 		return;
 		}
 		if(is_single()){
-            $tag = the_tags( '<div class="tags_list">', '&nbsp;', '</div>' );
+            $tag = the_tags( '<div class="tags_list">', '&nbsp;', '</div>' ); 
         }
 
 	return $content = $content .$tag. $html;
