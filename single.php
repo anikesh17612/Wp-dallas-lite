@@ -36,28 +36,16 @@ while (have_posts()):
 	the_post();
 	get_template_part('template-parts/content', get_post_type());
 
-
-		$authors_bio = get_user_meta($post->post_author);
-
-		// Filter out empty meta data
-
-		$authors_bio = array_filter(array_map(
-		function ($a)
-			{
-			return $a[0];
-			}
-
-		, $authors_bio));
 		echo '<div class="post-author-meta clearfix">';
 		echo '<div class="author-meta col-md-2">
 			<div class="author-img">';
 		echo get_avatar($post->post_author);
 		echo '</div></div>';
 		echo '<div class="col-md-10"><div class="author-title">';
-		echo $authors_bio['first_name'] . ' ' . $authors_bio['last_name'];
+		echo get_user_meta($post->post_author, 'first_name', true)  . ' ' . get_user_meta($post->post_author, 'last_name', true);
 		echo '</div>';
 		echo '<div class="author-desc">';
-		echo $authors_bio['description'];
+		echo get_user_meta($post->post_author, 'description', true);
 		echo '</div>';
 
 		if (get_the_author_meta('url') != '' || get_the_author_meta('fb_url') != '' || get_the_author_meta('twitter_url') != '' || get_the_author_meta('gplus_url') != '' || get_the_author_meta('linkedin_url') != '' || get_the_author_meta('behance_url') != '' || get_the_author_meta('youtube_url') != '' || get_the_author_meta('snapchat_url') != '' || get_the_author_meta('skype_url') != '' || get_the_author_meta('pinterest_url') != '')
@@ -148,7 +136,8 @@ if ($tags != '')
 			$post->ID
 		) ,
 		'posts_per_page' => 5,
-		'caller_get_posts' => 1
+		// 'caller_get_posts' => 1
+		'ignore_sticky_posts' => 1
 	);
 	$my_query = new WP_Query($args);
 	if ($my_query->have_posts())
@@ -161,7 +150,7 @@ if ($tags != '')
 		while ($my_query->have_posts()):
 			$my_query->the_post();
 			echo '<li>';
-?>			
+?>
 			<?php
 			if (get_the_post_thumbnail() != '')
 				{ ?>
@@ -180,9 +169,9 @@ if ($tags != '')
 			the_title_attribute(); ?>" class="related_link"><?php
 			the_title(); ?></a></h3>
 			</li>
-			
-			
-	 
+
+
+
 			<?php
 		endwhile;
 		echo '</ul>
