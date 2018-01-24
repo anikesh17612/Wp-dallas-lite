@@ -446,6 +446,28 @@ textarea {
 	width: 100%;
 }
 
+
+/*----- # Navigation -----*/
+
+
+/*----- ## Links -----*/
+
+a:visited {
+	color: purple;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: midnightblue;
+}
+
+a:focus,
+a:hover,
+a:active {
+	text-decoration: none;
+}
+
 /*----- Menus -----*/
 
 .main-navigation {
