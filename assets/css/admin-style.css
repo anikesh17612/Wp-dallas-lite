@@ -1,9 +1,8 @@
 /**
   * @package wp_dallas_lite
  */
- 
- #customize-control-separatorline,
- #customize-control-footer_separatorline{
-	 border-bottom:1px solid #222;
-	 margin:15px 0px;
- }
+#customize-control-separatorline,
+#customize-control-footer_separatorline{
+	border-bottom:1px solid #222;
+	margin:15px 0px;
+}
