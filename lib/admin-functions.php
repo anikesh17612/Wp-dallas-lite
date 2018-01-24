@@ -6,7 +6,7 @@ defined('ABSPATH') or die('No script kiddies please!');
 
 function social_share_menu_item()
 	{
-	add_submenu_page("options-general.php", "Social Share", "Social Share", "manage_options", "social-share", "social_share_page");
+	add_theme_page("Social Share", "Social Share", "manage_options", "social-share", "social_share_page");
 	}
 
 add_action("admin_menu", "social_share_menu_item");
@@ -16,7 +16,7 @@ function social_share_page()
 ?>
       <div class="wrap">
          <h1>Social Sharing Options</h1>
- 
+
          <form method="post" action="options.php">
             <?php
 	settings_fields("social_share_config_section");
@@ -193,8 +193,9 @@ function add_social_share_icons($content)
 		{
 		return;
 		}
+		$tag = '';
 		if(is_single()){
-            $tag = the_tags( '<div class="tags_list">', ' ', '</div>' ); 
+            $tag = the_tags( '<div class="tags_list">', ' ', '</div>' );
         }
 
 	return $content = $content .$tag. $html;
