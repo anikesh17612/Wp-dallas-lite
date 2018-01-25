@@ -2034,6 +2034,7 @@ form input[type="submit"] {
 		border-left: 1px solid #fff;
 		position: absolute;
 		top: 12px;
+		border-radius: 0;
 		right: 0px;
 		border-top: none;
 		border-right: none;
