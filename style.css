@@ -1018,8 +1018,8 @@ body.box_layout #page {
 #bottom-section ul.contact-info >li,
 .widget ul.contact-info >li {
 	position: relative;
-	padding: 0 0 10px 30px;
-	margin-bottom: 10px;
+	padding: 0 0 5px 30px;
+	margin-bottom: 5px;
 }
 
 #bottom-section ul.contact-info >li .fa,
