@@ -5,7 +5,7 @@
  * Contains handlers for navigation and widget area.
  */
 
-( function( $ ) {
+( function( $ )) {
 	var body, masthead, menuToggle, siteNavigation, socialNavigation, siteHeaderMenu, resizeTimer;
 
 	function initMainNavigation( container ) {
