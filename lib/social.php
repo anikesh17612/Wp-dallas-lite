@@ -54,7 +54,7 @@
                 $html .= '<li><a href="skype:'. $skype .'?chat"><i class="fa fa-skype"></i></a></li>';
             }
 			if( $whatsapp ) {
-                $html .= '<li><a href="whatsapp:'. $whatsapp .'?chat"><i class="fa fa-whatsapp"></i></a></li>';
+                $html .= '<li class="whatsappicon"><a href="whatsapp:'. $whatsapp .'?chat"><i class="fa fa-whatsapp"></i></a></li>';
             }
 			if( $pinterest ) {
                 $html .= '<li><a target="_blank" href="'. $pinterest .'"><i class="fa fa-pinterest"></i></a></li>';
