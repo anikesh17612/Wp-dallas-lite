@@ -16,18 +16,18 @@
 
 		if ('post' === get_post_type()): ?>
 			<div class="entry-meta">
-				<?php	wp_dallas_lite_posted_on(); ?>		
+				<?php	wp_dallas_lite_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
-		<?php if (!is_single()){?>
+		<?php if ('' !== get_the_post_thumbnail() && ! is_single()){?>
 			<div class="post-thumbnail">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 					<img src="<?php the_post_thumbnail_url(); ?>"/>
 				</a>
-			</div>	
-		<?php } 
+			</div>
+		<?php }
 		if (is_single()) { ?>
 			<div class="single-entry-content">
 				<?php the_content(); ?>
@@ -53,7 +53,7 @@
 						if (get_theme_mod('continueReading', 'Read More'))
 							{
 							$continue = esc_html(get_theme_mod('continueReading', 'Read More'));
-							
+
 							}
 						}
 					}
@@ -71,15 +71,15 @@
 				if (get_theme_mod('continueReading', 'Read More'))
 					{
 					$continue = esc_html(get_theme_mod('continueReading', 'Read More'));
-					
+
 					}
 				echo '<div class="meta-content-limit"><a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a></div>';
 				}else{
-					
+
 				}
 			}
 		else{
-		} 
+		}
 
 		$content = "";
 			echo add_social_share_icons($content); ?>
