@@ -1,4 +1,4 @@
-WP Dallas Lite
+Dallas Lite
 ===
 
 First Free Theme by JoomDev.

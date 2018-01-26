@@ -1,17 +1,17 @@
 <?php
 /*-------------------------------------------*
-wp_dallas_lite Option Registration
+dallas-lite Option Registration
 *------------------------------------------*/
 class wp_call_back
 {
-
-
+	
+	
 	function sanitize_call_back($callback)
 	{
-
-
+		
+		
 	}
-
+	 
 }
 function admin_style()
 	{
@@ -27,16 +27,16 @@ $callback = new wp_call_back;
 	$wp_customize->add_setting('separatorline', array(
 		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('call_back_separatorline'),
-
+		
 	));
 	$wp_customize->add_panel('blog_layout', array(
 		'priority' => 20,
 		'blog_layout' => '',
-		'title' => __('WP Dallas Lite Options', 'wp_dallas_lite') ,
-		'description' => __('Set editable text for certain content.', 'wp_dallas_lite') ,
+		'title' => __('WP Dallas Lite Options', 'dallas-lite') ,
+		'description' => __('Set editable text for certain content.', 'dallas-lite') ,
 	));
 	$wp_customize->add_section('Blog_layout_option', array(
-		'title' => __('Site Layout', 'wp_dallas_lite') ,
+		'title' => __('Site Layout', 'dallas-lite') ,
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
@@ -45,7 +45,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	) );
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'fullwidth_layout', array(
-		'label' => __('Body Layout', 'wp_dallas_lite') ,
+		'label' => __('Body Layout', 'dallas-lite') ,
 		'section' => 'Blog_layout_option',
 		'settings' => 'body_layout',
 		'type' => 'select',
@@ -54,7 +54,7 @@ $callback = new wp_call_back;
 			'fullwidth_body_layout' => 'Fullwidth Layout',
 		) ,
 	)));
-
+	
 	$wp_customize->add_setting('blog_layout_selection', array(
 		'default' => 'blogright',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
@@ -63,7 +63,7 @@ $callback = new wp_call_back;
 	// Add control
 
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'select_blog_layout', array(
-		'label' => __('Select Blog Layout', 'wp_dallas_lite') ,
+		'label' => __('Select Blog Layout', 'dallas-lite') ,
 		'section' => 'Blog_layout_option',
 		'settings' => 'blog_layout_selection',
 		'type' => 'select',
@@ -76,13 +76,13 @@ $callback = new wp_call_back;
 	$wp_customize->add_setting('select_blog_single_page_layout', array(
 		'default' => 'rightside',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
-
+		
 	));
 
 	// Add control
 
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'select_blog_single_page_layout', array(
-		'label' => __('Select Blog Single Plage Layout', 'wp_dallas_lite') ,
+		'label' => __('Select Blog Single Plage Layout', 'dallas-lite') ,
 		'section' => 'Blog_layout_option',
 		'settings' => 'select_blog_single_page_layout',
 		'type' => 'select',
@@ -100,7 +100,7 @@ $callback = new wp_call_back;
 	// Add control
 
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'select_pagination_layout', array(
-		'label' => __('Select Pagination Layout', 'wp_dallas_lite') ,
+		'label' => __('Select Pagination Layout', 'dallas-lite') ,
 		'section' => 'Blog_layout_option',
 		'settings' => 'select_pagination_layout',
 		'type' => 'select',
@@ -110,54 +110,11 @@ $callback = new wp_call_back;
 			'paginumber' => 'Number',
 		) ,
 	)));
-	/*---------Footer Option---------------------  */
-	$wp_customize->add_section('footer_section', array(
-		'title' => __('Footer Settings', 'wp_atlanta') ,
-		'panel' => 'blog_layout',
-		'priority' => 10
-	));
-	$wp_customize->add_setting('enable_copyright_text', array(
-		'default' => '1'
-	));
-	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'enable_copyright_text', array(
-		'label' => __('Enable Copyright Text', 'wp_atlanta') ,
-		'section' => 'footer_section',
-		'settings' => 'enable_copyright_text',
-		'type' => 'radio',
-		'choices' => array(
-			'1' => 'Yes',
-			'0' => 'No',
-		) ,
-	)));
-	$wp_customize->add_setting('copyright_text', array(
-		'default' => 'Copyright &copy; 2017 WP Atlanta. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>'
-	));
-	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'copyright_text', array(
-		'label' => __('Copyright Text', 'wp_atlanta') ,
-		'section' => 'footer_section',
-		'settings' => 'copyright_text',
-		'type' => 'textarea',
-		array(
-			'textarea_rows' => 5,
-		) ,
-	)));
-	$wp_customize->add_setting('backToTop', array(
-		'default' => '1'
-	));
-	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'back_to_top', array(
-		'label' => __('Back To Top', 'wp_atlanta') ,
-		'section' => 'footer_section',
-		'settings' => 'backToTop',
-		'type' => 'radio',
-		'choices' => array(
-			'1' => 'Yes',
-			'0' => 'No',
-		) ,
-	)));
-
+	
+	
 	/*---------All Logo & favicon---------------------  */
 	$wp_customize->add_section('logo_favicon_section', array(
-		'title' => __('All Logo & Favicon', 'wp_dallas_lite') ,
+		'title' => __('All Logo & Favicon', 'dallas-lite') ,
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
@@ -166,7 +123,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'select_header_style', array(
-		'label' => __('Select Header Style', 'wp_dallas_lite') ,
+		'label' => __('Select Header Style', 'dallas-lite') ,
 		'section' => 'logo_favicon_section',
 		'settings' => 'allLogoFavicon',
 		'type' => 'select',
@@ -180,7 +137,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize, 'upload_logo', array(
-		'label' => __('Upload Logo', 'wp_dallas_lite') ,
+		'label' => __('Upload Logo', 'dallas-lite') ,
 		'section' => 'logo_favicon_section',
 		'settings' => 'uploadLogo',
 	)));
@@ -189,7 +146,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'site_title', array(
-		'label' => __('Site Title', 'wp_dallas_lite') ,
+		'label' => __('Site Title', 'dallas-lite') ,
 		'section' => 'logo_favicon_section',
 		'settings' => 'siteTitle',
 		'type' => 'text',
@@ -202,7 +159,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'tag_line', array(
-		'label' => __('Tag Line', 'wp_dallas_lite') ,
+		'label' => __('Tag Line', 'dallas-lite') ,
 		'section' => 'logo_favicon_section',
 		'settings' => 'tagLine',
 		'type' => 'text',
@@ -212,7 +169,7 @@ $callback = new wp_call_back;
 	)));
 	/*---------Blog Settings---------------------  */
 	$wp_customize->add_section('blog_setting', array(
-		'title' => __('Blog Settings', 'wp_dallas_lite') ,
+		'title' => __('Blog Settings', 'dallas-lite') ,
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
@@ -221,7 +178,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'enable_Excerpt', array(
-		'label' => __('Enable Excerpt', 'wp_dallas_lite') ,
+		'label' => __('Enable Excerpt', 'dallas-lite') ,
 		'section' => 'blog_setting',
 		'settings' => 'enableExcerpt',
 		'type' => 'radio',
@@ -235,7 +192,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('call_back_pagination'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'excerpt_word_limit', array(
-		'label' => __('Excerpt Word Limit', 'wp_dallas_lite') ,
+		'label' => __('Excerpt Word Limit', 'dallas-lite') ,
 		'section' => 'blog_setting',
 		'settings' => 'excerptwordLimit',
 		'type' => 'text',
@@ -248,7 +205,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'enable_blog_readmore', array(
-		'label' => __('Enable Blog Readmore', 'wp_dallas_lite') ,
+		'label' => __('Enable Blog Readmore', 'dallas-lite') ,
 		'section' => 'blog_setting',
 		'settings' => 'enableBlogReadmore',
 		'type' => 'radio',
@@ -262,7 +219,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'continue_reading', array(
-		'label' => __('Continue Reading', 'wp_dallas_lite') ,
+		'label' => __('Continue Reading', 'dallas-lite') ,
 		'section' => 'blog_setting',
 		'settings' => 'continueReading',
 		'type' => 'text',
@@ -272,7 +229,7 @@ $callback = new wp_call_back;
 	)));
 	/*---------All Logo & favicon---------------------  */
 	$wp_customize->add_section('logo_favicon_section', array(
-		'title' => __('All Logo & Favicon', 'wp_dallas_lite') ,
+		'title' => __('All Logo & Favicon', 'dallas-lite') ,
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
@@ -281,7 +238,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'select_header_style', array(
-		'label' => __('Select Header Style', 'wp_dallas_lite') ,
+		'label' => __('Select Header Style', 'dallas-lite') ,
 		'section' => 'logo_favicon_section',
 		'settings' => 'allLogoFavicon',
 		'type' => 'select',
@@ -295,7 +252,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize, 'upload_logo', array(
-		'label' => __('Upload Logo', 'wp_dallas_lite') ,
+		'label' => __('Upload Logo', 'dallas-lite') ,
 		'section' => 'logo_favicon_section',
 		'settings' => 'uploadLogo',
 	)));
@@ -304,7 +261,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'site_title', array(
-		'label' => __('Site Title', 'wp_dallas_lite') ,
+		'label' => __('Site Title', 'dallas-lite') ,
 		'section' => 'logo_favicon_section',
 		'settings' => 'siteTitle',
 		'type' => 'text',
@@ -317,7 +274,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'tag_line', array(
-		'label' => __('Tag Line', 'wp_dallas_lite') ,
+		'label' => __('Tag Line', 'dallas-lite') ,
 		'section' => 'logo_favicon_section',
 		'settings' => 'tagLine',
 		'type' => 'text',
@@ -327,7 +284,7 @@ $callback = new wp_call_back;
 	)));
 	/*---------Blog Settings---------------------  */
 	$wp_customize->add_section('blog_setting', array(
-		'title' => __('Blog Settings', 'wp_dallas_lite') ,
+		'title' => __('Blog Settings', 'dallas-lite') ,
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
@@ -336,7 +293,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'enable_Excerpt', array(
-		'label' => __('Enable Excerpt', 'wp_dallas_lite') ,
+		'label' => __('Enable Excerpt', 'dallas-lite') ,
 		'section' => 'blog_setting',
 		'settings' => 'enableExcerpt',
 		'type' => 'radio',
@@ -350,7 +307,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'excerpt_word_limit', array(
-		'label' => __('Excerpt Word Limit', 'wp_dallas_lite') ,
+		'label' => __('Excerpt Word Limit', 'dallas-lite') ,
 		'section' => 'blog_setting',
 		'settings' => 'excerptwordLimit',
 		'type' => 'text',
@@ -363,7 +320,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'enable_blog_readmore', array(
-		'label' => __('Enable Blog Readmore', 'wp_dallas_lite') ,
+		'label' => __('Enable Blog Readmore', 'dallas-lite') ,
 		'section' => 'blog_setting',
 		'settings' => 'enableBlogReadmore',
 		'type' => 'radio',
@@ -377,7 +334,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'continue_reading', array(
-		'label' => __('Continue Reading', 'wp_dallas_lite') ,
+		'label' => __('Continue Reading', 'dallas-lite') ,
 		'section' => 'blog_setting',
 		'settings' => 'continueReading',
 		'type' => 'text',
@@ -387,7 +344,7 @@ $callback = new wp_call_back;
 	)));
 	/*---------404 Error---------------------  */
 	$wp_customize->add_section('error', array(
-		'title' => __('404 Error', 'wp_dallas_lite') ,
+		'title' => __('404 Error', 'dallas-lite') ,
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
@@ -396,7 +353,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'page_title', array(
-		'label' => __('404 Page Title', 'wp_dallas_lite') ,
+		'label' => __('404 Page Title', 'dallas-lite') ,
 		'section' => 'error',
 		'settings' => '404pageTitle',
 		'type' => 'text',
@@ -409,7 +366,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'page_description', array(
-		'label' => __('404 Page Description', 'wp_dallas_lite') ,
+		'label' => __('404 Page Description', 'dallas-lite') ,
 		'section' => 'error',
 		'settings' => '404pageDescription',
 		'type' => 'textarea',
@@ -422,14 +379,14 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'button_text', array(
-		'label' => __('404 Button Text', 'wp_dallas_lite') ,
+		'label' => __('404 Button Text', 'dallas-lite') ,
 		'section' => 'error',
 		'settings' => '404buttonText',
 		'type' => 'text'
 	)));
 	/*---------Layout & Styling---------------------  */
 	$wp_customize->add_section('layout_styling', array(
-		'title' => __('Layout & Styling', 'wp_dallas_lite') ,
+		'title' => __('Layout & Styling', 'dallas-lite') ,
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
@@ -438,7 +395,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_body_background_color', array(
-		'label' => __('Body Background Color', 'wp_dallas_lite') ,
+		'label' => __('Body Background Color', 'dallas-lite') ,
 		'section' => 'layout_styling',
 		'settings' => 'body_bg_color',
 	)));
@@ -447,7 +404,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_major_color', array(
-		'label' => __('Major Color', 'wp_dallas_lite') ,
+		'label' => __('Major Color', 'dallas-lite') ,
 		'section' => 'layout_styling',
 		'settings' => 'major_color',
 	)));
@@ -456,7 +413,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_hover_color', array(
-		'label' => __('Hover Color', 'wp_dallas_lite') ,
+		'label' => __('Hover Color', 'dallas-lite') ,
 		'section' => 'layout_styling',
 		'settings' => 'hover_color',
 	)));
@@ -465,7 +422,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_top_header_color', array(
-		'label' => __('Top Header Color', 'wp_dallas_lite') ,
+		'label' => __('Top Header Color', 'dallas-lite') ,
 		'section' => 'layout_styling',
 		'settings' => 'top_header_color',
 	)));
@@ -475,7 +432,7 @@ $callback = new wp_call_back;
 
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_header_color', array(
-		'label' => __('Header Color', 'wp_dallas_lite') ,
+		'label' => __('Header Color', 'dallas-lite') ,
 		'section' => 'layout_styling',
 		'settings' => 'header_color',
 	)));
@@ -483,7 +440,7 @@ $callback = new wp_call_back;
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'footer_separatorline', array(
 		'section' => 'layout_styling',
 		'settings' => 'separatorline',
-		'label' => esc_html__('Footer Background Settings', 'wp_dallas_lite') ,
+		'label' => esc_html__('Footer Background Settings', 'dallas-lite') ,
 		'type' => 'hidden',
 		'class' => 'layout_separator',
 	)));
@@ -493,7 +450,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_bg_color', array(
-		'label' => __('Footer Color', 'wp_dallas_lite') ,
+		'label' => __('Footer Color', 'dallas-lite') ,
 		'section' => 'layout_styling',
 		'settings' => 'footer_color',
 	)));
@@ -502,7 +459,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'copyright_bg_color', array(
-		'label' => __('Copyright Color', 'wp_dallas_lite') ,
+		'label' => __('Copyright Color', 'dallas-lite') ,
 		'section' => 'layout_styling',
 		'settings' => 'copyright_color',
 	)));
@@ -510,7 +467,7 @@ $callback = new wp_call_back;
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'separatorline', array(
 		'section' => 'layout_styling',
 		'settings' => 'separatorline',
-		'label' => esc_html__('Button Color Settings', 'wp_dallas_lite') ,
+		'label' => esc_html__('Button Color Settings', 'dallas-lite') ,
 		'type' => 'hidden',
 		'class' => 'layout_separator',
 	)));
@@ -522,7 +479,7 @@ $callback = new wp_call_back;
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'font_size', array(
 		'section' => 'layout_styling',
 		'settings' => 'buttonColorSettings',
-		'label' => esc_html__('Body Font Size', 'wp_dallas_lite') ,
+		'label' => esc_html__('Body Font Size', 'dallas-lite') ,
 		'type' => 'title',
 		'default' => 'Button Color Settings',
 	)));
@@ -531,7 +488,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_background_color', array(
-		'label' => __('Background Color', 'wp_dallas_lite') ,
+		'label' => __('Background Color', 'dallas-lite') ,
 		'section' => 'layout_styling',
 		'settings' => 'button_bg_color',
 	)));
@@ -540,7 +497,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_hover_background_color', array(
-		'label' => __('Hover Background Color', 'wp_dallas_lite') ,
+		'label' => __('Hover Background Color', 'dallas-lite') ,
 		'section' => 'layout_styling',
 		'settings' => 'button_hover_bg_color',
 	)));
@@ -549,7 +506,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_text_color', array(
-		'label' => __('Text Color', 'wp_dallas_lite') ,
+		'label' => __('Text Color', 'dallas-lite') ,
 		'section' => 'layout_styling',
 		'settings' => 'button_text_color',
 	)));
@@ -558,13 +515,13 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_hover_text_color', array(
-		'label' => __('Hover Text Color', 'wp_dallas_lite') ,
+		'label' => __('Hover Text Color', 'dallas-lite') ,
 		'section' => 'layout_styling',
 		'settings' => 'button_hover_text_color',
 	)));
 	/*---------Typography Setting---------------------  */
 	$wp_customize->add_section('typographySetting', array(
-		'title' => __('Typography Settings', 'wp_dallas_lite') ,
+		'title' => __('Typography Settings', 'dallas-lite') ,
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
@@ -575,7 +532,7 @@ $callback = new wp_call_back;
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'google_font', array(
 		'section' => 'typographySetting',
 		'settings' => 'body_google_font',
-		'label' => esc_html__('Body Google Font', 'wp_dallas_lite') ,
+		'label' => esc_html__('Body Google Font', 'dallas-lite') ,
 		'type' => 'select',
 		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
@@ -590,7 +547,7 @@ $callback = new wp_call_back;
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'font_size', array(
 		'section' => 'typographySetting',
 		'settings' => 'body_font_size',
-		'label' => esc_html__('Body Font Size', 'wp_dallas_lite') ,
+		'label' => esc_html__('Body Font Size', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '16',
 	)));
@@ -601,7 +558,7 @@ $callback = new wp_call_back;
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'select_google_font', array(
 		'section' => 'typographySetting',
 		'settings' => 'menu_google_font',
-		'label' => esc_html__('Menu Google Font', 'wp_dallas_lite') ,
+		'label' => esc_html__('Menu Google Font', 'dallas-lite') ,
 		'type' => 'select',
 		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
@@ -616,7 +573,7 @@ $callback = new wp_call_back;
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'menu_font_size', array(
 		'section' => 'typographySetting',
 		'settings' => 'menu_font_size',
-		'label' => esc_html__('Menu Font Size', 'wp_dallas_lite') ,
+		'label' => esc_html__('Menu Font Size', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '15',
 	)));
@@ -631,7 +588,7 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h1_google_font',
-		'label' => esc_html__('H1 Google Font', 'wp_dallas_lite') ,
+		'label' => esc_html__('H1 Google Font', 'dallas-lite') ,
 		'type' => 'select',
 		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
@@ -650,27 +607,27 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h1_font_size',
-		'label' => esc_html__('H1 Font Size', 'wp_dallas_lite') ,
+		'label' => esc_html__('H1 Font Size', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '36',
 	)));
-	// h1 line height
+	// h1 line height 
 	$wp_customize->add_setting('h1_line_height', array(
 		'default' => '50',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
-
+	
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h1_line_height',
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h1_line_height',
-		'label' => esc_html__('H1 Line Height (in px)', 'wp_dallas_lite') ,
+		'label' => esc_html__('H1 Line Height (in px)', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '50',
 	)));
-
+	
 	//-------------------------
-
+	
 	$wp_customize->add_setting('h2_google_font', array(
 		'default' => 'Lato',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
@@ -682,7 +639,7 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h2_google_font',
-		'label' => esc_html__('H2 Google Font', 'wp_dallas_lite') ,
+		'label' => esc_html__('H2 Google Font', 'dallas-lite') ,
 		'type' => 'select',
 		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
@@ -701,28 +658,28 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h2_font_size',
-		'label' => esc_html__('H2 Font Size', 'wp_dallas_lite') ,
+		'label' => esc_html__('H2 Font Size', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '30',
 	)));
-
+	
 	// H2 line height
 	$wp_customize->add_setting('h2_line_height', array(
 		'default' => '45',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
-
+	
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h2_line_height',
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h2_line_height',
-		'label' => esc_html__('H2 Line Height (in px)', 'wp_dallas_lite') ,
+		'label' => esc_html__('H2 Line Height (in px)', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '45',
 	)));
-
+	
 	//----------------------------------
-
+	
 	$wp_customize->add_setting('h3_google_font', array(
 		'default' => 'Lato',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
@@ -734,7 +691,7 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h3_google_font',
-		'label' => esc_html__('H3 Google Font', 'wp_dallas_lite') ,
+		'label' => esc_html__('H3 Google Font', 'dallas-lite') ,
 		'type' => 'select',
 		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
@@ -753,27 +710,27 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h3_font_size',
-		'label' => esc_html__('H3 Font Size', 'wp_dallas_lite') ,
+		'label' => esc_html__('H3 Font Size', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '26',
 	)));
-
+	
 	// H3 line height
 	$wp_customize->add_setting('h3_line_height', array(
 		'default' => '40',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
-
+	
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h3_line_height',
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h3_line_height',
-		'label' => esc_html__('H3 Line Height (in px)', 'wp_dallas_lite') ,
+		'label' => esc_html__('H3 Line Height (in px)', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '40',
 	)));
-//-----------------------------------------------
-
+//-----------------------------------------------	
+	
 	$wp_customize->add_setting('h4_google_font', array(
 		'default' => 'Lato',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
@@ -785,7 +742,7 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h4_google_font',
-		'label' => esc_html__('H4 Google Font', 'wp_dallas_lite') ,
+		'label' => esc_html__('H4 Google Font', 'dallas-lite') ,
 		'type' => 'select',
 		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
@@ -804,28 +761,28 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h4_font_size',
-		'label' => esc_html__('H4 Font Size', 'wp_dallas_lite') ,
+		'label' => esc_html__('H4 Font Size', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '24',
 	)));
-
+	
 	// H4 line height
 	$wp_customize->add_setting('h4_line_height', array(
 		'default' => '35',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
-
+	
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h4_line_height',
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h4_line_height',
-		'label' => esc_html__('H4 Line Height (in px)', 'wp_dallas_lite') ,
+		'label' => esc_html__('H4 Line Height (in px)', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '35',
 	)));
-
+	
 	//---------------------------------------------------
-
+	
 	$wp_customize->add_setting('h5_google_font', array(
 		'default' => 'Lato',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
@@ -837,7 +794,7 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h5_google_font',
-		'label' => esc_html__('H5 Google Font', 'wp_dallas_lite') ,
+		'label' => esc_html__('H5 Google Font', 'dallas-lite') ,
 		'type' => 'select',
 		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
@@ -856,28 +813,28 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h5_font_size',
-		'label' => esc_html__('H5 Font Size', 'wp_dallas_lite') ,
+		'label' => esc_html__('H5 Font Size', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '22',
 	)));
-
+	
 	// H5 line height
 	$wp_customize->add_setting('h5_line_height', array(
 		'default' => '30',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
-
+	
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h5_line_height',
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h5_line_height',
-		'label' => esc_html__('H5 Line Height (in px)', 'wp_dallas_lite') ,
+		'label' => esc_html__('H5 Line Height (in px)', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '30',
 	)));
-
-
-
+	
+	
+	
 	$wp_customize->add_setting('h6_google_font', array(
 		'default' => 'Lato',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
@@ -889,7 +846,7 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h6_google_font',
-		'label' => esc_html__('H6 Google Font', 'wp_dallas_lite') ,
+		'label' => esc_html__('H6 Google Font', 'dallas-lite') ,
 		'type' => 'select',
 		'default' => 'Lato',
 		'choices' => get_google_fonts() ,
@@ -908,29 +865,29 @@ $callback = new wp_call_back;
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h6_font_size',
-		'label' => esc_html__('H6 Font Size', 'wp_dallas_lite') ,
+		'label' => esc_html__('H6 Font Size', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '20',
 	)));
-
+	
 	// H6 line height
 	$wp_customize->add_setting('h6_line_height', array(
 		'default' => '25',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
-
+	
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'h6_line_height',
 	array(
 		'section' => 'typographySetting',
 		'settings' => 'h6_line_height',
-		'label' => esc_html__('H6 Line Height (in px)', 'wp_dallas_lite') ,
+		'label' => esc_html__('H6 Line Height (in px)', 'dallas-lite') ,
 		'type' => 'number',
 		'default' => '25',
 	)));
-
+	
 	/*---------Social Icons---------------------  */
 	$wp_customize->add_section('socialMedial', array(
-		'title' => __('Social Icons', 'wp_dallas_lite') ,
+		'title' => __('Social Icons', 'dallas-lite') ,
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
@@ -939,7 +896,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'facebook_logo', array(
-		'label' => __('Facebook Link', 'wp_dallas_lite') ,
+		'label' => __('Facebook Link', 'dallas-lite') ,
 		'section' => 'socialMedial',
 		'settings' => 'facebooklogo',
 		'type' => 'text',
@@ -952,7 +909,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'twitter_logo', array(
-		'label' => __('Twitter Link', 'wp_dallas_lite') ,
+		'label' => __('Twitter Link', 'dallas-lite') ,
 		'section' => 'socialMedial',
 		'settings' => 'twitterlogo',
 		'type' => 'text',
@@ -965,7 +922,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'googleplus_logo', array(
-		'label' => __('Google Plus Link', 'wp_dallas_lite') ,
+		'label' => __('Google Plus Link', 'dallas-lite') ,
 		'section' => 'socialMedial',
 		'settings' => 'googlepluslogo',
 		'type' => 'text',
@@ -978,7 +935,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'linkedin_logo', array(
-		'label' => __('LinkedIn Link', 'wp_dallas_lite') ,
+		'label' => __('LinkedIn Link', 'dallas-lite') ,
 		'section' => 'socialMedial',
 		'settings' => 'linkedinlogo',
 		'type' => 'text',
@@ -991,7 +948,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'behance_logo', array(
-		'label' => __('Behance Link', 'wp_dallas_lite') ,
+		'label' => __('Behance Link', 'dallas-lite') ,
 		'section' => 'socialMedial',
 		'settings' => 'behancelogo',
 		'type' => 'text',
@@ -1004,7 +961,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'youtube_logo', array(
-		'label' => __('Youtube Link', 'wp_dallas_lite') ,
+		'label' => __('Youtube Link', 'dallas-lite') ,
 		'section' => 'socialMedial',
 		'settings' => 'youtubelogo',
 		'type' => 'text',
@@ -1017,7 +974,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'snapchat_logo', array(
-		'label' => __('Snapchat Link', 'wp_dallas_lite') ,
+		'label' => __('Snapchat Link', 'dallas-lite') ,
 		'section' => 'socialMedial',
 		'settings' => 'snapchatlogo',
 		'type' => 'text',
@@ -1030,7 +987,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'skype_logo', array(
-		'label' => __('Skype Link', 'wp_dallas_lite') ,
+		'label' => __('Skype Link', 'dallas-lite') ,
 		'section' => 'socialMedial',
 		'settings' => 'skypelogo',
 		'type' => 'text',
@@ -1043,7 +1000,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'whatsapp_logo', array(
-		'label' => __('whatsapp Link', 'wp_dallas_lite') ,
+		'label' => __('whatsapp Link', 'dallas-lite') ,
 		'section' => 'socialMedial',
 		'settings' => 'whatsapplogo',
 		'type' => 'text',
@@ -1056,7 +1013,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'pinterest_logo', array(
-		'label' => __('Pinterest Link', 'wp_dallas_lite') ,
+		'label' => __('Pinterest Link', 'dallas-lite') ,
 		'section' => 'socialMedial',
 		'settings' => 'pinterestlogo',
 		'type' => 'text',
@@ -1069,7 +1026,7 @@ $callback = new wp_call_back;
 		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'custom_logo', array(
-		'label' => __('Custom Link', 'wp_dallas_lite') ,
+		'label' => __('Custom Link', 'dallas-lite') ,
 		'section' => 'socialMedial',
 		'settings' => 'customlogo',
 		'type' => 'text',
@@ -1077,8 +1034,8 @@ $callback = new wp_call_back;
 			'logo_text' => 'Use custom Link',
 		) ,
 	)));
-
-
+ 
+	
 	}
 
 ?>

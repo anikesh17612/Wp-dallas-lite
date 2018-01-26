@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wp_dallas_lite
+ * @package dallas-lite
  */
 
  ?>
@@ -16,7 +16,7 @@
 
 		if ('post' === get_post_type()): ?>
 			<div class="entry-meta">
-				<?php	wp_dallas_lite_posted_on(); ?>
+				<?php	dallas-lite_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -62,7 +62,7 @@
 					echo the_content();
 					}
 			} ?>
-			<?php wp_link_pages(array( 'before' => '<div class="page-links">' . esc_html__('Pages:', 'wp_dallas_lite') ,'after' => '</div>',)); ?>
+			<?php wp_link_pages(array( 'before' => '<div class="page-links">' . esc_html__('Pages:', 'dallas-lite') ,'after' => '</div>',)); ?>
 	</div><!-- .entry-content -->
 	<div class="post-meta">
 		<?php if(!is_single()){

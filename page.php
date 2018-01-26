@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wp_dallas_lite
+ * @package dallas-lite
  */
 get_header();
 ?>
@@ -71,7 +71,7 @@ if (get_theme_mod('blog_layout_selection') == 'blogfullwidth')
 	// We don't need sidebar here for Blog full width Layout
 
 	} ?>
-	
+
 
  </div> <!-- #row -->
 </div><!-- #container -->

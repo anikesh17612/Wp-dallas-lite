@@ -1,19 +1,19 @@
-=== WP Dallas Lite ===
+=== Dallas Lite ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.0
-Tested up to: 4.8
+Tested up to: 4.9.2
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called WP Dallas Lite.
+A starter theme called Dallas Lite.
 
 == Description ==
 
-WP Dallas Lite is a free Theme by JoomDev
+Dallas Lite is a free Theme by JoomDev
 
 == Installation ==
 
@@ -29,7 +29,7 @@ WP Dallas Lite includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0 - jan 26 2018 =
 * Initial release
 
 == Credits ==

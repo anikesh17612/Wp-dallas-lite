@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package wp_dallas_lite
+ * @package dallas-lite
  */
 ?>
 
@@ -14,7 +14,7 @@
 <?php
 
 if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_sidebar('bottom-c') || is_active_sidebar('bottom-d'))
-	{ ?>	
+	{ ?>
 <!-- Create bottom postion of theme -->
 <section id="bottom-section">
 	<div class="container">
@@ -65,7 +65,7 @@ if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_
 								<?php echo get_theme_mod('copyright_text', 'Copyright &copy; 2018 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>'); ?>
 							</div><!-- site-info -->
 							<?php
-						}else{		
+						}else{
 							} ?>
 						<div class="footer-menu col-md-6">
 							<?php if (has_nav_menu('menu-3')){

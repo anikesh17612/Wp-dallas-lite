@@ -8,32 +8,32 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package wp_dallas_lite
+ * @package dallas-lite
  */
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses wp_dallas_lite_header_style()
+ * @uses dallas-lite_header_style()
  */
-function wp_dallas_lite_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'wp_dallas_lite_custom_header_args', array(
+function dallas-lite_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'dallas-lite_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'wp_dallas_lite_header_style',
+		'wp-head-callback'       => 'dallas-lite_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'wp_dallas_lite_custom_header_setup' );
+add_action( 'after_setup_theme', 'dallas-lite_custom_header_setup' );
 
-if ( ! function_exists( 'wp_dallas_lite_header_style' ) ) :
+if ( ! function_exists( 'dallas-lite_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see wp_dallas_lite_custom_header_setup().
+	 * @see dallas-lite_custom_header_setup().
 	 */
-	function wp_dallas_lite_header_style() {
+	function dallas-lite_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

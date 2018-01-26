@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package wp_dallas_lite
+ * @package dallas-lite
  */
 ?>
 <!doctype html>
@@ -30,7 +30,7 @@ wp_head(); ?>
 body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php
-esc_html_e('Skip to content', 'wp_dallas_lite'); ?></a>
+esc_html_e('Skip to content', 'dallas-lite'); ?></a>
 	<div id="header-section">
 		<div class="container">
 			<div class="row">
@@ -75,13 +75,13 @@ if (get_theme_mod('allLogoFavicon') == 'logo-image' || get_theme_mod('allLogoFav
 	if (get_theme_mod('uploadLogo') =="")
 		{ ?>
 							<div class="wpdal_logo_image"><img src="<?php
-		echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt=""></div> 
+		echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt=""></div>
 						<?php
 		}
 	  else
 		{ ?>
 							<div class="wpdal_logo_image"><img src="<?php
-		echo get_theme_mod('uploadLogo'); ?>" alt=""></div> 
+		echo get_theme_mod('uploadLogo'); ?>" alt=""></div>
 						<?php
 		} ?>
 						<?php
@@ -90,9 +90,9 @@ if (get_theme_mod('allLogoFavicon') == 'logo-image' || get_theme_mod('allLogoFav
 if (get_theme_mod('allLogoFavicon') == 'logo-text')
 	{ ?>
 							<div class="wpdal_logo_text"><h1><?php
-	echo get_theme_mod('siteTitle') ?></h1></div> 
+	echo get_theme_mod('siteTitle') ?></h1></div>
 							<div class="wpdal_logo_text"><p><?php
-	echo get_theme_mod('tagLine') ?></p></div> 
+	echo get_theme_mod('tagLine') ?></p></div>
 						<?php
 	}
   else

@@ -4,13 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package wp-dallas-lite
+ * @package dallas-lite
  */
 defined('ABSPATH') or die('No script kiddies please!');
 
-if (!function_exists('wp_dallas_lite_css_generator'))
+if (!function_exists('dallas-lite_css_generator'))
 	{
-	function wp_dallas_lite_css_generator()
+	function dallas-lite_css_generator()
 		{
 		$output = '';
 		/* ******************************************************

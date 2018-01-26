@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wp_dallas_lite
+ * @package dallas-lite
  */
 get_header();
 ?>
@@ -86,10 +86,10 @@ if ($published_posts > $default_posts_per_page)
 	  else
 		{ ?>
 	<div class="wpdal_pagination">
-			<div class="loadmore"><button class="btn btn-info">Load More</button></div>		
-			
+			<div class="loadmore"><button class="btn btn-info">Load More</button></div>
+
 		</div>
-		
+
 	<?php
 		}
 	}
@@ -114,9 +114,9 @@ if (get_theme_mod('blog_layout_selection') == 'blogfullwidth')
 	// We don't need sidebar here for Blog full width Layout
 
 	} ?>
-	
 
- 
+
+
  </div> <!-- #row -->
 </div><!-- #container -->
 
