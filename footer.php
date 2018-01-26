@@ -12,47 +12,8 @@
 
 	</div><!-- #content -->
 <?php
-
-if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_sidebar('bottom-c') || is_active_sidebar('bottom-d'))
-	{ ?>
-<!-- Create bottom postion of theme -->
-<section id="bottom-section">
-	<div class="container">
-		<div class="row">
-			<?php
-				if (is_active_sidebar('bottom-a'))
-					{
-					echo '<div class="col-md-3">';
-						dynamic_sidebar('bottom-a');
-					echo '</div>';
-					}
-
-				if (is_active_sidebar('bottom-b'))
-					{
-					echo '<div class="col-md-3">';
-					dynamic_sidebar('bottom-b');
-					echo '</div>';
-					}
-
-				if (is_active_sidebar('bottom-c'))
-					{
-					echo '<div class="col-md-3">';
-					dynamic_sidebar('bottom-c');
-					echo '</div>';
-					}
-
-				if (is_active_sidebar('bottom-d'))
-					{
-					echo '<div class="col-md-3">';
-					dynamic_sidebar('bottom-d');
-					echo '</div>';
-					}
-			?>
-		</div>
-	</div>
-</section>
-<?php
-	} ?>
+get_sidebar('footer');
+?>
 <!-- End bottom postion of theme -->
 <?php if(get_theme_mod('enable_copyright_text', '1') || has_nav_menu('menu-3') ){?>
 	<footer id="footer-section">
@@ -62,7 +23,8 @@ if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_
 					<?php $enable_copyright_text = get_theme_mod('enable_copyright_text', '1');
 						if ($enable_copyright_text){ ?>
 							<div class="wp-copyright col-md-6">
-								<?php echo get_theme_mod('copyright_text', 'Copyright &copy; 2018 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="https://www.joomdev.com/wordpress-themes" target="_blank">JoomDev</a>'); ?>
+								<?php $main_url='https://www.joomdev.com/wordpress-themes'; ?>
+								<?php echo get_theme_mod('copyright_text', 'Copyright &copy; 2018 WP Dallas <sup>Lite</sup>. All Right Reserved. Created by <a href="'.$main_url.'" target="_blank">JoomDev</a>'); ?>
 							</div><!-- site-info -->
 							<?php
 						}else{
