@@ -5,16 +5,17 @@
  * Contains handlers for navigation and widget area.
  */
 
-( function( $ )) {
+ function dallas_lite (jQuery)  {
+
 	var body, masthead, menuToggle, siteNavigation, socialNavigation, siteHeaderMenu, resizeTimer;
 
 	function initMainNavigation( container ) {
 
 		// Add dropdown toggle that displays child menu items.
-		var dropdownToggle = $( '<button />', {
+		var dropdownToggle = jQuery( '<button />', {
 			'class': 'dropdown-toggle',
 			'aria-expanded': false
-		} ).append( $( '<span />', {
+		} ).append( jQuery( '<span />', {
 			'class': 'screen-reader-text',
 			text: screenReaderText.expand
 		} ) );
@@ -29,7 +30,7 @@
 		container.find( '.menu-item-has-children' ).attr( 'aria-haspopup', 'true' );
 
 		container.find( '.dropdown-toggle' ).click( function( e ) {
-			var _this            = $( this ),
+			var _this            = jQuery( this ),
 				screenReaderSpan = _this.find( '.screen-reader-text' );
 
 			e.preventDefault();
@@ -42,9 +43,9 @@
 			screenReaderSpan.text( screenReaderSpan.text() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
 		} );
 	}
-	initMainNavigation( $( '.main-navigation' ) );
+	initMainNavigation( jQuery( '.main-navigation' ) );
 
-	masthead         = $( '#masthead' );
+	masthead         = jQuery( '#masthead' );
 	menuToggle       = masthead.find( '#menu-toggle' );
 	siteHeaderMenu   = masthead.find( '#site-header-menu' );
 	siteNavigation   = masthead.find( '#site-navigation' );
@@ -62,10 +63,10 @@
 		menuToggle.add( siteNavigation ).add( socialNavigation ).attr( 'aria-expanded', 'false' );
 
 		menuToggle.on( 'click.twentysixteen', function() {
-			$( this ).add( siteHeaderMenu ).toggleClass( 'toggled-on' );
+			jQuery( this ).add( siteHeaderMenu ).toggleClass( 'toggled-on' );
 
 			// jscs:disable
-			$( this ).add( siteNavigation ).add( socialNavigation ).attr( 'aria-expanded', $( this ).add( siteNavigation ).add( socialNavigation ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			jQuery( this ).add( siteNavigation ).add( socialNavigation ).attr( 'aria-expanded', jQuery( this ).add( siteNavigation ).add( socialNavigation ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 			// jscs:enable
 		} );
 	} )();
@@ -79,13 +80,13 @@
 		// Toggle `focus` class to allow submenu access on tablets.
 		function toggleFocusClassTouchScreen() {
 			if ( window.innerWidth >= 910 ) {
-				$( document.body ).on( 'touchstart.twentysixteen', function( e ) {
-					if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
-						$( '.main-navigation li' ).removeClass( 'focus' );
+				jQuery( document.body ).on( 'touchstart.twentysixteen', function( e ) {
+					if ( ! jQuery( e.target ).closest( '.main-navigation li' ).length ) {
+						jQuery( '.main-navigation li' ).removeClass( 'focus' );
 					}
 				} );
 				siteNavigation.find( '.menu-item-has-children > a' ).on( 'touchstart.twentysixteen', function( e ) {
-					var el = $( this ).parent( 'li' );
+					var el = jQuery( this ).parent( 'li' );
 
 					if ( ! el.hasClass( 'focus' ) ) {
 						e.preventDefault();
@@ -99,12 +100,12 @@
 		}
 
 		if ( 'ontouchstart' in window ) {
-			$( window ).on( 'resize.twentysixteen', toggleFocusClassTouchScreen );
+			jQuery( window ).on( 'resize.twentysixteen', toggleFocusClassTouchScreen );
 			toggleFocusClassTouchScreen();
 		}
 
 		siteNavigation.find( 'a' ).on( 'focus.twentysixteen blur.twentysixteen', function() {
-			$( this ).parents( '.menu-item' ).toggleClass( 'focus' );
+			jQuery( this ).parents( '.menu-item' ).toggleClass( 'focus' );
 		} );
 	} )();
 
@@ -140,8 +141,8 @@
 			return;
 		}
 
-		$( '.entry-content' ).find( param ).each( function() {
-			var element              = $( this ),
+		jQuery( '.entry-content' ).find( param ).each( function() {
+			var element              = jQuery( this ),
 				elementPos           = element.offset(),
 				elementPosTop        = elementPos.top,
 				entryFooter          = element.closest( 'article' ).find( '.entry-footer' ),
@@ -160,7 +161,7 @@
 					newImg = new Image();
 					newImg.src = element.attr( 'src' );
 
-					$( newImg ).on( 'load.twentysixteen', function() {
+					jQuery( newImg ).on( 'load.twentysixteen', function() {
 						if ( newImg.width >= 840  ) {
 							element.addClass( 'below-entry-meta' );
 
@@ -180,10 +181,10 @@
 		} );
 	}
 
-	$( document ).ready( function() {
-		body = $( document.body );
+	jQuery( document ).ready( function() {
+		body = jQuery( document.body );
 
-		$( window )
+		jQuery( window )
 			.on( 'load.twentysixteen', onResizeARIA )
 			.on( 'resize.twentysixteen', function() {
 				clearTimeout( resizeTimer );
@@ -197,4 +198,4 @@
 		belowEntryMetaClass( 'img.size-full' );
 		belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
 	} );
-} )( jQuery );
+} ( jQuery );
