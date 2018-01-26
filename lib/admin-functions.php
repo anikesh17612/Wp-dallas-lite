@@ -1,6 +1,6 @@
 <?php
 /**
- * @package wp_dallas_lite
+ * @package wp-dallas-lite
  */
 defined('ABSPATH') or die('No script kiddies please!');
 

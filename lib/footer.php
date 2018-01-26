@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wp_dallas_lite
+ * @package wp-dallas-lite
  */
 
  function copyright() {
@@ -22,7 +22,7 @@
 		$youtube	=  get_theme_mod('youtubelogo','https://www.youtube.com/');
 		$Snapchat	=  get_theme_mod('snapchatlogo','https://www.snapchat.com/');
 		$skype		=  get_theme_mod('skypelogo','https://login.skype.com/login');
-		$pinterest	=  get_theme_mod('pinterestlogo','https://www.pinterest.com/');        
+		$pinterest	=  get_theme_mod('pinterestlogo','https://www.pinterest.com/');
         $custom		=  get_theme_mod('customlogo');
 
         if( $facebook || $twitter || $googleplus || $linkedin || $behance || $behance || $youtube || $Snapchat || $skype || $pinterest || $custom || "" ) {
