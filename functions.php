@@ -7,7 +7,7 @@
  * @package dallas-lite
  */
 
-if (!function_exists('dallas-lite_setup')):
+if (!function_exists('dallas_lite_setup')):
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,7 +15,7 @@ if (!function_exists('dallas-lite_setup')):
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function dallas-lite_setup()
+	function dallas_lite_setup()
 		{
 		/*
 		* Make theme available for translation.
@@ -63,7 +63,7 @@ if (!function_exists('dallas-lite_setup')):
 
 		// Set up the WordPress core custom background feature.
 
-		add_theme_support('custom-background', apply_filters('dallas-lite_custom_background_args', array(
+		add_theme_support('custom-background', apply_filters('dallas_lite_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		)));
@@ -85,7 +85,7 @@ if (!function_exists('dallas-lite_setup')):
 		}
 
 endif;
-add_action('after_setup_theme', 'dallas-lite_setup');
+add_action('after_setup_theme', 'dallas_lite_setup');
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -94,12 +94,12 @@ add_action('after_setup_theme', 'dallas-lite_setup');
  * @global int $content_width
  */
 
-function dallas-lite_content_width()
+function dallas_lite_content_width()
 	{
-	$GLOBALS['content_width'] = apply_filters('dallas-lite_content_width', 640);
+	$GLOBALS['content_width'] = apply_filters('dallas_lite_content_width', 640);
 	}
 
-add_action('after_setup_theme', 'dallas-lite_content_width', 0);
+add_action('after_setup_theme', 'dallas_lite_content_width', 0);
 /*
 * Enable support for Post Thumbnails on posts and pages.
 *
@@ -113,7 +113,7 @@ set_post_thumbnail_size(1200, 'auto');
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 
-function dallas-lite_widgets_init()
+function dallas_lite_widgets_init()
 	{
 	register_sidebar(array(
 		'name' => esc_html__('Sidebar', 'dallas-lite') ,
@@ -162,12 +162,12 @@ function dallas-lite_widgets_init()
 	));
 	}
 
-add_action('widgets_init', 'dallas-lite_widgets_init');
+add_action('widgets_init', 'dallas_lite_widgets_init');
 /**
  * Enqueue scripts and styles.
  */
 
-function dallas-lite_scripts()
+function dallas_lite_scripts()
 	{
 	wp_enqueue_style('dallas-lite-style', get_stylesheet_uri());
 	wp_enqueue_script('dallas-lite-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(
@@ -188,32 +188,32 @@ function dallas-lite_scripts()
 	wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(
 		'jquery'
 	) , '3.0.0', true);
-	wp_enqueue_script('dallas-lite_script', get_template_directory_uri() . '/assets/js/functions.js', array(
+	wp_enqueue_script('dallas_lite_script', get_template_directory_uri() . '/assets/js/functions.js', array(
 		'jquery'
 	) , '20160816', true);
-	wp_enqueue_script('dallas-lite-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(
+	wp_enqueue_script('dallas_lite-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(
 		'jquery'
 	) , '20151215', true);
-	wp_enqueue_style('dallas-lite_style', get_stylesheet_uri()); //
-	wp_add_inline_style('dallas-lite_style', dallas-lite_css_generator()); //
+	wp_enqueue_style('dallas_lite_style', get_stylesheet_uri()); //
+	wp_add_inline_style('dallas_lite_style', dallas_lite_css_generator()); //
 	if (is_singular() && comments_open() && get_option('thread_comments'))
 		{
 		wp_enqueue_script('comment-reply');
 		}
 
-	wp_localize_script('dallas-lite_script', 'screenReaderText', array(
+	wp_localize_script('dallas_lite_script', 'screenReaderText', array(
 		'expand' => __('expand child menu', 'dallas-lite') ,
 		'collapse' => __('collapse child menu', 'dallas-lite') ,
 	));
 	}
 
-add_action('wp_enqueue_scripts', 'dallas-lite_scripts');
+add_action('wp_enqueue_scripts', 'dallas_lite_scripts');
 /*  ********************************/
 /* REMOVE COLORS OPTION FROM CUSTOMIZER  */
 /* ***************************** */
-add_action("customize_register", "dallas-lite_JMD_customize_register");
+add_action("customize_register", "dallas_lite_JMD_customize_register");
 
-function dallas-lite_JMD_customize_register($wp_customize)
+function dallas_lite_JMD_customize_register($wp_customize)
 	{
 	$wp_customize->remove_section("colors");
 	$wp_customize->remove_control("blogname");
@@ -255,8 +255,8 @@ add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_callback');
 * 				Custom Excerpt Length
 *----------------------------------------------------*/
 
-if (!function_exists('wpdallas_excerpt_max_charlength')):
-	function wpdallas_excerpt_max_charlength($wordsreturned)
+if (!function_exists('dallas_lite_excerpt_max_charlength')):
+	function dallas_lite_excerpt_max_charlength($wordsreturned)
 		{
 		$string = get_the_excerpt();
 		$retval = $string;
