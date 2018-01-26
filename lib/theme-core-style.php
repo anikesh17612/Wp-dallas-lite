@@ -8,9 +8,9 @@
  */
 defined('ABSPATH') or die('No script kiddies please!');
 
-if (!function_exists('dallas-lite_css_generator'))
+if (!function_exists('dallas_lite_css_generator'))
 	{
-	function dallas-lite_css_generator()
+	function dallas_lite_css_generator()
 		{
 		$output = '';
 		/* ******************************************************
