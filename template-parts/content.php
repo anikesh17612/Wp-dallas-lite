@@ -40,7 +40,7 @@
 						{
 						$textlimit = get_theme_mod('excerptwordLimit', 330);
 						echo '<p class="short-description">';
-						echo wpdallas_excerpt_max_charlength($textlimit);
+						echo dallas_lite_excerpt_max_charlength($textlimit);
 						echo '</p>';
 						}
 					  else
