@@ -14,20 +14,20 @@
  *
  * @return void
  */
-function dallas-lite_woocommerce_setup() {
+function dallas_lite_woocommerce_setup() {
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
 }
-add_action( 'after_setup_theme', 'dallas-lite_woocommerce_setup' );
+add_action( 'after_setup_theme', 'dallas_lite_woocommerce_setup' );
 
 /**
  * WooCommerce specific scripts & stylesheets.
  *
  * @return void
  */
-function dallas-lite_woocommerce_scripts() {
+function dallas_lite_woocommerce_scripts() {
 	wp_enqueue_style( 'dallas-lite-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
@@ -44,7 +44,7 @@ function dallas-lite_woocommerce_scripts() {
 
 	wp_add_inline_style( 'dallas-lite-woocommerce-style', $inline_font );
 }
-add_action( 'wp_enqueue_scripts', 'dallas-lite_woocommerce_scripts' );
+add_action( 'wp_enqueue_scripts', 'dallas_lite_woocommerce_scripts' );
 
 /**
  * Disable the default WooCommerce stylesheet.
