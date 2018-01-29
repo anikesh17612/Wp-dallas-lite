@@ -269,7 +269,7 @@ if (!function_exists('dallas_lite_excerpt_max_charlength')):
 			}
 		  else
 			{
-			array_splice($array, $wordsreturned);
+			//array_splice($array, $wordsreturned);
 			$retval = implode(" ", $array) . " ...";
 			}
 
