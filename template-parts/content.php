@@ -79,9 +79,9 @@
 			}
 		else{
 		}
-
-		$content = "";
-			echo add_social_share_icons($content); ?>
+      if(is_single()){
+			echo add_social_share_icons();
+    }?>
 	</div>
 </article>
 
