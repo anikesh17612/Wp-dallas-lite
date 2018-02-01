@@ -6,7 +6,7 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
-( function( $ )) {
+ function blog_customize( jQuery ) {
 
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
@@ -39,4 +39,4 @@
 			}
 		} );
 	} );
-} )( jQuery );
+}( jQuery );

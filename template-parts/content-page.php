@@ -1,30 +1,26 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dallas-lite
+ * @package dallaslite
+ * @since Dallas Lite 1.0
  */
-
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
 	<div class="entry-content">
 		<?php
 			the_content();
-
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dallas-lite' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dallaslite' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
-
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
 			<?php
@@ -32,7 +28,7 @@
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Edit <span class="screen-reader-text">%s</span>', 'dallas-lite' ),
+							__( 'Edit <span class="screen-reader-text">%s</span>', 'dallaslite' ),
 							array(
 								'span' => array(
 									'class' => array(),

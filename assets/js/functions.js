@@ -5,7 +5,7 @@
  * Contains handlers for navigation and widget area.
  */
 
- function dallas-lite (jQuery)  {
+ function dallaslite (jQuery)  {
 
 	var body, masthead, menuToggle, siteNavigation, socialNavigation, siteHeaderMenu, resizeTimer;
 

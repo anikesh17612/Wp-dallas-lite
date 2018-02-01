@@ -1,6 +1,14 @@
-/* ******************************************************** */
+/**
+ * The template for displaying all single posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package dallaslite
+ * @since Dallas Lite 1.0
+ */
+
 /* ************* LOAD MORE POST ************* ***************/
-/* ******************************************************** */
+
 var ajaxurl = loadmore_params.adminUrl+"admin-ajax.php";
 		var page = 2;
 		jQuery(function($) {
@@ -21,25 +29,24 @@ var ajaxurl = loadmore_params.adminUrl+"admin-ajax.php";
 				});
 			});
 		});
-/* ******************************************************** */
-/* **		 ADD CLASS IN BODY IN CASE OF BOX LAYOUT	*****/
-/* ******************************************************** */
+
+/************ ADD CLASS IN BODY IN CASE OF BOX LAYOUT	***********/
+
 jQuery(document).ready(function(){
 	var currentBodyLayout =loadmore_params.body_layout;
 	if(currentBodyLayout == 'box_layout'){
 		jQuery('.main_body').addClass('box_layout');
 	}
 })
-/* ******************************************************** */
+
 /* ****************	BACK TO TOP LINK  ***********************/
-/* ******************************************************** */	
 
 jQuery(document).ready(function(){
 	jQuery(".backtotop").hide();
 	jQuery(".backtotop").on('click',function(){
 		jQuery("html, body").animate({scrollTop: jQuery("body").offset().top}, 500);
 	});
-})	
+})
 
 jQuery(window).scroll(function() {
     if (jQuery(this).scrollTop() > 150) {
@@ -48,12 +55,11 @@ jQuery(window).scroll(function() {
        jQuery(".backtotop").stop(true, true).fadeOut();
     }
 });
-/* ******************************************************** */
+
 /* ****************	MOBILE MENU CLICK  ***********************/
-/* ******************************************************** */	
+
 jQuery(document).ready(function(){
 	jQuery(".menu-toggle").on('click',function(){
 		jQuery('.main_body').toggleClass('mobile_menu_open');
 	})
 })
-

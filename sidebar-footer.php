@@ -1,4 +1,14 @@
-<?php if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_sidebar('bottom-c') || is_active_sidebar('bottom-d'))
+<?php
+/**
+ * The sidebar containing the Footer widget area
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package dallaslite
+ * @since Dallas Lite 1.0
+ */
+
+  if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_sidebar('bottom-c') || is_active_sidebar('bottom-d'))
 	{ ?>
 <!-- Create bottom postion of theme -->
 <section id="bottom-section">

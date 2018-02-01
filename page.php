@@ -9,7 +9,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dallas-lite
+ * @package dallaslite
+* @since Dallas Lite 1.0
  */
 get_header();
 ?>

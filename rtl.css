@@ -9,14 +9,6 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 
 */
 
-/*
-body {
-	direction: rtl;
-	unicode-bidi: embed;
-}
-*/
-
-
 body {
 	direction: rtl;
 	unicode-bidi: embed;

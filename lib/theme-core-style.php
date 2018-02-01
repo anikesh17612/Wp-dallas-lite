@@ -4,13 +4,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package dallas-lite
+ * @package dallaslite
+* @since Dallas Lite 1.0
  */
+
 defined('ABSPATH') or die('No script kiddies please!');
 
-if (!function_exists('dallas_lite_css_generator'))
+if (!function_exists('dallaslite_css_generator'))
 	{
-	function dallas_lite_css_generator()
+	function dallaslite_css_generator()
 		{
 		$output = '';
 		/* ******************************************************
@@ -94,6 +96,11 @@ if (!function_exists('dallas_lite_css_generator'))
 			$h1style.= 'font-size:' . get_theme_mod('h1_font_size', '36') . 'px;';
 			}
 
+      if (get_theme_mod('h1_font_weight', '500'))
+  			{
+  			$h1style.= 'font-weight:' . get_theme_mod('h1_font_weight', '500').';' ;
+  			}
+
 		if (get_theme_mod('h1_google_font', 'lato'))
 			{
 			$h1style.= 'font-family:"' . get_theme_mod('h1_google_font', 'Lato') . '",sans-serif;';
@@ -113,6 +120,11 @@ if (!function_exists('dallas_lite_css_generator'))
 			$h2style.= 'font-size:' . get_theme_mod('h2_font_size', '30') . 'px;';
 			}
 
+    if (get_theme_mod('h2_font_weight', '500'))
+  		{
+  		$h2style.= 'font-weight:' . get_theme_mod('h2_font_weight', '500').';' ;
+  		}
+
 		if (get_theme_mod('h2_google_font', 'lato'))
 			{
 			$h2style.= 'font-family:"' . get_theme_mod('h2_google_font', 'Lato') . '",sans-serif;';
@@ -131,6 +143,11 @@ if (!function_exists('dallas_lite_css_generator'))
 			$h3style.= 'font-size:' . get_theme_mod('h3_font_size', '26') . 'px;';
 			}
 
+    if (get_theme_mod('h3_font_weight', '500'))
+    	{
+    	$h3style.= 'font-weight:' . get_theme_mod('h3_font_weight', '500').';' ;
+    	}
+
 		if (get_theme_mod('h3_google_font', 'lato'))
 			{
 			$h3style.= 'font-family:"' . get_theme_mod('h3_google_font', 'Lato') . '",sans-serif;';
@@ -148,6 +165,11 @@ if (!function_exists('dallas_lite_css_generator'))
 			$h4style.= 'font-size:' . get_theme_mod('h4_font_size', '24') . 'px;';
 			}
 
+    if (get_theme_mod('h4_font_weight', '500'))
+    	{
+    	$h4style.= 'font-weight:' . get_theme_mod('h4_font_weight', '500').';' ;
+    	}
+
 		if (get_theme_mod('h4_google_font', 'lato'))
 			{
 			$h4style.= 'font-family:"' . get_theme_mod('h4_google_font', 'Lato') . '",sans-serif;';
@@ -164,6 +186,10 @@ if (!function_exists('dallas_lite_css_generator'))
 			{
 			$h5style.= 'font-size:' . get_theme_mod('h5_font_size', '22') . 'px;';
 			}
+    if (get_theme_mod('h5_font_weight', '500'))
+      {
+      $h5style.= 'font-weight:' . get_theme_mod('h5_font_weight', '500').';' ;
+      }
 
 		if (get_theme_mod('h5_google_font', 'lato'))
 			{
@@ -181,7 +207,10 @@ if (!function_exists('dallas_lite_css_generator'))
 			{
 			$h6style.= 'font-size:' . get_theme_mod('h6_font_size', '20') . 'px;';
 			}
-
+    if (get_theme_mod('h6_font_weight', '500'))
+      {
+      $h6style.= 'font-weight:' . get_theme_mod('h6_font_weight', '500').';' ;
+      }
 		if (get_theme_mod('h6_google_font', 'lato'))
 			{
 			$h6style.= 'font-family:"' . get_theme_mod('h6_google_font', 'Lato') . '",sans-serif;';

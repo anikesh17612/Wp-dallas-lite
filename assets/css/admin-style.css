@@ -1,7 +1,16 @@
 /**
-  * @package dallas-lite
+  * @package dallaslite
+	* @since Dallas Lite 1.0
  */
 #customize-control-separatorline,
+#customize-control-body-font,
+#customize-control-menu-font,
+#customize-control-h1-separatorline,
+#customize-control-h2-separatorline,
+#customize-control-h3-separatorline,
+#customize-control-h4-separatorline,
+#customize-control-h5-separatorline,
+#customize-control-h6-separatorline,
 #customize-control-footer_separatorline{
 	border-bottom:1px solid #222;
 	margin:15px 0px;

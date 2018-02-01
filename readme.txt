@@ -25,7 +25,7 @@ Dallas Lite is a free Theme by JoomDev
 
 = Does this theme support any plugins? =
 
-WP Dallas Lite includes support for Infinite Scroll in Jetpack.
+Dallas Lite includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

@@ -4,7 +4,7 @@
  *
  * @link https://woocommerce.com/
  *
- * @package dallas-lite
+ * @package dallaslite
 
 /**
  * WooCommerce setup function.
@@ -14,21 +14,21 @@
  *
  * @return void
  */
-function dallas_lite_woocommerce_setup() {
+function dallaslite_woocommerce_setup() {
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
 }
-add_action( 'after_setup_theme', 'dallas_lite_woocommerce_setup' );
+add_action( 'after_setup_theme', 'dallaslite_woocommerce_setup' );
 
 /**
  * WooCommerce specific scripts & stylesheets.
  *
  * @return void
  */
-function dallas_lite_woocommerce_scripts() {
-	wp_enqueue_style( 'dallas-lite-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+function dallaslite_woocommerce_scripts() {
+	wp_enqueue_style( 'dallaslite-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -42,9 +42,9 @@ function dallas_lite_woocommerce_scripts() {
 			font-style: normal;
 		}';
 
-	wp_add_inline_style( 'dallas-lite-woocommerce-style', $inline_font );
+	wp_add_inline_style( 'dallaslite-woocommerce-style', $inline_font );
 }
-add_action( 'wp_enqueue_scripts', 'dallas_lite_woocommerce_scripts' );
+add_action( 'wp_enqueue_scripts', 'dallaslite_woocommerce_scripts' );
 
 /**
  * Disable the default WooCommerce stylesheet.
@@ -62,42 +62,42 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
  * @param  array $classes CSS classes applied to the body tag.
  * @return array $classes modified to include 'woocommerce-active' class.
  */
-function dallas-lite_woocommerce_active_body_class( $classes ) {
+function dallaslite_woocommerce_active_body_class( $classes ) {
 	$classes[] = 'woocommerce-active';
 
 	return $classes;
 }
-add_filter( 'body_class', 'dallas-lite_woocommerce_active_body_class' );
+add_filter( 'body_class', 'dallaslite_woocommerce_active_body_class' );
 
 /**
  * Products per page.
  *
  * @return integer number of products.
  */
-function dallas-lite_woocommerce_products_per_page() {
+function dallaslite_woocommerce_products_per_page() {
 	return 12;
 }
-add_filter( 'loop_shop_per_page', 'dallas-lite_woocommerce_products_per_page' );
+add_filter( 'loop_shop_per_page', 'dallaslite_woocommerce_products_per_page' );
 
 /**
  * Product gallery thumnbail columns.
  *
  * @return integer number of columns.
  */
-function dallas-lite_woocommerce_thumbnail_columns() {
+function dallaslite_woocommerce_thumbnail_columns() {
 	return 4;
 }
-add_filter( 'woocommerce_product_thumbnails_columns', 'dallas-lite_woocommerce_thumbnail_columns' );
+add_filter( 'woocommerce_product_thumbnails_columns', 'dallaslite_woocommerce_thumbnail_columns' );
 
 /**
  * Default loop columns on product archives.
  *
  * @return integer products per row.
  */
-function dallas-lite_woocommerce_loop_columns() {
+function dallaslite_woocommerce_loop_columns() {
 	return 3;
 }
-add_filter( 'loop_shop_columns', 'dallas-lite_woocommerce_loop_columns' );
+add_filter( 'loop_shop_columns', 'dallaslite_woocommerce_loop_columns' );
 
 /**
  * Related Products Args.
@@ -105,7 +105,7 @@ add_filter( 'loop_shop_columns', 'dallas-lite_woocommerce_loop_columns' );
  * @param array $args related products args.
  * @return array $args related products args.
  */
-function dallas-lite_woocommerce_related_products_args( $args ) {
+function dallaslite_woocommerce_related_products_args( $args ) {
 	$defaults = array(
 		'posts_per_page' => 3,
 		'columns'        => 3,
@@ -115,32 +115,32 @@ function dallas-lite_woocommerce_related_products_args( $args ) {
 
 	return $args;
 }
-add_filter( 'woocommerce_output_related_products_args', 'dallas-lite_woocommerce_related_products_args' );
+add_filter( 'woocommerce_output_related_products_args', 'dallaslite_woocommerce_related_products_args' );
 
-if ( ! function_exists( 'dallas-lite_woocommerce_product_columns_wrapper' ) ) {
+if ( ! function_exists( 'dallaslite_woocommerce_product_columns_wrapper' ) ) {
 	/**
 	 * Product columns wrapper.
 	 *
 	 * @return  void
 	 */
-	function dallas-lite_woocommerce_product_columns_wrapper() {
-		$columns = dallas-lite_woocommerce_loop_columns();
+	function dallaslite_woocommerce_product_columns_wrapper() {
+		$columns = dallaslite_woocommerce_loop_columns();
 		echo '<div class="columns-' . absint( $columns ) . '">';
 	}
 }
-add_action( 'woocommerce_before_shop_loop', 'dallas-lite_woocommerce_product_columns_wrapper', 40 );
+add_action( 'woocommerce_before_shop_loop', 'dallaslite_woocommerce_product_columns_wrapper', 40 );
 
-if ( ! function_exists( 'dallas-lite_woocommerce_product_columns_wrapper_close' ) ) {
+if ( ! function_exists( 'dallaslite_woocommerce_product_columns_wrapper_close' ) ) {
 	/**
 	 * Product columns wrapper close.
 	 *
 	 * @return  void
 	 */
-	function dallas-lite_woocommerce_product_columns_wrapper_close() {
+	function dallaslite_woocommerce_product_columns_wrapper_close() {
 		echo '</div>';
 	}
 }
-add_action( 'woocommerce_after_shop_loop', 'dallas-lite_woocommerce_product_columns_wrapper_close', 40 );
+add_action( 'woocommerce_after_shop_loop', 'dallaslite_woocommerce_product_columns_wrapper_close', 40 );
 
 /**
  * Remove default WooCommerce wrapper.
@@ -148,7 +148,7 @@ add_action( 'woocommerce_after_shop_loop', 'dallas-lite_woocommerce_product_colu
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-if ( ! function_exists( 'dallas-lite_woocommerce_wrapper_before' ) ) {
+if ( ! function_exists( 'dallaslite_woocommerce_wrapper_before' ) ) {
 	/**
 	 * Before Content.
 	 *
@@ -156,16 +156,16 @@ if ( ! function_exists( 'dallas-lite_woocommerce_wrapper_before' ) ) {
 	 *
 	 * @return void
 	 */
-	function dallas-lite_woocommerce_wrapper_before() {
+	function dallaslite_woocommerce_wrapper_before() {
 		?>
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 		<?php
 	}
 }
-add_action( 'woocommerce_before_main_content', 'dallas-lite_woocommerce_wrapper_before' );
+add_action( 'woocommerce_before_main_content', 'dallaslite_woocommerce_wrapper_before' );
 
-if ( ! function_exists( 'dallas-lite_woocommerce_wrapper_after' ) ) {
+if ( ! function_exists( 'dallaslite_woocommerce_wrapper_after' ) ) {
 	/**
 	 * After Content.
 	 *
@@ -173,28 +173,23 @@ if ( ! function_exists( 'dallas-lite_woocommerce_wrapper_after' ) ) {
 	 *
 	 * @return void
 	 */
-	function dallas-lite_woocommerce_wrapper_after() {
+	function dallaslite_woocommerce_wrapper_after() {
 		?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 		<?php
 	}
 }
-add_action( 'woocommerce_after_main_content', 'dallas-lite_woocommerce_wrapper_after' );
+add_action( 'woocommerce_after_main_content', 'dallaslite_woocommerce_wrapper_after' );
 
 /**
  * Sample implementation of the WooCommerce Mini Cart.
  *
  * You can add the WooCommerce Mini Cart to header.php like so ...
  *
-	<?php
-		if ( function_exists( 'dallas-lite_woocommerce_header_cart' ) ) {
-			dallas-lite_woocommerce_header_cart();
-		}
-	?>
  */
 
-if ( ! function_exists( 'dallas-lite_woocommerce_cart_link_fragment' ) ) {
+if ( ! function_exists( 'dallaslite_woocommerce_cart_link_fragment' ) ) {
 	/**
 	 * Cart Fragments.
 	 *
@@ -203,17 +198,17 @@ if ( ! function_exists( 'dallas-lite_woocommerce_cart_link_fragment' ) ) {
 	 * @param array $fragments Fragments to refresh via AJAX.
 	 * @return array Fragments to refresh via AJAX.
 	 */
-	function dallas-lite_woocommerce_cart_link_fragment( $fragments ) {
+	function dallaslite_woocommerce_cart_link_fragment( $fragments ) {
 		ob_start();
-		dallas-lite_woocommerce_cart_link();
+		dallaslite_woocommerce_cart_link();
 		$fragments['a.cart-contents'] = ob_get_clean();
 
 		return $fragments;
 	}
 }
-add_filter( 'woocommerce_add_to_cart_fragments', 'dallas-lite_woocommerce_cart_link_fragment' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'dallaslite_woocommerce_cart_link_fragment' );
 
-if ( ! function_exists( 'dallas-lite_woocommerce_cart_link' ) ) {
+if ( ! function_exists( 'dallaslite_woocommerce_cart_link' ) ) {
 	/**
 	 * Cart Link.
 	 *
@@ -221,23 +216,23 @@ if ( ! function_exists( 'dallas-lite_woocommerce_cart_link' ) ) {
 	 *
 	 * @return void
 	 */
-	function dallas-lite_woocommerce_cart_link() {
+	function dallaslite_woocommerce_cart_link() {
 		?>
-			<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'dallas-lite' ); ?>">
+			<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'dallaslite' ); ?>">
 				<?php /* translators: number of items in the mini cart. */ ?>
-				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'dallas-lite' ), WC()->cart->get_cart_contents_count() ) );?></span>
+				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'dallaslite' ), WC()->cart->get_cart_contents_count() ) );?></span>
 			</a>
 		<?php
 	}
 }
 
-if ( ! function_exists( 'dallas-lite_woocommerce_header_cart' ) ) {
+if ( ! function_exists( 'dallaslite_woocommerce_header_cart' ) ) {
 	/**
 	 * Display Header Cart.
 	 *
 	 * @return void
 	 */
-	function dallas-lite_woocommerce_header_cart() {
+	function dallaslite_woocommerce_header_cart() {
 		if ( is_cart() ) {
 			$class = 'current-menu-item';
 		} else {
@@ -246,7 +241,7 @@ if ( ! function_exists( 'dallas-lite_woocommerce_header_cart' ) ) {
 		?>
 		<ul id="site-header-cart" class="site-header-cart">
 			<li class="<?php echo esc_attr( $class ); ?>">
-				<?php dallas-lite_woocommerce_cart_link(); ?>
+				<?php dallaslite_woocommerce_cart_link(); ?>
 			</li>
 			<li>
 				<?php
