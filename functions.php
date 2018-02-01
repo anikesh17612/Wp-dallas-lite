@@ -1,6 +1,6 @@
 <?php
 /**
- * WP Dallas Lite functions and definitions
+ * Dallas Lite functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -47,6 +47,8 @@ if (!function_exists('dallaslite_setup')):
 
 		register_nav_menus(array(
 			'menu-1' => esc_html__('Primary', 'dallaslite') ,
+			'menu-2' => esc_html__('Top', 'dallaslite') ,
+			'menu-3' => esc_html__('Footer', 'dallaslite') ,
 		));
 		/*
 		* Switch default core markup for search form, comment form, and comments
@@ -182,7 +184,8 @@ function dallaslite_scripts()
 	);
 	wp_localize_script('dallaslite-loadmore', 'loadmore_params', $translation_array);
 	wp_enqueue_style('font-family', 'https://fonts.googleapis.com/css?family=' . get_theme_mod('body_google_font', 'Lato') . '|' . get_theme_mod('menu_google_font', 'Lato') . '|' . get_theme_mod('h1_google_font', 'Lato') . '|' . get_theme_mod('h2_google_font', 'Lato') . '|' . get_theme_mod('h3_google_font', 'Lato') . '|' . get_theme_mod('h4_google_font', 'Lato') . '|' . get_theme_mod('h5_google_font', 'Lato') . '|' . get_theme_mod('h6_google_font', 'Lato'));
-	wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
+wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.css');
+	wp_enqueue_style('bootstrap-min-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css');
 	wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(
 		'jquery'
@@ -220,36 +223,7 @@ function dallaslite_JMD_customize_register($wp_customize)
 	$wp_customize->remove_control("display_header_text");
 	}
 
-/**
- * This code Implimented to load more post using ajax ON click load more Button
- */
 
-function load_posts_by_ajax_callback()
-	{
-	if ($_POST['wpdal_loadpost'] == 1) $paged = $_POST['page'];
-	$args = array(
-		'post_type' => 'post',
-		'post_status' => 'publish',
-		'posts_per_page' => '2',
-		'paged' => $paged,
-	);
-	$my_posts = new WP_Query($args);
-	if ($my_posts->have_posts()):
-?>
-		<?php
-		while ($my_posts->have_posts()):
-			$my_posts->the_post() ?>
-			<?php
-			get_template_part('template-parts/content', get_post_format()); ?>
-		<?php
-		endwhile
-?>
-		<?php
-	endif;
-	wp_die();
-	}
-
-add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_callback');
 /*-----------------------------------------------------
 * 				Custom Excerpt Length
 *----------------------------------------------------*/
@@ -484,7 +458,7 @@ require_once (get_template_directory() . '/lib/plugin-check.php');
 /* --------------------------------------------*
 Social Sharing Plugins
 ---------------------------------------------*/
-require_once (get_template_directory() . '/lib/admin-functions.php');
+require_once (get_template_directory() . '/lib/socialshare.php');
 
 /**
  * Load WooCommerce compatibility file.
