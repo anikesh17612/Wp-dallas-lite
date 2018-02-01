@@ -1,6 +1,6 @@
 <?php
 /**
- * WP Dallas Lite Theme Customizer
+ * Dallas Lite Theme Customizer
  *
  * @package dallaslite
  * @since Dallas Lite 1.0
