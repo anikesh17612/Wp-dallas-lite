@@ -65,36 +65,24 @@ esc_html_e('Skip to content', 'dallaslite'); ?></a>
 			<div class="col-md-3">
 				<div class="site-branding">
 					<a href="<?php echo site_url(); ?>"><?php
-					if (get_theme_mod('allLogoFavicon') == 'logo-image' || get_theme_mod('allLogoFavicon') == "")
-					{ ?>
-						<?php
-						if (get_theme_mod('uploadLogo') =="")
-						{ ?>
-								<div class="wpdal_logo_image"><img src="<?php
-									echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt=""></div>
+					if (get_theme_mod('allLogoFavicon') == 'logo-text' || get_theme_mod('allLogoFavicon') == "")
+					{
+						$titletext = get_theme_mod('siteTitle','title_text');
+						if($titletext){ ?>
+							<div class="wpdal_logo_text"><h1><?php
+								echo get_theme_mod('siteTitle','JD Dallas Lite'); ?></h1></div>
+							<?php }
+							$tagLinetext = get_theme_mod('tagLine','tagLine_text');
+							if($tagLinetext){?>
+									<div class="wpdal_logo_text"><p><?php
+									echo get_theme_mod('tagLine','Just Another WordPress Site'); ?></p></div>
 									<?php
-						}
-	  			else
-					{ ?>
+						}}
+  				else
+					{?>
 						<div class="wpdal_logo_image"><img src="<?php
 							echo get_theme_mod('uploadLogo'); ?>" alt=""></div>
-						<?php
-					} ?>
-				<?php
-				}
-  		else
-				if (get_theme_mod('allLogoFavicon') == 'logo-text')
-				{ ?>
-					<div class="wpdal_logo_text"><h1><?php
-						echo get_theme_mod('siteTitle') ?></h1></div>
-							<div class="wpdal_logo_text"><p><?php
-							echo get_theme_mod('tagLine') ?></p></div>
-						<?php
-					}
-  			else
-				{
-					the_custom_logo();
-				}
+				<?php	}
 				?></a>
 			</div>
 		</div>
