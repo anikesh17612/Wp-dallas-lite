@@ -16,7 +16,7 @@ get_header();
 				</header><!-- .page-header -->
 				<div class="page-content">
 					<p><?php echo esc_html(get_theme_mod('404pageDescription',esc_html__('The page you are looking for was moved, removed, renamed or might never existed..', 'dallaslite'))); ?></p>
-					<p><a href="<?php echo home_url();?>"><?php echo esc_html(get_theme_mod('404buttonText', esc_html__('Go Back Home', 'dallaslite'))); ?></a></p>
+					<p><a href="<?php echo esc_url( home_url( '/' ) );?>"><?php echo esc_html(get_theme_mod('404buttonText', esc_html__('Go Back Home', 'dallaslite'))); ?></a></p>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 		</main><!-- #main -->
