@@ -175,7 +175,7 @@ $callback = new wp_call_back;
 	));
 	$wp_customize->add_setting('enableExcerpt', array(
 		'default' => '1',
-		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
+		'sanitize_callback' => $callback->sanitize_call_back('enable_blog_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'enable_Excerpt', array(
 		'label' => __('Enable Excerpt', 'dallaslite') ,
@@ -189,7 +189,7 @@ $callback = new wp_call_back;
 	)));
 	$wp_customize->add_setting('excerptwordLimit', array(
 		'default' => '330',
-		'sanitize_callback' => $callback->sanitize_call_back('call_back_pagination'),
+		'sanitize_callback' => $callback->sanitize_call_back('enable_blog_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'excerpt_word_limit', array(
 		'label' => __('Excerpt Word Limit', 'dallaslite') ,
@@ -202,7 +202,7 @@ $callback = new wp_call_back;
 	)));
 	$wp_customize->add_setting('enableBlogReadmore', array(
 		'default' => '1',
-		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
+		'sanitize_callback' => $callback->sanitize_call_back('enable_blog_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'enable_blog_readmore', array(
 		'label' => __('Enable Blog Readmore', 'dallaslite') ,
@@ -216,7 +216,7 @@ $callback = new wp_call_back;
 	)));
 	$wp_customize->add_setting('continueReading', array(
 		'default' => 'Read more',
-		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
+		'sanitize_callback' => $callback->sanitize_call_back('enable_blog_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'continue_reading', array(
 		'label' => __('Continue Reading', 'dallaslite') ,
@@ -1376,7 +1376,7 @@ $callback = new wp_call_back;
 	));
 	$wp_customize->add_setting('enable_copyright_text', array(
 		'default' => '1',
-		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
+		'sanitize_callback' => $callback->sanitize_call_back('enable_footer_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'enable_copyright_text', array(
 		'label' => __('Enable Copyright Text', 'dallaslite'),
@@ -1390,7 +1390,7 @@ $callback = new wp_call_back;
 	)));
 	$wp_customize->add_setting('copyright_text', array(
 		'default' => 'Copyright 2018 dallaslite. All Right Reserved. Created by JoomDev',
-		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
+		'sanitize_callback' => $callback->sanitize_call_back('enable_copyright_text_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'copyright_text', array(
 		'label' => __('Copyright Text', 'dallaslite'),
@@ -1403,7 +1403,7 @@ $callback = new wp_call_back;
 	)));
 	$wp_customize->add_setting('backToTop', array(
 		'default' => '1',
-		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
+		'sanitize_callback' => $callback->sanitize_call_back('enable_backtotop_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'back_to_top', array(
 		'label' => __('Back To Top', 'dallaslite') ,
