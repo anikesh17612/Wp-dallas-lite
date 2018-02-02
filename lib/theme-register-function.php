@@ -151,7 +151,7 @@ $callback = new wp_call_back;
 		'settings' => 'siteTitle',
 		'type' => 'text',
 		'choices' => array(
-			'logo_text' => 'JD Dallas Lite',
+			'title_text' => 'JD Dallas Lite',
 		) ,
 	)));
 	$wp_customize->add_setting('tagLine', array(
@@ -164,7 +164,7 @@ $callback = new wp_call_back;
 		'settings' => 'tagLine',
 		'type' => 'text',
 		'choices' => array(
-			'logo_tagline' => 'Just Another WordPress Site',
+			'tagline_text' => 'Just Another WordPress Site',
 		) ,
 	)));
 	/*---------Blog Settings---------------------  */
