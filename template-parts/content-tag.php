@@ -21,6 +21,6 @@ if ($tags_array)
 		}
 
 	echo '<div class="tags_list">';
-	echo implode(" ", $tagString);
+	echo wp_kses_post(implode(" ", $tagString));
 	echo '</div>';
 	} ?>

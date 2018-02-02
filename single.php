@@ -43,10 +43,10 @@ while (have_posts()):
 		echo get_avatar($post->post_author);
 		echo '</div></div>';
 		echo '<div class="col-md-10"><div class="author-title">';
-		echo get_user_meta($post->post_author, 'first_name', true)  . ' ' . get_user_meta($post->post_author, 'last_name', true);
+		echo wp_kses_post(get_user_meta($post->post_author, 'first_name', true)  . ' ' . get_user_meta($post->post_author, 'last_name', true));
 		echo '</div>';
 		echo '<div class="author-desc">';
-		echo get_user_meta($post->post_author, 'description', true);
+		echo wp_kses_post(get_user_meta($post->post_author, 'description', true));
 		echo '</div>';
 
 		if (get_the_author_meta('url') != '' || get_the_author_meta('fb_url') != '' || get_the_author_meta('twitter_url') != '' || get_the_author_meta('gplus_url') != '' || get_the_author_meta('linkedin_url') != '' || get_the_author_meta('behance_url') != '' || get_the_author_meta('youtube_url') != '' || get_the_author_meta('snapchat_url') != '' || get_the_author_meta('skype_url') != '' || get_the_author_meta('pinterest_url') != '')
@@ -54,54 +54,54 @@ while (have_posts()):
 			echo '<div class="author-meta-social-link">';
 			if (get_the_author_meta('url'))
 				{
-				echo '<a href="' . get_the_author_meta('url') . '" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>';
+				echo wp_kses_post('<a href="' . get_the_author_meta('url') . '" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>');
 				}
 
 			$user_id = get_current_user_id();
 			$user_meta = get_user_meta($user_id);
 			if (get_the_author_meta('fb_url'))
 				{
-				echo '<a href="' . get_the_author_meta('fb_url') . '" target="_blank"><i class="fa fa-facebook"></i></a>';
+				echo wp_kses_post('<a href="' . get_the_author_meta('fb_url') . '" target="_blank"><i class="fa fa-facebook"></i></a>');
 				}
 
 			if (get_the_author_meta('twitter_url'))
 				{
-				echo '<a href="' . get_the_author_meta('twitter_url') . '" target="_blank"><i class="fa fa-twitter"></i></a>';
+				echo wp_kses_post('<a href="' . get_the_author_meta('twitter_url') . '" target="_blank"><i class="fa fa-twitter"></i></a>');
 				}
 
 			if (get_the_author_meta('gplus_url'))
 				{
-				echo '<a href="' . get_the_author_meta('gplus_url') . '" target="_blank"><i class="fa fa-google-plus"></i></a>';
+				echo wp_kses_post('<a href="' . get_the_author_meta('gplus_url') . '" target="_blank"><i class="fa fa-google-plus"></i></a>');
 				}
 
 			if (get_the_author_meta('linkedin_url'))
 				{
-				echo '<a href="' . get_the_author_meta('linkedin_url') . '" target="_blank"><i class="fa fa-linkedin"></i></a>';
+				echo wp_kses_post('<a href="' . get_the_author_meta('linkedin_url') . '" target="_blank"><i class="fa fa-linkedin"></i></a>');
 				}
 
 			if (get_the_author_meta('behance_url'))
 				{
-				echo '<a href="' . get_the_author_meta('behance_url') . '" target="_blank"><i class="fa fa-behance"></i></a>';
+				echo wp_kses_post('<a href="' . get_the_author_meta('behance_url') . '" target="_blank"><i class="fa fa-behance"></i></a>');
 				}
 
 			if (get_the_author_meta('youtube_url'))
 				{
-				echo '<a href="' . get_the_author_meta('youtube_url') . '" target="_blank"><i class="fa fa-youtube"></i></a>';
+				echo wp_kses_post('<a href="' . get_the_author_meta('youtube_url') . '" target="_blank"><i class="fa fa-youtube"></i></a>');
 				}
 
 			if (get_the_author_meta('snapchat_url'))
 				{
-				echo '<a href="' . get_the_author_meta('snapchat_url') . '" target="_blank"><i class="fa fa-snapchat"></i></a>';
+				echo wp_kses_post('<a href="' . get_the_author_meta('snapchat_url') . '" target="_blank"><i class="fa fa-snapchat"></i></a>');
 				}
 
 			if (get_the_author_meta('skype_url'))
 				{
-				echo '<a href="' . get_the_author_meta('skype_url') . '" target="_blank"><i class="fa fa-skype"></i></a>';
+				echo wp_kses_post('<a href="' . get_the_author_meta('skype_url') . '" target="_blank"><i class="fa fa-skype"></i></a>');
 				}
 
 			if (get_the_author_meta('pinterest_url'))
 				{
-				echo '<a href="' . get_the_author_meta('pinterest_url') . '" target="_blank"><i class="fa fa-pinterest"></i></a>';
+				echo wp_kses_post('<a href="' . get_the_author_meta('pinterest_url') . '" target="_blank"><i class="fa fa-pinterest"></i></a>');
 				}
 
 			echo '</div>';

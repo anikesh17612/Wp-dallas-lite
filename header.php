@@ -19,7 +19,7 @@ bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php $fb_image = wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID() ), 'thumnail'); ?>
 	<?php if ($fb_image) : ?>
-	<meta property="og:image" content="<?php echo $fb_image[0]; ?>" />
+	<meta property="og:image" content="<?php echo  wp_kses_post($fb_image[0]); ?>" />
 	<?php endif; ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
@@ -52,7 +52,7 @@ esc_html_e('Skip to content', 'dallaslite'); ?></a>
 						if (get_theme_mod('facebooklogo', '#') != '' || get_theme_mod('twitterlogo', '#') != '' || get_theme_mod('googlepluslogo', '#') != '' || get_theme_mod('linkedinlogo', '#') != '' || get_theme_mod('behancelogo', '#') != '' || get_theme_mod('youtubelogo', '#') != '' || get_theme_mod('snapchatlogo', '#') != '' || get_theme_mod('skypelogo', '#') != '' || get_theme_mod('whatsapplogo', '#') != '' || get_theme_mod('pinterestlogo', '#') != '' || get_theme_mod('customlogo', '#') != '')
 							{ ?>
 					<div class="social-icon col-md-6">
-						<?php echo socialicon(); ?>
+						<?php echo wp_kses_post(socialicon()); ?>
 					</div>
 					<?php
 					} ?>
@@ -64,24 +64,24 @@ esc_html_e('Skip to content', 'dallaslite'); ?></a>
 		<div class="container">
 			<div class="col-md-3">
 				<div class="site-branding">
-					<a href="<?php echo site_url(); ?>"><?php
+					<a href="<?php echo wp_kses_post(site_url()); ?>"><?php
 					if (get_theme_mod('allLogoFavicon') == 'logo-text' || get_theme_mod('allLogoFavicon') == "")
 					{
 						$titletext = get_theme_mod('siteTitle','title_text');
 						if($titletext){ ?>
 							<div class="wpdal_logo_text"><h1><?php
-								echo get_theme_mod('siteTitle','JD Dallas Lite'); ?></h1></div>
+								echo wp_kses_post(get_theme_mod('siteTitle','JD Dallas Lite')); ?></h1></div>
 							<?php }
 							$tagLinetext = get_theme_mod('tagLine','tagLine_text');
 							if($tagLinetext){?>
 									<div class="wpdal_logo_text"><p><?php
-									echo get_theme_mod('tagLine','Just Another WordPress Site'); ?></p></div>
+									echo wp_kses_post(get_theme_mod('tagLine','Just Another WordPress Site')); ?></p></div>
 									<?php
 						}}
   				else
 					{?>
 						<div class="wpdal_logo_image"><img src="<?php
-							echo get_theme_mod('uploadLogo'); ?>" alt=""></div>
+							echo wp_kses_post(get_theme_mod('uploadLogo')); ?>" alt=""></div>
 				<?php	}
 				?></a>
 			</div>

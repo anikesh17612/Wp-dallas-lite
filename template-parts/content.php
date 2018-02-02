@@ -39,7 +39,7 @@
 						{
 						$textlimit = get_theme_mod('excerptwordLimit', 330);
 						echo '<p class="short-description">';
-						echo dallaslite_excerpt_max_charlength($textlimit);
+						echo wp_kses_post(dallaslite_excerpt_max_charlength($wordsreturned));
 						echo '</p>';
 						}
 					  else
@@ -72,7 +72,7 @@
 					$continue = esc_html(get_theme_mod('continueReading', 'Read More'));
 
 					}
-				echo '<div class="meta-content-limit"><a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a></div>';
+				echo wp_kses_post('<div class="meta-content-limit"><a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a></div>');
 				}else{
 
 				}
@@ -80,7 +80,7 @@
 		else{
 		}
       if(is_single()){
-			echo add_social_share_icons();
+			echo wp_kses_post(add_social_share_icons());
     }?>
 	</div>
 </article>
