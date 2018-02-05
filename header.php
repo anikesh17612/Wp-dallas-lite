@@ -81,7 +81,7 @@ esc_html_e('Skip to content', 'dallaslite'); ?></a>
   				else
 					{?>
 						<div class="wpdal_logo_image"><img src="<?php
-							echo wp_kses_post(get_theme_mod('uploadLogo')); ?>" alt=""></div>
+							echo wp_kses_post(get_theme_mod('uploadLogo')); ?>" alt="dallaslite-logo"></div>
 				<?php	}
 				?></a>
 			</div>
