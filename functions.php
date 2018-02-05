@@ -187,7 +187,7 @@ function dallaslite_scripts()
 	wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.css');
 	wp_enqueue_style('bootstrap-min-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css');
-	
+
 	wp_enqueue_script('dallaslite_script', get_template_directory_uri() . '/assets/js/functions.js', array(
 		'jquery'
 	) , '20160816', true);
@@ -211,9 +211,9 @@ add_action('wp_enqueue_scripts', 'dallaslite_scripts');
 /*  ********************************/
 /* REMOVE COLORS OPTION FROM CUSTOMIZER  */
 /* ***************************** */
-add_action("customize_register", "dallaslite_JMD_customize_register");
+add_action("customize_register", "dallaslite_override_customize_register");
 
-function dallaslite_JMD_customize_register($wp_customize)
+function dallaslite_override_customize_register($wp_customize)
 	{
 	$wp_customize->remove_section("colors");
 	$wp_customize->remove_control("blogname");
@@ -287,50 +287,75 @@ User Follow social icon
  * @param  object $profileuser A WP_User object
  * @return void
  */
-/*add_action('profile_update', 'my_profile_update', 10, 2);
+add_action('profile_update', 'dallaslite_my_profile_update', 10, 2);
 $user_id = get_current_user_id();
 
-function my_profile_update($user_id, $old_user_data)
+function dallaslite_my_profile_update($user_id, $old_user_data)
 	{
-
 	// Do something
+	if ( isset( $_POST['fb_url'] ) &&  ! empty( $_POST['fb_url'] )) { // Input var okay.
+		update_user_meta($user_id, 'fb_url', esc_url_raw(wp_unslash($_POST['fb_url'])));
+	}
+	if ( isset( $_POST['twitter_url'] ) &&  ! empty( $_POST['twitter_url'] )) { // Input var okay.
+		update_user_meta($user_id, 'twitter_url', esc_url_raw(wp_unslash($_POST['twitter_url'])));
+	}
+	if ( isset( $_POST['gplus_url'] ) &&  ! empty( $_POST['gplus_url'] )) { // Input var okay.
+		update_user_meta($user_id, 'gplus_url', esc_url_raw(wp_unslash($_POST['gplus_url'])));
+	}
+	if ( isset( $_POST['linkedin_url'] ) &&  ! empty( $_POST['linkedin_url'] )) { // Input var okay.
+		update_user_meta($user_id, 'linkedin_url', esc_url_raw(wp_unslash($_POST['linkedin_url'])));
+	}
+	if ( isset( $_POST['behance_url'] ) &&  ! empty( $_POST['behance_url'] )) { // Input var okay.
+		update_user_meta($user_id, 'behance_url', esc_url_raw(wp_unslash($_POST['behance_url'])));
+	}
+	if ( isset( $_POST['youtube_url'] ) &&  ! empty( $_POST['youtube_url'] )) { // Input var okay.
+		update_user_meta($user_id, 'youtube_url', esc_url_raw(wp_unslash($_POST['youtube_url'])));
+	}
+	if ( isset( $_POST['snapchat_url'] ) &&  ! empty( $_POST['snapchat_url'] )) { // Input var okay.
+		update_user_meta($user_id, 'snapchat_url', esc_url_raw(wp_unslash($_POST['snapchat_url'])));
+	}
+	if ( isset( $_POST['skype_url'] ) &&  ! empty( $_POST['skype_url'] )) { // Input var okay.
+		update_user_meta($user_id, 'skype_url', esc_url_raw(wp_unslash($_POST['skype_url'])));
+	}
+	if ( isset( $_POST['pinterest_url'] ) &&  ! empty( $_POST['pinterest_url'] )) { // Input var okay.
+		update_user_meta($user_id, 'pinterest_url', esc_url_raw(wp_unslash($_POST['pinterest_url'])));
+	}
+	}
 
-	update_user_meta($user_id, 'fb_url', $_POST['fb_url']);
-	update_user_meta($user_id, 'twitter_url', $_POST['twitter_url']);
-	update_user_meta($user_id, 'gplus_url', $_POST['gplus_url']);
-	update_user_meta($user_id, 'linkedin_url', $_POST['linkedin_url']);
-	update_user_meta($user_id, 'behance_url', $_POST['behance_url']);
-	update_user_meta($user_id, 'youtube_url', $_POST['youtube_url']);
-	update_user_meta($user_id, 'snapchat_url', $_POST['snapchat_url']);
-	update_user_meta($user_id, 'skype_url', $_POST['skype_url']);
-	update_user_meta($user_id, 'pinterest_url', $_POST['pinterest_url']);
-	}
-*/
-add_action('edit_user_profile_update', 'update_extra_profile_fields');
+	add_action('edit_user_profile_update', 'dallaslite_update_extra_profile_fields');
 
-function update_extra_profile_fields($user_id)
-	{
-	if (current_user_can('edit_user', $user_id))
-	if ( ! empty( $_POST['fb_url'] ) && 'Yes' === $_POST['fb_url'] ) {
-	}
-	if ( ! empty( $_POST['twitter_url'] ) && 'Yes' === $_POST['twitter_url'] ) {
-	}
-	if ( ! empty( $_POST['gplus_url'] ) && 'Yes' === $_POST['gplus_url'] ) {
-	}
-	if ( ! empty( $_POST['linkedin_url'] ) && 'Yes' === $_POST['linkedin_url'] ) {
-	}
-	if ( ! empty( $_POST['behance_url'] ) && 'Yes' === $_POST['behance_url'] ) {
-	}
-	if ( ! empty( $_POST['youtube_url'] ) && 'Yes' === $_POST['youtube_url'] ) {
-	}
-	if ( ! empty( $_POST['snapchat_url'] ) && 'Yes' === $_POST['snapchat_url'] ) {
-	}
-	if ( ! empty( $_POST['skype_url'] ) && 'Yes' === $_POST['skype_url'] ) {
-	}
-	if ( ! empty( $_POST['pinterest_url'] ) && 'Yes' === $_POST['pinterest_url'] ) {
-	}
-	}
-function custom_user_profile_fields($profileuser)
+	function dallaslite_update_extra_profile_fields($user_id)
+		{
+		if (current_user_can('edit_user', $user_id))
+		if ( isset( $_POST['fb_url'] ) &&  ! empty( $_POST['fb_url'] )) { // Input var okay.
+			update_user_meta($user_id, 'fb_url', esc_url_raw(wp_unslash($_POST['fb_url'])));
+		}
+		if ( isset( $_POST['twitter_url'] ) &&  ! empty( $_POST['twitter_url'] )) { // Input var okay.
+			update_user_meta($user_id, 'twitter_url', esc_url_raw(wp_unslash($_POST['twitter_url'])));
+		}
+		if ( isset( $_POST['gplus_url'] ) &&  ! empty( $_POST['gplus_url'] )) { // Input var okay.
+			update_user_meta($user_id, 'gplus_url', esc_url_raw(wp_unslash($_POST['gplus_url'])));
+		}
+		if ( isset( $_POST['linkedin_url'] ) &&  ! empty( $_POST['linkedin_url'] )) { // Input var okay.
+			update_user_meta($user_id, 'linkedin_url', esc_url_raw(wp_unslash($_POST['linkedin_url'])));
+		}
+		if ( isset( $_POST['behance_url'] ) &&  ! empty( $_POST['behance_url'] )) { // Input var okay.
+			update_user_meta($user_id, 'behance_url', esc_url_raw(wp_unslash($_POST['behance_url'])));
+		}
+		if ( isset( $_POST['youtube_url'] ) &&  ! empty( $_POST['youtube_url'] )) { // Input var okay.
+			update_user_meta($user_id, 'youtube_url', esc_url_raw(wp_unslash($_POST['youtube_url'])));
+		}
+		if ( isset( $_POST['snapchat_url'] ) &&  ! empty( $_POST['snapchat_url'] )) { // Input var okay.
+			update_user_meta($user_id, 'snapchat_url', esc_url_raw(wp_unslash($_POST['snapchat_url'])));
+		}
+		if ( isset( $_POST['skype_url'] ) &&  ! empty( $_POST['skype_url'] )) { // Input var okay.
+			update_user_meta($user_id, 'skype_url', esc_url_raw(wp_unslash($_POST['skype_url'])));
+		}
+		if ( isset( $_POST['pinterest_url'] ) &&  ! empty( $_POST['pinterest_url'] )) { // Input var okay.
+			update_user_meta($user_id, 'pinterest_url', esc_url_raw(wp_unslash($_POST['pinterest_url'])));
+		}
+		}
+function dallaslite_user_profile_fields($profileuser)
 	{
 ?>
 	<table class="form-table">
@@ -446,14 +471,14 @@ function custom_user_profile_fields($profileuser)
 <?php
 	}
 
-add_action('show_user_profile', 'custom_user_profile_fields', 10, 1);
-add_action('edit_user_profile', 'custom_user_profile_fields', 10, 1);
+add_action('show_user_profile', 'dallaslite_user_profile_fields', 10, 1);
+add_action('edit_user_profile', 'dallaslite_user_profile_fields', 10, 1);
 
 /**
  * Registers an editor stylesheet for the theme.
  */
 function dallaslite_add_editor_styles() {
-    add_editor_style( 'custom-editor-style.css' );
+    add_editor_style( 'dallaslite-editor-style.css' );
 }
 add_action( 'admin_init', 'dallaslite_add_editor_styles' );
 
