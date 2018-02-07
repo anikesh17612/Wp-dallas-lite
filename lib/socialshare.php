@@ -13,6 +13,7 @@
  */
          function add_social_share_icons()
         	{
+        	$html = "<div class='post-social-share'>";
         	global $post;
         	$url = get_permalink($post->ID);
         	$url = esc_url($url);
