@@ -70,5 +70,5 @@
         		if(is_single()){
                     $tag = the_tags( '<div class="tags_list">', ' ', '</div>' );
                 }
-        	return $content = $content .$tag. $html;
+        	return $content = $tag. $html;
         	}
