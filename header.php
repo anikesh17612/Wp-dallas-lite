@@ -6,32 +6,26 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package lite
- * @since  Lite 1.0
+ * @package dallaslite
  */
 ?>
 <!doctype html>
 <html <?php
 language_attributes(); ?>>
 <head>
-	<meta charset="<?php
-bloginfo('charset'); ?>">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php $fb_image = wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID() ), 'thumnail'); ?>
 	<?php if ($fb_image) : ?>
 	<meta property="og:image" content="<?php echo  wp_kses_post($fb_image[0]); ?>" />
 	<?php endif; ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-
-	<?php
-wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
-
-<body <?php
-body_class(); ?>>
+<body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php
-esc_html_e('Skip to content', 'dallaslite'); ?></a>
+	<a class="skip-link screen-reader-text" href="#content">
+		<?php esc_html_e('Skip to content', 'dallaslite'); ?></a>
 	<div id="header-section">
 		<div class="container">
 			<div class="row">
@@ -45,7 +39,6 @@ esc_html_e('Skip to content', 'dallaslite'); ?></a>
 								'menu_class' => 'nav menu'
 							));
 							}
-
 						?>
 					</div>
 					<?php
@@ -70,7 +63,7 @@ esc_html_e('Skip to content', 'dallaslite'); ?></a>
 						$titletext = get_theme_mod('siteTitle','title_text');
 						if($titletext){ ?>
 							<div class="wpdal_logo_text"><h1><?php
-								echo wp_kses_post(get_theme_mod('siteTitle','JD Dallas Lite')); ?></h1></div>
+								echo wp_kses_post(get_theme_mod('siteTitle','Dallas Lite')); ?></h1></div>
 							<?php }
 							$tagLinetext = get_theme_mod('tagLine','tagLine_text');
 							if($tagLinetext){?>

@@ -3,7 +3,6 @@
  * Functions which enhance the theme by hooking into WordPress
  *
  * @package dallaslite
- * @since Dallas Lite 1.0
  */
 
 /**

@@ -5,7 +5,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package dallaslite
- * @since Dallas Lite 1.0
  */
  ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -13,11 +12,11 @@
 		<?php	if (is_singular()):	the_title('<h1 class="entry-title">', '</h1>');
 				else:	the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
 				endif;
-		if ('post' === get_post_type()): ?>
-			<div class="entry-meta">
-				<?php	dallaslite_posted_on(); ?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		      if ('post' === get_post_type()): ?>
+			       <div class="entry-meta">
+				           <?php	dallaslite_posted_on(); ?>
+			       </div><!-- .entry-meta -->
+		   <?php endif; ?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php if ('' !== get_the_post_thumbnail() && ! is_single()){?>
@@ -39,6 +38,7 @@
 						{
 						$textlimit = get_theme_mod('excerptwordLimit', 330);
 						echo '<p class="short-description">';
+            $wordsreturned="";
 						echo wp_kses_post(dallaslite_excerpt_max_charlength($wordsreturned));
 						echo '</p>';
 						}
@@ -84,7 +84,5 @@
     }?>
 	</div>
 </article>
-
-
 <!-- #post-<?php
 the_ID(); ?> -->

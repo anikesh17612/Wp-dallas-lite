@@ -5,7 +5,7 @@
  * Contains handlers for navigation and widget area.
  */
 
- function dallaslite (jQuery)  {
+( function  ($)  {
 
 	var body, masthead, menuToggle, siteNavigation, socialNavigation, siteHeaderMenu, resizeTimer;
 
@@ -198,4 +198,4 @@
 		belowEntryMetaClass( 'img.size-full' );
 		belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
 	} );
-} ( jQuery );
+}) ( jQuery );

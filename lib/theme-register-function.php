@@ -4,30 +4,22 @@ Dallas Lite Option Registration
 *------------------------------------------*/
 class wp_call_back
 {
-
-
 	function sanitize_call_back($callback)
 	{
-
-
 	}
-
 }
 function admin_style()
 	{
 	wp_enqueue_style('admin-styles', get_template_directory_uri() . '/assets/css/admin-style.css');
 	}
-
 add_action('admin_enqueue_scripts', 'admin_style');
 add_action('customize_register', 'wp_dallas_option');
-
 function wp_dallas_option($wp_customize)
 	{
 $callback = new wp_call_back;
 	$wp_customize->add_setting('separatorline', array(
 		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('call_back_separatorline'),
-
 	));
 	$wp_customize->add_panel('blog_layout', array(
 		'priority' => 20,
@@ -54,14 +46,11 @@ $callback = new wp_call_back;
 			'fullwidth_body_layout' => 'Fullwidth Layout',
 		) ,
 	)));
-
 	$wp_customize->add_setting('blog_layout_selection', array(
 		'default' => 'blogright',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
-
 	// Add control
-
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'select_blog_layout', array(
 		'label' => __('Select Blog Layout', 'dallaslite') ,
 		'section' => 'Blog_layout_option',
@@ -76,11 +65,8 @@ $callback = new wp_call_back;
 	$wp_customize->add_setting('select_blog_single_page_layout', array(
 		'default' => 'rightside',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
-
 	));
-
 	// Add control
-
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'select_blog_single_page_layout', array(
 		'label' => __('Select Blog Single Plage Layout', 'dallaslite') ,
 		'section' => 'Blog_layout_option',
@@ -96,9 +82,7 @@ $callback = new wp_call_back;
 		'default' => 'paginumber',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
-
 	// Add control
-
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'select_pagination_layout', array(
 		'label' => __('Select Pagination Layout', 'dallaslite') ,
 		'section' => 'Blog_layout_option',
@@ -142,7 +126,7 @@ $callback = new wp_call_back;
 		'settings' => 'uploadLogo',
 	)));
 	$wp_customize->add_setting('siteTitle', array(
-		'default' => 'JD Dallas Lite',
+		'default' => 'Dallas Lite',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'site_title', array(

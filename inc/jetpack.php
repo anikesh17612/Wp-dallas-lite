@@ -5,7 +5,6 @@
  * @link https://jetpack.com/
  *
  * @package dallaslite
- * @since Dallas Lite 1.0
  */
 
 /**

@@ -5,7 +5,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package dallaslite
-* @since Dallas Lite 1.0
  */
 
 defined('ABSPATH') or die('No script kiddies please!');
@@ -62,21 +61,16 @@ if (!function_exists('dallaslite_css_generator'))
 		**********  Quick Style for headings and Google font **********
 		****************************************************************/
 		$bstyle = $mstyle = $h1style = $h2style = $h3style = $h4style = $h5style = $h6style = '';
-
 		// Body
-
 		if (get_theme_mod('body_font_size', '16'))
 			{
 			$bstyle.= 'font-size:' . get_theme_mod('body_font_size', '16') . 'px;';
 			}
-
 		if (get_theme_mod('body_google_font'))
 			{
 			$bstyle.= 'font-family:"' . get_theme_mod('body_google_font', 'Lato') . '",sans-serif;';
 			}
-
 		// Menu
-
 		$mstyle = '';
 		if (get_theme_mod('menu_font_size', '15'))
 			{
@@ -87,67 +81,52 @@ if (!function_exists('dallaslite_css_generator'))
 			{
 			$mstyle.= 'font-family:"' . get_theme_mod('menu_google_font', 'Lato') . '",sans-serif;';
 			}
-
 		// Heading 1
-
 		$h1style = '';
 		if (get_theme_mod('h1_font_size', '36'))
 			{
 			$h1style.= 'font-size:' . get_theme_mod('h1_font_size', '36') . 'px;';
 			}
-
       if (get_theme_mod('h1_font_weight', '500'))
   			{
   			$h1style.= 'font-weight:' . get_theme_mod('h1_font_weight', '500').';' ;
   			}
-
 		if (get_theme_mod('h1_google_font', 'lato'))
 			{
 			$h1style.= 'font-family:"' . get_theme_mod('h1_google_font', 'Lato') . '",sans-serif;';
 			}
-
 		if (get_theme_mod('h1_line_height', '32'))
 			{
-
 			$h1style.= 'line-height:' . get_theme_mod('h1_line_height', '32') . 'px;';
 			}
-
 		// Heading 2
-
 		$h2style = '';
 		if (get_theme_mod('h2_font_size', '30'))
 			{
 			$h2style.= 'font-size:' . get_theme_mod('h2_font_size', '30') . 'px;';
 			}
-
     if (get_theme_mod('h2_font_weight', '500'))
   		{
   		$h2style.= 'font-weight:' . get_theme_mod('h2_font_weight', '500').';' ;
   		}
-
 		if (get_theme_mod('h2_google_font', 'lato'))
 			{
 			$h2style.= 'font-family:"' . get_theme_mod('h2_google_font', 'Lato') . '",sans-serif;';
 			}
-
 		if (get_theme_mod('h2_line_height', '32'))
 			{
 			$h2style.= 'line-height:' . get_theme_mod('h2_line_height', '32') . 'px;';
 			}
-
 		// Heading 3
-
 		$h3style = '';
 		if (get_theme_mod('h3_font_size', '26'))
 			{
 			$h3style.= 'font-size:' . get_theme_mod('h3_font_size', '26') . 'px;';
 			}
-
     if (get_theme_mod('h3_font_weight', '500'))
     	{
     	$h3style.= 'font-weight:' . get_theme_mod('h3_font_weight', '500').';' ;
     	}
-
 		if (get_theme_mod('h3_google_font', 'lato'))
 			{
 			$h3style.= 'font-family:"' . get_theme_mod('h3_google_font', 'Lato') . '",sans-serif;';
@@ -156,20 +135,16 @@ if (!function_exists('dallaslite_css_generator'))
 			{
 			$h3style.= 'line-height:' . get_theme_mod('h3_line_height', '30') . 'px;';
 			}
-
 		// Heading 4
-
 		$h4style = '';
 		if (get_theme_mod('h4_font_size', '24'))
 			{
 			$h4style.= 'font-size:' . get_theme_mod('h4_font_size', '24') . 'px;';
 			}
-
     if (get_theme_mod('h4_font_weight', '500'))
     	{
     	$h4style.= 'font-weight:' . get_theme_mod('h4_font_weight', '500').';' ;
     	}
-
 		if (get_theme_mod('h4_google_font', 'lato'))
 			{
 			$h4style.= 'font-family:"' . get_theme_mod('h4_google_font', 'Lato') . '",sans-serif;';
@@ -178,9 +153,7 @@ if (!function_exists('dallaslite_css_generator'))
 			{
 			$h4style.= 'line-height:' . get_theme_mod('h4_line_height', '27') . 'px;';
 			}
-
 		// Heading 5
-
 		$h5style = '';
 		if (get_theme_mod('h5_font_size', '22'))
 			{
@@ -190,7 +163,6 @@ if (!function_exists('dallaslite_css_generator'))
       {
       $h5style.= 'font-weight:' . get_theme_mod('h5_font_weight', '500').';' ;
       }
-
 		if (get_theme_mod('h5_google_font', 'lato'))
 			{
 			$h5style.= 'font-family:"' . get_theme_mod('h5_google_font', 'Lato') . '",sans-serif;';
@@ -199,9 +171,7 @@ if (!function_exists('dallaslite_css_generator'))
 			{
 			$h5style.= 'line-height:' . get_theme_mod('h5_line_height', '25') . 'px;';
 			}
-
 		// Heading 6
-
 		$h6style = '';
 		if (get_theme_mod('h6_font_size', '20'))
 			{
@@ -232,9 +202,7 @@ if (!function_exists('dallaslite_css_generator'))
 		$output.= '.site-header{ background-color: ' . esc_attr(get_theme_mod('header_color', '#222533')) . '; }';
 		$output.= '#bottom-section{ background-color: ' . esc_attr(get_theme_mod('footer_color', '#1a1c27')) . '; }';
 		$output.= '#footer-section{ background-color: ' . esc_attr(get_theme_mod('copyright_color', '#222533')) . '; }';
-
 		// Button color setting...
-
 		if (get_theme_mod('button_bg_color', '#222533'))
 			{
 			$output.= '.mc4wp-form-fields input[type=submit], form button,#wp-subscribe.wp-subscribe-wrap input.submit, form input[type="button"], form input[type="reset"], form input[type="submit"] , #comments .form-submit input.submit, a btn, .btn, .btn-info, .btn-primary, .demo-four .mc4wp-form-fields input[type=submit], .common-menu-wrap .nav>li.online-booking-button a, .error-page-inner a.btn.btn-primary.btn-lg,.btn.btn-primary, .package-list-button,
@@ -244,7 +212,6 @@ if (!function_exists('dallaslite_css_generator'))
 			{
 			$output.= '.mc4wp-form-fields input[type=submit]:hover,#wp-subscribe.wp-subscribe-wrap input.submit:hover, form button:hover, form input[type="button"]:hover, form input[type="reset"]:hover, form input[type="submit"]:hover, #comments .form-submit input.submit:hover, .btn-info:hover, .btn-info:focus, .btn-info:active:focus, .demo-four .mc4wp-form-fields input[type=submit]:hover, .common-menu-wrap .nav>li.online-booking-button a:hover, .error-page-inner a.btn.btn-primary.btn-lg:hover,.btn.btn-primary:hover, .package-list-button:hover, .contact-submit input[type=submit]:hover,.form-submit input[type=submit]:hover{ background-color: ' . esc_attr(get_theme_mod('button_hover_bg_color', '#363b52')) . '; border-color: ' . esc_attr(get_theme_mod('button_hover_bg_color', '#363b52')) . '; color: ' . esc_attr(get_theme_mod('button_hover_text_color', '#ffffff')) . '}';
 			}
-
 		$output.= '.subtitle-cover:before{background:' . get_theme_mod('sub_header_overlayer_color', 'rgba(0, 0, 0, 0.5)') . ';}';
 		$output.= '.subtitle-cover{padding:100px 0; margin-bottom: 100px;}';
 		$output.= "body.error404,body.page-template-404{

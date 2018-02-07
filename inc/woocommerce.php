@@ -5,7 +5,7 @@
  * @link https://woocommerce.com/
  *
  * @package dallaslite
-
+*/
 /**
  * WooCommerce setup function.
  *

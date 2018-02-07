@@ -5,7 +5,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package dallaslite
- * @since Dallas Lite 1.0
  */
 
 $tags_array = get_the_tags($post->ID);

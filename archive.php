@@ -5,21 +5,18 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package dallaslite
-* @since Dallas Lite 1.0
  */
 get_header(); ?>
-<?php if (get_theme_mod('blog_layout_selection') == 'blogleft'){ ?>
+<?php if ( get_theme_mod( 'blog_layout_selection' ) == 'blogleft' ) { ?>
 		<div class="wpdal-left-sidebar col-md-3">
 			<?php	get_sidebar(); ?>
-    </div>
+		</div>
 		<?php } ?>
-		<?php if (get_theme_mod('blog_layout_selection') == 'blogfullwidth'){
-			echo '<div id="primary" class="content-area  col-md-12">';
-		}
-  	else
-		{
-			echo '<div id="primary" class="content-area  col-md-9">';
-		} ?>
+	<?php	if ( get_theme_mod( 'blog_layout_selection' ) == 'blogfullwidth' ) {
+					echo '<div id="primary" class="content-area  col-md-12">';
+					 } else {
+						echo '<div id="primary" class="content-area  col-md-9">';
+					} ?>
 			<main id="main" class="site-main">
 				<?php if (have_posts()): ?>
 					<header class="page-header">
@@ -46,21 +43,27 @@ get_header(); ?>
 /*****************************************************************/
 /* Show pagination option based on Blog pages show at most ******/
 /****************************************************************/
-			$select_pagination_layout = get_theme_mod('select_pagination_layout');
-			if ($select_pagination_layout == "" || $select_pagination_layout == 'paginumber')
-			{ ?>
-				<div class="wpdal_pagination">
-		<?php the_posts_pagination() ?>
+$count_posts = wp_count_posts();
+$published_posts = $count_posts->publish;
+$default_posts_per_page = get_option('posts_per_page');
+
+if ($published_posts > $default_posts_per_page)	{
+		$select_pagination_layout = get_theme_mod('select_pagination_layout');
+		if ($select_pagination_layout == "" || $select_pagination_layout == 'paginumber'){ ?>
+			<div class="wpdal_pagination">
+				<?php	the_posts_pagination(); ?>
 			</div>
+
 			<?php
 			}
-	  	else
-			{ ?>
-				<div class="wpdal_pagination">
-					<div class="loadmore"><button class="btn btn-info">Load More</button></div>
-				</div>
-				<?php
+		else
+		{ ?>
+			<div class="wpdal_pagination">
+				<div class="loadmore"><button class="btn btn-info">Load More</button></div>
+			</div>
+	<?php
 			}
+		}
 		?>
 			</div><!-- #primary -->
 	<?php if (get_theme_mod('blog_layout_selection') == 'blogright' || get_theme_mod('blog_layout_selection') == "")

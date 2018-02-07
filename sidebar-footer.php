@@ -5,7 +5,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package dallaslite
- * @since Dallas Lite 1.0
  */
 
   if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b') || is_active_sidebar('bottom-c') || is_active_sidebar('bottom-d'))
@@ -21,21 +20,18 @@
 						dynamic_sidebar('bottom-a');
 					echo '</div>';
 					}
-
 				if (is_active_sidebar('bottom-b'))
 					{
 					echo '<div class="col-md-3">';
 					dynamic_sidebar('bottom-b');
 					echo '</div>';
 					}
-
 				if (is_active_sidebar('bottom-c'))
 					{
 					echo '<div class="col-md-3">';
 					dynamic_sidebar('bottom-c');
 					echo '</div>';
 					}
-
 				if (is_active_sidebar('bottom-d'))
 					{
 					echo '<div class="col-md-3">';

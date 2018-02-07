@@ -5,7 +5,6 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package dallaslite
- * @since Dallas Lite 1.0
  */
 
 if (!function_exists('dallaslite_setup')):
@@ -221,6 +220,38 @@ function dallaslite_override_customize_register($wp_customize)
 	$wp_customize->remove_control("display_header_text");
 	}
 
+	/**
+	 * This code Implimented to load more post using ajax ON click load more Button
+	 */
+
+	function dallaslite_load_posts()
+		{
+				if ( isset( $_POST['wpdal_loadpost'] ) &&  1 === intval( wp_unslash( $_POST['wpdal_loadpost'] ) ) )  // Input var okay.
+				if( isset($_POST['page']) && !empty ( intval( wp_unslash($_POST['page'] ) ) ) )
+		$paged = intval( wp_unslash( $_POST['page'] ) );
+		$args = array(
+			'post_type' => 'post',
+			'post_status' => 'publish',
+			'posts_per_page' => '2',
+			'paged' => $paged,
+		);
+		$my_posts = new WP_Query($args);
+		if ($my_posts->have_posts()):
+	?>
+			<?php
+			while ($my_posts->have_posts()):
+				$my_posts->the_post() ?>
+				<?php
+				get_template_part('template-parts/content', get_post_format()); ?>
+			<?php
+			endwhile
+	?>
+			<?php
+		endif;
+		wp_die();
+		}
+
+	add_action('wp_ajax_load_posts_by_ajax', 'dallaslite_load_posts');
 
 /*-----------------------------------------------------
 * 				Custom Excerpt Length
@@ -287,10 +318,10 @@ User Follow social icon
  * @param  object $profileuser A WP_User object
  * @return void
  */
-add_action('profile_update', 'dallaslite_my_profile_update', 10, 2);
+add_action('profile_update', 'dallaslite_edit_profile', 10, 2);
 $user_id = get_current_user_id();
 
-function dallaslite_my_profile_update($user_id, $old_user_data)
+function dallaslite_edit_profile($user_id, $old_user_data)
 	{
 	// Do something
 	if ( isset( $_POST['fb_url'] ) &&  ! empty( $_POST['fb_url'] )) { // Input var okay.
@@ -322,9 +353,9 @@ function dallaslite_my_profile_update($user_id, $old_user_data)
 	}
 	}
 
-	add_action('edit_user_profile_update', 'dallaslite_update_extra_profile_fields');
+	add_action('edit_user_profile_update', 'dallaslite_update_profile_fields');
 
-	function dallaslite_update_extra_profile_fields($user_id)
+	function dallaslite_update_profile_fields($user_id)
 		{
 		if (current_user_can('edit_user', $user_id))
 		if ( isset( $_POST['fb_url'] ) &&  ! empty( $_POST['fb_url'] )) { // Input var okay.

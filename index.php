@@ -10,7 +10,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package dallaslite
- * @since Dallas Lite 1.0
  */
 get_header();
 ?>
@@ -38,10 +37,9 @@ if (get_theme_mod('blog_layout_selection') == 'blogfullwidth')
 			if (have_posts()):
 				if (is_home() && !is_front_page()): ?>
 							<header>
-								<h1 class="page-title screen-reader-text"><?php
-					single_post_title(); ?></h1>
+								<h1 class="page-title screen-reader-text">
+								<?php single_post_title(); ?></h1>
 							</header>
-
 						<?php
 				endif;
 						/* Start the Loop */
@@ -63,21 +61,27 @@ if (get_theme_mod('blog_layout_selection') == 'blogfullwidth')
 /*****************************************************************/
 /* Show pagination option based on Blog pages show at most ******/
 /****************************************************************/
-	$select_pagination_layout = get_theme_mod('select_pagination_layout');
-	if ($select_pagination_layout == "" || $select_pagination_layout == 'paginumber')
-		{ ?>
-		<div class="wpdal_pagination">
-		<?php	the_posts_pagination(); ?>
-		</div>
-	<?php
-		}
-	  else
-		{ ?>
-	<div class="wpdal_pagination">
-			<div class="loadmore"><button class="btn btn-info">Load More</button></div>
-	</div>
-	<?php
-		}
+				$count_posts = wp_count_posts();
+				$published_posts = $count_posts->publish;
+				$default_posts_per_page = get_option('posts_per_page');
+
+				if ($published_posts > $default_posts_per_page)	{
+						$select_pagination_layout = get_theme_mod('select_pagination_layout');
+						if ($select_pagination_layout == "" || $select_pagination_layout == 'paginumber'){ ?>
+							<div class="wpdal_pagination">
+								<?php	the_posts_pagination(); ?>
+							</div>
+
+							<?php
+							}
+						else
+						{ ?>
+							<div class="wpdal_pagination">
+								<div class="loadmore"><button class="btn btn-info">Load More</button></div>
+							</div>
+					<?php
+							}
+						}
 ?>
 </div><!-- #primary -->
 <?php
