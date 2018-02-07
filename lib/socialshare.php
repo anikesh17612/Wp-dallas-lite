@@ -13,7 +13,6 @@
  */
          function add_social_share_icons()
         	{
-        	$html = "<div class='post-social-share'><div class='share-on'> </div>";
         	global $post;
         	$url = get_permalink($post->ID);
         	$url = esc_url($url);
@@ -22,7 +21,8 @@
         	$postThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID) , 'full');
         	$pinterestURL = 'https://pinterest.com/pin/create/button/?url=' . $url . '&amp;media=' . $postThumbnail[0] . '&amp;description=' . $title;
         	$deliciousURL = 'https://delicious.com/save?v=' . $url . '&title=' . $title;
-        	if (get_theme_mod('facebookshare') == 1 || get_theme_mod('facebookshare') == "")
+
+          if (get_theme_mod('facebookshare') == 1 )
         		{
         		$html = $html . "<div class='facebook'><a target='_blank' href='http://www.facebook.com/sharer.php?u=" . $url . "'><i class='fa fa-facebook' aria-hidden='true'></i></a></div>";
         		}
@@ -57,14 +57,6 @@
         	if (get_theme_mod('stumbleuponshare') == 1 || get_theme_mod('stumbleuponshare') == "")
         		{
         		$html = $html . "<div class='email'><a target='_blank' href='mailto:?subject=" . $title . "' title='Share by email'><i class='fa fa-envelope-o' aria-hidden='true'></i></a></div>";
-        		}
-        	if (get_theme_mod('facebookshare') == 1 || get_theme_mod('facebookshare') == "" || get_theme_mod('twittershare') == 1 || get_theme_mod('linkedinshare') == 1 || get_theme_mod('redditshare') == 1 || get_theme_mod('emailshare') == 1 || get_theme_mod('googleplusshare') == 1 || get_theme_mod('pinterestshare') == 1 || get_theme_mod('deliciousshare') == 1 || get_theme_mod('stumbleuponshare') == 1)
-        		{
-        		$html;
-        		}
-        	  else
-        		{
-        		return;
         		}
         		$tag = '';
         		if(is_single()){
