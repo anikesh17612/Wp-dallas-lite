@@ -6,7 +6,6 @@
  *
  * @package dallaslite
  */
-
 if (!function_exists('dallaslite_setup')):
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -186,7 +185,9 @@ function dallaslite_scripts()
 	wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.css');
 	wp_enqueue_style('bootstrap-min-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css');
-
+	if(esc_url(get_theme_mod('right-to-left','true'))){
+		wp_enqueue_style('rtl-css', get_template_directory_uri() . '/rtl.css');
+	}
 	wp_enqueue_script('dallaslite_script', get_template_directory_uri() . '/assets/js/functions.js', array(
 		'jquery'
 	) , '20160816', true);
@@ -250,7 +251,6 @@ function dallaslite_override_customize_register($wp_customize)
 		endif;
 		wp_die();
 		}
-
 	add_action('wp_ajax_load_posts_by_ajax', 'dallaslite_load_posts');
 
 /*-----------------------------------------------------
@@ -274,26 +274,21 @@ if (!function_exists('dallaslite_excerpt_max_charlength')):
 			//array_splice($array, $wordsreturned);
 			$retval = implode(" ", $array) . " ...";
 			}
-
 		return $retval;
 		}
-
 endif;
 /**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
-
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
 /**
  * Customizer additions.
  */
@@ -306,9 +301,7 @@ require get_template_directory() . '/inc/customizer.php';
 if (defined('JETPACK__VERSION'))
 	{
 	require get_template_directory() . '/inc/jetpack.php';
-
 	}
-
 /* --------------------------------------------*
 User Follow social icon
 ---------------------------------------------*/
@@ -320,7 +313,6 @@ User Follow social icon
  */
 add_action('profile_update', 'dallaslite_edit_profile', 10, 2);
 $user_id = get_current_user_id();
-
 function dallaslite_edit_profile($user_id, $old_user_data)
 	{
 	// Do something

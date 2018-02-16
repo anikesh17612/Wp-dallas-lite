@@ -334,6 +334,25 @@ $callback = new wp_call_back;
 		'panel' => 'blog_layout',
 		'priority' => 10
 	));
+	$wp_customize->add_setting('right-to-left', array(
+		'default' => 'No',
+		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'style_rtl', array(
+		'label' => __('RTL on template', 'dallaslite') ,
+		'section' => 'layout_styling',
+		'settings' => 'right-to-left',
+		'type' => 'checkbox'
+			)));
+	/*  Layout Separator code  */
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'body-separatorline', array(
+		'section' => 'layout_styling',
+		'settings' => 'separatorline',
+		'label' => esc_html__('Body Color Settings', 'dallaslite') ,
+		'type' => 'hidden',
+		'class' => 'body_separator',
+	)));
+	/*  Layout Separator code  */
 	$wp_customize->add_setting('body_bg_color', array(
 		'default' => '#fff',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
