@@ -233,7 +233,7 @@ function dallaslite_override_customize_register($wp_customize)
 	 function dallaslite_load_rtl( $classes )
 	 	{
 			if(get_theme_mod('right-to-left','Yes')){
-				$classes[] = 'dallas-rtl';
+				$classes[] = 'rtl';
 			}
 			return $classes;
 
