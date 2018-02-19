@@ -225,6 +225,21 @@ function dallaslite_override_customize_register($wp_customize)
 	 * This code Implimented to load more post using ajax ON click load more Button
 	 */
 
+	 /**
+ 	 * This code Implimented to add class on body if using RTL
+ 	 */
+	 add_filter( 'body_class', 'dallaslite_load_rtl' );
+
+	 function dallaslite_load_rtl( $classes )
+	 	{
+			if(get_theme_mod('right-to-left','Yes')){
+				$classes[] = 'dallas-rtl';
+			}
+			return $classes;
+
+
+		}
+
 	function dallaslite_load_posts()
 		{
 				if ( isset( $_POST['wpdal_loadpost'] ) &&  1 === intval( wp_unslash( $_POST['wpdal_loadpost'] ) ) )  // Input var okay.
