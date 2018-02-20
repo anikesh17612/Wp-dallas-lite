@@ -37,6 +37,7 @@ body.rtl {
 
 .rtl .main-navigation ul {
     padding-right: 0;
+    margin: 0;
 }
 
 .rtl .main-navigation ul ul {
@@ -103,16 +104,9 @@ body.rtl {
 
 /*----- Top Header -----*/
 
-.rtl #header-section .top-menu {
-    float: right;
-}
-
-.rtl #header-section .social-icon {
-    text-align: left;
-}
-
 .rtl ul#top-menu {
-    margin-right: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 .rtl ul#top-menu li ul.sub-menu li ul.sub-menu {
@@ -124,6 +118,17 @@ body.rtl {
 
 .rtl #bottom-section #wp-subscribe {
     text-align: right;
+}
+
+.rtl #bottom-section ul.contact-info > li,
+.rtl .widget ul.contact-info > li {
+    padding: 0 30px 5px 0px;
+}
+
+#bottom-section ul.contact-info > li .fa,
+.widget ul.contact-info > li .fa {
+    left: auto;
+    right: 0;
 }
 
 /*----- Footer -----*/
@@ -141,6 +146,8 @@ body.rtl {
 .rtl #site-navigation ul#primary-menu > li.menu-item-has-children > a:after {
     padding-left: 0;
     padding-right: 5px;
+    padding-top: 2px;
+    float: left;
 }
 
 .rtl #site-navigation ul#primary-menu ul.sub-menu > li > a:hover,
@@ -285,6 +292,28 @@ body.rtl {
 
 /*----- Responsive -----*/
 
+@media (min-width: 768px) {
+    /*----- Top Header ---------*/
+    .rtl #header-section .social-icon {
+        text-align: left;
+    }
+    .rtl #header-section .top-menu {
+        float: right;
+    }
+}
+
+@media (min-width: 992px) {
+    /*----- Top Header ---------*/
+    #masthead .row > div {
+        float: right;
+    }
+    /*----- Bottom Section -----*/
+    .rtl #bottom-section .row > div,
+    .rtl #footer-section .row > div > div {
+        float: right;
+    }
+}
+
 @media (max-width:1300px) {
     .rtl .backtotop {
         left: 20px;
@@ -333,6 +362,12 @@ body.rtl {
     .rtl #site-navigation.main-navigation ul#primary-menu ul.sub-menu > li > ul > li > ul > li.current-menu-ancestor > a {
         padding: 15px 45px 15px 2px;
     }
+
+    /*Footer Section start*/
+    .rtl #footer-section .footer-menu ul {
+        text-align: center;
+    }
+
 }
 
 @media screen and (max-width:767px) {
