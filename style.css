@@ -1471,17 +1471,26 @@ article.type-post h2.entry-title a {
 
 .single-entry-content ol li,
 .single-entry-content ul li {
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 35px;
 }
 
 .single-entry-content ul {
     list-style: outside none none;
 }
 
+.single-entry-content ul li {
+    padding-left: 25px;
+}
+
 .single-entry-content ul li:before {
     content: "\f192";
     margin-right: 10px;
     font-family: FontAwesome;
+    position: absolute;
+    left: 0;
+    top: 1px;
 }
 
 .single-entry-content ol {
@@ -1504,6 +1513,9 @@ article.type-post h2.entry-title a {
     margin-right: 10px;
     text-align: center;
     width: 25px;
+    position: absolute;
+    left: 0;
+    top: 1px;
 }
 
 /*----- Pagination -----*/

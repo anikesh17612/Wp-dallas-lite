@@ -241,10 +241,23 @@ body.rtl {
     margin: 0 10px 0 0;
 }
 
+.rtl .single-entry-content ul li,
+.rtl .single-entry-content ol li {
+    padding-left: 0;
+    padding-right: 35px;
+}
+
+.rtl .single-entry-content ul li {
+    padding-left: 0;
+    padding-right: 25px;
+}
+
 .rtl .single-entry-content ul li:before,
 .rtl .single-entry-content ol li:before {
     margin-left: 10px;
     margin-right: 0px;
+    left: auto;
+    right: 0;
 }
 
 /*----- WP Subscribe -----*/
