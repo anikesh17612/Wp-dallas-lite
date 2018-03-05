@@ -3,7 +3,7 @@
 *
 * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
 *
-* @package dallaslite
+* @package Dallas Lite
 */
 defined('ABSPATH') or die('No script kiddies please!');
 
@@ -11,7 +11,7 @@ function dallaslite_plugin_notice() {
     $user_id = get_current_user_id();
     if ( !get_user_meta( $user_id, 'dallaslite_notice_dismissed' ) ) {
 		if( !function_exists('wps_get_mailing_services') || !class_exists('wpt_widget')){
-		echo wp_kses_post('<div id="message" class="notice notice-success is-dismissible"><p>' . __( 'This theme recommends the following plugins:', 'dallaslite' ) .' <a href="'.admin_url().'plugin-install.php?tab=plugin-information&plugin=wp-subscribe&TB_iframe=true&width=640&height=500" class="thickbox">WP Subscribe</a>   <a href="'.admin_url().'plugin-install.php?tab=plugin-information&plugin=wp-tab-widget&TB_iframe=true&width=640&height=500" class="thickbox">WP Tab Widget</a></p>
+		echo wp_kses_post('<div id="message" class="notice notice-success is-dismissible"><p>' . __( 'This theme recommends the following plugins:', 'dallas-lite' ) .' <a href="'.admin_url().'plugin-install.php?tab=plugin-information&plugin=wp-subscribe&TB_iframe=true&width=640&height=500" class="thickbox">WP Subscribe</a>   <a href="'.admin_url().'plugin-install.php?tab=plugin-information&plugin=wp-tab-widget&TB_iframe=true&width=640&height=500" class="thickbox">WP Tab Widget</a></p>
 		<a href="' . esc_url( wp_nonce_url( add_query_arg( 'tgmpa-dismiss', 'dismiss_admin_notices' ), 'tgmpa-dismiss-' . get_current_user_id() ) ) . '" class="dismiss-notice" target="_parent">Dismiss this notice</a></p></div>');
 		}
 	}

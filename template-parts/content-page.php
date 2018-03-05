@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dallaslite
+ * @package Dallas Lite
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -15,7 +15,7 @@
 		<?php
 			the_content();
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dallaslite' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dallas-lite' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -27,7 +27,7 @@
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Edit <span class="screen-reader-text">%s</span>', 'dallaslite' ),
+							__( 'Edit <span class="screen-reader-text">%s</span>', 'dallas-lite' ),
 							array(
 								'span' => array(
 									'class' => array(),

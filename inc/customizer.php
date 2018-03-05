@@ -2,7 +2,7 @@
 /**
  * Dallas Lite Theme Customizer
  *
- * @package dallaslite
+ * @package Dallas Lite
  */
 
 /**

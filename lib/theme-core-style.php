@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package dallaslite
+ * @package Dallas Lite
  */
 
 defined('ABSPATH') or die('No script kiddies please!');

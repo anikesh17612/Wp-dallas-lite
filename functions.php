@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package dallaslite
+ * @package Dallas Lite
  */
 
  /* Dallas Lite only works in WordPress 4.7 or later.
@@ -27,10 +27,11 @@ if (!function_exists('dallaslite_setup')):
 		/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on WP Dallas Lite, use a find and replace
+		* If you're building a theme based on Dallas Lite, use a find and replace
 		* to change 'dallaslite' to the name of your theme in all the template files.
 		*/
-		load_theme_textdomain('dallaslite');
+		
+		load_theme_textdomain('dallas-lite');
 
 		// Add default posts and comments RSS feed links to head.
 
@@ -52,9 +53,9 @@ if (!function_exists('dallaslite_setup')):
 		// This theme uses wp_nav_menu() in one location.
 
 		register_nav_menus(array(
-			'menu-1' => esc_html__('Primary', 'dallaslite') ,
-			'menu-2' => esc_html__('Top', 'dallaslite') ,
-			'menu-3' => esc_html__('Footer', 'dallaslite') ,
+			'menu-1' => esc_html__('Primary', 'dallas-lite') ,
+			'menu-2' => esc_html__('Top', 'dallas-lite') ,
+			'menu-3' => esc_html__('Footer', 'dallas-lite') ,
 		));
 		/*
 		* Switch default core markup for search form, comment form, and comments
@@ -123,45 +124,45 @@ set_post_thumbnail_size(1200, 'auto');
 function dallaslite_widgets_init()
 	{
 	register_sidebar(array(
-		'name' => esc_html__('Sidebar', 'dallaslite') ,
+		'name' => esc_html__('Sidebar', 'dallas-lite') ,
 		'id' => 'sidebar-1',
-		'description' => esc_html__('Add widgets here.', 'dallaslite') ,
+		'description' => esc_html__('Add widgets here.', 'dallas-lite') ,
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
 	));
 	register_sidebar(array(
-		'name' => esc_html__('Bottom A', 'dallaslite') ,
+		'name' => esc_html__('Bottom A', 'dallas-lite') ,
 		'id' => 'bottom-a',
-		'description' => esc_html__('Add widgets here.', 'dallaslite') ,
+		'description' => esc_html__('Add widgets here.', 'dallas-lite') ,
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
 	));
 	register_sidebar(array(
-		'name' => esc_html__('bottom B', 'dallaslite') ,
+		'name' => esc_html__('bottom B', 'dallas-lite') ,
 		'id' => 'bottom-b',
-		'description' => esc_html__('Add widgets here.', 'dallaslite') ,
+		'description' => esc_html__('Add widgets here.', 'dallas-lite') ,
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
 	));
 	register_sidebar(array(
-		'name' => esc_html__('Bottom C', 'dallaslite') ,
+		'name' => esc_html__('Bottom C', 'dallas-lite') ,
 		'id' => 'bottom-c',
-		'description' => esc_html__('Add widgets here.', 'dallaslite') ,
+		'description' => esc_html__('Add widgets here.', 'dallas-lite') ,
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
 	));
 	register_sidebar(array(
-		'name' => esc_html__('Bottom D', 'dallaslite') ,
+		'name' => esc_html__('Bottom D', 'dallas-lite') ,
 		'id' => 'bottom-d',
-		'description' => esc_html__('Add widgets here.', 'dallaslite') ,
+		'description' => esc_html__('Add widgets here.', 'dallas-lite') ,
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h2 class="widget-title">',
@@ -210,8 +211,8 @@ function dallaslite_scripts()
 		}
 
 	wp_localize_script('dallaslite_script', 'screenReaderText', array(
-		'expand' => __('expand child menu', 'dallaslite') ,
-		'collapse' => __('collapse child menu', 'dallaslite') ,
+		'expand' => __('expand child menu', 'dallas-lite') ,
+		'collapse' => __('collapse child menu', 'dallas-lite') ,
 	));
 	}
 
@@ -408,109 +409,109 @@ function dallaslite_user_profile_fields($profileuser)
 		<tr>
 			<th>
 				<label for="fb_url"><?php
-	esc_html_e('Facebook','dallaslite'); ?></label>
+	esc_html_e('Facebook','dallas-lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="fb_url" id="fb_url" value="<?php
 	echo esc_attr(get_the_author_meta('fb_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Facebook url.','dallaslite'); ?></span>
+	esc_html_e('Facebook url.','dallas-lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="twitter_url"><?php
-	esc_html_e('Twitter url','dallaslite'); ?></label>
+	esc_html_e('Twitter url','dallas-lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="twitter_url" id="twitter_url" value="<?php
 	echo esc_attr(get_the_author_meta('twitter_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Twitter url.','dallaslite'); ?></span>
+	esc_html_e('Twitter url.','dallas-lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="gplus_url"><?php
-	esc_html_e('Google Plus url','dallaslite'); ?></label>
+	esc_html_e('Google Plus url','dallas-lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="gplus_url" id="gplus_url" value="<?php
 	echo esc_attr(get_the_author_meta('gplus_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Google Plus url.','dallaslite'); ?></span>
+	esc_html_e('Google Plus url.','dallas-lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="linkedin_url"><?php
-	esc_html_e('Linkedin  url','dallaslite'); ?></label>
+	esc_html_e('Linkedin  url','dallas-lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="linkedin_url" id="linkedin_url" value="<?php
 	echo esc_attr(get_the_author_meta('linkedin_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Linkedin url.','dallaslite'); ?></span>
+	esc_html_e('Linkedin url.','dallas-lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="behance_url"><?php
-	esc_html_e('Behance url','dallaslite'); ?></label>
+	esc_html_e('Behance url','dallas-lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="behance_url" id="behance_url" value="<?php
 	echo esc_attr(get_the_author_meta('behance_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Behance url.','dallaslite'); ?></span>
+	esc_html_e('Behance url.','dallas-lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="youtube_url"><?php
-	esc_html_e('Youtube url','dallaslite'); ?></label>
+	esc_html_e('Youtube url','dallas-lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="youtube_url" id="youtube_url" value="<?php
 	echo esc_attr(get_the_author_meta('youtube_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Youtube url.','dallaslite'); ?></span>
+	esc_html_e('Youtube url.','dallas-lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="snapchat_url"><?php
-	esc_html_e('Snapchat url','dallaslite'); ?></label>
+	esc_html_e('Snapchat url','dallas-lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="snapchat_url" id="snapchat_url" value="<?php
 	echo esc_attr(get_the_author_meta('snapchat_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Snapchat url.','dallaslite'); ?></span>
+	esc_html_e('Snapchat url.','dallas-lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="skype_url"><?php
-	esc_html_e('Skype url','dallaslite'); ?></label>
+	esc_html_e('Skype url','dallas-lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="skype_url" id="skype_url" value="<?php
 	echo esc_attr(get_the_author_meta('skype_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Skype url.','dallaslite'); ?></span>
+	esc_html_e('Skype url.','dallas-lite'); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
 				<label for="pinterest_url"><?php
-	esc_html_e('Pinterest url','dallaslite'); ?></label>
+	esc_html_e('Pinterest url','dallas-lite'); ?></label>
 			</th>
 			<td>
 				<input type="text" name="pinterest_url" id="pinterest_url" value="<?php
 	echo esc_attr(get_the_author_meta('pinterest_url', $profileuser->ID)); ?>" class="regular-text" />
 				<br /><span class="description"><?php
-	esc_html_e('Pinterest url.','dallaslite'); ?></span>
+	esc_html_e('Pinterest url.','dallas-lite'); ?></span>
 			</td>
 		</tr>
 	</table>

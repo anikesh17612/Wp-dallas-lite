@@ -7,8 +7,7 @@
  * relies on many newer functions and markup changes introduced in 4.7.
  *
  * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since Dallas Lite 1.0
+ * @since Dallas Lite
  */
 
 /**
@@ -36,7 +35,7 @@ add_action( 'after_switch_theme', 'dallaslite_switch_theme' );
  * @global string $wp_version WordPress version.
  */
 function dallaslite_upgrade_notice() {
-	$message = sprintf( __( 'Dallas Lite requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'dallaslite' ), $GLOBALS['wp_version'] );
+	$message = sprintf( 'Dallas Lite requires at least WordPress version 4.7. You are running version . Please upgrade and try again.', 'dallas-lite' , $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
@@ -48,7 +47,7 @@ function dallaslite_upgrade_notice() {
  * @global string $wp_version WordPress version.
  */
 function dallaslite_customize() {
-	wp_die( sprintf( __( 'Dallas Lite requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'dallaslite' ), $GLOBALS['wp_version'] ), '', array(
+	wp_die( sprintf( 'Dallas Lite requires at least WordPress version 4.7. You are running version . Please upgrade and try again.', 'dallas-lite', $GLOBALS['wp_version'] ), '', array(
 		'back_link' => true,
 	) );
 }
@@ -63,7 +62,7 @@ add_action( 'load-customize.php', 'dallaslite_customize' );
  */
 function dallaslite_preview() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( __( 'Dallas Lite requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'dallaslite' ), $GLOBALS['wp_version'] ) );
+		wp_die( sprintf( 'Dallas Lite requires at least WordPress version 4.7. You are running version . Please upgrade and try again.', 'dallas-lite', $GLOBALS['wp_version'] ) );
 	}
 }
 add_action( 'template_redirect', 'dallaslite_preview' );

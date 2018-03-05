@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dallaslite
+ * @package Dallas Lite
  */
 get_header(); ?>
 <?php if ( get_theme_mod( 'blog_layout_selection' ) == 'blogleft' ) { ?>

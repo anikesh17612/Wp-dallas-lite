@@ -6,15 +6,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package dallaslite
+ * @package Dallas Lite
  */
 ?>
     <!doctype html>
-    <?php if(get_theme_mod("right-to-left", true)){ ?>
+    <?php if(get_theme_mod("right-to-left", false)){ ?>
     <html dir="rtl" <?php language_attributes(); ?>>
     <?php }
     else{ ?>
-      <html <?php language_attributes(); ?>>
+	<html <?php language_attributes(); ?>>
     <?php } ?>
     <head>
         <meta charset="<?php bloginfo('charset'); ?>">
@@ -30,7 +30,7 @@
     <body <?php body_class(); ?>>
         <div id="page" class="site">
             <a class="skip-link screen-reader-text" href="#content">
-                <?php esc_html_e('Skip to content', 'dallaslite'); ?>
+                <?php esc_html_e('Skip to content', 'dallas-lite'); ?>
             </a>
             <div id="header-section">
                 <div class="container">

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package dallaslite
+ * @package Dallas Lite
  */
 get_header();
 if (get_theme_mod('select_blog_single_page_layout') == 'leftside' )

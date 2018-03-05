@@ -4,7 +4,7 @@
  *
  * @link https://woocommerce.com/
  *
- * @package dallaslite
+ * @package Dallas Lite
 */
 /**
  * WooCommerce setup function.
@@ -218,9 +218,9 @@ if ( ! function_exists( 'dallaslite_woocommerce_cart_link' ) ) {
 	 */
 	function dallaslite_woocommerce_cart_link() {
 		?>
-			<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'dallaslite' ); ?>">
+			<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'dallas-lite' ); ?>">
 				<?php /* translators: number of items in the mini cart. */ ?>
-				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'dallaslite' ), WC()->cart->get_cart_contents_count() ) );?></span>
+				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'dallas-lite' ), WC()->cart->get_cart_contents_count() ) );?></span>
 			</a>
 		<?php
 	}
