@@ -335,7 +335,7 @@ $callback = new wp_call_back;
 		'priority' => 10
 	));
 	$wp_customize->add_setting('right-to-left', array(
-		'default' => '',
+		'default' => 'false',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'style_rtl', array(
