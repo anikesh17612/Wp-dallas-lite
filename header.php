@@ -10,8 +10,12 @@
  */
 ?>
     <!doctype html>
+    <?php if(get_theme_mod("right-to-left", true)){ ?>
     <html dir="rtl" <?php language_attributes(); ?>>
-
+    <?php }
+    else{ ?>
+      <html <?php language_attributes(); ?>>
+    <?php } ?>
     <head>
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
