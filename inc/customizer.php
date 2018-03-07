@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function dallaslite_customize_register( $wp_customize ) {
+function dallas_lite_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -18,22 +18,22 @@ function dallaslite_customize_register( $wp_customize ) {
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title a',
-			'render_callback' => 'dallaslite_customize_partial_blogname',
+			'render_callback' => 'dallas_lite_customize_partial_blogname',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
-			'render_callback' => 'dallaslite_customize_partial_blogdescription',
+			'render_callback' => 'dallas_lite_customize_partial_blogdescription',
 		) );
 	}
 }
-add_action( 'customize_register', 'dallaslite_customize_register' );
+add_action( 'customize_register', 'dallas_lite_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function dallaslite_customize_partial_blogname() {
+function dallas_lite_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -42,14 +42,14 @@ function dallaslite_customize_partial_blogname() {
  *
  * @return void
  */
-function dallaslite_customize_partial_blogdescription() {
+function dallas_lite_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function dallaslite_customize_preview_js() {
-	wp_enqueue_script( 'dallaslite-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+function dallas_lite_customize_preview_js() {
+	wp_enqueue_script( 'dallas_lite-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'dallaslite_customize_preview_js' );
+add_action( 'customize_preview_init', 'dallas_lite_customize_preview_js' );

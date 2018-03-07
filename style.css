@@ -119,6 +119,10 @@ img {
     /* Adhere to container width. */
 }
 
+.wp-custom-header img{
+	width:100%;
+}
+
 svg:not(:root) {
     overflow: hidden;
 }

@@ -14,7 +14,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
  return;
 }
 
-if (!function_exists('dallaslite_setup')):
+if (!function_exists('dallas_lite_setup')):
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -22,13 +22,13 @@ if (!function_exists('dallaslite_setup')):
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function dallaslite_setup()
+	function dallas_lite_setup()
 		{
 		/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		* If you're building a theme based on Dallas Lite, use a find and replace
-		* to change 'dallaslite' to the name of your theme in all the template files.
+		* to change 'dallas_lite' to the name of your theme in all the template files.
 		*/
 		
 		load_theme_textdomain('dallas-lite');
@@ -71,7 +71,7 @@ if (!function_exists('dallaslite_setup')):
 
 		// Set up the WordPress core custom background feature.
 
-		add_theme_support('custom-background', apply_filters('dallaslite_custom_background_args', array(
+		add_theme_support('custom-background', apply_filters('dallas_lite_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		)));
@@ -93,7 +93,7 @@ if (!function_exists('dallaslite_setup')):
 		}
 
 endif;
-add_action('after_setup_theme', 'dallaslite_setup');
+add_action('after_setup_theme', 'dallas_lite_setup');
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -102,12 +102,12 @@ add_action('after_setup_theme', 'dallaslite_setup');
  * @global int $content_width
  */
 
-function dallaslite_content_width()
+function dallas_lite_content_width()
 	{
-	$GLOBALS['content_width'] = apply_filters('dallaslite_content_width', 640);
+	$GLOBALS['content_width'] = apply_filters('dallas_lite_content_width', 640);
 	}
 
-add_action('after_setup_theme', 'dallaslite_content_width', 0);
+add_action('after_setup_theme', 'dallas_lite_content_width', 0);
 /*
 * Enable support for Post Thumbnails on posts and pages.
 *
@@ -121,7 +121,7 @@ set_post_thumbnail_size(1200, 'auto');
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 
-function dallaslite_widgets_init()
+function dallas_lite_widgets_init()
 	{
 	register_sidebar(array(
 		'name' => esc_html__('Sidebar', 'dallas-lite') ,
@@ -170,65 +170,53 @@ function dallaslite_widgets_init()
 	));
 	}
 
-add_action('widgets_init', 'dallaslite_widgets_init');
+add_action('widgets_init', 'dallas_lite_widgets_init');
 /**
  * Enqueue scripts and styles.
  */
 
-function dallaslite_scripts()
+function dallas_lite_scripts()
 	{
-	wp_enqueue_style('dallaslite-style', get_stylesheet_uri());
-	wp_enqueue_script('dallaslite-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(
+	wp_enqueue_style('dallas_lite-style', get_stylesheet_uri());
+	wp_enqueue_script('dallas_lite-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(
 		'jquery'
 	) , '20151215', true);
-	wp_enqueue_script('dallaslite-loadmore', get_template_directory_uri() . '/assets/js/loadmore.js', array(
+	wp_enqueue_script('dallas_lite-loadmore', get_template_directory_uri() . '/assets/js/loadmore.js', array(
 		'jquery'
 	) , '20151215', true);
 	$translation_array = array(
 		'templateUrl' => get_template_directory_uri() ,
 		'adminUrl' => admin_url() ,
-		'body_layout' => get_theme_mod('body_layout', 'fullwidth_body_layout')
+		'body_layout' => esc_attr( get_theme_mod( 'body_layout', 'fullwidth_body_layout' ) )
 	);
-	wp_localize_script('dallaslite-loadmore', 'loadmore_params', $translation_array);
-	wp_enqueue_style('font-family', 'https://fonts.googleapis.com/css?family=' . get_theme_mod('body_google_font', 'Lato') . '|' . get_theme_mod('menu_google_font', 'Lato') . '|' . get_theme_mod('h1_google_font', 'Lato') . '|' . get_theme_mod('h2_google_font', 'Lato') . '|' . get_theme_mod('h3_google_font', 'Lato') . '|' . get_theme_mod('h4_google_font', 'Lato') . '|' . get_theme_mod('h5_google_font', 'Lato') . '|' . get_theme_mod('h6_google_font', 'Lato'));
+	wp_localize_script('dallas-lite-loadmore', 'loadmore_params', $translation_array);
+	wp_enqueue_style('font-family', 'https://fonts.googleapis.com/css?family=' . esc_attr( get_theme_mod( 'body_google_font', 'Lato' ) ) . '|' . esc_attr( get_theme_mod( 'menu_google_font', 'Lato' ) ) . '|' . esc_attr( get_theme_mod( 'h1_google_font', 'Lato' ) ) . '|' . esc_attr( get_theme_mod( 'h2_google_font', 'Lato' ) ) . '|' . esc_attr( get_theme_mod( 'h3_google_font', 'Lato' ) ) . '|' . esc_attr( get_theme_mod( 'h4_google_font', 'Lato' ) ) . '|' . esc_attr( get_theme_mod( 'h5_google_font', 'Lato' ) ) . '|' . esc_attr( get_theme_mod( 'h6_google_font', 'Lato' ) ) );
 	wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.css');
-	wp_enqueue_style('bootstrap-min-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
-	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css');
-	if(esc_url(get_theme_mod('right-to-left','true'))){
+	wp_enqueue_style('font-awesome-css', get_template_directory_uri() . '/assets/css/font-awesome.min.css');
+	if( esc_attr( get_theme_mod( 'right-to-left','true' ) ) ){
 		wp_enqueue_style('rtl-css', get_template_directory_uri() . '/rtl.css');
 	}
-	wp_enqueue_script('dallaslite_script', get_template_directory_uri() . '/assets/js/functions.js', array(
+	wp_enqueue_script('dallas_lite_script', get_template_directory_uri() . '/assets/js/functions.js', array(
 		'jquery'
 	) , '20160816', true);
-	wp_enqueue_script('dallaslite-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(
+	wp_enqueue_script('dallas-lite-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(
 		'jquery'
 	) , '20151215', true);
-	wp_enqueue_style('dallaslite_style', get_stylesheet_uri()); //
-	wp_add_inline_style('dallaslite_style', dallaslite_css_generator()); //
+	wp_enqueue_style('dallas-lite-style', get_stylesheet_uri()); //
+	wp_add_inline_style('dallas-lite-style', dallas_lite_css_generator()); //
 	if (is_singular() && comments_open() && get_option('thread_comments'))
 		{
 		wp_enqueue_script('comment-reply');
 		}
 
-	wp_localize_script('dallaslite_script', 'screenReaderText', array(
+	wp_localize_script('dallas_lite_script', 'screenReaderText', array(
 		'expand' => __('expand child menu', 'dallas-lite') ,
 		'collapse' => __('collapse child menu', 'dallas-lite') ,
 	));
 	}
 
-add_action('wp_enqueue_scripts', 'dallaslite_scripts');
-/*  ********************************/
-/* REMOVE COLORS OPTION FROM CUSTOMIZER  */
-/* ***************************** */
-add_action("customize_register", "dallaslite_override_customize_register");
+add_action('wp_enqueue_scripts', 'dallas_lite_scripts');
 
-function dallaslite_override_customize_register($wp_customize)
-	{
-	$wp_customize->remove_section("colors");
-	$wp_customize->remove_control("blogname");
-	$wp_customize->remove_control("blogdescription");
-	$wp_customize->remove_control("display_header_text");
-	}
 
 	/**
 	 * This code Implimented to load more post using ajax ON click load more Button
@@ -237,11 +225,11 @@ function dallaslite_override_customize_register($wp_customize)
 	 /**
  	 * This code Implimented to add class on body if using RTL
  	 */
-	 add_filter( 'body_class', 'dallaslite_load_rtl' );
+	 add_filter( 'body_class', 'dallas_lite_load_rtl' );
 
-	 function dallaslite_load_rtl( $classes )
+	 function dallas_lite_load_rtl( $classes )
 	 	{
-			if(get_theme_mod('right-to-left','Yes')){
+			if(esc_attr( get_theme_mod( 'right-to-left','Yes' ) ) ){
 				$classes[] = 'rtl';
 			}
 			return $classes;
@@ -249,7 +237,7 @@ function dallaslite_override_customize_register($wp_customize)
 
 		}
 
-	function dallaslite_load_posts()
+	function dallas_lite_load_posts()
 		{
 				if ( isset( $_POST['wpdal_loadpost'] ) &&  1 === intval( wp_unslash( $_POST['wpdal_loadpost'] ) ) )  // Input var okay.
 				if( isset($_POST['page']) && !empty ( intval( wp_unslash($_POST['page'] ) ) ) )
@@ -275,14 +263,14 @@ function dallaslite_override_customize_register($wp_customize)
 		endif;
 		wp_die();
 		}
-	add_action('wp_ajax_load_posts_by_ajax', 'dallaslite_load_posts');
+	add_action('wp_ajax_load_posts_by_ajax', 'dallas_lite_load_posts');
 
 /*-----------------------------------------------------
 * 				Custom Excerpt Length
 *----------------------------------------------------*/
 
-if (!function_exists('dallaslite_excerpt_max_charlength')):
-	function dallaslite_excerpt_max_charlength($wordsreturned)
+if (!function_exists('dallas_lite_excerpt_max_charlength')):
+	function dallas_lite_excerpt_max_charlength($wordsreturned)
 		{
 		$string = get_the_excerpt();
 		$retval = $string;
@@ -335,9 +323,9 @@ User Follow social icon
  * @param  object $profileuser A WP_User object
  * @return void
  */
-add_action('profile_update', 'dallaslite_edit_profile', 10, 2);
+add_action('profile_update', 'dallas_lite_edit_profile', 10, 2);
 $user_id = get_current_user_id();
-function dallaslite_edit_profile($user_id, $old_user_data)
+function dallas_lite_edit_profile($user_id, $old_user_data)
 	{
 	// Do something
 	if ( isset( $_POST['fb_url'] ) &&  ! empty( $_POST['fb_url'] )) { // Input var okay.
@@ -369,9 +357,9 @@ function dallaslite_edit_profile($user_id, $old_user_data)
 	}
 	}
 
-	add_action('edit_user_profile_update', 'dallaslite_update_profile_fields');
+	add_action('edit_user_profile_update', 'dallas_lite_update_profile_fields');
 
-	function dallaslite_update_profile_fields($user_id)
+	function dallas_lite_update_profile_fields($user_id)
 		{
 		if (current_user_can('edit_user', $user_id))
 		if ( isset( $_POST['fb_url'] ) &&  ! empty( $_POST['fb_url'] )) { // Input var okay.
@@ -402,7 +390,7 @@ function dallaslite_edit_profile($user_id, $old_user_data)
 			update_user_meta($user_id, 'pinterest_url', esc_url_raw(wp_unslash($_POST['pinterest_url'])));
 		}
 		}
-function dallaslite_user_profile_fields($profileuser)
+function dallas_lite_user_profile_fields($profileuser)
 	{
 ?>
 	<table class="form-table">
@@ -518,16 +506,16 @@ function dallaslite_user_profile_fields($profileuser)
 <?php
 	}
 
-add_action('show_user_profile', 'dallaslite_user_profile_fields', 10, 1);
-add_action('edit_user_profile', 'dallaslite_user_profile_fields', 10, 1);
+add_action('show_user_profile', 'dallas_lite_user_profile_fields', 10, 1);
+add_action('edit_user_profile', 'dallas_lite_user_profile_fields', 10, 1);
 
 /**
  * Registers an editor stylesheet for the theme.
  */
-function dallaslite_add_editor_styles() {
-    add_editor_style( 'dallaslite-editor-style.css' );
+function dallas_lite_add_editor_styles() {
+    add_editor_style( 'dallas-lite-editor-style.css' );
 }
-add_action( 'admin_init', 'dallaslite_add_editor_styles' );
+add_action( 'admin_init', 'dallas_lite_add_editor_styles' );
 
 /* --------------------------------------------*
 Required Plugins

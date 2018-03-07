@@ -3,7 +3,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package dallaslite
+ * @package Dallas Lite
  */
 
 /* ************* LOAD MORE POST ************* ***************/

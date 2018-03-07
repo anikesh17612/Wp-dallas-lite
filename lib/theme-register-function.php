@@ -8,13 +8,13 @@ class wp_call_back
 	{
 	}
 }
-function admin_style()
+function dallas_lite_admin_style()
 	{
 	wp_enqueue_style('admin-styles', get_template_directory_uri() . '/assets/css/admin-style.css');
 	}
-add_action('admin_enqueue_scripts', 'admin_style');
-add_action('customize_register', 'wp_dallas_option');
-function wp_dallas_option($wp_customize)
+add_action('admin_enqueue_scripts', 'dallas_lite_admin_style');
+add_action('customize_register', 'dallas_lite_option');
+function dallas_lite_option($wp_customize)
 	{
 $callback = new wp_call_back;
 	$wp_customize->add_setting('separatorline', array(
@@ -1031,7 +1031,7 @@ $callback = new wp_call_back;
 		'priority' => 10
 	));
 	$wp_customize->add_setting('facebooklogo', array(
-		'default' => 'https://facebook.com',
+		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'facebook_logo', array(
@@ -1044,7 +1044,7 @@ $callback = new wp_call_back;
 		) ,
 	)));
 	$wp_customize->add_setting('twitterlogo', array(
-		'default' => 'https://twitter.com/',
+		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'twitter_logo', array(
@@ -1057,7 +1057,7 @@ $callback = new wp_call_back;
 		) ,
 	)));
 	$wp_customize->add_setting('googlepluslogo', array(
-		'default' => 'https://plus.google.com',
+		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'googleplus_logo', array(
@@ -1070,7 +1070,7 @@ $callback = new wp_call_back;
 		) ,
 	)));
 	$wp_customize->add_setting('linkedinlogo', array(
-		'default' => 'https://in.linkedin.com/',
+		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'linkedin_logo', array(
@@ -1083,7 +1083,7 @@ $callback = new wp_call_back;
 		) ,
 	)));
 	$wp_customize->add_setting('behancelogo', array(
-		'default' => 'https://www.behance.net/',
+		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'behance_logo', array(
@@ -1096,7 +1096,7 @@ $callback = new wp_call_back;
 		) ,
 	)));
 	$wp_customize->add_setting('youtubelogo', array(
-		'default' => 'https://www.youtube.com/',
+		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'youtube_logo', array(
@@ -1109,7 +1109,7 @@ $callback = new wp_call_back;
 		) ,
 	)));
 	$wp_customize->add_setting('snapchatlogo', array(
-		'default' => 'https://www.snapchat.com/',
+		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'snapchat_logo', array(
@@ -1122,7 +1122,7 @@ $callback = new wp_call_back;
 		) ,
 	)));
 	$wp_customize->add_setting('skypelogo', array(
-		'default' => 'https://login.skype.com/login',
+		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'skype_logo', array(
@@ -1135,7 +1135,7 @@ $callback = new wp_call_back;
 		) ,
 	)));
 	$wp_customize->add_setting('whatsapplogo', array(
-		'default' => 'whatsapp://send?text=' .  '&text=Hi',
+		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'whatsapp_logo', array(
@@ -1148,7 +1148,7 @@ $callback = new wp_call_back;
 		) ,
 	)));
 	$wp_customize->add_setting('pinterestlogo', array(
-		'default' => 'https://www.pinterest.com/',
+		'default' => '',
 		'sanitize_callback' => $callback->sanitize_call_back('enable_dallas_call'),
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'pinterest_logo', array(

@@ -17,12 +17,12 @@
  *
  * @since Dallas Lite 1.0
  */
-function dallaslite_switch_theme() {
+function dallas_lite_switch_theme() {
 	switch_theme( WP_DEFAULT_THEME );
 	unset( $_GET['activated'] );
-	add_action( 'admin_notices', 'dallaslite_upgrade_notice' );
+	add_action( 'admin_notices', 'dallas_lite_upgrade_notice' );
 }
-add_action( 'after_switch_theme', 'dallaslite_switch_theme' );
+add_action( 'after_switch_theme', 'dallas_lite_switch_theme' );
 
 /**
  * Adds a message for unsuccessful theme switch.
@@ -34,8 +34,8 @@ add_action( 'after_switch_theme', 'dallaslite_switch_theme' );
  *
  * @global string $wp_version WordPress version.
  */
-function dallaslite_upgrade_notice() {
-	$message = sprintf( 'Dallas Lite requires at least WordPress version 4.7. You are running version . Please upgrade and try again.', 'dallas-lite' , $GLOBALS['wp_version'] );
+function dallas_lite_upgrade_notice() {
+	$message = sprintf( 'Dallas Lite requires at least WordPress version 4.7. You are running version . Please upgrade and try again.', 'dallas-lite' , $wp_version );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
@@ -46,12 +46,12 @@ function dallaslite_upgrade_notice() {
  *
  * @global string $wp_version WordPress version.
  */
-function dallaslite_customize() {
+function dallas_lite_customize() {
 	wp_die( sprintf( 'Dallas Lite requires at least WordPress version 4.7. You are running version . Please upgrade and try again.', 'dallas-lite', $GLOBALS['wp_version'] ), '', array(
 		'back_link' => true,
 	) );
 }
-add_action( 'load-customize.php', 'dallaslite_customize' );
+add_action( 'load-customize.php', 'dallas_lite_customize' );
 
 /**
  * Prevents the Theme Preview from being loaded on WordPress versions prior to 4.7.
@@ -60,9 +60,9 @@ add_action( 'load-customize.php', 'dallaslite_customize' );
  *
  * @global string $wp_version WordPress version.
  */
-function dallaslite_preview() {
+function dallas_lite_preview() {
 	if ( isset( $_GET['preview'] ) ) {
 		wp_die( sprintf( 'Dallas Lite requires at least WordPress version 4.7. You are running version . Please upgrade and try again.', 'dallas-lite', $GLOBALS['wp_version'] ) );
 	}
 }
-add_action( 'template_redirect', 'dallaslite_preview' );
+add_action( 'template_redirect', 'dallas_lite_preview' );
