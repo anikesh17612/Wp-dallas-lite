@@ -119,8 +119,8 @@ img {
     /* Adhere to container width. */
 }
 
-.wp-custom-header img{
-	width:100%;
+.wp-custom-header img {
+    width: 100%;
 }
 
 svg:not(:root) {
@@ -833,10 +833,14 @@ ul.social-icons > li {
 
 ul#top-menu {
     margin-left: 0px;
+    font-size: 16px !important;
+    line-height: 1 !important;
 }
 
 ul#top-menu > li > a {
     color: #fff;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
     padding: 15px 10px;
 }
 
@@ -986,6 +990,8 @@ ul#top-menu ul.sub-menu > li.menu-item-has-children > a:after {
     padding: 0;
     text-align: right;
     list-style: outside none none;
+    font-size: 16px !important;
+    line-height: 1 !important;
 }
 
 #footer-section .footer-menu ul li a {
@@ -1142,13 +1148,16 @@ body.box_layout #page {
     vertical-align: middle;
 }
 
-.site-branding h1.site-title {
-    margin: 0;
-    font-size: 18px;
+.site-branding h1 {
+    font-size: 36px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
 }
 
-.site-branding p.site-description {
-    font-size: 16px;
+.site-branding p {
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
 }
 
 /*----- Back to top -----*/
@@ -1163,12 +1172,14 @@ body.box_layout #page {
     position: fixed;
     text-align: center;
     border: 1px solid #ffcc33;
+    line-height: 1 !important;
 }
 
 .backtotop .fa {
     color: #262626;
-    font-size: 35px;
-    line-height: 35px;
+    font-size: 35px !important;
+    line-height: 1 !important;
+    display: block;
 }
 
 .backtotop:hover {
@@ -1265,6 +1276,8 @@ body.box_layout #page {
 .wp-copyright {
     padding: 15px 0;
     color: #999;
+    font-size: 16px !important;
+    line-height: 1 !important;
 }
 
 /*------- Search -------*/
@@ -1273,8 +1286,11 @@ body.box_layout #page {
     position: relative;
 }
 
-.search-form {
+.search-form,
+.search-form label {
     position: relative;
+    font-size: 16px !important;
+    line-height: 1;
 }
 
 .search-form label {
@@ -1321,7 +1337,8 @@ body.box_layout #page {
 
 .post-social-share > div a {
     width: 36px;
-    line-height: 36px;
+    font-size: 14px !important;
+    line-height: 36px !important;
     display: block;
     text-align: center;
     color: #ffffff;
