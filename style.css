@@ -823,8 +823,8 @@ ul.social-icons > li {
     width: 30px;
     height: 30px;
     display: block;
-    font-size: 15px;
-    line-height: 28px;
+    font-size: 14px !important;
+    line-height: 30px !important;
     text-align: center;
     background: #464a4d;
     border-radius: 3px;
