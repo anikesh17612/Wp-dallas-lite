@@ -1,13 +1,14 @@
 /**
- * File customizer.js.
- *
  * Theme Customizer enhancements for a better user experience.
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
+ *
+ * @package Dallas Lite.
+ *
+ * @since  1.2
  */
 
- function blog_customize( jQuery ) {
-
+function blog_customize( jQuery ) {
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -19,7 +20,6 @@
 			$( '.site-description' ).text( to );
 		} );
 	} );
-
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {

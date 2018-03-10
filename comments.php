@@ -9,11 +9,13 @@
  *
  * @package Dallas Lite
  */
+
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
+
 if ( post_password_required() ) {
 	return;
 }
@@ -57,6 +59,8 @@ if ( post_password_required() ) {
 		<?php
 		endif;
 	endif; // Check for have_comments().
-	comment_form(array('title_reply_before'   => '<h4 id="reply-title" class="comment-reply-title">'));
+	comment_form( array(
+		'title_reply_before' => '<h4 id="reply-title" class="comment-reply-title">',
+	) );
 	?>
 </div><!-- #comments -->
