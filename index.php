@@ -66,7 +66,7 @@ if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogfullwidth')
 				$default_posts_per_page = get_option('posts_per_page');
 
 				if ($published_posts > $default_posts_per_page)	{
-						$select_pagination_layout = esc_attr( get_theme_mod( 'select_pagination_layout' ) );
+						$select_pagination_layout =  get_theme_mod( 'select_pagination_layout' );
 						if ( $select_pagination_layout == "" || $select_pagination_layout == 'paginumber' ){ ?>
 							<div class="wpdal_pagination">
 								<?php	the_posts_pagination(); ?>

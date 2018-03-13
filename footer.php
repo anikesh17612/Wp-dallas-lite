@@ -23,7 +23,7 @@
 					if ( $enable_copyright_text ) { ?>
 						<div class="wp-copyright col-md-6">
 							<?php $main_url = 'https://www.joomdev.com/wordpress-themes'; ?>
-							<?php echo wp_kses_post( get_theme_mod( 'copyright_text', 'Copyright &copy; ' . '-'. date( 'Y' ) . 'Dallas Lite <sup>Lite</sup> . All Right Reserved. Created by <a href="' . $main_url . '" target = "_blank">JoomDev</a>' ) ); ?>
+							<?php echo wp_kses_post( get_theme_mod( 'copyright_text', 'Copyright &copy; - ' . date( 'Y' ) . 'Dallas Lite <sup>Lite</sup> . All Right Reserved. Created by <a href="' . $main_url . '" target = "_blank">JoomDev</a>' ) ); ?>
 						</div><!-- site-info -->
 					<?php } ?>
 						<div class="footer-menu col-md-6">
