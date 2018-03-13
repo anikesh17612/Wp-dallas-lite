@@ -1555,7 +1555,7 @@ article.type-post h2.entry-title a {
     cursor: pointer;
 }
 
-.wpdal_pagination > .current,
+.wpdal_pagination .current,
 .wpdal_pagination a:hover,
 .wpdal_pagination span:hover {
     background-color: #222534;
