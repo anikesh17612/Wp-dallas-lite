@@ -119,10 +119,13 @@ img {
     /* Adhere to container width. */
 }
 
+<<<<<<< HEAD
 .wp-custom-header img {
     width: 100%;
 }
 
+=======
+>>>>>>> parent of 5b21e14... update fuction name and modified code and remove error
 svg:not(:root) {
     overflow: hidden;
 }

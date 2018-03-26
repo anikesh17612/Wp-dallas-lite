@@ -10,11 +10,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php	if (is_singular()):	the_title('<h1 class="entry-title">', '</h1>');
-				else:	the_title('<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>');
+				else:	the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
 				endif;
 		      if ('post' === get_post_type()): ?>
 			       <div class="entry-meta">
-				           <?php	dallas_lite_posted_on(); ?>
+				           <?php	dallaslite_posted_on(); ?>
 			       </div><!-- .entry-meta -->
 		   <?php endif; ?>
 	</header><!-- .entry-header -->
@@ -32,14 +32,25 @@
 			</div>
 		<?php }
 		else {
+<<<<<<< HEAD
 				if ( get_theme_mod( 'enableExcerpt', true ) )
 					{
 					if ( get_theme_mod( 'excerptwordLimit', 330 ) ) 
+=======
+				if (get_theme_mod('enableExcerpt', true))
+					{
+					if (get_theme_mod('excerptwordLimit', 330))
+>>>>>>> parent of 5b21e14... update fuction name and modified code and remove error
 						{
-						$textlimit = esc_attr( get_theme_mod( 'excerptwordLimit', 330 ) );
+						$textlimit = get_theme_mod('excerptwordLimit', 330);
 						echo '<p class="short-description">';
+<<<<<<< HEAD
 						$wordsreturned="";
 						echo wp_kses_post(dallas_lite_excerpt_max_charlength($wordsreturned));
+=======
+            $wordsreturned="";
+						echo wp_kses_post(dallaslite_excerpt_max_charlength($wordsreturned));
+>>>>>>> parent of 5b21e14... update fuction name and modified code and remove error
 						echo '</p>';
 						}
 					  else
@@ -47,11 +58,11 @@
 						echo the_content();
 						}
 
-					if ( esc_attr( get_theme_mod( 'enableBlogReadmore', true ) ) )
+					if (get_theme_mod('enableBlogReadmore', true))
 						{
-						if ( esc_attr( get_theme_mod( 'continueReading', 'Read More' ) ) )
+						if (get_theme_mod('continueReading', 'Read More'))
 							{
-							$continue = esc_attr(get_theme_mod('continueReading', 'Read More' ) );
+							$continue = esc_html(get_theme_mod('continueReading', 'Read More'));
 
 							}
 						}
@@ -65,11 +76,11 @@
 	</div><!-- .entry-content -->
 	<div class="post-meta">
 		<?php if(!is_single()){
-				if ( esc_attr( get_theme_mod( 'enableBlogReadmore', true ) ) )
+				if (get_theme_mod('enableBlogReadmore', true))
 				{
-				if ( esc_attr( get_theme_mod( 'continueReading', 'Read More' ) ) )
+				if (get_theme_mod('continueReading', 'Read More'))
 					{
-					$continue = esc_html(get_theme_mod( 'continueReading', 'Read More' ) );
+					$continue = esc_html(get_theme_mod('continueReading', 'Read More'));
 
 					}
 				echo wp_kses_post('<div class="meta-content-limit"><a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a></div>');
@@ -80,7 +91,7 @@
 		else{
 		}
       if(is_single()){
-			echo wp_kses_post(dallas_lite_social_share_icons());
+			echo wp_kses_post(add_social_share_icons());
     }?>
 	</div>
 </article>

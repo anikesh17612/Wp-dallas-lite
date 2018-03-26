@@ -14,11 +14,11 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function dallas_lite_jetpack_setup() {
+function dallaslite_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'dallas_lite_infinite_scroll_render',
+		'render'    => 'dallaslite_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
@@ -28,7 +28,7 @@ function dallas_lite_jetpack_setup() {
 	// Add theme support for Content Options.
 	add_theme_support( 'jetpack-content-options', array(
 		'post-details' => array(
-			'stylesheet' => 'dallas-lite-style',
+			'stylesheet' => 'dallaslite-style',
 			'date'       => '.posted-on',
 			'categories' => '.cat-links',
 			'tags'       => '.tags-links',
@@ -37,12 +37,12 @@ function dallas_lite_jetpack_setup() {
 		),
 	) );
 }
-add_action( 'after_setup_theme', 'dallas_lite_jetpack_setup' );
+add_action( 'after_setup_theme', 'dallaslite_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function dallas_lite_infinite_scroll_render() {
+function dallaslite_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

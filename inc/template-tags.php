@@ -7,12 +7,12 @@
  * @package Dallas Lite
  */
 
-if ( ! function_exists( 'dallas_lite_posted_on' ) ) :
+if ( ! function_exists( 'dallas-lite_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
 
-	function dallas_lite_posted_on() {
+	function dallaslite_posted_on() {
 
 
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -49,11 +49,11 @@ if ( ! function_exists( 'dallas_lite_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'dallas_lite_entry_footer' ) ) :
+if ( ! function_exists( 'dallaslite_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function dallas_lite_entry_footer() {
+	function dallaslite_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */

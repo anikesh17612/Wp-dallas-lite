@@ -12,19 +12,19 @@
  * @package Dallas Lite
  */
 
- function dallas_lite_socialicon() {
+ function socialicon() {
 
-        $facebook	=  esc_url( get_theme_mod( 'facebooklogo','' ) );
-        $twitter	=  esc_url( get_theme_mod( 'twitterlogo','' ) );
-        $googleplus =  esc_url( get_theme_mod( 'googlepluslogo','' ) );
-        $linkedin	=  esc_url( get_theme_mod( 'linkedinlogo','' ) );
-        $behance	=  esc_url( get_theme_mod( 'behancelogo','' ) );
-	    $youtube	=  esc_url( get_theme_mod( 'youtubelogo','' ) );
-	    $Snapchat	=  esc_url( get_theme_mod( 'snapchatlogo','' ) );
-	    $skype		=  esc_url( get_theme_mod( 'skypelogo','' ) );
-	    $whatsapp	=  esc_url( get_theme_mod( 'whatsapplogo','' ) );
-	    $pinterest	=  esc_url( get_theme_mod( 'pinterestlogo','' ) );
-        $custom		=  esc_url( get_theme_mod( 'customlogo' ) );
+        $facebook	=  get_theme_mod('facebooklogo','https://www.facebook.com/');
+        $twitter	=  get_theme_mod('twitterlogo','https://twitter.com');
+        $googleplus =  get_theme_mod('googlepluslogo','https://plus.google.com');
+        $linkedin	=  get_theme_mod('linkedinlogo','https://in.linkedin.com/');
+        $behance	=  get_theme_mod('behancelogo','https://www.behance.net/');
+		    $youtube	=  get_theme_mod('youtubelogo','https://www.youtube.com/');
+		    $Snapchat	=  get_theme_mod('snapchatlogo','https://www.snapchat.com/');
+	      $skype		=  get_theme_mod('skypelogo','https://login.skype.com/login');
+		    $whatsapp	=  get_theme_mod('whatsapplogo','https://login.skype.com/login');
+		    $pinterest	=  get_theme_mod('pinterestlogo','https://www.pinterest.com/');
+        $custom		=  get_theme_mod('customlogo');
 
         if( $facebook || $twitter || $googleplus || $linkedin || $behance || $behance || $youtube || $Snapchat || $skype || $pinterest || $custom || "" ) {
             $html  = '<ul class="social-icons">';

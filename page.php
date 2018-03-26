@@ -14,7 +14,7 @@
 get_header();
 ?>
 <?php
-if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogleft' )
+if (get_theme_mod('blog_layout_selection') == 'blogleft' )
 	{ ?>
 	<div class="wpdal-left-sidebar col-md-3">
   <?php
@@ -22,7 +22,7 @@ if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogleft' )
   </div>
 <?php
 	}
-if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogfullwidth')
+if (get_theme_mod('blog_layout_selection') == 'blogfullwidth')
 	{
 	echo '<div id="primary" class="content-area  col-md-12 col-sm-12 col-xs-12 ">';
 	}
@@ -45,7 +45,7 @@ endwhile; // End of the loop.
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php
-if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogright' || esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == "")
+if (get_theme_mod('blog_layout_selection') == 'blogright' || get_theme_mod('blog_layout_selection') == "")
 	{ ?>
 	<div class="wpdal-right-sidebar col-md-3 col-sm-12 col-xs-12">
 		<?php
@@ -53,7 +53,7 @@ if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogright' || esc_
     </div>
 <?php
 	}
-if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogfullwidth')
+if (get_theme_mod('blog_layout_selection') == 'blogfullwidth')
 	{
 	// We don't need sidebar here for Blog full width Layout
 	} ?>

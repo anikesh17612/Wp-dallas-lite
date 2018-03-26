@@ -14,11 +14,16 @@
 <?php get_sidebar( 'footer' );
 ?>
 <!-- End bottom postion of theme -->
+<<<<<<< HEAD
 <?php if ( esc_attr( get_theme_mod( 'enable_copyright_text', '1' ) ) || has_nav_menu( 'menu-3' ) ) {?>
+=======
+<?php if(get_theme_mod('enable_copyright_text', '1') || has_nav_menu('menu-3') ){?>
+>>>>>>> parent of 5b21e14... update fuction name and modified code and remove error
 	<footer id="footer-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
+<<<<<<< HEAD
 					<?php $enable_copyright_text = esc_attr( get_theme_mod( 'enable_copyright_text', '1' ) );
 					if ( $enable_copyright_text ) { ?>
 						<div class="wp-copyright col-md-6">
@@ -26,6 +31,17 @@
 							<?php echo wp_kses_post( get_theme_mod( 'copyright_text', 'Copyright &copy; - ' . date( 'Y' ) . 'Dallas Lite <sup>Lite</sup> . All Right Reserved. Created by <a href="' . $main_url . '" target = "_blank">JoomDev</a>' ) ); ?>
 						</div><!-- site-info -->
 					<?php } ?>
+=======
+					<?php $enable_copyright_text = get_theme_mod('enable_copyright_text', '1');
+						if ($enable_copyright_text){ ?>
+							<div class="wp-copyright col-md-6">
+								<?php $main_url='https://www.joomdev.com/wordpress-themes'; ?>
+								<?php echo wp_kses_post(get_theme_mod('copyright_text', 'Copyright &copy;'.' ' . '-'. date('Y').' '. 'Dallas Lite <sup>Lite</sup>. All Right Reserved. Created by <a href="'.$main_url.'" target="_blank">JoomDev</a>')); ?>
+							</div><!-- site-info -->
+							<?php
+						}else{
+							} ?>
+>>>>>>> parent of 5b21e14... update fuction name and modified code and remove error
 						<div class="footer-menu col-md-6">
 							<?php if ( has_nav_menu( 'menu-3' ) ) {
 								wp_nav_menu(array(

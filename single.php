@@ -7,7 +7,7 @@
  * @package Dallas Lite
  */
 get_header();
-if ( esc_attr( get_theme_mod( 'select_blog_single_page_layout' ) ) == 'leftside' )
+if (get_theme_mod('select_blog_single_page_layout') == 'leftside' )
 	{ ?>
 		<div class="wpdal-left-sidebar wpdal-single-layout-page col-md-3 col-sm-12 col-xs-12">
 			<?php get_sidebar(); ?>
@@ -15,7 +15,7 @@ if ( esc_attr( get_theme_mod( 'select_blog_single_page_layout' ) ) == 'leftside'
 <?php
 	} ?>
 <?php
-if ( esc_attr( get_theme_mod( 'select_blog_single_page_layout' ) ) == 'fullwidth')
+if (get_theme_mod('select_blog_single_page_layout') == 'fullwidth')
 	{
 	echo '<div id="primary" class="content-area  col-md-12 col-sm-12 col-xs-12 ">';
 	}
@@ -153,7 +153,7 @@ if (wp_get_post_tags($post->ID) != '')
 ?>
 	</div><!-- #primary -->
 	<?php
-if ( esc_attr( get_theme_mod( 'select_blog_single_page_layout' ) ) == 'rightside' || esc_attr( get_theme_mod( 'select_blog_single_page_layout' ) ) == "")
+if (get_theme_mod('select_blog_single_page_layout') == 'rightside' || get_theme_mod('select_blog_single_page_layout') == "")
 	{ ?>
 		<div class="wpdal-right-sidebar wpdal-single-layout-page col-md-3 col-sm-12 col-xs-12">
 			<?php
@@ -161,7 +161,7 @@ if ( esc_attr( get_theme_mod( 'select_blog_single_page_layout' ) ) == 'rightside
 		</div>
 	<?php
 	}
-if ( esc_attr( get_theme_mod( 'select_blog_single_page_layout' ) ) == 'fullwidth')
+if (get_theme_mod('select_blog_single_page_layout') == 'fullwidth')
 	{
 	// We don't need sidebar here for Single page full width Layout
 	}

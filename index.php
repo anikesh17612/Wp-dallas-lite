@@ -14,7 +14,7 @@
 get_header();
 ?>
 <?php
-if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogleft' )
+if (get_theme_mod('blog_layout_selection') == 'blogleft' )
 	{ ?>
 	<div class="wpdal-left-sidebar col-md-3">
 		<?php
@@ -23,7 +23,7 @@ if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogleft' )
 <?php
 	} ?>
 <?php
-if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogfullwidth')
+if (get_theme_mod('blog_layout_selection') == 'blogfullwidth')
 	{
 	echo '<div id="primary" class="content-area  col-md-12 col-sm-12 col-xs-12 ">';
 	}
@@ -67,7 +67,9 @@ if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogfullwidth')
 
 				if ($published_posts > $default_posts_per_page)	{
 						$select_pagination_layout =  get_theme_mod( 'select_pagination_layout' );
-						if ( $select_pagination_layout == "" || $select_pagination_layout == 'paginumber' ){ ?>
+						if ( $select_pagination_layout == "" || $select_pagination_layout == 'paginumber' ){ 
+						$select_pagination_layout = get_theme_mod('select_pagination_layout');
+						if ($select_pagination_layout == "" || $select_pagination_layout == 'paginumber'){ ?>
 							<div class="wpdal_pagination">
 								<?php	the_posts_pagination(); ?>
 							</div>
@@ -85,7 +87,7 @@ if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogfullwidth')
 ?>
 </div><!-- #primary -->
 <?php
-if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogright' || esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == "" )
+if (get_theme_mod('blog_layout_selection') == 'blogright' || get_theme_mod('blog_layout_selection') == "")
 	{ ?>
 	<div class="wpdal-right-sidebar col-md-3 col-sm-12 col-xs-12">
 		<?php
@@ -93,7 +95,7 @@ if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogright' || esc_
     </div>
 <?php
 	}
-if ( esc_attr( get_theme_mod( 'blog_layout_selection' ) ) == 'blogfullwidth')
+if (get_theme_mod('blog_layout_selection') == 'blogfullwidth')
 	{
 	// We don't need sidebar here for Blog full width Layout
 	} ?>
