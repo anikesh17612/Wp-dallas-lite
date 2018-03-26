@@ -57,9 +57,9 @@ $callback = new wp_call_back;
 		'settings' => 'blog_layout_selection',
 		'type' => 'select',
 		'choices' => array(
-			'blogfullwidth' => 'Full Width',
-			'blogleft' => 'Left Sidebar',
-			'blogright' => 'Right Sidebar',			
+			'blogleft' => 'Blog Left',
+			'blogright' => 'Blog Right',
+			'blogfullwidth' => 'Blog Full Width',
 		) ,
 	)));
 	$wp_customize->add_setting('select_blog_single_page_layout', array(
@@ -73,9 +73,9 @@ $callback = new wp_call_back;
 		'settings' => 'select_blog_single_page_layout',
 		'type' => 'select',
 		'choices' => array(
-			'leftside' => 'Left Sidebar',
-			'rightside' => 'Right Sidebar',
-			'fullwidth' => 'Full Width',
+			'leftside' => 'Single Width Left Sidebar',
+			'rightside' => 'Single Width Right Sidebar',
+			'fullwidth' => 'Single Width Full Width',
 		) ,
 	)));
 	$wp_customize->add_setting('select_pagination_layout', array(

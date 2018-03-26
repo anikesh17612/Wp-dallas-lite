@@ -1,11 +1,8 @@
+/* global screenReaderText */
 /**
- * Global screenReaderText
- *
  * Theme functions file.
  *
  * Contains handlers for navigation and widget area.
- *
- * @package Dallas Lite.
  */
 
 ( function  ($)  {
@@ -39,9 +36,10 @@
 			e.preventDefault();
 			_this.toggleClass( 'toggled-on' );
 			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
-			// jscs:disable.
+
+			// jscs:disable
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-			// jscs:enable.
+			// jscs:enable
 			screenReaderSpan.text( screenReaderSpan.text() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
 		} );
 	}
@@ -66,9 +64,10 @@
 
 		menuToggle.on( 'click.twentysixteen', function() {
 			jQuery( this ).add( siteHeaderMenu ).toggleClass( 'toggled-on' );
-			// jscs:disable.
+
+			// jscs:disable
 			jQuery( this ).add( siteNavigation ).add( socialNavigation ).attr( 'aria-expanded', jQuery( this ).add( siteNavigation ).add( socialNavigation ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-			// jscs:enable.
+			// jscs:enable
 		} );
 	} )();
 

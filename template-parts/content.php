@@ -32,25 +32,14 @@
 			</div>
 		<?php }
 		else {
-<<<<<<< HEAD
-				if ( get_theme_mod( 'enableExcerpt', true ) )
-					{
-					if ( get_theme_mod( 'excerptwordLimit', 330 ) ) 
-=======
 				if (get_theme_mod('enableExcerpt', true))
 					{
 					if (get_theme_mod('excerptwordLimit', 330))
->>>>>>> parent of 5b21e14... update fuction name and modified code and remove error
 						{
 						$textlimit = get_theme_mod('excerptwordLimit', 330);
 						echo '<p class="short-description">';
-<<<<<<< HEAD
-						$wordsreturned="";
-						echo wp_kses_post(dallas_lite_excerpt_max_charlength($wordsreturned));
-=======
             $wordsreturned="";
 						echo wp_kses_post(dallaslite_excerpt_max_charlength($wordsreturned));
->>>>>>> parent of 5b21e14... update fuction name and modified code and remove error
 						echo '</p>';
 						}
 					  else

@@ -2,12 +2,8 @@
  * File navigation.js.
  *
  * Handles toggling the navigation menu for small screens and enables TAB key
- *
  * navigation support for dropdown menus.
- *
- * @package Dallas Lite
  */
-
 ( function() {
 	var container, button, menu, links, i, len;
 
@@ -87,10 +83,10 @@
 		if ( 'ontouchstart' in window ) {
 			touchStartFn = function( e ) {
 				var menuItem = this.parentNode, i;
+
 				if ( ! menuItem.classList.contains( 'focus' ) ) {
 					e.preventDefault();
-					var ln = menuItem.parentNode.children.length;
-					for ( i = 0; i < ln; ++i ) {
+					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
 						if ( menuItem === menuItem.parentNode.children[i] ) {
 							continue;
 						}
@@ -101,8 +97,8 @@
 					menuItem.classList.remove( 'focus' );
 				}
 			};
-			var plen = parentLink.length;
-			for ( i = 0; i < plen; ++i ) {
+
+			for ( i = 0; i < parentLink.length; ++i ) {
 				parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
 			}
 		}
