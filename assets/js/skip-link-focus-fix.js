@@ -4,7 +4,12 @@
  * Helps with accessibility for keyboard only users.
  *
  * Learn more: https://git.io/vWdr2
+ *
+ * @package Dallas Lite.
+ *
+ * @since  1.2
  */
+
 ( function() {
 	var isIe = /(trident|msie)/i.test( navigator.userAgent );
 
