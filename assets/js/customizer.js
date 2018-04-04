@@ -1,11 +1,11 @@
 /**
  * File customizer.js.
  *
- * Site title and description.
- *
  * Theme Customizer enhancements for a better user experience.
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
+ *
+ * @param object jQuery.
  *
  * @package Dallas Lite.
  *

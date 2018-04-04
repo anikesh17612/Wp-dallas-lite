@@ -244,9 +244,12 @@ function dallaslite_load_rtl( $classes ) {
 	}
 	return $classes;
 }
+/**
+ * Load Posts at the home page.
+ */
 function dallaslite_load_posts() {
-	if ( isset( $_POST['wpdal_loadpost'] ) &&  1 === $_POST['wpdal_loadpost'] )  // Input var okay.
-		if ( isset( $_POST['page'] ) && 0 > wp_unslash( $_POST['page'] ) )
+	if ( isset( $_POST['wpdal_loadpost'] ) &&  '0' === $_POST['wpdal_loadpost'] )  // Input var okay.
+		if ( isset( $_POST['page'] ) && 0 > $_POST['page'] )
 			$paged = wp_unslash( $_POST['page'] );
 			$args = array(
 			'post_type' => 'post',
@@ -270,11 +273,13 @@ function dallaslite_load_posts() {
 }
 	add_action( 'wp_ajax_load_posts_by_ajax', 'dallaslite_load_posts' );
 
-/**
- *Custom Excerpt Length
- */
 
 if ( ! function_exists( 'dallaslite_excerpt_max_charlength' ) ) :
+	/**
+	 * Custom Excerpt Length
+	 *
+	 * @param object $wordsreturned varrible for word resturned.
+	 */
 	function dallaslite_excerpt_max_charlength( $wordsreturned ) {
 		$string = get_the_excerpt();
 		$retval = $string;
@@ -324,221 +329,205 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 add_action( 'profile_update', 'dallaslite_edit_profile', 10, 2 );
 $user_id = get_current_user_id();
+/**
+ * Edit User Profile data.
+ *
+ * @param object $user_id varrible for user ID.
+ * @param string $old_user_data  The relation type the old user data.
+ */
 function dallaslite_edit_profile( $user_id, $old_user_data ) {
 	// Do something
 	if ( isset( $_POST['fb_url'] ) && ! empty( $_POST['fb_url'] ) ) { // Input var okay.
 		update_user_attribute( $user_id, 'fb_url', esc_url_raw( wp_unslash( $_POST['fb_url'] ) ) );
 	}
+	if ( isset( $_POST['twitter_url'] ) && ! empty( $_POST['twitter_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'twitter_url', esc_url_raw( wp_unslash( $_POST['twitter_url'] ) ) );
+	}
+	if ( isset( $_POST['gplus_url'] ) && ! empty( $_POST['gplus_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'gplus_url', esc_url_raw( wp_unslash( $_POST['gplus_url'] ) ) );
+	}
+	if ( isset( $_POST['linkedin_url'] ) && ! empty( $_POST['linkedin_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'linkedin_url', esc_url_raw( wp_unslash( $_POST['linkedin_url'] ) ) );
+	}
+	if ( isset( $_POST['behance_url'] ) && ! empty( $_POST['behance_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'behance_url', esc_url_raw( wp_unslash( $_POST['behance_url'] ) ) );
+	}
+	if ( isset( $_POST['youtube_url'] ) && ! empty( $_POST['youtube_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'youtube_url', esc_url_raw( wp_unslash( $_POST['youtube_url'] ) ) );
+	}
+	if ( isset( $_POST['snapchat_url'] ) && ! empty( $_POST['snapchat_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'snapchat_url', esc_url_raw( wp_unslash( $_POST['snapchat_url'] ) ) );
+	}
+	if ( isset( $_POST['skype_url'] ) && ! empty( $_POST['skype_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'skype_url', esc_url_raw( wp_unslash( $_POST['skype_url'] ) ) );
+	}
+	if ( isset( $_POST['pinterest_url'] ) && ! empty( $_POST['pinterest_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'pinterest_url', esc_url_raw( wp_unslash( $_POST['pinterest_url'] ) ) );
+	}
+}
+
+	add_action( 'edit_user_profile_update', 'dallaslite_update_profile_fields' );
+/**
+ * User ID.
+ *
+ * @param object $user_id varrible for user ID.
+ */
+function dallaslite_update_profile_fields( $user_id ) {
+	if ( current_user_can( 'edit_user', $user_id ) )
+	if ( isset( $_POST['fb_url'] ) && ! empty( $_POST['fb_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'fb_url', esc_url_raw( wp_unslash( $_POST['fb_url'] ) ) );
+	}
 	if ( isset( $_POST['twitter_url'] ) && ! empty( $_POST['twitter_url'] )) { // Input var okay.
-		update_user_attribute($user_id, 'twitter_url', esc_url_raw(wp_unslash($_POST['twitter_url'])));
+		update_user_attribute( $user_id, 'twitter_url', esc_url_raw( wp_unslash( $_POST['twitter_url'] ) ) );
 	}
-	if ( isset( $_POST['gplus_url'] ) && ! empty( $_POST['gplus_url'] )) { // Input var okay.
-		update_user_attribute($user_id, 'gplus_url', esc_url_raw(wp_unslash($_POST['gplus_url'])));
+	if ( isset( $_POST['gplus_url'] ) && ! empty( $_POST['gplus_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'gplus_url', esc_url_raw( wp_unslash( $_POST['gplus_url'] ) ) );
 	}
-	if ( isset( $_POST['linkedin_url'] ) && ! empty( $_POST['linkedin_url'] )) { // Input var okay.
-		update_user_attribute($user_id, 'linkedin_url', esc_url_raw(wp_unslash($_POST['linkedin_url'])));
+	if ( isset( $_POST['linkedin_url'] ) && ! empty( $_POST['linkedin_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'linkedin_url', esc_url_raw( wp_unslash( $_POST['linkedin_url'] ) ) );
 	}
-	if ( isset( $_POST['behance_url'] ) && ! empty( $_POST['behance_url'] )) { // Input var okay.
-		update_user_attribute($user_id, 'behance_url', esc_url_raw(wp_unslash($_POST['behance_url'])));
+	if ( isset( $_POST['behance_url'] ) && ! empty( $_POST['behance_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'behance_url', esc_url_raw( wp_unslash( $_POST['behance_url'] ) ) );
 	}
-	if ( isset( $_POST['youtube_url'] ) && ! empty( $_POST['youtube_url'] )) { // Input var okay.
-		update_user_attribute($user_id, 'youtube_url', esc_url_raw(wp_unslash($_POST['youtube_url'])));
+	if ( isset( $_POST['youtube_url'] ) && ! empty( $_POST['youtube_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'youtube_url', esc_url_raw( wp_unslash( $_POST['youtube_url'] ) ) );
 	}
-	if ( isset( $_POST['snapchat_url'] ) && ! empty( $_POST['snapchat_url'] )) { // Input var okay.
-		update_user_attribute($user_id, 'snapchat_url', esc_url_raw(wp_unslash($_POST['snapchat_url'])));
+	if ( isset( $_POST['snapchat_url'] ) && ! empty( $_POST['snapchat_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'snapchat_url', esc_url_raw( wp_unslash( $_POST['snapchat_url'] ) ) );
 	}
-	if ( isset( $_POST['skype_url'] ) && ! empty( $_POST['skype_url'] )) { // Input var okay.
-		update_user_attribute($user_id, 'skype_url', esc_url_raw(wp_unslash($_POST['skype_url'])));
+	if ( isset( $_POST['skype_url'] ) && ! empty( $_POST['skype_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'skype_url', esc_url_raw( wp_unslash( $_POST['skype_url'] ) ) );
 	}
-	if ( isset( $_POST['pinterest_url'] ) && ! empty( $_POST['pinterest_url'] )) { // Input var okay.
-		update_user_attribute($user_id, 'pinterest_url', esc_url_raw(wp_unslash($_POST['pinterest_url'])));
+	if ( isset( $_POST['pinterest_url'] ) && ! empty( $_POST['pinterest_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'pinterest_url', esc_url_raw( wp_unslash( $_POST['pinterest_url'] ) ) );
 	}
-	}
-
-	add_action('edit_user_profile_update', 'dallaslite_update_profile_fields');
-
-	function dallaslite_update_profile_fields($user_id)
-		{
-		if (current_user_can('edit_user', $user_id))
-		if ( isset( $_POST['fb_url'] ) &&  ! empty( $_POST['fb_url'] )) { // Input var okay.
-			update_user_attribute($user_id, 'fb_url', esc_url_raw(wp_unslash($_POST['fb_url'])));
-		}
-		if ( isset( $_POST['twitter_url'] ) &&  ! empty( $_POST['twitter_url'] )) { // Input var okay.
-			update_user_attribute($user_id, 'twitter_url', esc_url_raw(wp_unslash($_POST['twitter_url'])));
-		}
-		if ( isset( $_POST['gplus_url'] ) &&  ! empty( $_POST['gplus_url'] )) { // Input var okay.
-			update_user_attribute($user_id, 'gplus_url', esc_url_raw(wp_unslash($_POST['gplus_url'])));
-		}
-		if ( isset( $_POST['linkedin_url'] ) &&  ! empty( $_POST['linkedin_url'] )) { // Input var okay.
-			update_user_attribute($user_id, 'linkedin_url', esc_url_raw(wp_unslash($_POST['linkedin_url'])));
-		}
-		if ( isset( $_POST['behance_url'] ) &&  ! empty( $_POST['behance_url'] )) { // Input var okay.
-			update_user_attribute($user_id, 'behance_url', esc_url_raw(wp_unslash($_POST['behance_url'])));
-		}
-		if ( isset( $_POST['youtube_url'] ) &&  ! empty( $_POST['youtube_url'] )) { // Input var okay.
-			update_user_attribute($user_id, 'youtube_url', esc_url_raw(wp_unslash($_POST['youtube_url'])));
-		}
-		if ( isset( $_POST['snapchat_url'] ) &&  ! empty( $_POST['snapchat_url'] )) { // Input var okay.
-			update_user_attribute($user_id, 'snapchat_url', esc_url_raw(wp_unslash($_POST['snapchat_url'])));
-		}
-		if ( isset( $_POST['skype_url'] ) &&  ! empty( $_POST['skype_url'] )) { // Input var okay.
-			update_user_attribute($user_id, 'skype_url', esc_url_raw(wp_unslash($_POST['skype_url'])));
-		}
-		if ( isset( $_POST['pinterest_url'] ) &&  ! empty( $_POST['pinterest_url'] )) { // Input var okay.
-			update_user_attribute($user_id, 'pinterest_url', esc_url_raw(wp_unslash($_POST['pinterest_url'])));
-		}
-		}
-function dallaslite_user_profile_fields($profileuser)
-	{
+}
+/**
+ * Edit User Profile user.
+ *
+ * @param object $profileuser varrible for profile user.
+ */
+function dallaslite_user_profile_fields( $profileuser ) {
 ?>
 	<table class="form-table">
 		<tr>
 			<th>
-				<label for="fb_url"><?php
-	esc_html_e('Facebook','dallas-lite'); ?></label>
+				<label for="fb_url"><?php esc_html_e( 'Facebook','dallas-lite' ); ?></label>
 			</th>
 			<td>
-				<input type="text" name="fb_url" id="fb_url" value="<?php
-	echo esc_attr(get_the_author_meta('fb_url', $profileuser->ID)); ?>" class="regular-text" />
-				<br /><span class="description"><?php
-	esc_html_e('Facebook url.','dallas-lite'); ?></span>
+				<input type="text" name="fb_url" id="fb_url" value="<?php echo esc_attr( get_the_author_meta( 'fb_url', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br /><span class="description"><?php esc_html_e( 'Facebook url.','dallas-lite' ); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
-				<label for="twitter_url"><?php
-	esc_html_e('Twitter url','dallas-lite'); ?></label>
+				<label for="twitter_url"><?php esc_html_e( 'Twitter url','dallas-lite' ); ?></label>
 			</th>
 			<td>
-				<input type="text" name="twitter_url" id="twitter_url" value="<?php
-	echo esc_attr(get_the_author_meta('twitter_url', $profileuser->ID)); ?>" class="regular-text" />
-				<br /><span class="description"><?php
-	esc_html_e('Twitter url.','dallas-lite'); ?></span>
+				<input type="text" name="twitter_url" id="twitter_url" value="<?php echo esc_attr( get_the_author_meta( 'twitter_url', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br /><span class="description"><?php esc_html_e( 'Twitter url.','dallas-lite' ); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
-				<label for="gplus_url"><?php
-	esc_html_e('Google Plus url','dallas-lite'); ?></label>
+				<label for="gplus_url"><?php esc_html_e( 'Google Plus url','dallas-lite' ); ?></label>
 			</th>
 			<td>
-				<input type="text" name="gplus_url" id="gplus_url" value="<?php
-	echo esc_attr(get_the_author_meta('gplus_url', $profileuser->ID)); ?>" class="regular-text" />
-				<br /><span class="description"><?php
-	esc_html_e('Google Plus url.','dallas-lite'); ?></span>
+				<input type="text" name="gplus_url" id="gplus_url" value="<?php echo esc_attr( get_the_author_meta( 'gplus_url', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br /><span class="description"><?php esc_html_e( 'Google Plus url.','dallas-lite' ); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
-				<label for="linkedin_url"><?php
-	esc_html_e('Linkedin  url','dallas-lite'); ?></label>
+				<label for="linkedin_url"><?php esc_html_e( 'Linkedin  url','dallas-lite' ); ?></label>
 			</th>
 			<td>
-				<input type="text" name="linkedin_url" id="linkedin_url" value="<?php
-	echo esc_attr(get_the_author_meta('linkedin_url', $profileuser->ID)); ?>" class="regular-text" />
-				<br /><span class="description"><?php
-	esc_html_e('Linkedin url.','dallas-lite'); ?></span>
+				<input type="text" name="linkedin_url" id="linkedin_url" value="<?php echo esc_attr( get_the_author_meta( 'linkedin_url', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br /><span class="description"><?php esc_html_e( 'Linkedin url.','dallas-lite' ); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
-				<label for="behance_url"><?php
-	esc_html_e('Behance url','dallas-lite'); ?></label>
+				<label for="behance_url"><?php esc_html_e( 'Behance url','dallas-lite' ); ?></label>
 			</th>
 			<td>
-				<input type="text" name="behance_url" id="behance_url" value="<?php
-	echo esc_attr(get_the_author_meta('behance_url', $profileuser->ID)); ?>" class="regular-text" />
-				<br /><span class="description"><?php
-	esc_html_e('Behance url.','dallas-lite'); ?></span>
+				<input type="text" name="behance_url" id="behance_url" value="<?php echo esc_attr( get_the_author_meta( 'behance_url', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br /><span class="description"><?php esc_html_e( 'Behance url.','dallas-lite' ); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
-				<label for="youtube_url"><?php
-	esc_html_e('Youtube url','dallas-lite'); ?></label>
+				<label for="youtube_url"><?php esc_html_e( 'Youtube url','dallas-lite' ); ?></label>
 			</th>
 			<td>
-				<input type="text" name="youtube_url" id="youtube_url" value="<?php
-	echo esc_attr(get_the_author_meta('youtube_url', $profileuser->ID)); ?>" class="regular-text" />
-				<br /><span class="description"><?php
-	esc_html_e('Youtube url.','dallas-lite'); ?></span>
+				<input type="text" name="youtube_url" id="youtube_url" value="<?php echo esc_attr( get_the_author_meta( 'youtube_url', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br /><span class="description"><?php esc_html_e( 'Youtube url.','dallas-lite' ); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
-				<label for="snapchat_url"><?php
-	esc_html_e('Snapchat url','dallas-lite'); ?></label>
+				<label for="snapchat_url"><?php esc_html_e( 'Snapchat url','dallas-lite' ); ?></label>
 			</th>
 			<td>
-				<input type="text" name="snapchat_url" id="snapchat_url" value="<?php
-	echo esc_attr(get_the_author_meta('snapchat_url', $profileuser->ID)); ?>" class="regular-text" />
-				<br /><span class="description"><?php
-	esc_html_e('Snapchat url.','dallas-lite'); ?></span>
+				<input type="text" name="snapchat_url" id="snapchat_url" value="<?php echo esc_attr( get_the_author_meta( 'snapchat_url', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br /><span class="description"><?php esc_html_e( 'Snapchat url.','dallas-lite' ); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
-				<label for="skype_url"><?php
-	esc_html_e('Skype url','dallas-lite'); ?></label>
+				<label for="skype_url"><?php esc_html_e( 'Skype url','dallas-lite' ); ?></label>
 			</th>
 			<td>
-				<input type="text" name="skype_url" id="skype_url" value="<?php
-	echo esc_attr(get_the_author_meta('skype_url', $profileuser->ID)); ?>" class="regular-text" />
-				<br /><span class="description"><?php
-	esc_html_e('Skype url.','dallas-lite'); ?></span>
+				<input type="text" name="skype_url" id="skype_url" value="<?php echo esc_attr( get_the_author_meta( 'skype_url', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br /><span class="description"><?php esc_html_e( 'Skype url.','dallas-lite' ); ?></span>
 			</td>
 		</tr>
 		<tr>
 			<th>
-				<label for="pinterest_url"><?php
-	esc_html_e('Pinterest url','dallas-lite'); ?></label>
+				<label for="pinterest_url"><?php esc_html_e( 'Pinterest url','dallas-lite' ); ?></label>
 			</th>
 			<td>
-				<input type="text" name="pinterest_url" id="pinterest_url" value="<?php
-	echo esc_attr(get_the_author_meta('pinterest_url', $profileuser->ID)); ?>" class="regular-text" />
-				<br /><span class="description"><?php
-	esc_html_e('Pinterest url.','dallas-lite'); ?></span>
+				<input type="text" name="pinterest_url" id="pinterest_url" value="<?php echo esc_attr( get_the_author_meta( 'pinterest_url', $profileuser->ID ) ); ?>" class="regular-text" />
+				<br /><span class="description"><?php esc_html_e( 'Pinterest url.','dallas-lite' ); ?></span>
 			</td>
 		</tr>
 	</table>
 <?php
-	}
+}
 
-add_action('show_user_profile', 'dallaslite_user_profile_fields', 10, 1);
-add_action('edit_user_profile', 'dallaslite_user_profile_fields', 10, 1);
+add_action( 'show_user_profile', 'dallaslite_user_profile_fields', 10, 1 );
+add_action( 'edit_user_profile', 'dallaslite_user_profile_fields', 10, 1 );
 
 /**
  * Registers an editor stylesheet for the theme.
  */
 function dallaslite_add_editor_styles() {
-    add_editor_style( 'dallaslite-editor-style.css' );
+	add_editor_style( 'dallaslite-editor-style.css' );
 }
 add_action( 'admin_init', 'dallaslite_add_editor_styles' );
 
-/* --------------------------------------------*
-Required Plugins
----------------------------------------------*/
-require_once (get_template_directory() . '/lib/plugin-check.php');
+/**
+ * Required Plugins
+ */
+require_once( get_template_directory() . '/lib/plugin-check.php' );
 
-/* --------------------------------------------*
-Social Sharing Plugins
----------------------------------------------*/
-require_once (get_template_directory() . '/lib/socialshare.php');
+/**
+ * Social Sharing Plugins
+ */
+require_once( get_template_directory() . '/lib/socialshare.php' );
 
 /**
  * Load WooCommerce compatibility file.
  */
 
-if (class_exists('WooCommerce'))
-	{
+if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
+}
 
-	}
+require_once( get_template_directory() . '/lib/theme-register-function.php' );
 
-require_once (get_template_directory() . '/lib/theme-register-function.php');
+require_once( get_template_directory() . '/lib/googlefonts.php' );
 
-require_once (get_template_directory() . '/lib/googlefonts.php');
+require_once( get_template_directory() . '/lib/theme-core-style.php' );
 
-require_once (get_template_directory() . '/lib/theme-core-style.php');
-
-require_once (get_template_directory() . '/lib/social.php');
+require_once( get_template_directory() . '/lib/social.php' );

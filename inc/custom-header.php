@@ -4,20 +4,16 @@
  *
  * You can add an optional custom header image to header.php like so ...
  *
- *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
  * @package Dallas Lite
- *
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
  * @uses dallaslite_header_style()
- *
  */
- 
 function dallaslite_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'dallaslite_custom_header_args', array(
 		'default-image'          => '',
