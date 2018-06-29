@@ -248,13 +248,13 @@ function dallaslite_load_rtl( $classes ) {
  * Load Posts at the home page.
  */
 function dallaslite_load_posts() {
-	if ( isset( $_POST['wpdal_loadpost'] ) &&  '0' === $_POST['wpdal_loadpost'] )  // Input var okay.
+	if ( isset( $_POST['wpdal_loadpost'] ) &&  'Yes' === wp_verify_nonce( $_POST['wpdal_loadpost'] ) )  // Input var okay.
 		if ( isset( $_POST['page'] ) && 0 > $_POST['page'] )
-			$paged = wp_unslash( $_POST['page'] );
+			$paged = $_POST['page'];
 			$args = array(
 			'post_type' => 'post',
 			'post_status' => 'publish',
-			'posts_per_page' => '2',
+			'posts_per_page' => '4',
 			'paged' => $paged,
 		);
 		$my_posts = new WP_Query( $args );

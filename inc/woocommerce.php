@@ -5,7 +5,8 @@
  * @link https://woocommerce.com/
  *
  * @package Dallas Lite
-*/
+ */
+
 /**
  * WooCommerce setup function.
  *
@@ -186,7 +187,6 @@ add_action( 'woocommerce_after_main_content', 'dallaslite_woocommerce_wrapper_af
  * Sample implementation of the WooCommerce Mini Cart.
  *
  * You can add the WooCommerce Mini Cart to header.php like so ...
- *
  */
 
 if ( ! function_exists( 'dallaslite_woocommerce_cart_link_fragment' ) ) {

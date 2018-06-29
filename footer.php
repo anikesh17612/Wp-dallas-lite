@@ -7,10 +7,9 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package Dallas Lite
+ * @since  1.2
  */
-
 ?>
-
 	</div><!-- #content -->
 <?php get_sidebar( 'footer' ); ?>
 <!-- End bottom postion of theme -->

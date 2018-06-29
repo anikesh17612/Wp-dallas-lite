@@ -54,7 +54,7 @@ $published_posts = $count_posts->publish;
 $default_posts_per_page = get_option( 'posts_per_page' );
 if ( $published_posts > $default_posts_per_page ) {
 		$select_pagination_layout = get_theme_mod( 'select_pagination_layout' );
-	if ( '' === $select_pagination_layout || '0paginumber' === $select_pagination_layout ) { ?>
+	if ( '' !== $select_pagination_layout || '0paginumber' === $select_pagination_layout ) { ?>
 		<div class="wpdal_pagination">
 			<?php	the_posts_pagination(); ?>
 		</div>
@@ -65,7 +65,7 @@ if ( $published_posts > $default_posts_per_page ) {
 	<?php }
 } ?>
 			</div><!-- #primary -->
-<?php if ( get_theme_mod( 'blog_layout_selection' ) === 'blogright' || get_theme_mod( 'blog_layout_selection' ) === '' ) { ?>
+<?php if ( get_theme_mod( 'blog_layout_selection' ) === 'blogright' || get_theme_mod( 'blog_layout_selection' ) !== '' ) { ?>
 		<div class="wpdal-right-sidebar col-md-3">
 			<?php get_sidebar(); ?>
 		</div>
