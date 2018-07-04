@@ -6,12 +6,8 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  *
  * @package Dallas Lite.
- */
-
-/**
- * Site title and description.
  *
- * Header text color.
+ * @since  1.2
  */
 
 function blog_customize( $ ) {

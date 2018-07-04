@@ -178,7 +178,9 @@ function dallaslite_scripts() {
 	wp_enqueue_script('dallaslite-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(
 		'jquery'
 	) , '20151215', true);
-
+	wp_enqueue_script('dallaslite-loadmore', get_template_directory_uri() . '/assets/js/loadmore.js', array(
+		'jquery'
+	) , '20151215', true);
 	$translation_array = array(
 		'templateUrl' => get_template_directory_uri(),
 		'adminUrl' => admin_url(),
@@ -242,71 +244,34 @@ function dallaslite_load_rtl( $classes ) {
 	}
 	return $classes;
 }
-
-
-
 /**
  * Load Posts at the home page.
  */
-function dallaslite_load_more_scripts() {
-
-	global $wp_query;
-	// In most cases it is already included on the page and this line can be removed.
-	wp_enqueue_script( 'jquery' );
-	// register our main script but do not enqueue it yet.
-	wp_register_script( 'dallaslite_loadmore', get_stylesheet_directory_uri() . '/assets/js/dallaslite_loadmore.js', array( 'jquery' ) );
-
-	// now the most interesting part.
-	// we have to pass parameters to dallaslite_loadmore.js script but we can get the parameters values only in PHP.
-	// you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script().
-	wp_localize_script( 'dallaslite_loadmore', 'dallaslite_loadmore_params', array(
-		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX.
-		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here.
-		'current_page' => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
-		'max_page' => $wp_query->max_num_pages,
-	) );
-
-	wp_enqueue_script( 'dallaslite_loadmore' );
+function dallaslite_load_posts() {
+	if ( isset( $_POST['wpdal_loadpost'] ) &&  'Yes' === wp_verify_nonce( $_POST['wpdal_loadpost'] ) )  // Input var okay.
+		if ( isset( $_POST['page'] ) && 0 > $_POST['page'] )
+			$paged = $_POST['page'];
+			$args = array(
+			'post_type' => 'post',
+			'post_status' => 'publish',
+			'posts_per_page' => '4',
+			'paged' => $paged,
+		);
+		$my_posts = new WP_Query( $args );
+	if ( $my_posts->have_posts() ) : ?>
+			<?php
+			while ( $my_posts->have_posts() ) :
+				$my_posts->the_post() ?>
+				<?php
+				get_template_part( 'template-parts/content', get_post_format() ); ?>
+			<?php
+			endwhile
+	?>
+			<?php
+		endif;
+		wp_die();
 }
-
-add_action( 'wp_enqueue_scripts', 'dallaslite_load_more_scripts' );
-
-/**
- * Load Posts By AJAX at the home page.
- */
-function dallaslite_loadmore_ajax_handler() {
-
-	// prepare our arguments for the query.
-	if ( isset( $_POST['foo'], $_POST['foo_nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['foo_nonce'] ), 'foo_action' ) ) {
-		$foo = sanitize_text_field( wp_unslash( $_POST['foo'] ) );
-		$args = json_decode( wp_unslash( stripslashes( $_POST['query'] ), true ) );
-	}
-		$args['paged'] = $_POST['page'] + 1; // we need next page to be loaded.
-		$args['post_status'] = 'publish';
-
-	// it is always better to use WP_Query but not here.
-	query_posts( $args );
-	if ( have_posts() ) :
-		// run the loop.
-		while ( have_posts() ) : the_post();
-
-			// look into your theme code how the posts are inserted, but you can use your own HTML of course.
-			// do you remember? - my example is adapted for Twenty Seventeen theme.
-			get_template_part( '/template-parts/content', get_post_format() );
-			// for the test purposes comment the line above and uncomment the below one.
-			// the_title();.
-		endwhile;
-	endif;
-	die; // here we exit the script and even no wp_reset_query() required!.
-}
-add_action( 'wp_ajax_loadmore', 'dallaslite_loadmore_ajax_handler' ); // wp_ajax_{action}.
-add_action( 'wp_ajax_nopriv_loadmore', 'dallaslite_loadmore_ajax_handler' ); // wp_ajax_nopriv_{action}.
-
-
-/**
- * Load Posts at the home page.
- */
-
+	add_action( 'wp_ajax_load_posts_by_ajax', 'dallaslite_load_posts' );
 
 
 if ( ! function_exists( 'dallaslite_excerpt_max_charlength' ) ) :
@@ -371,36 +336,33 @@ $user_id = get_current_user_id();
  * @param string $old_user_data  The relation type the old user data.
  */
 function dallaslite_edit_profile( $user_id, $old_user_data ) {
-	// Do something.
-	if ( isset( $_POST['foo'], $_POST['foo_nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['foo_nonce'] ), 'foo_action' ) ) {
-		$foo = sanitize_text_field( wp_unslash( $_POST['foo'] ) );
-		if ( isset( $_POST['fb_url'] ) && ! empty( $_POST['fb_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'fb_url', esc_url_raw( wp_unslash( $_POST['fb_url'] ) ) );
-		}
-		if ( isset( $_POST['twitter_url'] ) && ! empty( $_POST['twitter_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'twitter_url', esc_url_raw( wp_unslash( $_POST['twitter_url'] ) ) );
-		}
-		if ( isset( $_POST['gplus_url'] ) && ! empty( $_POST['gplus_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'gplus_url', esc_url_raw( wp_unslash( $_POST['gplus_url'] ) ) );
-		}
-		if ( isset( $_POST['linkedin_url'] ) && ! empty( $_POST['linkedin_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'linkedin_url', esc_url_raw( wp_unslash( $_POST['linkedin_url'] ) ) );
-		}
-		if ( isset( $_POST['behance_url'] ) && ! empty( $_POST['behance_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'behance_url', esc_url_raw( wp_unslash( $_POST['behance_url'] ) ) );
-		}
-		if ( isset( $_POST['youtube_url'] ) && ! empty( $_POST['youtube_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'youtube_url', esc_url_raw( wp_unslash( $_POST['youtube_url'] ) ) );
-		}
-		if ( isset( $_POST['snapchat_url'] ) && ! empty( $_POST['snapchat_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'snapchat_url', esc_url_raw( wp_unslash( $_POST['snapchat_url'] ) ) );
-		}
-		if ( isset( $_POST['skype_url'] ) && ! empty( $_POST['skype_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'skype_url', esc_url_raw( wp_unslash( $_POST['skype_url'] ) ) );
-		}
-		if ( isset( $_POST['pinterest_url'] ) && ! empty( $_POST['pinterest_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'pinterest_url', esc_url_raw( wp_unslash( $_POST['pinterest_url'] ) ) );
-		}
+	// Do something
+	if ( isset( $_POST['fb_url'] ) && ! empty( $_POST['fb_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'fb_url', esc_url_raw( wp_unslash( $_POST['fb_url'] ) ) );
+	}
+	if ( isset( $_POST['twitter_url'] ) && ! empty( $_POST['twitter_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'twitter_url', esc_url_raw( wp_unslash( $_POST['twitter_url'] ) ) );
+	}
+	if ( isset( $_POST['gplus_url'] ) && ! empty( $_POST['gplus_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'gplus_url', esc_url_raw( wp_unslash( $_POST['gplus_url'] ) ) );
+	}
+	if ( isset( $_POST['linkedin_url'] ) && ! empty( $_POST['linkedin_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'linkedin_url', esc_url_raw( wp_unslash( $_POST['linkedin_url'] ) ) );
+	}
+	if ( isset( $_POST['behance_url'] ) && ! empty( $_POST['behance_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'behance_url', esc_url_raw( wp_unslash( $_POST['behance_url'] ) ) );
+	}
+	if ( isset( $_POST['youtube_url'] ) && ! empty( $_POST['youtube_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'youtube_url', esc_url_raw( wp_unslash( $_POST['youtube_url'] ) ) );
+	}
+	if ( isset( $_POST['snapchat_url'] ) && ! empty( $_POST['snapchat_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'snapchat_url', esc_url_raw( wp_unslash( $_POST['snapchat_url'] ) ) );
+	}
+	if ( isset( $_POST['skype_url'] ) && ! empty( $_POST['skype_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'skype_url', esc_url_raw( wp_unslash( $_POST['skype_url'] ) ) );
+	}
+	if ( isset( $_POST['pinterest_url'] ) && ! empty( $_POST['pinterest_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'pinterest_url', esc_url_raw( wp_unslash( $_POST['pinterest_url'] ) ) );
 	}
 }
 
@@ -411,36 +373,33 @@ function dallaslite_edit_profile( $user_id, $old_user_data ) {
  * @param object $user_id varrible for user ID.
  */
 function dallaslite_update_profile_fields( $user_id ) {
-	if ( isset( $_POST['foo'], $_POST['foo_nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['foo_nonce'] ), 'foo_action' ) ) {
-		$foo = sanitize_text_field( wp_unslash( $_POST['foo'] ) );
-		// if ( current_user_can( 'edit_user', $user_id ) )
-		if ( isset( $_POST['fb_url'] ) && ! empty( $_POST['fb_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'fb_url', esc_url_raw( wp_unslash( $_POST['fb_url'] ) ) );
-		}
-		if ( isset( $_POST['twitter_url'] ) && ! empty( $_POST['twitter_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'twitter_url', esc_url_raw( wp_unslash( $_POST['twitter_url'] ) ) );
-		}
-		if ( isset( $_POST['gplus_url'] ) && ! empty( $_POST['gplus_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'gplus_url', esc_url_raw( wp_unslash( $_POST['gplus_url'] ) ) );
-		}
-		if ( isset( $_POST['linkedin_url'] ) && ! empty( $_POST['linkedin_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'linkedin_url', esc_url_raw( wp_unslash( $_POST['linkedin_url'] ) ) );
-		}
-		if ( isset( $_POST['behance_url'] ) && ! empty( $_POST['behance_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'behance_url', esc_url_raw( wp_unslash( $_POST['behance_url'] ) ) );
-		}
-		if ( isset( $_POST['youtube_url'] ) && ! empty( $_POST['youtube_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'youtube_url', esc_url_raw( wp_unslash( $_POST['youtube_url'] ) ) );
-		}
-		if ( isset( $_POST['snapchat_url'] ) && ! empty( $_POST['snapchat_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'snapchat_url', esc_url_raw( wp_unslash( $_POST['snapchat_url'] ) ) );
-		}
-		if ( isset( $_POST['skype_url'] ) && ! empty( $_POST['skype_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'skype_url', esc_url_raw( wp_unslash( $_POST['skype_url'] ) ) );
-		}
-		if ( isset( $_POST['pinterest_url'] ) && ! empty( $_POST['pinterest_url'] ) ) { // Input var okay.
-			update_user_attribute( $user_id, 'pinterest_url', esc_url_raw( wp_unslash( $_POST['pinterest_url'] ) ) );
-		}
+	if ( current_user_can( 'edit_user', $user_id ) )
+	if ( isset( $_POST['fb_url'] ) && ! empty( $_POST['fb_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'fb_url', esc_url_raw( wp_unslash( $_POST['fb_url'] ) ) );
+	}
+	if ( isset( $_POST['twitter_url'] ) && ! empty( $_POST['twitter_url'] )) { // Input var okay.
+		update_user_attribute( $user_id, 'twitter_url', esc_url_raw( wp_unslash( $_POST['twitter_url'] ) ) );
+	}
+	if ( isset( $_POST['gplus_url'] ) && ! empty( $_POST['gplus_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'gplus_url', esc_url_raw( wp_unslash( $_POST['gplus_url'] ) ) );
+	}
+	if ( isset( $_POST['linkedin_url'] ) && ! empty( $_POST['linkedin_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'linkedin_url', esc_url_raw( wp_unslash( $_POST['linkedin_url'] ) ) );
+	}
+	if ( isset( $_POST['behance_url'] ) && ! empty( $_POST['behance_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'behance_url', esc_url_raw( wp_unslash( $_POST['behance_url'] ) ) );
+	}
+	if ( isset( $_POST['youtube_url'] ) && ! empty( $_POST['youtube_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'youtube_url', esc_url_raw( wp_unslash( $_POST['youtube_url'] ) ) );
+	}
+	if ( isset( $_POST['snapchat_url'] ) && ! empty( $_POST['snapchat_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'snapchat_url', esc_url_raw( wp_unslash( $_POST['snapchat_url'] ) ) );
+	}
+	if ( isset( $_POST['skype_url'] ) && ! empty( $_POST['skype_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'skype_url', esc_url_raw( wp_unslash( $_POST['skype_url'] ) ) );
+	}
+	if ( isset( $_POST['pinterest_url'] ) && ! empty( $_POST['pinterest_url'] ) ) { // Input var okay.
+		update_user_attribute( $user_id, 'pinterest_url', esc_url_raw( wp_unslash( $_POST['pinterest_url'] ) ) );
 	}
 }
 /**
@@ -565,7 +524,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
-require_once( get_template_directory() . '/lib/class-theme-register-function.php' );
+require_once( get_template_directory() . '/lib/theme-register-function.php' );
 
 require_once( get_template_directory() . '/lib/googlefonts.php' );
 
