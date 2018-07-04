@@ -9,6 +9,7 @@
  * @package Dallas Lite
  * @since  1.2
  */
+
 ?>
 	</div><!-- #content -->
 <?php get_sidebar( 'footer' ); ?>
