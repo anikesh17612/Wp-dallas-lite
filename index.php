@@ -13,14 +13,12 @@
  */
 
 get_header();
-?>
-<?php
+
 if ( get_theme_mod( 'blog_layout_selection' ) === 'blogleft' ) { ?>
 	<div class="wpdal-left-sidebar col-md-3">
 		<?php get_sidebar(); ?>
 	</div>
-<?php } ?>
-<?php
+<?php }
 if ( get_theme_mod( 'blog_layout_selection' ) === 'blogfullwidth' ) {
 	echo '<div id="primary" class="content-area  col-md-12 col-sm-12 col-xs-12 ">';
 } else {
@@ -34,15 +32,12 @@ if ( get_theme_mod( 'blog_layout_selection' ) === 'blogfullwidth' ) {
 				</header>
 				<?php endif;
 		/* Start the Loop */
-		while ( have_posts() ) :
-							the_post();
-
-			/*
-			* Include the Post-Format-specific template for the content.
-			* If you want to override this in a child theme, then include a file
-			* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-			*/
-
+		while ( have_posts() ) : the_post();
+			/**
+			 * Include the Post-Format-specific template for the content.
+			 * If you want to override this in a child theme, then include a file
+			 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+			 */
 			get_template_part( 'template-parts/content', get_post_format() );
 		endwhile;
 					else :
@@ -54,23 +49,13 @@ if ( get_theme_mod( 'blog_layout_selection' ) === 'blogfullwidth' ) {
 /**
  * Show pagination option based on Blog pages show at most.
  */
-				$count_posts = wp_count_posts();
-				$published_posts = $count_posts->publish;
-				$default_posts_per_page = get_option( 'posts_per_page' );
-
-if ( $published_posts > $default_posts_per_page ) {
-	$select_pagination_layout = get_theme_mod( 'select_pagination_layout' );
-	if ( '' === $select_pagination_layout || 'paginumber' === $select_pagination_layout ) { ?>
-		<div class="wpdal_pagination">
-			<?php the_posts_pagination(); ?>
-		</div>
-<?php } else { ?>
-		<div class="wpdal_pagination">
-			<div class="loadmore"><button class="btn btn-info">Load More</button></div>
-		</div>
-<?php }
-}
+global $wp_query; // you can remove this line if everything works for you.
+// don't display the button if there are not enough posts.
+$max_num_pages = $wp_query->max_num_pages;
+if ( $max_num_pages > 1 )
+	echo '<div class="dallaslite_loadmore">Load More</div>'; // you can use <a> as well.
 ?>
+
 </div><!-- #primary -->
 <?php
 if ( get_theme_mod( 'blog_layout_selection' ) === 'blogright' || get_theme_mod( 'blog_layout_selection' ) !== '' ) { ?>

@@ -21,24 +21,24 @@ if ( get_theme_mod( 'select_blog_single_page_layout' ) == 'leftside' ) { ?>
 	<main id="main" class="site-main">
 		<?php while ( have_posts() ) : the_post();
 			get_template_part( 'template-parts/content', get_post_type() );
+			$user_id = get_current_user_id();
 			echo '<div class="post-author-meta clearfix">';
 			echo '<div class="author-meta col-md-2">' ;
 			echo '<div class="author-img">';
 			echo get_avatar( $post->post_author );
 			echo '</div></div>';
 			echo '<div class="col-md-10"><div class="author-title">';
-			echo wp_kses_post( get_user_meta( $post->post_author, 'first_name' )  . ' ' . get_user_meta( $post->post_author, 'last_name' ) );
+			echo dallas_lite_user_data( $user_id,'first_name' ) . ' ' . dallas_lite_user_data( $user_id,'last_name' );
 			echo '</div>';
 			echo '<div class="author-desc">';
-			echo wp_kses_post( get_user_meta( $post->post_author, 'description', true ) );
+			echo dallas_lite_user_data( $user_id,'description' );
 			echo '</div>';
 			if ( get_the_author_meta( 'url' ) != '' || get_the_author_meta( 'fb_url' ) != '' || get_the_author_meta( 'twitter_url' ) != '' || get_the_author_meta( 'gplus_url' ) != '' || get_the_author_meta( 'linkedin_url' ) != '' || get_the_author_meta( 'behance_url' ) != '' || get_the_author_meta( 'youtube_url' ) != '' || get_the_author_meta( 'snapchat_url' ) != '' || get_the_author_meta( 'skype_url' ) != '' || get_the_author_meta( 'pinterest_url' ) != '' ) {
 					echo '<div class="author-meta-social-link">';
 				if ( get_the_author_meta( 'url' ) ) {
 						echo wp_kses_post( '<a href="' . get_the_author_meta( 'url' ) . '" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>' );
 				}
-					$user_id = get_current_user_id();
-					$user_meta = get_user_meta( $user_id );
+					// $user_meta = get_user_meta( $user_id );.
 				if ( get_the_author_meta( 'fb_url' ) ) {
 						echo wp_kses_post( '<a href="' . get_the_author_meta( 'fb_url' ) . '" target="_blank"><i class="fa fa-facebook"></i></a>' );
 				}
@@ -77,24 +77,20 @@ if ( get_theme_mod( 'select_blog_single_page_layout' ) == 'leftside' ) { ?>
 	</main><!-- #main -->
 	<?php
 		// for use in the loop, list 5 post titles related to first tag on current post.
-
-
 			$terms = get_the_terms( get_the_ID(), 'category' );
 			$term_list = wp_list_pluck( $terms, 'slug' );
 			$related_args = array(
 			'post_type' => 'post',
-			'posts_per_page' => -1,
 			'post_status' => 'publish',
 			'post__not_in' => array( get_the_ID() ),
-			'orderby' => 'rand',
 			'tax_query' => array(
 			array(
 				'taxonomy' => 'category',
 				'field' => 'slug',
-				'terms' => $term_list
+				'terms' => $term_list,
 			),
-		),
- );
+			),
+			);
 			$my_query = new WP_Query( $related_args );
 			if ( $my_query->have_posts() ) {
 				echo '<div class="related_post">';

@@ -1,7 +1,5 @@
 <?php
 /**
- * The social icons Show at header on all page.
- *
  * This is the most generic template file in a WordPress theme and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
@@ -9,10 +7,13 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Dallas Lite.
-  @since 1.2
+ * @since 1.2
+ */
+
+/**
+ * Social icon at theme Header.
  */
 function socialicon() {
-
 		$facebook 	= get_theme_mod( 'facebooklogo','' );
 		$twitter	= get_theme_mod( 'twitterlogo','' );
 		$googleplus = get_theme_mod( 'googlepluslogo','' );
@@ -24,10 +25,8 @@ function socialicon() {
 		$whatsapp	= get_theme_mod( 'whatsapplogo','' );
 		$pinterest	= get_theme_mod( 'pinterestlogo','' );
 		$custom		= get_theme_mod( 'customlogo' );
-
 	if ( $facebook || $twitter || $googleplus || $linkedin || $behance || $behance || $youtube || $snapchat || $skype || $pinterest || $custom || '' ) {
 		$html  = '<ul class="social-icons">';
-
 		if ( $facebook ) {
 			$html .= '<li><a target="_blank" href="' . $facebook . '"><i class="fa fa-facebook"></i></a></li>';
 		}

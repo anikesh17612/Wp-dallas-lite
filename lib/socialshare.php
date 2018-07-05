@@ -1,7 +1,5 @@
 <?php
 /**
- * The social icons file
- *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme ( the other being style.css ).
  * It is used to display a page when nothing more specific matches a query.
@@ -11,23 +9,25 @@
  *
  * @package Dallas Lite
  */
-         
+
+/**
+ * Social share icons on post.
+ */
 function add_social_share_icons() {
 	$html = "<div class='post-social-share'>";
 	global $post;
-	$url = get_permalink($post->ID);
+	$url = get_permalink( $post->ID );
 	$url = esc_url( $url );
 	$title = str_replace( ' ', '%20', get_the_title() );
-	$twitterURL = 'https://twitter.com/intent/tweet?text=' . $title . '&amp;url=' . $url . '&amp;';
-	$postThumbnail = wp_get_attachment_image_src(  get_post_thumbnail_id( $post->ID ) , 'full' );
-	$pinterestURL = 'https://pinterest.com/pin/create/button/?url=' . $url . '&amp;media=' . $postThumbnail[0] . '&amp;description=' . $title;
-	$deliciousURL = 'https://delicious.com/save?v=' . $url . '&title=' . $title;
-
+	$twitterurl = 'https://twitter.com/intent/tweet?text=' . $title . '&amp;url=' . $url . '&amp;';
+	$postthumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+	$pinteresturl = 'https://pinterest.com/pin/create/button/?url=' . $url . '&amp;media=' . $postthumbnail[0] . '&amp;description=' . $title;
+	$deliciousurl = 'https://delicious.com/save?v=' . $url . '&title=' . $title;
 	if ( get_theme_mod( 'facebookshare' ) === 1 ) {
 		$html = $html . "<div class='facebook'><a target='_blank' href='http://www.facebook.com/sharer.php?u=" . $url . "'><i class='fa fa-facebook' aria-hidden='true'></i></a></div>";
 	}
-	if ( get_theme_mod( 'twittershare' ) === 1 || get_theme_mod( 'twittershare' ) == '' ) {
-		$html = $html . "<div class='twitter'><a target='_blank' href='" . $twitterURL . "' ><i class='fa fa-twitter' aria-hidden='true'></i></a></div>";
+	if ( get_theme_mod( 'twittershare' ) === 1 || get_theme_mod( 'twitterShare' ) == '' ) {
+		$html = $html . "<div class='twitter'><a target='_blank' href='" . $twitterurl . "' ><i class='fa fa-twitter' aria-hidden='true'></i></a></div>";
 	}
 	if ( get_theme_mod( 'linkedinshare' ) === 1 || get_theme_mod( 'linkedinshare' ) == '' ) {
 		$html = $html . "<div class='linkedin'><a target='_blank' href='http://www.linkedin.com/shareArticle?url=" . $url . "'><i class='fa fa-linkedin' aria-hidden='true'></i></a></div>";
@@ -39,10 +39,10 @@ function add_social_share_icons() {
 		$html = $html . "<div class='stumbleupon'><a target='_blank' href='https://www.stumbleupon.com/submit?url=" . $url . "'><i class='fa fa-stumbleupon' aria-hidden='true'></i></a></div>";
 	}
 	if ( get_theme_mod( 'googleplusshare' ) === 1 || get_theme_mod( 'googleplusshare' ) == '' ) {
-		$html = $html . "<div class='delicious'><a target='_blank' href='" . $deliciousURL . "'><i class='fa fa-delicious' aria-hidden='true'></i></a></div>";
+		$html = $html . "<div class='delicious'><a target='_blank' href='" . $deliciousurl . "'><i class='fa fa-delicious' aria-hidden='true'></i></a></div>";
 	}
 	if ( get_theme_mod( 'pinterestshare' ) === 1 || get_theme_mod( 'pinterestshare' ) == '' ) {
-		$html = $html . "<div class='pinterest'><a target='_blank' href='" . $pinterestURL . "'><i class='fa fa-pinterest' aria-hidden='true'></i></a></div>";
+		$html = $html . "<div class='pinterest'><a target='_blank' href='" . $pinteresturl . "'><i class='fa fa-pinterest' aria-hidden='true'></i></a></div>";
 	}
 	if ( get_theme_mod( 'deliciousshare' ) === 1 || get_theme_mod( 'deliciousshare' ) == '' ) {
 		$html = $html . "<div class='google-plus'><a target='_blank' href='https://plus.google.com/share?url=" . $url . "'><i class='fa fa-google-plus' aria-hidden='true'></i></a></div>";
@@ -51,8 +51,9 @@ function add_social_share_icons() {
 		$html = $html . "<div class='email'><a target='_blank' href='mailto:?subject=" . $title . "' title='Share by email'><i class='fa fa-envelope-o' aria-hidden='true'></i></a></div>";
 	}
 		$tag = '';
-		if( is_single() ) {
-			$tag = the_tags(  '<div class="tags_list">', ' ', '</div>' );
+	if ( is_single() ) {
+		$tag = the_tags( '<div class="tags_list">' . $tag . '</div>' );
 	}
-	return $content = $tag. $html;
-	}
+	$content = $tag . $html;
+	return $content;
+}
