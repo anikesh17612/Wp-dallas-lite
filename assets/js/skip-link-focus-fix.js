@@ -6,8 +6,6 @@
  * Learn more: https://git.io/vWdr2
  *
  * @package Dallas Lite.
- *
- * @since  1.2
  */
 
 ( function() {

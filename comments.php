@@ -8,8 +8,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Dallas Lite.
- *
- * @since  1.2
  */
 
 /*

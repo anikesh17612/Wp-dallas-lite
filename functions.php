@@ -221,7 +221,7 @@ add_action( 'customize_register', 'dallaslite_override_customize_register' );
  * @param object $classes classes to RTL.
  */
 function dallaslite_load_rtl( $classes ) {
-	if ( get_theme_mod( 'right-to-left','Yes' ) ) {
+	if ( get_theme_mod( 'right-to-left' ) == 'true' ) {
 		$classes[] = 'rtl';
 	}
 	return $classes;
@@ -344,16 +344,134 @@ function dallaslite_edit_profile( $user_id ) {
 		$foo = sanitize_text_field( wp_unslash( $_POST ['foo'] ) );
 	}
 	if ( current_user_can( 'edit_user',$user_id ) ) {
-		update_user_meta( $user_id, 'fb_url', $_POST['fb_url'] );
-		update_user_meta( $user_id, 'twitter_url', $_POST['twitter_url'] );
-		update_user_meta( $user_id, 'gplus_url', $_POST['gplus_url'] );
-		update_user_meta( $user_id, 'linkedin_url', $_POST['linkedin_url'] );
-		update_user_meta( $user_id, 'behance_url', $_POST['behance_url'] );
-		update_user_meta( $user_id, 'youtube_url', $_POST['youtube_url'] );
-		update_user_meta( $user_id, 'snapchat_url', $_POST['snapchat_url'] );
-		update_user_meta( $user_id, 'skype_url', $_POST['skype_url'] );
-		update_user_meta( $user_id, 'pinterest_url', $_POST['pinterest_url'] );
-	}
+		global $wpdb;
+		$fburl = wp_cache_get( 'mycomments' );
+		if ( false == $comments ) {
+			$fburl = $wpdb->update(
+				'wp_usermeta',
+				array(
+					'meta_value' => $_POST['fb_url'],
+				),
+				array(
+						'meta_key' => 'fb_url',
+						'user_id' => $user_id,
+					)
+			);
+				wp_cache_set( 'mycomments', $fburl );
+		}
+		$twitterurl = wp_cache_get( 'mycomments' );
+		if ( false == $comments ) {
+			$fburl = $wpdb->update(
+				'wp_usermeta',
+				array(
+					'meta_value' => $_POST['twitter_url'],
+				),
+				array(
+						'meta_key' => 'twitter_url',
+						'user_id' => $user_id,
+					)
+			);
+				wp_cache_set( 'mycomments', $twitterurl );
+		}
+		$gplusurl = wp_cache_get( 'mycomments' );
+		if ( false == $comments ) {
+			$gplusurl = $wpdb->update(
+				'wp_usermeta',
+				array(
+					'meta_value' => $_POST['gplus_url'],
+				),
+				array(
+						'meta_key' => 'gplus_url',
+						'user_id' => $user_id,
+					)
+			);
+				wp_cache_set( 'mycomments', $gplusrurl );
+		}
+		$linkedinurl = wp_cache_get( 'mycomments' );
+		if ( false == $comments ) {
+			$linkedinurl = $wpdb->update(
+				'wp_usermeta',
+				array(
+					'meta_value' => $_POST['linkedin_url'],
+				),
+				array(
+						'meta_key' => 'linkedin_url',
+						'user_id' => $user_id,
+					)
+			);
+				wp_cache_set( 'mycomments', $linkedinurl );
+		}
+		$behanceurl = wp_cache_get( 'mycomments' );
+		if ( false == $comments ) {
+			$behanceurl = $wpdb->update(
+				'wp_usermeta',
+				array(
+					'meta_value' => $_POST['behance_url'],
+				),
+				array(
+						'meta_key' => 'behance_url',
+						'user_id' => $user_id,
+					)
+			);
+				wp_cache_set( 'mycomments', $behanceurl );
+		}
+		$youtubeurl = wp_cache_get( 'mycomments' );
+		if ( false == $comments ) {
+			$youtubeurl = $wpdb->update(
+				'wp_usermeta',
+				array(
+					'meta_value' => $_POST['youtube_url'],
+				),
+				array(
+						'meta_key' => 'youtube_url',
+						'user_id' => $user_id,
+					)
+			);
+				wp_cache_set( 'mycomments', $youtubeurl );
+		}
+		$snapchaturl = wp_cache_get( 'mycomments' );
+		if ( false == $comments ) {
+			$snapchaturl = $wpdb->update(
+				'wp_usermeta',
+				array(
+					'meta_value' => $_POST['snapchat_url'],
+				),
+				array(
+						'meta_key' => 'snapchat_url',
+						'user_id' => $user_id,
+					)
+			);
+				wp_cache_set( 'mycomments', $snapchaturl );
+		}
+		$skypeurl = wp_cache_get( 'mycomments' );
+		if ( false == $comments ) {
+			$skypeurl = $wpdb->update(
+				'wp_usermeta',
+				array(
+					'meta_value' => $_POST['skype_url'],
+				),
+				array(
+						'meta_key' => 'skype_url',
+						'user_id' => $user_id,
+					)
+			);
+				wp_cache_set( 'mycomments', $skypeurl );
+		}
+		$pinteresturl = wp_cache_get( 'mycomments' );
+		if ( false == $comments ) {
+			$pinteresturl = $wpdb->update(
+				'wp_usermeta',
+				array(
+					'meta_value' => $_POST['pinterest_url'],
+				),
+				array(
+						'meta_key' => 'pinterest_url',
+						'user_id' => $user_id,
+					)
+			);
+				wp_cache_set( 'mycomments', $pinteresturl );
+		}
+	} // End if().
 }
 	add_action( 'edit_user_profile_update', 'dallaslite_update_profile_fields' );
 /**

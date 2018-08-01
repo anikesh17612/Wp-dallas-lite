@@ -65,11 +65,11 @@ if ( $published_posts > $default_posts_per_page ) {
 					 */
 					global $wp_query; // you can remove this line if everything works for you.
 					// don't display the button if there are not enough posts.
-					$max_num_pages = $wp_query->max_num_pages;
-					if ( $max_num_pages > 1 )
-						echo '<div class="dallaslite_loadmore">Load More</div>'; // you can use <a> as well.
-					?>
-	<?php }
+					 $max_num_pages = $wp_query->max_num_pages > 1;
+				if ( $max_num_pages ) {
+					echo '<div class="dallaslite_loadmore">Load More</div>'; // you can use <a> as well.
+				} ?>
+<?php }
 } ?>
 			</div><!-- #primary -->
 <?php if ( get_theme_mod( 'blog_layout_selection' ) === 'blogright' || get_theme_mod( 'blog_layout_selection' ) !== '' ) { ?>
