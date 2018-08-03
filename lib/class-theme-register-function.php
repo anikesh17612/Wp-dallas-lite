@@ -1398,4 +1398,33 @@ function wp_dallas_option( $wp_customize ) {
 			'0' => 'No',
 		),
 	) ) );
+
+	/*
+	---------Install plugin---------------------
+	$wp_customize->add_section( 'install_plugin', array(
+		'title' => __( 'Install plugin', 'dallas-lite' ),
+		'panel' => 'blog_layout',
+		'priority' => 10,
+	) );
+	$wp_customize->add_setting( 'install_wp_subscribe', array(
+		'default' => 'Install',
+		'sanitize_callback' => $callback->sanitize_call_back( 'enable_wp_subscribe' ),
+	) );
+	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'wp_subscribe', array(
+		'label' => __( 'WP Subscribe', 'dallas-lite' ),
+		'section' => 'install_plugin',
+		'settings' => 'install_wp_subscribe',
+		'type' => 'button',
+	) ) );
+	$wp_customize->add_setting( 'install_wp_tab_widget', array(
+		'default' => 'Install',
+		'sanitize_callback' => $callback->sanitize_call_back( 'enable_wp_subscribe' ),
+	) );
+	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'wp_tab_widget', array(
+		'label' => __( 'WP Tab Widget', 'dallas-lite' ),
+		'section' => 'install_plugin',
+		'settings' => 'install_wp_tab_widget',
+		'type' => 'button',
+	) ) );
+	*/
 }

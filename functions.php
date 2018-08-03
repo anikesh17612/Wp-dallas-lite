@@ -638,7 +638,8 @@ add_action( 'admin_init', 'dallaslite_add_editor_styles' );
 /**
  * Required Plugins
  */
-require_once( get_template_directory() . '/lib/plugin-check.php' );
+require_once( get_template_directory() . '/lib/tgm-plugin-activation/class-tgm-plugin-activation.php' );
+require_once( get_template_directory() . '/lib/tgm-plugin-activation/required_plugins.php' );
 /**
  * Social Sharing Plugins
  */
