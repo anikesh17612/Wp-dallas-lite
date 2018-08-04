@@ -317,7 +317,7 @@ body.rtl {
 
 @media (min-width: 992px) {
     /*----- Top Header ---------*/
-    #masthead .row > div {
+   .rtl #masthead .row > div {
         float: right;
     }
     /*----- Bottom Section -----*/

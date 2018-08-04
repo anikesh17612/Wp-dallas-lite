@@ -40,6 +40,14 @@ jQuery(function($){
 	});
 });
 
+/************ ADD CLASS IN BODY IN CASE OF BOX LAYOUT	***********/
+
+jQuery( document ).ready(function(){
+	var currentBodyLayout = dallaslite_loadmore_params.body_layout;
+	if (currentBodyLayout == 'box_layout') {
+		jQuery( '.main_body' ).addClass( 'box_layout' );
+	}
+})
 
 /* ****************	BACK TO TOP LINK  ***********************/
 
@@ -64,13 +72,4 @@ jQuery( document ).ready(function(){
 	jQuery( ".menu-toggle" ).on('click',function(){
 		jQuery( '.main_body' ).toggleClass( 'mobile_menu_open' );
 	})
-})
-
-/************ ADD CLASS IN BODY IN CASE OF BOX LAYOUT	***********/
-
-jQuery( document ).ready(function(){
-	var currentBodyLayout = dallaslite_loadmore_params.body_layout;
-	if (currentBodyLayout == 'box_layout') {
-		jQuery( '.main_body' ).addClass( 'box_layout' );
-	}
 })

@@ -224,6 +224,11 @@ function dallaslite_load_rtl( $classes ) {
 	if ( get_theme_mod( 'right-to-left' ) == 'true' ) {
 		$classes[] = 'rtl';
 	}
+
+	if ( get_theme_mod( 'body_layout' ) == 'box_layout' ) {
+		$classes[] = 'box_layout';
+	}
+
 	return $classes;
 }
 /**
@@ -255,7 +260,7 @@ add_action( 'wp_enqueue_scripts', 'dallaslite_load_more_scripts' );
 function dallaslite_loadmore_ajax_handler() {
 	// prepare our arguments for the query.
 	if ( isset( $_POST ['foo'], $_POST ['foo_nonce'] ) && wp_verify_nonce( sanitize_key( $_POST ['foo_nonce'] ), 'foo_action' ) ) {
-		$foo = sanitize_text_field( wp_unslash( $_POST ['foo'] ) );
+		$foo = wp_unslash( sanitize_text_field( $_POST ['foo'] ) );
 		$args = json_decode( stripslashes( $_POST ['query'] ), true );
 	}
 		$args['paged'] = $_POST ['page'] + 1; // we need next page to be loaded.
@@ -628,6 +633,7 @@ function dallaslite_user_profile_fields( $profileuser ) {
 }
 add_action( 'show_user_profile', 'dallaslite_user_profile_fields', 10, 1 );
 add_action( 'edit_user_profile', 'dallaslite_user_profile_fields', 10, 1 );
+
 /**
  * Registers an editor stylesheet for the theme.
  */
@@ -635,11 +641,6 @@ function dallaslite_add_editor_styles() {
 	add_editor_style( 'dallaslite-editor-style.css' );
 }
 add_action( 'admin_init', 'dallaslite_add_editor_styles' );
-/**
- * Required Plugins
- */
-require_once( get_template_directory() . '/lib/tgm-plugin-activation/class-tgm-plugin-activation.php' );
-require_once( get_template_directory() . '/lib/tgm-plugin-activation/required_plugins.php' );
 /**
  * Social Sharing Plugins
  */

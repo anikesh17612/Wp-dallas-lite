@@ -94,7 +94,7 @@ function wp_dallas_option( $wp_customize ) {
 		),
 	) ) );
 	$wp_customize->add_setting( 'select_pagination_layout', array(
-		'default' => 'paginumber',
+		'default' => 'pagiloadmore',
 		'sanitize_callback' => $callback->sanitize_call_back( 'enable_dallas_call' ),
 	) );
 	// Add control.
@@ -103,7 +103,6 @@ function wp_dallas_option( $wp_customize ) {
 		'section' => 'Blog_layout_option',
 		'settings' => 'select_pagination_layout',
 		'type' => 'select',
-		'selected' => 'selected',
 		'choices' => array(
 			'pagiloadmore' => 'Load More',
 			'paginumber' => 'Number',
