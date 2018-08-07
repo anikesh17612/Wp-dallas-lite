@@ -292,19 +292,27 @@ if ( ! function_exists( 'dallaslite_excerpt_max_charlength' ) ) :
 	 *
 	 * @param object $wordsreturned varrible for word resturned.
 	 */
-	function dallaslite_excerpt_max_charlength( $wordsreturned ) {
-		$string = get_the_excerpt();
-		$retval = $string;
-		$string = preg_replace( '/(?<=\S,)(?=\S)/', ' ', $string );
-		$string = str_replace( "\n", ' ', $string );
-		$array = explode( ' ', $string );
-		if ( count( $array ) <= $wordsreturned ) {
-			$retval = $string;
-		} else {
-			$retval = implode( ' ', $array ) . ' ...';
+	function dallaslite_excerpt_max_charlength(  $wordsreturned ) {
+
+	    $string = the_content();
+		  $retval = $string;  //  Just in case of a problem
+	    $array = explode(" ", $string);
+	    /*  Already short enough, return the whole thing*/
+			echo count($array);
+	    if ( count($array) <= $wordsreturned )
+	    {
+	        $retval = $string;
+	    }
+	    /*  Need to chop of some words*/
+	    else
+	    {
+	        array_splice($array, $wordsreturned);
+	        $retval = implode(" ", $array)." ...";
+	    }
+	    return $retval;
 		}
-		return $retval;
-	}
+
+
 endif;
 /**
  * Implement the Custom Header feature.

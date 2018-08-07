@@ -36,11 +36,10 @@ if ( is_single() ) { ?>
 <?php
 } else {
 	if ( get_theme_mod( 'enableExcerpt', true ) ) {
-		if ( get_theme_mod( 'excerptwordLimit', 330 ) ) {
-			$textlimit = get_theme_mod( 'excerptwordLimit', 330 );
+		if ( get_theme_mod( 'excerptwordLimit', 30 ) ) {
+			$textlimit = get_theme_mod( 'excerptwordLimit', 30 );
 			echo '<p class="short-description">';
-			$wordsreturned = '';
-			echo wp_kses_post( dallaslite_excerpt_max_charlength( $wordsreturned ) );
+			echo wp_kses_post( dallaslite_excerpt_max_charlength( $textlimit ) );
 			echo '</p>';
 		} else {
 				echo the_content();

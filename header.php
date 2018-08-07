@@ -58,7 +58,7 @@
 				<div class="col-md-3">
 					<div class="site-branding">
 						<a href="<?php echo wp_kses_post( site_url() ); ?>">
-							<?php if ( get_theme_mod( 'allLogoFavicon' ) == 'logo-text' || get_theme_mod( 'allLogoFavicon' ) == '' ) {
+							<?php if ( get_theme_mod( 'allLogoFavicon' ) === 'logo-text' || get_theme_mod( 'allLogoFavicon' ) === '' ) {
 										$titletext = get_theme_mod( 'siteTitle','title_text' );
 								if ( $titletext ) { ?>
 									<div class="wpdal_logo_text">
