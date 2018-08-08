@@ -1909,7 +1909,7 @@ form input[type="submit"] {
 
 /*----- Tags List -----*/
 
-.tags_list a {
+.post-meta .tags_list a {
     color: #363b52;
     display: inline-block;
     font-size: 14px;
@@ -1919,12 +1919,12 @@ form input[type="submit"] {
     border: 1px solid #363b52;
 }
 
-.tags_list a:before {
+.post-meta .tags_list a:before {
     content: "#";
 }
 
-.tags_list a:hover,
-.tags_list a:visited {
+.post-meta .tags_list a:hover,
+.post-meta .tags_list a:visited {
     color: #363b52;
     border: 1px solid #363b52;
 }

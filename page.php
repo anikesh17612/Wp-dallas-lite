@@ -13,12 +13,12 @@
  */
 
 get_header(); ?>
-<?php if ( get_theme_mod( 'blog_layout_selection' ) == 'blogleft' ) { ?>
+<?php if ( get_theme_mod( 'blog_layout_selection' ) === 'blogleft' ) { ?>
 	<div class="wpdal-left-sidebar col-md-3">
 		<?php get_sidebar(); ?>
   </div>
 <?php }
-if ( get_theme_mod( 'blog_layout_selection' ) == 'blogfullwidth' ) {
+if ( get_theme_mod( 'blog_layout_selection' ) === 'blogfullwidth' ) {
 	echo '<div id="primary" class="content-area  col-md-12 col-sm-12 col-xs-12 ">';
 } else {
 	echo '<div id="primary" class="content-area  col-md-9 col-sm-12 col-xs-12 ">';
@@ -34,7 +34,7 @@ if ( get_theme_mod( 'blog_layout_selection' ) == 'blogfullwidth' ) {
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php
-if ( get_theme_mod( 'blog_layout_selection' ) == 'blogright' || get_theme_mod( 'blog_layout_selection' ) == '' ) { ?>
+if ( get_theme_mod( 'blog_layout_selection' ) === 'blogright' || get_theme_mod( 'blog_layout_selection' ) === '' ) { ?>
 	<div class="wpdal-right-sidebar col-md-3 col-sm-12 col-xs-12">
 		<?php get_sidebar(); ?>
   </div>

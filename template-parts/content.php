@@ -30,19 +30,19 @@ if ( '' !== get_the_post_thumbnail() && ! is_single() ) { ?>
 <?php
 }
 if ( is_single() ) { ?>
-	<div class="single-entry-content">
-		<?php the_content(); ?>
-	</div>
-<?php
-} else {
+			<div class="single-entry-content">
+				<?php the_content(); ?>
+			</div>
+<?php } else {
 	if ( get_theme_mod( 'enableExcerpt', true ) ) {
-		if ( get_theme_mod( 'excerptwordLimit', 30 ) ) {
-			$textlimit = get_theme_mod( 'excerptwordLimit', 30 );
+		if ( get_theme_mod( 'excerptwordLimit', 3300 ) ) {
+			$textlimit = get_theme_mod( 'excerptwordLimit', 330 );
+			$textlimit = absint( $textlimit );
 			echo '<p class="short-description">';
-			echo wp_kses_post( dallaslite_excerpt_max_charlength( $textlimit ) );
+			echo dallaslite_excerpt_max_charlength( $textlimit );
 			echo '</p>';
 		} else {
-				echo the_content();
+			echo the_content();
 		}
 		if ( get_theme_mod( 'enableBlogReadmore', true ) ) {
 			if ( get_theme_mod( 'continueReading', 'Read More' ) ) {
@@ -50,7 +50,7 @@ if ( is_single() ) { ?>
 			}
 		}
 	} else {
-			echo the_content();
+		echo the_content();
 	}
 } ?>
 	<?php wp_link_pages( array(

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="Custom">
+	<description>My custom ruleset</description>
+
+	<rule ref="WordPress">
+		<exclude name="WordPress.VIP.SuperGlobalInputUsage" />
+	</rule>
+</ruleset>

@@ -8,12 +8,12 @@
  */
 
 get_header();
-if ( get_theme_mod( 'select_blog_single_page_layout' ) == 'leftside' ) { ?>
+if ( get_theme_mod( 'select_blog_single_page_layout' ) === 'leftside' ) { ?>
 		<div class="wpdal-left-sidebar wpdal-single-layout-page col-md-3 col-sm-12 col-xs-12">
 			<?php get_sidebar(); ?>
 		</div>
 <?php } ?>
-<?php if ( get_theme_mod( 'select_blog_single_page_layout' ) == 'fullwidth' ) {
+<?php if ( get_theme_mod( 'select_blog_single_page_layout' ) === 'fullwidth' ) {
 	echo '<div id="primary" class="content-area  col-md-12 col-sm-12 col-xs-12 ">';
 } else {
 	echo '<div id="primary" class="content-area  col-md-9 col-sm-12 col-xs-12 ">';
@@ -33,7 +33,7 @@ if ( get_theme_mod( 'select_blog_single_page_layout' ) == 'leftside' ) { ?>
 			echo '<div class="author-desc">';
 			echo dallas_lite_user_data( $user_id,'description' );
 			echo '</div>';
-			if ( get_the_author_meta( 'url' ) != '' || get_the_author_meta( 'fb_url' ) != '' || get_the_author_meta( 'twitter_url' ) != '' || get_the_author_meta( 'gplus_url' ) != '' || get_the_author_meta( 'linkedin_url' ) != '' || get_the_author_meta( 'behance_url' ) != '' || get_the_author_meta( 'youtube_url' ) != '' || get_the_author_meta( 'snapchat_url' ) != '' || get_the_author_meta( 'skype_url' ) != '' || get_the_author_meta( 'pinterest_url' ) != '' ) {
+			if ( get_the_author_meta( 'url' ) !== '' || get_the_author_meta( 'fb_url' ) !== '' || get_the_author_meta( 'twitter_url' ) !== '' || get_the_author_meta( 'gplus_url' ) !== '' || get_the_author_meta( 'linkedin_url' ) !== '' || get_the_author_meta( 'behance_url' ) !== '' || get_the_author_meta( 'youtube_url' ) !== '' || get_the_author_meta( 'snapchat_url' ) !== '' || get_the_author_meta( 'skype_url' ) !== '' || get_the_author_meta( 'pinterest_url' ) !== '' ) {
 					echo '<div class="author-meta-social-link">';
 				if ( get_the_author_meta( 'url' ) ) {
 						echo wp_kses_post( '<a href="' . get_the_author_meta( 'url' ) . '" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>' );
@@ -101,7 +101,7 @@ if ( get_theme_mod( 'select_blog_single_page_layout' ) == 'leftside' ) { ?>
 				while ( $my_query->have_posts() ) :
 					$my_query->the_post();
 					echo '<li>';
-					if ( get_the_post_thumbnail() != '' ) { ?>
+					if ( get_the_post_thumbnail() !== '' ) { ?>
 						<a href="<?php the_permalink() ?>" rel="<?php the_title(); ?>" title="Permanent Link to <?php the_title_attribute(); ?>" class="related_link_image"><figure><?php $post_id = '';
 						echo get_the_post_thumbnail( $post_id, 'medium', array(
 							'class' => 'alignleft',
@@ -112,10 +112,10 @@ if ( get_theme_mod( 'select_blog_single_page_layout' ) == 'leftside' ) { ?>
 			<?php endwhile;
 				echo '</ul></div></div></div>';
 			}
-			wp_reset_query();
+			wp_reset_postdata();
 ?>
 	</div><!-- #primary -->
-	<?php if ( get_theme_mod( 'select_blog_single_page_layout' ) == 'rightside' || get_theme_mod( 'select_blog_single_page_layout' ) == '' ) { ?>
+	<?php if ( get_theme_mod( 'select_blog_single_page_layout' ) === 'rightside' || get_theme_mod( 'select_blog_single_page_layout' ) === '' ) { ?>
 		<div class="wpdal-right-sidebar wpdal-single-layout-page col-md-3 col-sm-12 col-xs-12">
 			<?php get_sidebar(); ?>
 		</div>
