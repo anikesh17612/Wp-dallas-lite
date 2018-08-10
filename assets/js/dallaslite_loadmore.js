@@ -7,7 +7,7 @@
  */
 
 jQuery(function($){
-	$( '.dallaslite_loadmore' ).click(function(){
+	$( document ).on('click','.dallaslite_loadmore',function(){
 
 		var button = $( this ),
 			data = {
@@ -15,6 +15,7 @@ jQuery(function($){
 				'query': dallaslite_loadmore_params.posts, // that's how we get params from wp_localize_script() function.
 				'page' : dallaslite_loadmore_params.current_page
 		};
+
 		$.ajax({
 			url : dallaslite_loadmore_params.ajaxurl, // AJAX handler.
 			data : data,
@@ -24,7 +25,8 @@ jQuery(function($){
 			},
 			success : function ( data ) {
 				if ( data ) {
-					button.text( 'Load More' ).prev().after( data ); // insert new posts.
+					$( "#main" ).append( data );
+					button.text( 'Load More' ).next().after( data ); // insert new posts.
 					dallaslite_loadmore_params.current_page++;
 					var currentpage = dallaslite_loadmore_params.current_page;
 					var maxpage = dallaslite_loadmore_params.max_page;
@@ -39,15 +41,6 @@ jQuery(function($){
 		});
 	});
 });
-
-/************ ADD CLASS IN BODY IN CASE OF BOX LAYOUT	***********/
-
-jQuery( document ).ready(function(){
-	var currentBodyLayout = dallaslite_loadmore_params.body_layout;
-	if (currentBodyLayout == 'box_layout') {
-		jQuery( '.main_body' ).addClass( 'box_layout' );
-	}
-})
 
 /* ****************	BACK TO TOP LINK  ***********************/
 

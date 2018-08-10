@@ -52,14 +52,16 @@ if ( get_theme_mod( 'blog_layout_selection' ) === 'blogfullwidth' ) {
  *
  */
 
-if ( 'pagiloadmore' === get_theme_mod( 'select_pagination_layout' ) ) { ?>
+if ( 'paginumber' === get_theme_mod( 'select_pagination_layout' ) || '' !== get_theme_mod( 'select_pagination_layout' ) ) { ?>
+	<div class="wpdal_pagination">
+		<?php the_posts_pagination(); ?>
+	</div>
+<?php }	else { ?>
 	<div class="wpdal_pagination">
 		<?php dallaslite_loadmore_btn(); ?>
 	</div>
-<?php
-} else {
-	the_post_pagination();
-} ?>
+<?php } ?>
+
 </div><!-- #primary -->
 <?php
 if ( get_theme_mod( 'blog_layout_selection' ) === 'blogright' || get_theme_mod( 'blog_layout_selection' ) !== '' ) { ?>

@@ -14,7 +14,7 @@
  * Header text color.
  */
 
-function blog_customize( $ ) {
+( function( $ ) {
 
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
@@ -47,4 +47,4 @@ function blog_customize( $ ) {
 			}
 		} );
 	} );
-}( jQuery );
+} )( jQuery );

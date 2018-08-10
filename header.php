@@ -43,11 +43,6 @@
 							) );
 } ?>
 				</div>
-				<?php if ( get_theme_mod( 'facebooklogo', ' ' ) !== '' || get_theme_mod( 'twitterlogo', ' ' ) !== '' || get_theme_mod( 'googlepluslogo', ' ' ) !== '' || get_theme_mod( 'linkedinlogo', ' ' ) !== '' || get_theme_mod( 'behancelogo', ' ' ) !== '' || get_theme_mod( 'youtubelogo', ' ' ) !== '' || get_theme_mod( 'snapchatlogo', ' ' ) !== '' || get_theme_mod( 'skypelogo', ' ' ) !== '' || get_theme_mod( 'whatsapplogo', ' ' ) !== '' || get_theme_mod( 'pinterestlogo', ' ' ) !== '' || get_theme_mod( 'customlogo', ' ' ) !== '' ) { ?>
-					<div class="social-icon col-md-6 col-sx-12">
-						<?php echo wp_kses_post( socialicon() ); ?>
-					</div>
-					<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -55,27 +50,20 @@
 	<header id="masthead" class="site-header">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3">
-					<div class="site-branding">
-						<a href="<?php echo wp_kses_post( site_url() ); ?>">
-							<?php if ( get_theme_mod( 'allLogoFavicon' ) === 'logo-text' || get_theme_mod( 'allLogoFavicon' ) === '' ) {
-										$titletext = get_theme_mod( 'siteTitle','title_text' );
-								if ( $titletext ) { ?>
-									<div class="wpdal_logo_text">
-										<h1><?php echo wp_kses_post( get_theme_mod( 'siteTitle','Dallas Lite' ) ); ?></h1>
-									</div>
-								<?php }
-								$taglinetext = get_theme_mod( 'tagLine','tagLine_text' );
-								if ( $taglinetext ) { ?>
-									<div class="wpdal_logo_text">
-										<p><?php echo wp_kses_post( get_theme_mod( 'tagLine','Just Another WordPress Site' ) ); ?></p>
-									</div>
-								<?php }
-} else { ?>
-									<div class="wpdal_logo_image"><img src="<?php echo wp_kses_post( get_theme_mod( 'uploadLogo' ) ); ?>" alt="dallaslite-logo"></div>
-									<?php	}
-		?>
-						</a>
+				<div class="custom-header-media">
+					<?php the_custom_header_markup(); ?>
+					<div class="col-md-3">
+						<div class="site-branding">
+							<?php the_custom_logo(); ?>
+							<div class="wpdal_logo_text">
+								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							</div>
+							<?php $dallaslite_description = get_bloginfo( 'description', 'display' );
+							if ( $dallaslite_description || is_customize_preview() ) :
+							?>
+							<p class="site-description"><?php echo $dallaslite_description; /* WPCS: xss ok. */ ?></p>
+							<?php endif; ?>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-9">

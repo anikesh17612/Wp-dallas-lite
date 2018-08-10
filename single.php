@@ -28,43 +28,19 @@ if ( get_theme_mod( 'select_blog_single_page_layout' ) === 'leftside' ) { ?>
 			echo get_avatar( $post->post_author );
 			echo '</div></div>';
 			echo '<div class="col-md-10"><div class="author-title">';
-			echo dallas_lite_user_data( $user_id,'first_name' ) . ' ' . dallas_lite_user_data( $user_id,'last_name' );
+			printf( // WPCS: XSS OK.
+				dallaslite_user_data( $user_id,'first_name' ) . ' ' . dallaslite_user_data( $user_id,'last_name' )
+			);
 			echo '</div>';
 			echo '<div class="author-desc">';
-			echo dallas_lite_user_data( $user_id,'description' );
+			printf( // WPCS: XSS OK.
+				dallaslite_user_data( $user_id,'description' )
+			);
 			echo '</div>';
-			if ( get_the_author_meta( 'url' ) !== '' || get_the_author_meta( 'fb_url' ) !== '' || get_the_author_meta( 'twitter_url' ) !== '' || get_the_author_meta( 'gplus_url' ) !== '' || get_the_author_meta( 'linkedin_url' ) !== '' || get_the_author_meta( 'behance_url' ) !== '' || get_the_author_meta( 'youtube_url' ) !== '' || get_the_author_meta( 'snapchat_url' ) !== '' || get_the_author_meta( 'skype_url' ) !== '' || get_the_author_meta( 'pinterest_url' ) !== '' ) {
+			if ( get_the_author_meta( 'url' ) !== '' ) {
 					echo '<div class="author-meta-social-link">';
 				if ( get_the_author_meta( 'url' ) ) {
 						echo wp_kses_post( '<a href="' . get_the_author_meta( 'url' ) . '" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>' );
-				}
-					// $user_meta = get_user_meta( $user_id );.
-				if ( get_the_author_meta( 'fb_url' ) ) {
-						echo wp_kses_post( '<a href="' . get_the_author_meta( 'fb_url' ) . '" target="_blank"><i class="fa fa-facebook"></i></a>' );
-				}
-				if ( get_the_author_meta( 'twitter_url' ) ) {
-						echo wp_kses_post( '<a href="' . get_the_author_meta( 'twitter_url' ) . '" target="_blank"><i class="fa fa-twitter"></i></a>' );
-				}
-				if ( get_the_author_meta( 'gplus_url' ) ) {
-						echo wp_kses_post( '<a href="' . get_the_author_meta( 'gplus_url' ) . '" target="_blank"><i class="fa fa-google-plus"></i></a>' );
-				}
-				if ( get_the_author_meta( 'linkedin_url' ) ) {
-						echo wp_kses_post( '<a href="' . get_the_author_meta( 'linkedin_url' ) . '" target="_blank"><i class="fa fa-linkedin"></i></a>' );
-				}
-				if ( get_the_author_meta( 'behance_url' ) ) {
-						echo wp_kses_post( '<a href="' . get_the_author_meta( 'behance_url' ) . '" target="_blank"><i class="fa fa-behance"></i></a>' );
-				}
-				if ( get_the_author_meta( 'youtube_url' ) ) {
-						echo wp_kses_post( '<a href="' . get_the_author_meta( 'youtube_url' ) . '" target="_blank"><i class="fa fa-youtube"></i></a>' );
-				}
-				if ( get_the_author_meta( 'snapchat_url' ) ) {
-					echo wp_kses_post( '<a href="' . get_the_author_meta( 'snapchat_url' ) . '" target="_blank"><i class="fa fa-snapchat"></i></a>' );
-				}
-				if ( get_the_author_meta( 'skype_url' ) ) {
-					echo wp_kses_post( '<a href="' . get_the_author_meta( 'skype_url' ) . '" target="_blank"><i class="fa fa-skype"></i></a>' );
-				}
-				if ( get_the_author_meta( 'pinterest_url' ) ) {
-					echo wp_kses_post( '<a href="' . get_the_author_meta( 'pinterest_url' ) . '" target="_blank"><i class="fa fa-pinterest"></i></a>' );
 				}
 				echo '</div>';
 			}// End if().
@@ -83,13 +59,6 @@ if ( get_theme_mod( 'select_blog_single_page_layout' ) === 'leftside' ) { ?>
 			'post_type' => 'post',
 			'post_status' => 'publish',
 			'post__not_in' => array( get_the_ID() ),
-			'tax_query' => array(
-			array(
-				'taxonomy' => 'category',
-				'field' => 'slug',
-				'terms' => $term_list,
-			),
-			),
 			);
 			$my_query = new WP_Query( $related_args );
 			if ( $my_query->have_posts() ) {

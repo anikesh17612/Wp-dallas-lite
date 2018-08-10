@@ -37,9 +37,12 @@ if ( is_single() ) { ?>
 	if ( get_theme_mod( 'enableExcerpt', true ) ) {
 		if ( get_theme_mod( 'excerptwordLimit', 3300 ) ) {
 			$textlimit = get_theme_mod( 'excerptwordLimit', 330 );
-			$textlimit = absint( $textlimit );
+			$textlimit = esc_html( $textlimit );
 			echo '<p class="short-description">';
-			echo dallaslite_excerpt_max_charlength( $textlimit );
+			  printf( // WPCS: XSS OK.
+					dallaslite_excerpt_max_charlength( esc_html( $textlimit ) )
+			  );
+
 			echo '</p>';
 		} else {
 			echo the_content();
@@ -60,6 +63,11 @@ if ( is_single() ) { ?>
 </div><!-- .entry-content -->
 <div class="post-meta">
 <?php
+if ( is_single() ) {
+	echo '<div class="tags_list">';
+		the_tags( '' , ' ' , '' );
+	echo '</div>';
+}
 if ( ! is_single() ) {
 	if ( get_theme_mod( 'enableBlogReadmore', true ) ) {
 		if ( get_theme_mod( 'continueReading', 'Read More' ) ) {
@@ -68,8 +76,6 @@ if ( ! is_single() ) {
 		echo wp_kses_post( '<div class="meta-content-limit"><a class="btn btn-primary" href="' . get_permalink() . '">' . $continue . '</a></div>' );
 	}
 }
-if ( is_single() ) {
-	echo wp_kses_post( add_social_share_icons() );
-} ?>
+?>
 </div>
 </article>
