@@ -72,9 +72,9 @@ function wp_dallas_option( $wp_customize ) {
 		'settings' => 'blog_layout_selection',
 		'type' => 'select',
 		'choices' => array(
-			'blogleft' => 'Blog Left',
-			'blogright' => 'Blog Right',
-			'blogfullwidth' => 'Blog Full Width',
+			'blogleft' => 'Left Sidebar',
+			'blogright' => 'Right Sidebar',
+			'blogfullwidth' => 'Full Width',
 		),
 	) ) );
 	$wp_customize->add_setting( 'select_blog_single_page_layout', array(
@@ -83,14 +83,14 @@ function wp_dallas_option( $wp_customize ) {
 	) );
 	// Add control.
 	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'select_blog_single_page_layout', array(
-		'label' => __( 'Select Blog Single Plage Layout', 'dallas-lite' ),
+		'label' => __( 'Select Single Post Layout', 'dallas-lite' ),
 		'section' => 'Blog_layout_option',
 		'settings' => 'select_blog_single_page_layout',
 		'type' => 'select',
 		'choices' => array(
-			'leftside' => 'Single Width Left Sidebar',
-			'rightside' => 'Single Width Right Sidebar',
-			'fullwidth' => 'Single Width Full Width',
+			'leftside' => 'Left Sidebar',
+			'rightside' => 'Right Sidebar',
+			'fullwidth' => 'Full Width',
 		),
 	) ) );
 	$wp_customize->add_setting( 'select_pagination_layout', array(
