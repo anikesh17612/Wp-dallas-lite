@@ -7,7 +7,7 @@
  *
  * @package Dallas Lite.
  *
- * @since  1.2
+ * @since  1.2.1
  */
 
 ( function  ($)  {
