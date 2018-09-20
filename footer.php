@@ -10,10 +10,10 @@
  */
 
 ?>
-	</div><!-- #content -->
-<?php get_sidebar( 'footer' ); ?>
-<!-- End bottom postion of theme -->
-<?php if ( get_theme_mod( 'enable_copyright_text', '1' ) || has_nav_menu( 'menu-3' ) ) { ?>
+</div><!-- #content -->
+<?php get_sidebar( 'footer' );
+// End bottom postion of theme.
+if ( get_theme_mod( 'enable_copyright_text', '1' ) || has_nav_menu( 'menu-3' ) ) { ?>
 	<footer id="footer-section">
 		<div class="container">
 			<div class="row">
@@ -21,8 +21,8 @@
 					<?php $enable_copyright_text = get_theme_mod( 'enable_copyright_text', '1' );
 					if ( $enable_copyright_text ) { ?>
 						<div class="wp-copyright col-md-6">
-							<?php $main_url = 'https://www.joomdev.com/wordpress-themes'; ?>
-							<?php echo wp_kses_post( get_theme_mod( 'copyright_text', 'Copyright &copy; - ' . date( 'Y' ) . ' Dallas Lite. All Right Reserved. Created by <a href="' . $main_url . '" target = "_blank">JoomDev</a>' ) ); ?>
+							<?php $main_url = 'https://www.joomdev.com/wordpress-themes';
+							 echo wp_kses_post( get_theme_mod( 'copyright_text', 'Copyright &copy; - ' . date( 'Y' ) . ' Dallas Lite. All Right Reserved. Created by <a href="' . $main_url . '" target = "_blank">JoomDev</a>' ) ); ?>
 						</div><!-- site-info -->
 						<?php
 					} ?>
@@ -33,21 +33,18 @@
 									'menu_id' => 'footer-menu',
 									'menu_class' => 'nav menu',
 								));
-}?>
+} ?>
 						</div>
 				</div>
 			</div>
 		</div>
 	</footer><!-- #site-footer -->
-<?php }?>
+<?php } ?>
 </div><!-- #page -->
 
 <?php
-wp_footer(); ?>
-
-<!-- Back To Top -->
-<?php
-
+wp_footer();
+// Back To Top.
 if ( get_theme_mod( 'backToTop' ) === '1' || get_theme_mod( 'backToTop' ) !== '' ) { ?>
 	<a href="javascript:void(0)" class="backtotop" style="display: block;"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 <?php } ?>

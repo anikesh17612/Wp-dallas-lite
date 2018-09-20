@@ -7,13 +7,13 @@
  * @package Dallas Lite
  */
 
-get_header(); ?>
-<?php if ( get_theme_mod( 'blog_layout_selection' ) === 'blogleft' ) { ?>
+get_header();
+if ( get_theme_mod( 'blog_layout_selection' ) === 'blogleft' ) { ?>
 		<div class="wpdal-left-sidebar col-md-3">
 			<?php get_sidebar(); ?>
 		</div>
-		<?php } ?>
-	<?php	if ( get_theme_mod( 'blog_layout_selection' ) === 'blogfullwidth' ) {
+		<?php }
+if ( get_theme_mod( 'blog_layout_selection' ) === 'blogfullwidth' ) {
 					echo '<div id="primary" class="content-area  col-md-12">';
 } else {
 		echo '<div id="primary" class="content-area  col-md-9">';
