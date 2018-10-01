@@ -90,7 +90,6 @@ if ( ! function_exists( 'dallaslite_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'dallaslite_setup' );
 
-add_theme_support( 'custom-logo' );
 /**
  * Dallas Lite only works in WordPress 4.7 or later.
  */
