@@ -84,7 +84,7 @@ if ( get_theme_mod( 'select_blog_single_page_layout' ) === 'fullwidth' ) {
 			wp_reset_postdata();
 ?>
 	</div><!-- #primary -->
-	<?php if ( get_theme_mod( 'select_blog_single_page_layout' ) === 'rightside' || get_theme_mod( 'select_blog_single_page_layout' ) === '' ) { ?>
+	<?php if ( get_theme_mod( 'select_blog_single_page_layout' ) === 'rightside' || get_theme_mod( 'select_blog_single_page_layout' ) !== '' ) { ?>
 		<div class="wpdal-right-sidebar wpdal-single-layout-page col-md-3 col-sm-12 col-xs-12">
 			<?php get_sidebar(); ?>
 		</div>

@@ -22,7 +22,7 @@ if ( get_theme_mod( 'enable_copyright_text', '1' ) || has_nav_menu( 'menu-3' ) )
 					if ( $enable_copyright_text ) { ?>
 						<div class="wp-copyright col-md-6">
 							<?php $main_url = 'https://wordpress.org/';
-							 echo wp_kses_post( get_theme_mod( 'copyright_text', 'Copyright &copy; - ' . date( 'Y' ) . ' Wordpress. All Right Reserved. Created by <a href="' . $main_url . '" target = "_blank">JoomDev</a>' ) ); ?>
+							 echo wp_kses_post( get_theme_mod( 'copyright_text', '<a href="' . $main_url . '" target = "_blank">Powered by Wordpress</a>' ) ); ?>
 						</div><!-- site-info -->
 						<?php
 					} ?>

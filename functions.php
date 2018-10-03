@@ -171,8 +171,8 @@ function dallaslite_scripts() {
 		'jquery'
 	) , '20151215', true);
 	wp_enqueue_style( 'font-family', 'https://fonts.googleapis.com/css?family=' . get_theme_mod( 'body_google_font', 'Lato' ) . '|' . get_theme_mod( 'menu_google_font', 'Lato' ) . '|' . get_theme_mod( 'h1_google_font', 'Lato' ) . '|' . get_theme_mod( 'h2_google_font', 'Lato' ) . '|' . get_theme_mod( 'h3_google_font', 'Lato' ) . '|' . get_theme_mod( 'h4_google_font', 'Lato' ) . '|' . get_theme_mod( 'h5_google_font', 'Lato' ) . '|' . get_theme_mod( 'h6_google_font', 'Lato' ) );
-	wp_enqueue_style( 'bootstrap-min-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
+	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.css' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css' );
 	if ( esc_url( get_theme_mod( 'right-to-left','true' ) ) ) {
 		wp_enqueue_style( 'rtl-css', get_template_directory_uri() . '/rtl.css' );
 	}
@@ -187,7 +187,7 @@ function dallaslite_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	wp_localize_script('dallaslite_script', 'screenReaderText', array(
+	wp_localize_script('	_script', 'screenReaderText', array(
 		'expand' => __( 'expand child menu', 'dallas-lite' ),
 		'collapse' => __( 'collapse child menu', 'dallas-lite' ),
 	));
@@ -357,9 +357,9 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-require_once( get_template_directory() . '/lib/class-theme-register-function.php' );
+require_once( get_template_directory() . '/lib/class-dallaslite-theme-function.php' );
 
-require_once( get_template_directory() . '/lib/googlefonts.php' );
+require_once( get_template_directory() . '/lib/dallaslite-googlefonts.php' );
 
 require_once( get_template_directory() . '/lib/theme-core-style.php' );
 
